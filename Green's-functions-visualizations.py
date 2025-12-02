@@ -42,6 +42,7 @@ plt.savefig("G_polar.png", dpi=75, bbox_inches='tight')
 plt.show()
 
 
+
 plt.figure(figsize=(8, 6))
 for i, theta in enumerate(theta_vals):
     plt.plot(r_vals, (F_polar[i, :]).imag, label=f"θ = {np.degrees(theta):.0f}°")
