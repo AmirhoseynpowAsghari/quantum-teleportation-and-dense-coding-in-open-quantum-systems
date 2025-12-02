@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from self_consistent_equations import solve_self_consistent
-from greens_function import compute_greens_functions
+from selfconsistent_equations import solve_self_consistent
+from Greens_function import compute_greens_functions
 
 u_ks, v_ks, Delta_ks, E_ks, mu, KX, KY, epsilon_ks = solve_self_consistent(
     Nk=200,

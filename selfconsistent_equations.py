@@ -41,8 +41,8 @@ def solve_self_consistent(Nk=200, t=0.1, U=4.5, Delta_t=0.45, V_SO=0.0, n=1.875,
 
         eps_min = float(np.min(epsilon_ks))
         eps_max = float(np.max(epsilon_ks))
-        mu_low = eps_min - 10*t
-        mu_high = eps_max + 10*t
+        mu_low = eps_min - 40*t
+        mu_high = eps_max + 40*t
 
         mu = bisect(number_eq, mu_low, mu_high, xtol=1e-6)
 
