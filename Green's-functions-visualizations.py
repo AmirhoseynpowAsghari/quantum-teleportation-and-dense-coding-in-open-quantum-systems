@@ -38,7 +38,7 @@ plt.legend()
 plt.grid(True)
 plt.title("Normal Green's Function in Polar Coordinates")
 
-plt.savefig("G_polar.png", dpi=150, bbox_inches='tight')
+plt.savefig("G_polar.png", dpi=75, bbox_inches='tight')
 plt.show()
 
 
@@ -50,5 +50,5 @@ plt.ylabel("$F_{ud}(r, θ)$")
 plt.legend()
 plt.grid(True)
 plt.title("Anomalous Green's Function in Polar Coordinates")
-plt.savefig("F_polar.png", dpi=150, bbox_inches='tight')
+plt.savefig("F_polar.png", dpi=75, bbox_inches='tight')
 plt.show()
