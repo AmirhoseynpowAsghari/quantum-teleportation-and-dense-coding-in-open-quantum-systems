@@ -37,7 +37,11 @@ plt.ylabel("$G_{uu}(r, θ)$")
 plt.legend()
 plt.grid(True)
 plt.title("Normal Green's Function in Polar Coordinates")
+
+plt.savefig("G_polar.png", dpi=300, bbox_inches='tight')
+plt.savefig("G_polar.pdf", bbox_inches='tight')   # optional
 plt.show()
+
 
 plt.figure(figsize=(8, 6))
 for i, theta in enumerate(theta_vals):
@@ -47,5 +51,6 @@ plt.ylabel("$F_{ud}(r, θ)$")
 plt.legend()
 plt.grid(True)
 plt.title("Anomalous Green's Function in Polar Coordinates")
+plt.savefig("F_polar.png", dpi=300, bbox_inches='tight')
+plt.savefig("F_polar.pdf", bbox_inches='tight')   # optional
 plt.show()
-
