@@ -55,4 +55,7 @@ plt.ylabel("Concurrence C(r, θ)")
 plt.legend()
 plt.grid(True)
 plt.title("Concurrence vs r for fixed θ")
+
+plt.savefig("Concurrence.png", dpi=75, bbox_inches='tight')
 plt.show()
+
