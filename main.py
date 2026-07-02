@@ -259,6 +259,32 @@ def main():
         print("STEP 7: Generating plots")
         print("-" * 70)
 
+        from greens_functions import evolve_greens_functions
+        from visualize_greens import plot_greens_all
+
+        print("[main] Evolving Green's functions in time ...")
+        G_t, F_t = evolve_greens_functions(
+            G_uu, F_ud, t_grid,
+            gamma=args.gammaA,
+            Gamma=args.GammaA,
+            kind=args.kind,
+            verbose=True,
+        )
+
+        # Choose snapshot indices
+        t_snap = np.linspace(0, config.N_T - 1, 6, dtype=int).tolist()
+
+        plot_greens_all(
+            G_t, F_t,
+            r_vals=r_vals,
+            t_grid=t_grid,
+            theta_vals=theta_vals,
+            theta_idx=args.theta,
+            t_indices=t_snap,
+            prefix=f"greens_{args.kind}_{args.bath}",
+            show=True,
+        )
+
         # Determine filename prefix
         if args.prefix is not None:
             prefix = args.prefix
