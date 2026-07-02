@@ -8,16 +8,16 @@ import numpy as np
 # -----------------------------------------------------------------------------
 # Physical parameters
 # -----------------------------------------------------------------------------
-t_hop   = 0.1          # hopping amplitude (eV or arbitrary units)
+t_hop   = 1.0         # hopping amplitude (eV or arbitrary units)
 U       = 75 * t_hop   # on-site Hubbard interaction
-Delta_t = 0.45         # triplet pairing amplitude
+Delta_t = 4.5         # triplet pairing amplitude
 V_SO    = 0.0 * t_hop  # spin-orbit coupling strength
 n_elec  = 1.875        # average electron density per site
 
 # -----------------------------------------------------------------------------
 # k-space grid
 # -----------------------------------------------------------------------------
-Nk = 400               # number of k-points per direction (reduce for quick tests)
+Nk = 100               # number of k-points per direction (reduce for quick tests)
 
 # -----------------------------------------------------------------------------
 # Self-consistency loop
@@ -52,5 +52,5 @@ BIG_GAMMA_B = 0.01  # reservoir memory rate, qubit B
 # -----------------------------------------------------------------------------
 OUT_RHO   = "rho_rt_results.npz"
 OUT_HEATMAP = "C_rt_heatmap.npz"
-MAKE_PLOTS  = False   # set True for interactive plots
+MAKE_PLOTS  = True   # set True for interactive plots
 THETA_PLOT_IDX = 0    # which θ slice to use for the heatmap
