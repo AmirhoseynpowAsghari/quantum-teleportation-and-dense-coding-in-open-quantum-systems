@@ -1,24 +1,13 @@
 # =============================================================================
 # greens_functions.py
-# Compute the normal (G) and anomalous (F) Green's functions on a (theta, r)
-# grid and optionally evolve them in time under non-Markovian noise.
 # =============================================================================
 
 import numpy as np
 from scipy.integrate import simpson
-
 from config import R_MIN, R_MAX, N_R, THETA_DEG
 
 
 def build_rgrid():
-    """
-    Build radial and angular grids.
-
-    Returns
-    -------
-    r_vals     : 1-D float array, length N_R
-    theta_vals : 1-D float array (radians), length N_theta
-    """
     r_vals     = np.linspace(R_MIN, R_MAX, N_R)
     theta_vals = np.radians(THETA_DEG)
     return r_vals, theta_vals
@@ -26,19 +15,11 @@ def build_rgrid():
 
 def compute_greens_functions(bdg, verbose=True):
     """
-    Compute G_{uu}(r, theta) and F_{ud}(r, theta) by 2-D k-space integration.
-
-    Parameters
-    ----------
-    bdg     : dict   output of self_consistency.run_selfconsistency()
-    verbose : bool
+    Compute G_uu(r,theta) and F_ud(r,theta) by 2-D k-space integration.
 
     Returns
     -------
-    r_vals     : 1-D float array, length N_R
-    theta_vals : 1-D float array (radians), length N_theta
-    G_uu_polar : complex array, shape (N_theta, N_R)
-    F_ud_polar : complex array, shape (N_theta, N_R)
+    r_vals, theta_vals, G_uu_polar, F_ud_polar
     """
     u_ks = bdg["u_ks"]
     v_ks = bdg["v_ks"]
@@ -48,126 +29,80 @@ def compute_greens_functions(bdg, verbose=True):
     ky   = bdg["ky"]
 
     r_vals, theta_vals = build_rgrid()
-    N_theta = len(theta_vals)
-    Nr      = len(r_vals)
+    Nth, Nr = len(theta_vals), len(r_vals)
 
-    G_uu_polar = np.zeros((N_theta, Nr), dtype=complex)
-    F_ud_polar = np.zeros((N_theta, Nr), dtype=complex)
+    G_uu_polar = np.zeros((Nth, Nr), dtype=complex)
+    F_ud_polar = np.zeros((Nth, Nr), dtype=complex)
 
     for i, theta in enumerate(theta_vals):
         if verbose:
-            print(f"[greens] theta = {np.degrees(theta):.0f} deg  ({i+1}/{N_theta})")
-
-        rx_dir = np.cos(theta)
-        ry_dir = np.sin(theta)
+            print(f"  [greens] theta={np.degrees(theta):.0f} deg  "
+                  f"({i+1}/{Nth})")
+        rx = np.cos(theta)
+        ry = np.sin(theta)
 
         for j, r in enumerate(r_vals):
-            phase = np.exp(1j * (KX * r * rx_dir + KY * r * ry_dir))
-
-            sum_G = np.zeros_like(KX, dtype=complex)
-            sum_F = np.zeros_like(KX, dtype=complex)
+            phase = np.exp(1j * (KX * r * rx + KY * r * ry))
+            sumG  = np.zeros_like(KX, dtype=complex)
+            sumF  = np.zeros_like(KX, dtype=complex)
 
             for s in range(2):
                 u = u_ks[:, :, s]
                 v = v_ks[:, :, s]
-                sum_G += -1j * u * u * phase
-                sum_F +=  1j * np.conj(v) * np.conj(u) * np.conj(phase)
+                sumG += -1j * u * u * phase
+                sumF +=  1j * np.conj(v) * np.conj(u) * np.conj(phase)
 
-            # 2-D Simpson integration over (kx, ky)
             G_uu_polar[i, j] = (
-                simpson(y=simpson(y=sum_G, x=kx, axis=0), x=ky, axis=0)
-                / (2.0 * np.pi) ** 2
+                simpson(y=simpson(y=sumG, x=kx, axis=0), x=ky, axis=0)
+                / (2.0 * np.pi)**2
             )
             F_ud_polar[i, j] = (
-                simpson(y=simpson(y=sum_F, x=kx, axis=0), x=ky, axis=0)
-                / (2.0 * np.pi) ** 2
+                simpson(y=simpson(y=sumF, x=kx, axis=0), x=ky, axis=0)
+                / (2.0 * np.pi)**2
             )
 
     return r_vals, theta_vals, G_uu_polar, F_ud_polar
 
 
 def evolve_greens_functions(G_uu_polar, F_ud_polar, t_grid,
-                             gamma=0.05, Gamma=0.01,
+                             gamma=0.05, GammaA=0.01,
                              kind="amp", verbose=True):
     """
-    Evolve Green's functions in time under a non-Markovian decay envelope.
-
-    For amplitude damping:
-        G(r, t) = G(r, 0) * P(t)
-        F(r, t) = F(r, 0) * sqrt(P(t))
-
-    For dephasing:
-        G(r, t) = G(r, 0) * exp(-gamma/2 * [t + (exp(-Gamma*t)-1)/Gamma])
-        F(r, t) = F(r, 0) * exp(-gamma   * [t + (exp(-Gamma*t)-1)/Gamma])
-
-    Parameters
-    ----------
-    G_uu_polar : complex array, shape (N_theta, N_R)
-    F_ud_polar : complex array, shape (N_theta, N_R)
-    t_grid     : 1-D float array, length N_t
-    gamma      : float   coupling strength
-    Gamma      : float   reservoir memory rate
-    kind       : str     'amp' or 'dephasing'
-    verbose    : bool
+    Apply non-Markovian decay envelope to Green's functions.
 
     Returns
     -------
-    G_t : complex array, shape (N_theta, N_R, N_t)
-    F_t : complex array, shape (N_theta, N_R, N_t)
+    G_t, F_t  : complex arrays, shape (N_theta, N_R, N_t)
     """
-    N_theta, Nr = G_uu_polar.shape
-    Nt          = len(t_grid)
+    Nth, Nr = G_uu_polar.shape
+    Nt      = len(t_grid)
 
-    G_t = np.zeros((N_theta, Nr, Nt), dtype=complex)
-    F_t = np.zeros((N_theta, Nr, Nt), dtype=complex)
+    G_t = np.zeros((Nth, Nr, Nt), dtype=complex)
+    F_t = np.zeros((Nth, Nr, Nt), dtype=complex)
 
     for k, t in enumerate(t_grid):
-        if verbose and k % max(1, Nt // 10) == 0:
-            print(f"[greens_evolve] t = {t:.2f}  ({k+1}/{Nt})")
+        if verbose and k % max(1, Nt // 8) == 0:
+            print(f"  [greens_evolve] t={t:.2f}  ({k+1}/{Nt})")
 
         if kind == "amp":
-            # Lorentzian structured reservoir
-            d2  = 2.0 * gamma * Gamma - Gamma ** 2
+            d2  = 2.0 * gamma * GammaA - GammaA**2
             if d2 > 0.0:
-                d   = np.sqrt(d2)
-                P   = np.exp(-Gamma * t) * (
-                    np.cos(0.5 * d * t) + (Gamma / d) * np.sin(0.5 * d * t)
-                ) ** 2
+                d = np.sqrt(d2)
+                P = np.exp(-GammaA * t) * (
+                    np.cos(0.5*d*t) + (GammaA/d)*np.sin(0.5*d*t)
+                )**2
             else:
-                P = np.exp(-Gamma * t) * (1.0 + 0.5 * Gamma * t) ** 2
+                P = np.exp(-GammaA * t) * (1.0 + 0.5*GammaA*t)**2
             P = float(np.clip(P, 0.0, 1.0))
-
             G_t[:, :, k] = G_uu_polar * P
             F_t[:, :, k] = F_ud_polar * np.sqrt(P)
 
         elif kind == "dephasing":
-            # Ornstein-Uhlenbeck colored noise
-            exponent = gamma * (t + (np.exp(-Gamma * t) - 1.0) / Gamma)
-            decay_G  = np.exp(-0.5 * exponent)
-            decay_F  = np.exp(-exponent)
-
-            G_t[:, :, k] = G_uu_polar * decay_G
-            F_t[:, :, k] = F_ud_polar * decay_F
+            exponent = gamma * (t + (np.exp(-GammaA*t) - 1.0) / GammaA)
+            G_t[:, :, k] = G_uu_polar * np.exp(-0.5 * exponent)
+            F_t[:, :, k] = F_ud_polar * np.exp(-exponent)
 
         else:
-            raise ValueError(f"Unknown kind '{kind}'. Use 'amp' or 'dephasing'.")
+            raise ValueError(f"Unknown kind '{kind}'")
 
     return G_t, F_t
-
-
-if __name__ == "__main__":
-    from self_consistency import run_selfconsistency
-    from config import T_MIN, T_MAX, N_T
-
-    bdg = run_selfconsistency(seed=0)
-    r_vals, theta_vals, G, F = compute_greens_functions(bdg, verbose=True)
-
-    t_grid = np.linspace(T_MIN, T_MAX, N_T)
-    G_t, F_t = evolve_greens_functions(G, F, t_grid,
-                                        gamma=4.5, Gamma=0.01,
-                                        kind="amp", verbose=True)
-
-    print(f"G_t shape : {G_t.shape}")
-    print(f"F_t shape : {F_t.shape}")
-    print(f"|G|_max at t=0   : {np.abs(G_t[:,:,0]).max():.6f}")
-    print(f"|G|_max at t=end : {np.abs(G_t[:,:,-1]).max():.6f}")
