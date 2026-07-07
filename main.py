@@ -312,6 +312,60 @@ def main():
     else:
         print("  Fidelity plots SKIPPED (--no-plot)")
 
+        # =========================================================
+    # STEP 10 – Theta-dependence analysis
+    # =========================================================
+    _header(10, "Theta-dependence analysis (C and F vs theta)")
+
+    from visualize_theta import run_theta_analysis
+    from utils import data_path as _dp
+
+    obs_all, F_all_init, F_all_pure = run_theta_analysis(
+        rho_rt       = rho_rt,
+        rho_matrices = rho_matrices,
+        r_vals       = r_vals,
+        t_grid       = t_grid,
+        theta_vals   = theta_vals,
+        prefix       = prefix,
+        show         = show,
+        fid_noise    = fid_noise,   # reuse dict from STEP 9
+    )
+
+    # Save theta-dependence data
+    out_theta = _dp(f"{prefix}_theta_obs.npz")
+    np.savez_compressed(
+        out_theta,
+        C_all    = obs_all["C"],
+        Fs_all   = obs_all["Fs"],
+        pur_all  = obs_all["pur"],
+        S_all    = obs_all["S"],
+        F_init   = F_all_init,
+        F_pure   = F_all_pure,
+        r_vals   = r_vals,
+        t_grid   = t_grid,
+        theta_vals = theta_vals,
+    )
+    print(f"  Saved -> {out_theta}")
+
+        # =========================================================
+    # STEP 11 – Holevo quantity analysis
+    # =========================================================
+    _header(11, "Holevo quantity analysis")
+
+    from holevo import run_holevo_analysis
+
+    holevo_results = run_holevo_analysis(
+        rho_rt            = rho_rt,
+        r_vals            = r_vals,
+        t_grid            = t_grid,
+        theta_vals        = theta_vals,
+        theta_idx         = args.theta,
+        compute_all_theta = True,
+        prefix            = prefix,
+        show              = show,
+        verbose           = True,
+    )
+
     # =========================================================
     # DONE
     # =========================================================

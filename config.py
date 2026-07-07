@@ -7,9 +7,9 @@ import numpy as np
 # -----------------------------------------------------------------------------
 # Physical parameters
 # -----------------------------------------------------------------------------
-t_hop   = 0.1
+t_hop   = 1.0
 U       = 75 * t_hop
-Delta_t = 0.45
+Delta_t = 4.5 * t_hop
 V_SO    = 0.0 * t_hop
 n_elec  = 1.875
 
@@ -37,25 +37,25 @@ THETA_DEG         = [0, 15, 30, 45, 60, 75, 90]
 # -----------------------------------------------------------------------------
 # Time evolution
 # -----------------------------------------------------------------------------
-T_MIN, T_MAX, N_T = 0.0, 80.0, 161
+T_MIN, T_MAX, N_T = 0.0, 80.0, 261
 
 # Noise channel
 NOISE_KIND  = "amp"
 NOISE_BATH  = "independent"
-GAMMA_A     = 4.5
-BIG_GAMMA_A = 0.01
-GAMMA_B     = 4.5
-BIG_GAMMA_B = 0.01
+GAMMA_A     = 1.5
+BIG_GAMMA_A = 0.1
+GAMMA_B     = 1.5
+BIG_GAMMA_B = 0.1
 
 # Fidelity noise (OU dephasing or amplitude damping)
 FID_NU_A      = 0.2
-FID_GAMMA_A   = 0.05
+FID_GAMMA_A   = 0.1
 FID_NU_B      = 0.2
-FID_GAMMA_B   = 0.05
-FID_GAMMA_AD_A  = 4.5
-FID_BIGAMMA_AD_A = 0.01
-FID_GAMMA_AD_B  = 4.5
-FID_BIGAMMA_AD_B = 0.01
+FID_GAMMA_B   = 0.1
+FID_GAMMA_AD_A  = 1.5
+FID_BIGAMMA_AD_A = 0.1
+FID_GAMMA_AD_B  = 1.5
+FID_BIGAMMA_AD_B = 0.1
 
 # -----------------------------------------------------------------------------
 # Output directories
@@ -73,4 +73,4 @@ OUT_HEATMAP = "C_rt_heatmap.npz"
 # Plot control
 # -----------------------------------------------------------------------------
 MAKE_PLOTS     = True
-THETA_PLOT_IDX = 0
+THETA_PLOT_IDX = 3
