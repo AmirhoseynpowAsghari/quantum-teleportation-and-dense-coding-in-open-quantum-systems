@@ -3,6 +3,7 @@
 # =============================================================================
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def build_density_matrices(G_uu_polar, F_ud_polar):
