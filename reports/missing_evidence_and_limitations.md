@@ -66,4 +66,4 @@ The two pasted LaTeX drafts disagree on title/authors, SOC, momentum-grid size, 
 
 ## 11. LaTeX compilation and original support files
 
-No LaTeX compiler was available, so compilation and visual PDF layout remain unverified. The original `Delta_ks_heatmaps.png`, `figs/greens_angular.png`, and `figs/concurrence_U_theta.png` were absent; they were regenerated from the current code. Their new numerical content is verified, but fidelity to the author's missing original images cannot be assessed.
+The manuscript was subsequently compiled successfully with TeX Live in GitHub Actions, producing the 13-page `manuscript.pdf`. The log contains no unresolved references or citations, but several box-layout warnings and one stuck-float warning remain for final editorial review; see `reports/latex_validation_report.md`. The original `Delta_ks_heatmaps.png`, `figs/greens_angular.png`, and `figs/concurrence_U_theta.png` were absent; they were regenerated from the current code. Their new numerical content is verified, but fidelity to the author's missing original images cannot be assessed.

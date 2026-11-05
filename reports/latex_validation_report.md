@@ -2,9 +2,10 @@
 
 ## Compilation
 
-- **LaTeX compilation was not performed.** `pdflatex`, `latexmk`, and `tectonic` were not installed in the execution environment.
-- No PDF was generated, and the source is therefore **not compilation-tested**.
-- Figure placement, overfull boxes, font rendering, and final page layout require a subsequent REVTeX 4.2 compilation.
+- **LaTeX compilation was performed successfully** with TeX Live in GitHub Actions run `42100176333` using `xu-cheng/latex-action@v4`.
+- **Output:** `manuscript.pdf`, 13 pages and 1,823,972 bytes.
+- The complete compiler output is preserved in `reports/manuscript.log`.
+- The workflow `.github/workflows/build-manuscript.yml` reproduces the PDF and writes it back to the triggering branch through the GitHub Contents API.
 
 ## Static source validation
 
@@ -42,6 +43,8 @@ The two original Oh–Kim entries were retained. The added bibliographic details
 
 ## Remaining technical issues
 
-1. A real REVTeX compilation is still required to detect package-, class-, or layout-specific errors not covered by static checks.
-2. The generated figures are PNG files, consistent with the supplied mandatory figures; journal submission may require higher-resolution or vector replacements.
-3. `\date{\today}` remains unchanged from the original, so the compiled date will be the eventual compilation date.
+1. The successful build log contains no undefined references or citations and no fatal errors. It does contain several underfull-box warnings, four overfull-box warnings associated with wide equations, and one REVTeX stuck-float warning. All ten graphics nevertheless appear in the output log and the PDF was produced completely.
+2. REVTeX also warns that no affiliation was supplied and that `showpacs` is required to display PACS codes; these conventions were retained from the original manuscript.
+3. The generated figures are PNG files, consistent with the supplied mandatory figures; journal submission may require higher-resolution or vector replacements.
+4. `\date{\today}` remains unchanged from the original, so the PDF carries the CI compilation date.
+5. Final aesthetic review of line breaks and float placement is recommended before journal submission.
