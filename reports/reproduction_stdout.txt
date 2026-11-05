@@ -1,0 +1,206 @@
+Recomputing U/t=75 Green's functions and observables ...
+Computing U/t=40 ...
+Computing U/t=115 ...
+Computing initial state for U/t=20 ...
+Computing initial state for U/t=44 ...
+Computing initial state for U/t=79 ...
+Generating manuscript support figures ...
+{
+  "repository_commit": "6ef5c49faf09494a25777d85591a6be0cf732446",
+  "implementation_scope": "Current magnitude-amplitude Green's-function implementation; the signed Delta/(2E) coherence factor is not used by greens_functions.py.",
+  "python": {
+    "numpy": "2.4.6"
+  },
+  "r0_amplitude_damping_identity_max_abs_error": {
+    "low_Fs_minus_p": 0.0,
+    "low_C_minus_p": 0.0,
+    "high_Fs_minus_p": 0.0,
+    "high_C_minus_p": 0.0
+  },
+  "archived_low_greens_max_abs_error": {
+    "G": 7.648631835675112e-17,
+    "F": 1.5265815529288592e-16
+  },
+  "archived_high_greens_max_abs_error": {
+    "G": 2.8579922022925946e-13,
+    "F": 1.2312234565214908e-12
+  },
+  "archived_low_observable_max_abs_error": {
+    "C_all": 2.220446049250313e-15,
+    "Fs_all": 1.1102230246251565e-15,
+    "F_pure": 1.4728672614872096e-08
+  },
+  "archived_fidelity_bounds": {
+    "F_init_min": 8.340175713126382e-08,
+    "F_init_max": 1.0000000000000022,
+    "F_pure_min": 4.1701577642160644e-08,
+    "F_pure_max": 0.9999999999999996,
+    "F_init_t0_max_error": 7.105427357601002e-15
+  },
+  "angular_symmetry_max_abs_error": {
+    "C_0_minus_90": 1.0547118733938987e-15,
+    "F_0_minus_90": 1.3992738634449609e-08,
+    "F_15_minus_75": 1.3831350731408065e-08,
+    "F_30_minus_60": 1.3666404119483389e-08
+  },
+  "r0_angular_variation": {
+    "C_ptp_max_over_t": 0.0,
+    "F_ptp_max_over_t": 0.0
+  },
+  "archived_low_holevo_max_abs_error": {
+    "chi_all": 3.671873916033519e-11,
+    "S_rho_all": 3.671859881036396e-11,
+    "S_tilde_all": 4.440892098500626e-16,
+    "chi_rt": 3.650557633960716e-11
+  },
+  "holevo_bounds": {
+    "chi_min": 6.111924300000737e-10,
+    "chi_max": 2.0,
+    "S_rho_min": -0.0,
+    "S_rho_max": 1.9999999993888076,
+    "S_tilde_min": 1.0000010824731567,
+    "S_tilde_max": 2.0,
+    "r0_angular_ptp_max": 0.0,
+    "final_time_max_abs_deviation_from_1": 0.001639519445505111
+  },
+  "archived_high_fidelity_max_abs_error": {
+    "F_pure": 1.4062869535536038e-08
+  },
+  "high_fidelity_bounds": {
+    "F_init_min": 4.8391868105219306e-05,
+    "F_init_max": 1.0000000000000004,
+    "F_pure_min": 2.4197035001577604e-05,
+    "F_pure_max": 0.9999999999999996,
+    "F_init_t0_max_error": 3.3306690738754696e-15
+  },
+  "high_regime_C_range": {
+    "min": 0.0,
+    "max": 1.0
+  },
+  "direct_repository_crosscheck": {
+    "C": 2.7755575615628914e-17,
+    "Fs": 2.220446049250313e-16,
+    "chi": 8.537615059367454e-14,
+    "pure_fidelity": 4.253727980962907e-09,
+    "trace": 2.220446049250313e-16,
+    "hermiticity": 0.0,
+    "minimum_eigenvalue": 0.0
+  },
+  "U_sweep": {
+    "data_file": "data/hubbard_U40_U75_U115_amp_independent_g1.50_G0.100_observables.npz",
+    "fixed_parameters": {
+      "Delta_t_over_t": 4.5,
+      "V_SO_over_t": 0.0,
+      "n_elec": 1.875,
+      "Nk": 100,
+      "gamma_over_t": 1.5,
+      "Gamma_over_t": 0.1,
+      "r_points": 200,
+      "time_points": 261,
+      "theta_degrees": [
+        0.0,
+        14.999999999999998,
+        29.999999999999996,
+        45.0,
+        59.99999999999999,
+        75.0,
+        90.0
+      ]
+    },
+    "solutions": {
+      "40": {
+        "Delta0_over_t": -0.02077126220404008,
+        "DeltaS_over_t": -1.2797794065624788,
+        "mu_over_t": 3.4477727948269283,
+        "max_absolute_residual": 2.171322149857602e-11,
+        "initial_density_matrix_min_eigenvalue": 0.0,
+        "C_range": [
+          0.0,
+          1.0
+        ],
+        "F_singlet_range": [
+          4.170090344523561e-08,
+          1.0
+        ],
+        "chi_range": [
+          8.815170815523743e-13,
+          2.0
+        ]
+      },
+      "75": {
+        "Delta0_over_t": -0.1254786056413186,
+        "DeltaS_over_t": -0.3614892375310815,
+        "mu_over_t": 3.2926233911958276,
+        "max_absolute_residual": 2.353062189541788e-12,
+        "initial_density_matrix_min_eigenvalue": 0.0,
+        "C_range": [
+          0.0,
+          1.0
+        ],
+        "F_singlet_range": [
+          4.1701577642160644e-08,
+          1.0
+        ],
+        "chi_range": [
+          6.111924300000737e-10,
+          2.0
+        ]
+      },
+      "115": {
+        "Delta0_over_t": -0.002558527404665663,
+        "DeltaS_over_t": -0.0035552806886527876,
+        "mu_over_t": 3.293654657620537,
+        "max_absolute_residual": 2.3869880507940144e-10,
+        "initial_density_matrix_min_eigenvalue": 0.0,
+        "C_range": [
+          0.0,
+          1.0
+        ],
+        "F_singlet_range": [
+          4.1700938172759276e-08,
+          1.0
+        ],
+        "chi_range": [
+          4.68336480707876e-12,
+          2.0
+        ]
+      }
+    }
+  },
+  "U_sweep_fixed_slice_r_index": 30,
+  "U_sweep_fixed_slice_r": 1.5075376884422111,
+  "U_sweep_initial_theta45": {
+    "40": {
+      "Fs_r0": 1.0,
+      "chi_r0": 2.0,
+      "Fs_fixed_r_t0": 0.7177450544290792,
+      "chi_fixed_r_t0": 0.6941313279175969,
+      "Fs_fixed_r_t80": 0.0001828394804320207,
+      "chi_fixed_r_t80": 0.9984285904284275,
+      "C_max_r": 0.0,
+      "largest_initial_Fs_at_nonzero_r": 0.9944742970040523
+    },
+    "75": {
+      "Fs_r0": 1.0,
+      "chi_r0": 2.0,
+      "Fs_fixed_r_t0": 0.7785512318755969,
+      "chi_fixed_r_t0": 0.8862079050515035,
+      "Fs_fixed_r_t80": 0.00019197054779652287,
+      "chi_fixed_r_t80": 0.998449705753826,
+      "C_max_r": 0.0,
+      "largest_initial_Fs_at_nonzero_r": 0.9838628502268594
+    },
+    "115": {
+      "Fs_r0": 1.0,
+      "chi_r0": 2.0,
+      "Fs_fixed_r_t0": 0.7835152903910201,
+      "chi_fixed_r_t0": 0.9031833133585379,
+      "Fs_fixed_r_t80": 0.0001927159844381458,
+      "chi_fixed_r_t80": 0.9984516054908963,
+      "C_max_r": 0.0,
+      "largest_initial_Fs_at_nonzero_r": 0.9712714704956764
+    }
+  }
+}
+Saved /home/user/quantum-teleportation-and-dense-coding-in-open-quantum-systems/data/hubbard_U40_U75_U115_amp_independent_g1.50_G0.100_observables.npz
+Saved /home/user/quantum-teleportation-and-dense-coding-in-open-quantum-systems/reports/numerical_validation.json

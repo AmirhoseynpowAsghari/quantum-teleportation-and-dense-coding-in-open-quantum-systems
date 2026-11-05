@@ -1,0 +1,92 @@
+{
+  "source": "manuscript.tex",
+  "compilation_performed": false,
+  "check_type": "static source audit only",
+  "label_count": 58,
+  "duplicate_labels": [],
+  "undefined_references": [],
+  "citation_key_count": 10,
+  "duplicate_bibitems": [],
+  "undefined_citations": [],
+  "uncited_bibitems": [],
+  "brace_balance": 0,
+  "environment_balance": {
+    "document": [
+      1,
+      1
+    ],
+    "equation": [
+      48,
+      48
+    ],
+    "align": [
+      0,
+      0
+    ],
+    "figure": [
+      3,
+      3
+    ],
+    "figure*": [
+      7,
+      7
+    ],
+    "thebibliography": [
+      1,
+      1
+    ]
+  },
+  "graphics": [
+    {
+      "path": "Delta_ks_heatmaps.png",
+      "exists": true
+    },
+    {
+      "path": "figs/greens_angular.png",
+      "exists": true
+    },
+    {
+      "path": "figs/concurrence_U_theta.png",
+      "exists": true
+    },
+    {
+      "path": "figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_C_heatmap.png",
+      "exists": true
+    },
+    {
+      "path": "figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_heatmap_singlet.png",
+      "exists": true
+    },
+    {
+      "path": "figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_singlet.png",
+      "exists": true
+    },
+    {
+      "path": "figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_singlet.png",
+      "exists": true
+    },
+    {
+      "path": "figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs_r.png",
+      "exists": true
+    },
+    {
+      "path": "figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_theta_t_heatmap.png",
+      "exists": true
+    },
+    {
+      "path": "figs/U_dependence_fidelity_holevo.png",
+      "exists": true
+    }
+  ],
+  "mandatory_figure_include_counts": {
+    "figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_heatmap_singlet.png": 1,
+    "figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_C_heatmap.png": 1,
+    "figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_theta_t_heatmap.png": 1,
+    "figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs_r.png": 1,
+    "figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_singlet.png": 1,
+    "figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_singlet.png": 1
+  },
+  "all_graphics_found": true,
+  "all_mandatory_figures_exactly_once": true,
+  "static_checks_passed": true
+}
