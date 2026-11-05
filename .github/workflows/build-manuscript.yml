@@ -23,19 +23,22 @@ jobs:
           root_file: manuscript.tex
           args: -pdf -interaction=nonstopmode -halt-on-error manuscript.tex
 
-      - name: Commit compiled PDF and log to the triggering branch
+      - name: Prepare LaTeX log
         run: |
           mkdir -p reports
           cp manuscript.log reports/manuscript.log
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add manuscript.pdf reports/manuscript.log
-          if git diff --cached --quiet; then
-            echo "Compiled outputs are unchanged."
-          else
-            git commit -m "Build manuscript PDF [skip ci]"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
-          fi
+
+      - name: Publish compiled files as GitHub release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: manuscript-pdf-latest
+          name: Latest compiled manuscript
+          body: Automated TeX Live build of manuscript.tex.
+          prerelease: true
+          files: |
+            manuscript.pdf
+            reports/manuscript.log
+          overwrite_files: true
 
       - name: Upload manuscript PDF
         uses: actions/upload-artifact@v4
