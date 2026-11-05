@@ -28,17 +28,53 @@ jobs:
           mkdir -p reports
           cp manuscript.log reports/manuscript.log
 
-      - name: Publish compiled files as GitHub release assets
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: manuscript-pdf-latest
-          name: Latest compiled manuscript
-          body: Automated TeX Live build of manuscript.tex.
-          prerelease: true
-          files: |
-            manuscript.pdf
-            reports/manuscript.log
-          overwrite_files: true
+      - name: Commit compiled files through the GitHub Contents API
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PY'
+          import base64
+          import json
+          import os
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+
+          repository = os.environ["GITHUB_REPOSITORY"]
+          branch = os.environ["GITHUB_REF_NAME"]
+          headers = {
+              "Authorization": f"Bearer {os.environ['GH_TOKEN']}",
+              "Accept": "application/vnd.github+json",
+              "X-GitHub-Api-Version": "2022-11-28",
+          }
+          for path in ("manuscript.pdf", "reports/manuscript.log"):
+              endpoint = f"https://api.github.com/repos/{repository}/contents/{path}"
+              query = urllib.parse.urlencode({"ref": branch})
+              sha = None
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(
+                          endpoint + "?" + query, headers=headers)) as response:
+                      sha = json.load(response).get("sha")
+              except urllib.error.HTTPError as error:
+                  if error.code != 404:
+                      raise
+              payload = {
+                  "message": f"Build {os.path.basename(path)} [skip ci]",
+                  "branch": branch,
+                  "content": base64.b64encode(open(path, "rb").read()).decode("ascii"),
+              }
+              if sha:
+                  payload["sha"] = sha
+              request = urllib.request.Request(
+                  endpoint,
+                  data=json.dumps(payload).encode("utf-8"),
+                  headers={**headers, "Content-Type": "application/json"},
+                  method="PUT",
+              )
+              with urllib.request.urlopen(request) as response:
+                  result = json.load(response)
+              print(f"Committed {path}: {result['commit']['sha']}")
+          PY
 
       - name: Upload manuscript PDF
         uses: actions/upload-artifact@v4
