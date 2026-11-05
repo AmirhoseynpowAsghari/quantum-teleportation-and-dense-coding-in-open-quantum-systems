@@ -1,0 +1,41 @@
+name: Build manuscript PDF
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - manuscript.tex
+      - .github/workflows/build-manuscript.yml
+
+permissions:
+  contents: read
+
+jobs:
+  latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Compile manuscript with TeX Live
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: manuscript.tex
+          args: -pdf -interaction=nonstopmode -halt-on-error manuscript.tex
+
+      - name: Upload manuscript PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: manuscript-pdf
+          path: manuscript.pdf
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload LaTeX log
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: manuscript-latex-log
+          path: manuscript.log
+          if-no-files-found: ignore
+          retention-days: 30
