@@ -114,7 +114,8 @@ def solve_and_build(U):
     if not bdg["converged"] or residual_max > 1e-8:
         raise RuntimeError(f"U={U}: unreliable self-consistency solution; "
                            f"flag={bdg['converged']}, residual={residual_max}")
-    r, theta, G, F = compute_greens_functions(bdg, verbose=False)
+    r, theta, G, F = compute_greens_functions(
+        bdg, verbose=False, convention="legacy_unsigned")
     rho0 = np.asarray(build_density_matrices(G, F))
     if not verify_density_matrices(rho0, atol=2e-8):
         raise RuntimeError(f"U={U}: density-matrix validation failed")
@@ -279,12 +280,16 @@ def main():
         "low_C_minus_p": maxdiff(low["C"][:, 0, :], low["p"]),
     }
 
+    # The current legacy mode includes the common single-spin helicity factor
+    # 1/2.  Multiply by two when comparing raw arrays with the old archive.
     with np.load(DATA / f"{LOW_PREFIX}_greens.npz") as d:
         validation["archived_low_greens_max_abs_error"] = {
-            "G": maxdiff(G, d["G_t"][:, :, 0]), "F": maxdiff(F, d["F_t"][:, :, 0])}
+            "G": maxdiff(2.0*G, d["G_t"][:, :, 0]),
+            "F": maxdiff(2.0*F, d["F_t"][:, :, 0])}
     with np.load(DATA / f"{HIGH_PREFIX}_greens.npz") as d:
         validation["archived_high_greens_max_abs_error"] = {
-            "G": maxdiff(G, d["G_t"][:, :, 0]), "F": maxdiff(F, d["F_t"][:, :, 0])}
+            "G": maxdiff(2.0*G, d["G_t"][:, :, 0]),
+            "F": maxdiff(2.0*F, d["F_t"][:, :, 0])}
 
     with np.load(DATA / f"{LOW_PREFIX}_theta_obs.npz") as d:
         validation["archived_low_observable_max_abs_error"] = {
