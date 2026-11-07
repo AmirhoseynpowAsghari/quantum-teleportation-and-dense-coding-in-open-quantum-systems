@@ -1,0 +1,435 @@
+{
+  "repository_commit": "40c41ad81018a976dc49c762af5fa78b9e592b86",
+  "model": {
+    "U_over_t": 75.0,
+    "V_SO_over_t": 0.0,
+    "Delta_t_over_t": 4.5,
+    "n_elec": 1.875,
+    "Nk": 100,
+    "max_abs_bdg_residual": 2.353062189541788e-12,
+    "greens_convention": "equal_time single-spin v^2 and signed F*"
+  },
+  "noise": {
+    "low": {
+      "gammaA": 1.5,
+      "GammaA": 0.1,
+      "gammaB": 1.5,
+      "GammaB": 0.1
+    },
+    "high": {
+      "gammaA": 4.5,
+      "GammaA": 0.01,
+      "gammaB": 4.5,
+      "GammaB": 0.01
+    }
+  },
+  "time_grid": {
+    "min": 0.0,
+    "max": 80.0,
+    "points": 261
+  },
+  "classical_benchmark": 0.6666666666666666,
+  "optimization": "Fully entangled fraction evaluated exactly by SVD of the 3x3 Pauli correlation matrix; no numerical optimizer used.",
+  "assumptions": [
+    "Q is an effective input spin qubit, not automatically a Bogoliubov quasiparticle.",
+    "A and B are independently addressable spin modes after extraction.",
+    "Q is initially independent of the resource.",
+    "Bell measurement and classical feedforward are ideal.",
+    "No microscopic quasiparticle--Cooper-pair interaction is simulated."
+  ],
+  "diagnostics": {
+    "minimum_output_eigenvalue": 0.0,
+    "maximum_hermiticity_error": 0.0,
+    "maximum_trace_error": 2.220446049250313e-16,
+    "maximum_probability_sum_error": 7.771561172376096e-16,
+    "maximum_optimized_minus_fixed_violation": 1.1102230246251565e-16
+  },
+  "points": [
+    {
+      "ir": 0,
+      "itheta": 3,
+      "r": 0.0,
+      "theta_deg": 45.0,
+      "low": {
+        "concurrence": {
+          "initial": 1.0,
+          "final": 0.00022522479439520868,
+          "min": 8.340175713126385e-08,
+          "max": 1.0
+        },
+        "singlet_fraction": {
+          "initial": 0.9999999999999998,
+          "final": 0.00022522479439520863,
+          "min": 8.340175713126384e-08,
+          "max": 0.9999999999999998
+        },
+        "fixed_average_fidelity": {
+          "initial": 0.9999999999999999,
+          "final": 0.3334834831962634,
+          "min": 0.3333333889345047,
+          "max": 0.9999999999999999
+        },
+        "fully_entangled_fraction": {
+          "initial": 1.0,
+          "final": 0.5,
+          "min": 0.49999999999999994,
+          "max": 1.0
+        },
+        "optimized_average_fidelity": {
+          "initial": 1.0,
+          "final": 0.6666666666666666,
+          "min": 0.6666666666666666,
+          "max": 1.0
+        },
+        "fixed_ever_above_classical": true,
+        "optimized_ever_above_classical": true,
+        "max_optimized_minus_fixed": 0.3333332777321619
+      },
+      "high": {
+        "concurrence": {
+          "initial": 1.0,
+          "final": 0.30373300263526976,
+          "min": 2.1345881560100066e-07,
+          "max": 1.0
+        },
+        "singlet_fraction": {
+          "initial": 0.9999999999999998,
+          "final": 0.3037330026352697,
+          "min": 2.134588156010006e-07,
+          "max": 0.9999999999999998
+        },
+        "fixed_average_fidelity": {
+          "initial": 0.9999999999999999,
+          "final": 0.5358220017568466,
+          "min": 0.33333347563921034,
+          "max": 0.9999999999999999
+        },
+        "fully_entangled_fraction": {
+          "initial": 1.0,
+          "final": 0.5,
+          "min": 0.49999999999999994,
+          "max": 1.0
+        },
+        "optimized_average_fidelity": {
+          "initial": 1.0,
+          "final": 0.6666666666666666,
+          "min": 0.6666666666666666,
+          "max": 1.0
+        },
+        "fixed_ever_above_classical": true,
+        "optimized_ever_above_classical": true,
+        "max_optimized_minus_fixed": 0.3333331910274563
+      }
+    },
+    {
+      "ir": 30,
+      "itheta": 3,
+      "r": 1.5075376884422111,
+      "theta_deg": 45.0,
+      "low": {
+        "concurrence": {
+          "initial": 0.0,
+          "final": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "singlet_fraction": {
+          "initial": 0.2513010324447446,
+          "final": 0.00011279508748766191,
+          "min": 4.177321575766956e-08,
+          "max": 0.2513010324447446
+        },
+        "fixed_average_fidelity": {
+          "initial": 0.5008673549631631,
+          "final": 0.3334085300583251,
+          "min": 0.3333333611821438,
+          "max": 0.5008673549631631
+        },
+        "fully_entangled_fraction": {
+          "initial": 0.2513010324447446,
+          "final": 0.4998875956121988,
+          "min": 0.25106350404663835,
+          "max": 0.49999995837146205
+        },
+        "optimized_average_fidelity": {
+          "initial": 0.5008673549631631,
+          "final": 0.6665917304081326,
+          "min": 0.5007090026977589,
+          "max": 0.666666638914308
+        },
+        "fixed_ever_above_classical": false,
+        "optimized_ever_above_classical": false,
+        "max_optimized_minus_fixed": 0.3333332777321642
+      },
+      "high": {
+        "concurrence": {
+          "initial": 0.0,
+          "final": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "singlet_fraction": {
+          "initial": 0.2513010324447446,
+          "final": 0.12910651979076862,
+          "min": 1.0691454099223662e-07,
+          "max": 0.2513010324447446
+        },
+        "fixed_average_fidelity": {
+          "initial": 0.5008673549631631,
+          "final": 0.41940434652717906,
+          "min": 0.333333404609694,
+          "max": 0.5008673549631631
+        },
+        "fully_entangled_fraction": {
+          "initial": 0.2513010324447446,
+          "final": 0.3714203688638556,
+          "min": 0.25096172055591087,
+          "max": 0.49999989345574813
+        },
+        "optimized_average_fidelity": {
+          "initial": 0.5008673549631631,
+          "final": 0.5809469125759037,
+          "min": 0.5006411470372739,
+          "max": 0.6666665956371655
+        },
+        "fixed_ever_above_classical": false,
+        "optimized_ever_above_classical": false,
+        "max_optimized_minus_fixed": 0.33333319102747144
+      }
+    },
+    {
+      "ir": 60,
+      "itheta": 3,
+      "r": 3.0150753768844223,
+      "theta_deg": 45.0,
+      "low": {
+        "concurrence": {
+          "initial": 0.0,
+          "final": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "singlet_fraction": {
+          "initial": 0.2504969902357213,
+          "final": 0.0001126743470648496,
+          "min": 4.17285100671118e-08,
+          "max": 0.2504969902357213
+        },
+        "fixed_average_fidelity": {
+          "initial": 0.5003313268238142,
+          "final": 0.33340844956470983,
+          "min": 0.3333333611523401,
+          "max": 0.5003313268238142
+        },
+        "fully_entangled_fraction": {
+          "initial": 0.25049699023572136,
+          "final": 0.4998874748989667,
+          "min": 0.25035556892564415,
+          "max": 0.49999995832675637
+        },
+        "optimized_average_fidelity": {
+          "initial": 0.5003313268238142,
+          "final": 0.6665916499326444,
+          "min": 0.5002370459504294,
+          "max": 0.6666666388845043
+        },
+        "fixed_ever_above_classical": false,
+        "optimized_ever_above_classical": false,
+        "max_optimized_minus_fixed": 0.3333332777321642
+      },
+      "high": {
+        "concurrence": {
+          "initial": 0.0,
+          "final": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "singlet_fraction": {
+          "initial": 0.2504969902357213,
+          "final": 0.1289189850550407,
+          "min": 1.0680012104827041e-07,
+          "max": 0.2504969902357213
+        },
+        "fixed_average_fidelity": {
+          "initial": 0.5003313268238142,
+          "final": 0.419279323370027,
+          "min": 0.33333340453341403,
+          "max": 0.5003313268238142
+        },
+        "fully_entangled_fraction": {
+          "initial": 0.25049699023572136,
+          "final": 0.37128228472706065,
+          "min": 0.2503942988345366,
+          "max": 0.4999998933413282
+        },
+        "optimized_average_fidelity": {
+          "initial": 0.5003313268238142,
+          "final": 0.5808548564847071,
+          "min": 0.5002628658896912,
+          "max": 0.6666665955608855
+        },
+        "fixed_ever_above_classical": false,
+        "optimized_ever_above_classical": false,
+        "max_optimized_minus_fixed": 0.33333319102747144
+      }
+    },
+    {
+      "ir": 30,
+      "itheta": 0,
+      "r": 1.5075376884422111,
+      "theta_deg": 0.0,
+      "low": {
+        "concurrence": {
+          "initial": 0.0,
+          "final": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "singlet_fraction": {
+          "initial": 0.26469220950515776,
+          "final": 0.0001148059973156339,
+          "min": 4.251778091998147e-08,
+          "max": 0.26469220950515776
+        },
+        "fixed_average_fidelity": {
+          "initial": 0.5097948063367718,
+          "final": 0.333409870664877,
+          "min": 0.33333336167852057,
+          "max": 0.5097948063367718
+        },
+        "fully_entangled_fraction": {
+          "initial": 0.2646922095051578,
+          "final": 0.4998896060691711,
+          "min": 0.2599224886539042,
+          "max": 0.4999999591160272
+        },
+        "optimized_average_fidelity": {
+          "initial": 0.5097948063367719,
+          "final": 0.6665930707127807,
+          "min": 0.5066149924359361,
+          "max": 0.6666666394106847
+        },
+        "fixed_ever_above_classical": false,
+        "optimized_ever_above_classical": false,
+        "max_optimized_minus_fixed": 0.33333327773216415
+      },
+      "high": {
+        "concurrence": {
+          "initial": 0.0,
+          "final": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "singlet_fraction": {
+          "initial": 0.26469220950515776,
+          "final": 0.13222987677741407,
+          "min": 1.0882018439217081e-07,
+          "max": 0.26469220950515776
+        },
+        "fixed_average_fidelity": {
+          "initial": 0.5097948063367718,
+          "final": 0.4214865845182761,
+          "min": 0.33333340588012295,
+          "max": 0.5097948063367718
+        },
+        "fully_entangled_fraction": {
+          "initial": 0.2646922095051578,
+          "final": 0.37372013510038327,
+          "min": 0.2589903582013475,
+          "max": 0.4999998953613911
+        },
+        "optimized_average_fidelity": {
+          "initial": 0.5097948063367719,
+          "final": 0.5824800900669221,
+          "min": 0.5059935721342317,
+          "max": 0.6666665969075941
+        },
+        "fixed_ever_above_classical": false,
+        "optimized_ever_above_classical": false,
+        "max_optimized_minus_fixed": 0.33333319102747117
+      }
+    },
+    {
+      "ir": 30,
+      "itheta": 6,
+      "r": 1.5075376884422111,
+      "theta_deg": 90.0,
+      "low": {
+        "concurrence": {
+          "initial": 0.0,
+          "final": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "singlet_fraction": {
+          "initial": 0.26469220950515776,
+          "final": 0.0001148059973156339,
+          "min": 4.251778091998147e-08,
+          "max": 0.26469220950515776
+        },
+        "fixed_average_fidelity": {
+          "initial": 0.5097948063367718,
+          "final": 0.333409870664877,
+          "min": 0.33333336167852057,
+          "max": 0.5097948063367718
+        },
+        "fully_entangled_fraction": {
+          "initial": 0.26469220950515776,
+          "final": 0.4998896060691711,
+          "min": 0.2599224886539042,
+          "max": 0.4999999591160272
+        },
+        "optimized_average_fidelity": {
+          "initial": 0.5097948063367719,
+          "final": 0.6665930707127807,
+          "min": 0.5066149924359361,
+          "max": 0.6666666394106847
+        },
+        "fixed_ever_above_classical": false,
+        "optimized_ever_above_classical": false,
+        "max_optimized_minus_fixed": 0.33333327773216415
+      },
+      "high": {
+        "concurrence": {
+          "initial": 0.0,
+          "final": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "singlet_fraction": {
+          "initial": 0.26469220950515776,
+          "final": 0.13222987677741407,
+          "min": 1.0882018439217081e-07,
+          "max": 0.26469220950515776
+        },
+        "fixed_average_fidelity": {
+          "initial": 0.5097948063367718,
+          "final": 0.4214865845182761,
+          "min": 0.33333340588012295,
+          "max": 0.5097948063367718
+        },
+        "fully_entangled_fraction": {
+          "initial": 0.26469220950515776,
+          "final": 0.37372013510038327,
+          "min": 0.2589903582013475,
+          "max": 0.4999998953613911
+        },
+        "optimized_average_fidelity": {
+          "initial": 0.5097948063367719,
+          "final": 0.5824800900669221,
+          "min": 0.5059935721342317,
+          "max": 0.6666665969075941
+        },
+        "fixed_ever_above_classical": false,
+        "optimized_ever_above_classical": false,
+        "max_optimized_minus_fixed": 0.33333319102747117
+      }
+    }
+  ],
+  "data_file": "data/teleportation_metrics.npz",
+  "figures": [
+    "figs/teleportation_theta45_low.png",
+    "figs/teleportation_theta45_high.png",
+    "figs/teleportation_angles_low.png"
+  ]
+}
