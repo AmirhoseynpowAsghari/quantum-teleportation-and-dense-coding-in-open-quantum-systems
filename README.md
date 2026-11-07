@@ -30,6 +30,7 @@ Optional analysis modules also support fidelity and Holevo-quantity calculations
 ├── observables.py          # Concurrence, singlet fraction, purity, entropy
 ├── fidelity.py             # Uhlmann fidelity and fidelity-grid utilities
 ├── holevo.py               # Holevo quantity and dense-coding analysis tools
+├── teleportation.py        # Explicit Bell-measurement teleportation protocol
 ├── visualization.py        # Main plots for concurrence and observables
 ├── visualize_*.py          # Additional plotting scripts
 ├── data/                   # Suggested location for generated .npz data files
@@ -248,6 +249,26 @@ print("max concurrence:", C_rt.max())
 ```
 
 This is useful for dense-coding analysis because it measures the classical information gain associated with the encoded two-qubit state.
+
+### Explicit teleportation
+
+`teleportation.py` treats Q as an effective input spin and forms
+`rho_QAB = rho_Q tensor rho_AB`. It performs four Bell projectors on Q,A,
+normalizes each outcome on B, applies outcome-dependent Pauli feedforward, and
+averages input–output fidelity over six cardinal input states. The module also
+calculates the fully entangled fraction exactly from the singular values of the
+Pauli correlation matrix and reports the corresponding locally optimized
+teleportation fidelity.
+
+The protocol assumes independently addressable A,B spin modes, ideal Bell
+measurement, and ideal classical feedforward. It does not simulate a
+microscopic quasiparticle–Cooper-pair interaction. Run the validation and the
+BdG-resource analysis with:
+
+```bash
+python analysis/validate_teleportation.py
+python analysis/run_teleportation_analysis.py
+```
 
 ## First-run troubleshooting
 

@@ -1,0 +1,534 @@
+{
+  "status": "passed",
+  "test_count": 65,
+  "tests": [
+    {
+      "test": "singlet Phi+: probability",
+      "actual": 0.24999999999999978,
+      "expected": 0.25,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "singlet Phi+: corrected output equals input",
+      "max_abs_matrix_error": 1.6883057536160646e-16,
+      "passed": true
+    },
+    {
+      "test": "singlet Phi-: probability",
+      "actual": 0.24999999999999978,
+      "expected": 0.25,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "singlet Phi-: corrected output equals input",
+      "max_abs_matrix_error": 1.6883057536160646e-16,
+      "passed": true
+    },
+    {
+      "test": "singlet Psi+: probability",
+      "actual": 0.24999999999999978,
+      "expected": 0.25,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "singlet Psi+: corrected output equals input",
+      "max_abs_matrix_error": 1.6883057536160646e-16,
+      "passed": true
+    },
+    {
+      "test": "singlet Psi-: probability",
+      "actual": 0.24999999999999978,
+      "expected": 0.25,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "singlet Psi-: corrected output equals input",
+      "max_abs_matrix_error": 1.6883057536160646e-16,
+      "passed": true
+    },
+    {
+      "test": "ideal singlet: six-state explicit fidelity",
+      "actual": 0.9999999999999997,
+      "expected": 1.0,
+      "absolute_error": 3.3306690738754696e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "ideal singlet: Hermiticity, trace, positivity, probabilities",
+      "values": {
+        "minimum_output_eigenvalue": 0.0,
+        "maximum_hermiticity_error": 0.0,
+        "maximum_trace_error": 0.0,
+        "maximum_probability_sum_error": 6.661338147750939e-16
+      },
+      "passed": true
+    },
+    {
+      "test": "ideal singlet: fully entangled fraction",
+      "actual": 0.9999999999999998,
+      "expected": 1.0,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "ideal singlet: optimized fidelity",
+      "actual": 0.9999999999999999,
+      "expected": 1.0,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "ideal singlet: concurrence",
+      "actual": 0.9999999999999998,
+      "expected": 1.0,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "mixed Phi+: output is I/2",
+      "max_abs_matrix_error": 0.0,
+      "passed": true
+    },
+    {
+      "test": "mixed Phi-: output is I/2",
+      "max_abs_matrix_error": 0.0,
+      "passed": true
+    },
+    {
+      "test": "mixed Psi+: output is I/2",
+      "max_abs_matrix_error": 0.0,
+      "passed": true
+    },
+    {
+      "test": "mixed Psi-: output is I/2",
+      "max_abs_matrix_error": 0.0,
+      "passed": true
+    },
+    {
+      "test": "maximally mixed: six-state explicit fidelity",
+      "actual": 0.49999999999999994,
+      "expected": 0.5,
+      "absolute_error": 5.551115123125783e-17,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "maximally mixed: Hermiticity, trace, positivity, probabilities",
+      "values": {
+        "minimum_output_eigenvalue": 0.5,
+        "maximum_hermiticity_error": 0.0,
+        "maximum_trace_error": 0.0,
+        "maximum_probability_sum_error": 4.440892098500626e-16
+      },
+      "passed": true
+    },
+    {
+      "test": "maximally mixed: fully entangled fraction",
+      "actual": 0.25,
+      "expected": 0.25,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "maximally mixed: optimized fidelity",
+      "actual": 0.5,
+      "expected": 0.5,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "maximally mixed: concurrence",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.00000000: explicit fidelity",
+      "actual": 0.49999999999999994,
+      "expected": 0.5,
+      "absolute_error": 5.551115123125783e-17,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.00000000: Hermiticity, trace, positivity, probabilities",
+      "values": {
+        "minimum_output_eigenvalue": 0.5,
+        "maximum_hermiticity_error": 0.0,
+        "maximum_trace_error": 0.0,
+        "maximum_probability_sum_error": 4.440892098500626e-16
+      },
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.00000000: fully entangled fraction",
+      "actual": 0.25,
+      "expected": 0.25,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.00000000: optimized fidelity",
+      "actual": 0.5,
+      "expected": 0.5,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.00000000: singlet fraction",
+      "actual": 0.24999999999999994,
+      "expected": 0.25,
+      "absolute_error": 5.551115123125783e-17,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.00000000: concurrence",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.20000000: explicit fidelity",
+      "actual": 0.6,
+      "expected": 0.6,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.20000000: Hermiticity, trace, positivity, probabilities",
+      "values": {
+        "minimum_output_eigenvalue": 0.39999999999999997,
+        "maximum_hermiticity_error": 0.0,
+        "maximum_trace_error": 0.0,
+        "maximum_probability_sum_error": 4.440892098500626e-16
+      },
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.20000000: fully entangled fraction",
+      "actual": 0.39999999999999997,
+      "expected": 0.4,
+      "absolute_error": 5.551115123125783e-17,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.20000000: optimized fidelity",
+      "actual": 0.6,
+      "expected": 0.6,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.20000000: singlet fraction",
+      "actual": 0.39999999999999986,
+      "expected": 0.4,
+      "absolute_error": 1.6653345369377348e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.20000000: concurrence",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.33333333: explicit fidelity",
+      "actual": 0.6666666666666665,
+      "expected": 0.6666666666666666,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.33333333: Hermiticity, trace, positivity, probabilities",
+      "values": {
+        "minimum_output_eigenvalue": 0.33333333333333337,
+        "maximum_hermiticity_error": 0.0,
+        "maximum_trace_error": 0.0,
+        "maximum_probability_sum_error": 3.3306690738754696e-16
+      },
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.33333333: fully entangled fraction",
+      "actual": 0.49999999999999994,
+      "expected": 0.5,
+      "absolute_error": 5.551115123125783e-17,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.33333333: optimized fidelity",
+      "actual": 0.6666666666666666,
+      "expected": 0.6666666666666666,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.33333333: singlet fraction",
+      "actual": 0.49999999999999983,
+      "expected": 0.5,
+      "absolute_error": 1.6653345369377348e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.33333333: concurrence",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.50000000: explicit fidelity",
+      "actual": 0.7499999999999999,
+      "expected": 0.75,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.50000000: Hermiticity, trace, positivity, probabilities",
+      "values": {
+        "minimum_output_eigenvalue": 0.25,
+        "maximum_hermiticity_error": 0.0,
+        "maximum_trace_error": 0.0,
+        "maximum_probability_sum_error": 4.440892098500626e-16
+      },
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.50000000: fully entangled fraction",
+      "actual": 0.6249999999999999,
+      "expected": 0.625,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.50000000: optimized fidelity",
+      "actual": 0.75,
+      "expected": 0.75,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.50000000: singlet fraction",
+      "actual": 0.6249999999999998,
+      "expected": 0.625,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.50000000: concurrence",
+      "actual": 0.2499999999999999,
+      "expected": 0.25,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.75000000: explicit fidelity",
+      "actual": 0.8749999999999997,
+      "expected": 0.875,
+      "absolute_error": 3.3306690738754696e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.75000000: Hermiticity, trace, positivity, probabilities",
+      "values": {
+        "minimum_output_eigenvalue": 0.125,
+        "maximum_hermiticity_error": 0.0,
+        "maximum_trace_error": 1.1102230246251565e-16,
+        "maximum_probability_sum_error": 6.661338147750939e-16
+      },
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.75000000: fully entangled fraction",
+      "actual": 0.8124999999999998,
+      "expected": 0.8125,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.75000000: optimized fidelity",
+      "actual": 0.8749999999999999,
+      "expected": 0.875,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.75000000: singlet fraction",
+      "actual": 0.8124999999999997,
+      "expected": 0.8125,
+      "absolute_error": 3.3306690738754696e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=0.75000000: concurrence",
+      "actual": 0.6249999999999998,
+      "expected": 0.625,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=1.00000000: explicit fidelity",
+      "actual": 0.9999999999999997,
+      "expected": 1.0,
+      "absolute_error": 3.3306690738754696e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=1.00000000: Hermiticity, trace, positivity, probabilities",
+      "values": {
+        "minimum_output_eigenvalue": 0.0,
+        "maximum_hermiticity_error": 0.0,
+        "maximum_trace_error": 0.0,
+        "maximum_probability_sum_error": 6.661338147750939e-16
+      },
+      "passed": true
+    },
+    {
+      "test": "Werner w=1.00000000: fully entangled fraction",
+      "actual": 0.9999999999999998,
+      "expected": 1.0,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=1.00000000: optimized fidelity",
+      "actual": 0.9999999999999999,
+      "expected": 1.0,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=1.00000000: singlet fraction",
+      "actual": 0.9999999999999997,
+      "expected": 1.0,
+      "absolute_error": 3.3306690738754696e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "Werner w=1.00000000: concurrence",
+      "actual": 0.9999999999999998,
+      "expected": 1.0,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "pure product |00>: fixed-protocol fidelity",
+      "actual": 0.3333333333333333,
+      "expected": 0.3333333333333333,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "pure product |00>: Hermiticity, trace, positivity, probabilities",
+      "values": {
+        "minimum_output_eigenvalue": 0.0,
+        "maximum_hermiticity_error": 0.0,
+        "maximum_trace_error": 0.0,
+        "maximum_probability_sum_error": 4.440892098500626e-16
+      },
+      "passed": true
+    },
+    {
+      "test": "pure product |00>: fully entangled fraction",
+      "actual": 0.5,
+      "expected": 0.5,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "pure product |00>: optimized fidelity",
+      "actual": 0.6666666666666666,
+      "expected": 0.6666666666666666,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "test": "non-Werner: optimized fidelity >= fixed fidelity",
+      "fixed": 0.6233333333333331,
+      "optimized": 0.6233333333333333,
+      "passed": true
+    },
+    {
+      "test": "non-Werner: Hermiticity, trace, positivity, probabilities",
+      "values": {
+        "minimum_output_eigenvalue": 0.25,
+        "maximum_hermiticity_error": 0.0,
+        "maximum_trace_error": 0.0,
+        "maximum_probability_sum_error": 4.440892098500626e-16
+      },
+      "passed": true
+    },
+    {
+      "test": "classical benchmark",
+      "actual": 0.6666666666666666,
+      "expected": 0.6666666666666666,
+      "absolute_error": 0.0,
+      "tolerance": 2e-10,
+      "passed": true
+    }
+  ],
+  "optimization_method": "Exact singular-value formula for the fully entangled fraction; no numerical optimizer was used.",
+  "werner_formula": "F_average=(1+w)/2; singlet_fraction=FEF=(1+3w)/4",
+  "bell_correction_order": [
+    "Phi+",
+    "Phi-",
+    "Psi+",
+    "Psi-"
+  ],
+  "pauli_correction_order": [
+    "iY",
+    "X",
+    "Z",
+    "I"
+  ]
+}
