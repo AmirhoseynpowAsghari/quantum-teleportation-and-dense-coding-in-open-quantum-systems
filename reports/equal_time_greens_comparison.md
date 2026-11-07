@@ -5,9 +5,9 @@
 The default Green’s-function implementation has been changed to the zero-temperature equal-time branch required for the Oh–Kim density-matrix reduction:
 
 \[
-G_<(\mathbf r)=+i\sum_{\mathbf k,s}|v_{\mathbf ks}|^2e^{-i\mathbf k\cdot\mathbf r},
+G_<(\mathbf r)=+\frac{i}{2}\sum_{\mathbf k,s}|v_{\mathbf ks}|^2e^{-i\mathbf k\cdot\mathbf r},
 \qquad
-F^*_<(\mathbf r)=+i\sum_{\mathbf k,s}u_{\mathbf ks}^*v_{\mathbf ks}e^{-i\mathbf k\cdot\mathbf r},
+F^*_<(\mathbf r)=+\frac{i}{2}\sum_{\mathbf k,s}u_{\mathbf ks}^*v_{\mathbf ks}e^{-i\mathbf k\cdot\mathbf r},
 \]
 
 with \(\hbar=1\) and, in Ketterson’s BdG convention,
@@ -29,16 +29,17 @@ sumG += 1j * np.abs(v)**2 * np.conj(phase)
 sumF += 1j * (np.conj(Delta_ks) / (2.0 * E_ks)) * np.conj(phase)
 ```
 
-The anomalous line implements \(u^*v=\Delta^*/(2E)\) while retaining the gap sign before Brillouin-zone integration. The legacy option preserves the old lines exactly for reproduction.
+After the helicity sum and quadrature, both `G` and `F` are multiplied by `SINGLE_SPIN_HELICITY_FACTOR = 0.5`. The anomalous line implements \(u^*v=\Delta^*/(2E)\) while retaining the gap sign before Brillouin-zone integration. The legacy option preserves the old integrands; its raw arrays are one half of the original archived arrays after this common normalization.
 
 The calculation remains restricted to the archived \(V_{\mathrm{SO}}=0\) original-spin reduction. It does not solve the separate nonzero-Rashba spin-basis problem.
 
 ## Validation
 
 - All three self-consistent solutions converged: \(U/t=40,75,115\).
-- Legacy \(U/t=75\) Green’s functions reproduce the archived arrays with maximum absolute errors \(7.65\times10^{-17}\) for \(G\) and \(1.53\times10^{-16}\) for \(F\).
+- Twice the single-spin legacy \(U/t=75\) Green’s functions reproduce the original archived arrays with maximum absolute errors \(7.65\times10^{-17}\) for \(G\) and \(1.53\times10^{-16}\) for \(F\).
 - All generated density matrices are Hermitian, unit trace, and positive semidefinite.
-- The occupied-state sum rule gives \(|G_<(0)|\approx n=1.875\). The numerical values are 1.881343, 1.883450, and 1.883685 for \(U/t=40,75,115\), with relative quadrature errors of 0.34–0.46%.
+- The discrete occupied-state sum rule gives \(G_<(0)=n/2=0.9375\) with absolute errors below \(1.61\times10^{-12}\) for all three interactions. Simpson-integrated values are 0.940671, 0.941725, and 0.941843 for \(U/t=40,75,115\), with relative quadrature errors of 0.34–0.46%.
+- Multiplying both \(G\) and \(F\) by 1/2 leaves every compared normalized correlator, density matrix, initial observable, and selected time-dependent observable unchanged with zero stored-array difference. See `reports/helicity_average_validation.json`.
 - For every interaction and both amplitude-damping regimes, the corrected zero-separation state satisfies
   \[
   F_{\mathrm s}(0,t)=C(0,t)=p(t)

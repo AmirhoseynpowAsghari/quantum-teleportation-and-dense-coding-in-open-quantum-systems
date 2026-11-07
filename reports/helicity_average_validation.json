@@ -1,0 +1,59 @@
+{
+  "helicity_factor": 0.5,
+  "target_G0_equal_time": 0.9375,
+  "U75_checks": {
+    "G_legacy_unsigned_new_minus_half_old_max_abs": 0.0,
+    "F_legacy_unsigned_new_minus_half_old_max_abs": 0.0,
+    "g_legacy_unsigned_normalized_max_abs_change": 0.0,
+    "f_legacy_unsigned_normalized_max_abs_change": 0.0,
+    "density_legacy_unsigned_max_abs_change": 0.0,
+    "G_equal_time_new_minus_half_old_max_abs": 0.0,
+    "F_equal_time_new_minus_half_old_max_abs": 0.0,
+    "g_equal_time_normalized_max_abs_change": 0.0,
+    "f_equal_time_normalized_max_abs_change": 0.0,
+    "density_equal_time_max_abs_change": 0.0
+  },
+  "all_U_physical_array_max_abs_changes": {
+    "initial_C_legacy_unsigned": 0.0,
+    "low_C_legacy_unsigned_selected": 0.0,
+    "high_C_legacy_unsigned_selected": 0.0,
+    "initial_Fs_legacy_unsigned": 0.0,
+    "low_Fs_legacy_unsigned_selected": 0.0,
+    "high_Fs_legacy_unsigned_selected": 0.0,
+    "initial_chi_legacy_unsigned": 0.0,
+    "low_chi_legacy_unsigned_selected": 0.0,
+    "high_chi_legacy_unsigned_selected": 0.0,
+    "initial_C_equal_time": 0.0,
+    "low_C_equal_time_selected": 0.0,
+    "high_C_equal_time_selected": 0.0,
+    "initial_Fs_equal_time": 0.0,
+    "low_Fs_equal_time_selected": 0.0,
+    "high_Fs_equal_time_selected": 0.0,
+    "initial_chi_equal_time": 0.0,
+    "low_chi_equal_time_selected": 0.0,
+    "high_chi_equal_time_selected": 0.0
+  },
+  "sum_rules": {
+    "40": {
+      "G0_integrated_abs": 0.9406712863993881,
+      "G0_discrete": 0.9374999999983942,
+      "target_n_over_2": 0.9375,
+      "discrete_abs_error": 1.6058265828178264e-12,
+      "integrated_relative_quadrature_error": 0.003382705492680671
+    },
+    "75": {
+      "G0_integrated_abs": 0.9417249861009086,
+      "G0_discrete": 0.937499999999872,
+      "target_n_over_2": 0.9375,
+      "discrete_abs_error": 1.2800871473928055e-13,
+      "integrated_relative_quadrature_error": 0.004506651840969174
+    },
+    "115": {
+      "G0_integrated_abs": 0.9418426732707786,
+      "G0_discrete": 0.9375000000011834,
+      "target_n_over_2": 0.9375,
+      "discrete_abs_error": 1.1833867219479544e-12,
+      "integrated_relative_quadrature_error": 0.004632184822163884
+    }
+  }
+}

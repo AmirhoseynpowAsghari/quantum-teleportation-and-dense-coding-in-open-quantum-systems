@@ -45,10 +45,10 @@ Subsequent comparison with Ketterson's Eqs.~(55.3), (55.10), and (55.12) establi
 
 The code now defaults to Ketterson's equal-time convention,
 \begin{equation}
-G_<(\mathbf r)=+i\sum_{\mathbf k,s}|v_{\mathbf ks}|^2e^{-i\mathbf k\cdot\mathbf r},\qquad
-F^*_<(\mathbf r)=+i\sum_{\mathbf k,s}\frac{\Delta_{\mathbf ks}^*}{2E_{\mathbf ks}}e^{-i\mathbf k\cdot\mathbf r},
+G_<(\mathbf r)=+\frac{i}{2}\sum_{\mathbf k,s}|v_{\mathbf ks}|^2e^{-i\mathbf k\cdot\mathbf r},\qquad
+F^*_<(\mathbf r)=+\frac{i}{2}\sum_{\mathbf k,s}\frac{\Delta_{\mathbf ks}^*}{2E_{\mathbf ks}}e^{-i\mathbf k\cdot\mathbf r},
 \end{equation}
-with $\hbar=1$. The numerical results change substantially. For example, at $U/t=75$, $r=1.50754$, $\theta=45^\circ$, the initial values change from $F_s=0.77855$, $C=0.55710$, $\chi_P=0.88621$ bits to $F_s=0.25130$, $C=0$, $\chi_P=6.50\times10^{-6}$ bits. The complete executed comparison is provided in \texttt{reports/equal\_time\_greens\_comparison.md} and \texttt{reports/equal\_time\_vs\_legacy\_summary.json}. This addendum supersedes any implication below that the anomalous sign was the only archived-input issue.
+with $\hbar=1$. The prefactor $1/2$ averages the two degenerate helicity contributions at $V_{\SO}=0$, giving $G_<(0)=n/2$; it is applied to both $G$ and $F$ and therefore cancels from normalized correlators and observables. The numerical results change substantially relative to the original archived $u^2$ implementation. For example, at $U/t=75$, $r=1.50754$, $\theta=45^\circ$, the initial values change from $F_s=0.77855$, $C=0.55710$, $\chi_P=0.88621$ bits to $F_s=0.25130$, $C=0$, $\chi_P=6.50\times10^{-6}$ bits. The complete executed comparison is provided in \texttt{reports/equal\_time\_greens\_comparison.md} and \texttt{reports/equal\_time\_vs\_legacy\_summary.json}. This addendum supersedes any implication below that the anomalous sign was the only archived-input issue.
 
 \section{Assumptions in the Oh--Kim derivation}
 

@@ -212,7 +212,7 @@ def main():
 
     summary = {
         "repository_commit_at_analysis": commit,
-        "default_convention": "Ketterson equal-time G_< and F*_<; v^2 and Delta*/(2E)",
+        "default_convention": "Ketterson equal-time G_< and F*_<; v^2 and Delta*/(2E), with degenerate-helicity factor 1/2",
         "legacy_convention": "Archived u^2 normal particle branch and unsigned real-u,v anomalous product",
         "fixed_parameters": {"V_SO_over_t": config.V_SO,
                              "Delta_t_over_t": config.Delta_t,
@@ -228,8 +228,14 @@ def main():
     }
     with np.load(DATA / "hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_greens.npz") as archived:
         summary["archived_legacy_reproduction_max_abs_error"] = {
-            "G": maxdiff(results[75]["legacy_unsigned"]["G"], archived["G_t"][:, :, 0]),
-            "F": maxdiff(results[75]["legacy_unsigned"]["F"], archived["F_t"][:, :, 0]),
+            "G_twice_single_spin_vs_archived": maxdiff(
+                2.0 * results[75]["legacy_unsigned"]["G"], archived["G_t"][:, :, 0]),
+            "F_twice_single_spin_vs_archived": maxdiff(
+                2.0 * results[75]["legacy_unsigned"]["F"], archived["F_t"][:, :, 0]),
+            "G_single_spin_vs_half_archived": maxdiff(
+                results[75]["legacy_unsigned"]["G"], 0.5 * archived["G_t"][:, :, 0]),
+            "F_single_spin_vs_half_archived": maxdiff(
+                results[75]["legacy_unsigned"]["F"], 0.5 * archived["F_t"][:, :, 0]),
         }
     for U in U_VALUES:
         summary["solutions"][str(U)] = {
@@ -254,12 +260,20 @@ def main():
                                    initial["legacy_unsigned"]["chi"][U]),
             "legacy_G0_theta0_abs": float(abs(legacy["G"][0, 0])),
             "equal_time_G0_theta0_abs": float(abs(equal["G"][0, 0])),
-            "legacy_unoccupied_sum_rule_target_2_minus_n": 2.0 - config.n_elec,
+            "legacy_unoccupied_sum_rule_target_(2_minus_n)/2": (2.0 - config.n_elec) / 2.0,
             "legacy_unoccupied_sum_rule_relative_quadrature_error": float(
-                abs(abs(legacy["G"][0, 0]) - (2.0 - config.n_elec)) / (2.0 - config.n_elec)),
-            "equal_time_occupancy_sum_rule_target_n": config.n_elec,
+                abs(abs(legacy["G"][0, 0]) - (2.0 - config.n_elec) / 2.0)
+                / ((2.0 - config.n_elec) / 2.0)),
+            "legacy_discrete_G0": float(
+                0.5 * np.sum(results[U]["bdg"]["u_ks"]**2) / config.Nk**2),
+            "equal_time_occupancy_sum_rule_target_n/2": config.n_elec / 2.0,
             "equal_time_occupancy_sum_rule_relative_quadrature_error": float(
-                abs(abs(equal["G"][0, 0]) - config.n_elec) / config.n_elec),
+                abs(abs(equal["G"][0, 0]) - config.n_elec / 2.0) / (config.n_elec / 2.0)),
+            "equal_time_discrete_G0": float(
+                0.5 * np.sum(results[U]["bdg"]["v_ks"]**2) / config.Nk**2),
+            "equal_time_discrete_sum_rule_abs_error": float(abs(
+                0.5 * np.sum(results[U]["bdg"]["v_ks"]**2) / config.Nk**2
+                - config.n_elec / 2.0)),
             "legacy_density_min_eigenvalue": legacy["eigen_min"],
             "equal_time_density_min_eigenvalue": equal["eigen_min"],
         }

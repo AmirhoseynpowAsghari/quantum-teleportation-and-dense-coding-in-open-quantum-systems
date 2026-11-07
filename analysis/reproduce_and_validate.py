@@ -280,12 +280,16 @@ def main():
         "low_C_minus_p": maxdiff(low["C"][:, 0, :], low["p"]),
     }
 
+    # The current legacy mode includes the common single-spin helicity factor
+    # 1/2.  Multiply by two when comparing raw arrays with the old archive.
     with np.load(DATA / f"{LOW_PREFIX}_greens.npz") as d:
         validation["archived_low_greens_max_abs_error"] = {
-            "G": maxdiff(G, d["G_t"][:, :, 0]), "F": maxdiff(F, d["F_t"][:, :, 0])}
+            "G": maxdiff(2.0*G, d["G_t"][:, :, 0]),
+            "F": maxdiff(2.0*F, d["F_t"][:, :, 0])}
     with np.load(DATA / f"{HIGH_PREFIX}_greens.npz") as d:
         validation["archived_high_greens_max_abs_error"] = {
-            "G": maxdiff(G, d["G_t"][:, :, 0]), "F": maxdiff(F, d["F_t"][:, :, 0])}
+            "G": maxdiff(2.0*G, d["G_t"][:, :, 0]),
+            "F": maxdiff(2.0*F, d["F_t"][:, :, 0])}
 
     with np.load(DATA / f"{LOW_PREFIX}_theta_obs.npz") as d:
         validation["archived_low_observable_max_abs_error"] = {

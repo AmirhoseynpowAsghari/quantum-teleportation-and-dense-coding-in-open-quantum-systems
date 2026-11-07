@@ -6,6 +6,10 @@ import numpy as np
 from scipy.integrate import simpson
 from config import R_MIN, R_MAX, N_R, THETA_DEG
 
+# At V_SO=0 the two helicity branches are degenerate and contribute equally.
+# Their mean, rather than their sum, gives the single-spin Oh--Kim correlator.
+SINGLE_SPIN_HELICITY_FACTOR = 0.5
+
 
 def build_rgrid():
     r_vals     = np.linspace(R_MIN, R_MAX, N_R)
@@ -26,17 +30,23 @@ def compute_greens_functions(bdg, verbose=True, convention="equal_time"):
         ``equal_time`` (default) implements Ketterson's T=0 lesser/equal-time
         branch, with t2=t1+0+ and r=r1-r2:
 
-            G_< = +i sum_k |v_k|^2 exp(-i k.r) / hbar,
-            F*_< = +i sum_k u_k* v_k exp(-i k.r) / hbar.
+            G_< = +(i/2) sum_{k,s} |v_ks|^2 exp(-i k.r) / hbar,
+            F*_< = +(i/2) sum_{k,s} u_ks* v_ks exp(-i k.r) / hbar.
+
+        The factor 1/2 converts the degenerate two-helicity sum at V_SO=0
+        to the single-spin correlator.  Consequently G_<(0)=n/2.  The same
+        common factor is applied to F* and to both conventions, so normalized
+        correlators and density matrices are unchanged.
 
         In the book's BdG convention, u_k* v_k = Delta_k*/(2 E_k).
         This is the occupation/anomalous input required by the Oh--Kim
         equal-time two-spin reduction in the V_SO=0 original spin basis.
 
-        ``legacy_unsigned`` preserves the archived implementation exactly:
-        the t1>t2 particle component proportional to |u_k|^2 for G and an
-        unsigned real-u,v anomalous product.  It is provided only for
-        reproduction and numerical comparison, not as the new default.
+        ``legacy_unsigned`` preserves the archived integrand and time-ordering
+        convention: the t1>t2 particle component proportional to |u_k|^2 for
+        G and an unsigned real-u,v anomalous product.  Its raw G,F arrays are
+        one half of the original archived arrays after the common single-spin
+        normalization; normalized quantities are identical.
 
     Returns
     -------
@@ -92,11 +102,11 @@ def compute_greens_functions(bdg, verbose=True, convention="equal_time"):
                     sumG += -1j * u * u * phase
                     sumF +=  1j * np.conj(v) * np.conj(u) * np.conj(phase)
 
-            G_uu_polar[i, j] = (
+            G_uu_polar[i, j] = SINGLE_SPIN_HELICITY_FACTOR * (
                 simpson(y=simpson(y=sumG, x=kx, axis=0), x=ky, axis=0)
                 / (2.0 * np.pi)**2
             )
-            F_ud_polar[i, j] = (
+            F_ud_polar[i, j] = SINGLE_SPIN_HELICITY_FACTOR * (
                 simpson(y=simpson(y=sumF, x=kx, axis=0), x=ky, axis=0)
                 / (2.0 * np.pi)**2
             )

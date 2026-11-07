@@ -41,9 +41,14 @@ Optional analysis modules also support fidelity and Holevo-quantity calculations
 `compute_greens_functions` now defaults to `convention="equal_time"`, the
 zero-temperature equal-time branch used for the Oh--Kim two-spin reduction:
 
-- normal occupation correlator: `+i * |v_k|^2 * exp(-i k.r)`;
-- conjugate anomalous correlator: `+i * u_k* * v_k * exp(-i k.r)`;
+- normal occupation correlator: `+(i/2) * sum_s |v_ks|^2 * exp(-i k.r)`;
+- conjugate anomalous correlator: `+(i/2) * sum_s u_ks* * v_ks * exp(-i k.r)`;
 - in Ketterson's BdG convention, `u_k* v_k = Delta_k* / (2 E_k)`.
+
+At `V_SO=0`, the common factor `1/2` averages the two degenerate helicity
+contributions to produce the single-spin correlator required by Oh--Kim. It
+gives `G(0)=n/2` and cancels from the normalized correlators, density matrices,
+and observables.
 
 The previous archived implementation remains available explicitly as
 `convention="legacy_unsigned"`. It uses the `u_k^2` particle branch and the

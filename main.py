@@ -194,7 +194,7 @@ def main():
         GammaB      = args.GammaB,
         theta_index = args.theta,
         theta_deg   = theta_deg,
-        greens_convention = np.bytes_("ketterson_equal_time_v2_Fstar"),
+        greens_convention = np.bytes_("ketterson_equal_time_v2_Fstar_single_spin"),
         Delta0      = bdg["Delta0"],
         DeltaS      = bdg["DeltaS"],
         mu          = bdg["mu"],
@@ -256,7 +256,7 @@ def main():
             r_vals     = r_vals,
             t_grid     = t_grid,
             theta_vals = theta_vals,
-            greens_convention = np.bytes_("ketterson_equal_time_v2_Fstar"),
+            greens_convention = np.bytes_("ketterson_equal_time_v2_Fstar_single_spin"),
         )
         print(f"  Saved Green's functions -> {out_gf}")
 
