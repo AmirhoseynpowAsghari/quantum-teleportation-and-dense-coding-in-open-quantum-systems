@@ -1,0 +1,59 @@
+{
+  "repository_commit_at_analysis": "dc7f25fc3757077a2a764fadbd726f27da4b6d4d",
+  "archived_source": "data/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_greens.npz",
+  "archived_parameters": {
+    "U_over_t": 75,
+    "V_SO_over_t": 0,
+    "Delta_t_over_t": 4.5,
+    "n": 1.875,
+    "Nk": 100
+  },
+  "C4_symmetry_max_abs_error": {
+    "G_0_minus_90": 4.1694790044305454e-17,
+    "G_30_minus_60": 1.1124467535615567e-16,
+    "F_0_minus_90": 2.78454248732887e-17,
+    "F_30_minus_60": 4.543071742460489e-17
+  },
+  "werner_equivalence_max_abs_error": 2.220446049250313e-16,
+  "trace_max_abs_error": 2.220446049250313e-16,
+  "hermiticity_max_abs_error": 0.0,
+  "minimum_eigenvalue": 0.0,
+  "p_min": 1.6805772129496394e-05,
+  "p_max": 1.0,
+  "g_max": 1.0,
+  "r0_singlet_max_abs_error": 1.1102230246251565e-16,
+  "self_consistency": {
+    "0.0": {
+      "converged": true,
+      "max_abs_residual": 2.353062189541788e-12,
+      "Delta0_over_t": -0.1254786056413186,
+      "DeltaS_over_t": -0.3614892375310815,
+      "mu_over_t": 3.2926233911958276
+    },
+    "0.5": {
+      "converged": true,
+      "max_abs_residual": 3.5259017927558034e-12,
+      "Delta0_over_t": -0.17028841723192548,
+      "DeltaS_over_t": -0.5525568356776209,
+      "mu_over_t": 3.674253830223897
+    }
+  },
+  "original_spin_basis_normal_offdiagonal": {
+    "0.0": {
+      "max_abs_G_up_down": 0.0,
+      "max_abs_k_resolved_weight": 0.0
+    },
+    "0.5": {
+      "max_abs_G_up_down": 0.031753310196917496,
+      "max_abs_k_resolved_weight": 0.43758367031999235
+    }
+  },
+  "signed_coherence_comparison": {
+    "convention": "u v* = -Delta*/(2E), with the same archived normal G and quadrature",
+    "max_abs_F_signed_minus_archived": 0.13954891361320035,
+    "max_abs_p_signed_minus_unsigned": 0.15042557695644454,
+    "minimum_signed_density_eigenvalue": 1.0082561473079015e-16,
+    "signed_trace_max_abs_error": 2.220446049250313e-16,
+    "interpretation": "A separate input-correlator issue; it does not invalidate the Oh--Kim matrix algebra."
+  }
+}

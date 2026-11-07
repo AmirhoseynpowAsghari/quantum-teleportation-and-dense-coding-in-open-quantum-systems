@@ -1,0 +1,27 @@
+{
+  "brace_balance": 0,
+  "duplicate_labels": [],
+  "undefined_references": [],
+  "undefined_citations": [],
+  "uncited_bibitems": [],
+  "graphics": [
+    {
+      "path": "figs/density_matrix_spatial_checks.png",
+      "exists": true
+    },
+    {
+      "path": "figs/density_matrix_werner_validation.png",
+      "exists": true
+    },
+    {
+      "path": "figs/density_matrix_rashba_scope.png",
+      "exists": true
+    },
+    {
+      "path": "figs/density_matrix_coherence_convention.png",
+      "exists": true
+    }
+  ],
+  "environment_imbalances": {},
+  "passed": true
+}
