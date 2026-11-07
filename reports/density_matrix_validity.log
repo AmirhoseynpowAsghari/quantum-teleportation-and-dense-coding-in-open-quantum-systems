@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  7 NOV 2026 09:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  7 NOV 2026 09:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -476,14 +476,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (4.70712pt too wide) in paragraph at lines 50--52
-\OT1/cmtt/m/n/10.95 reports/equal[]time[]greens[]comparison.md \OT1/cmr/m/n/10.
-95 and \OT1/cmtt/m/n/10.95 reports/equal[]time[]vs[]legacy[]summary.json\OT1/cm
-r/m/n/10.95 .
- []
-
-[2]
+{/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 Overfull \hbox (3.6411pt too wide) in paragraph at lines 107--109
 \OT1/cmr/m/n/10.95 depends on rel-a-tive crys-tal mo-men-tum; it is not a posit
 ion-dependent po-ten-tial or a finite-momentum
@@ -551,7 +544,7 @@ Package rerunfilecheck Info: File `density_matrix_validity.out' has not changed
 Here is how much of TeX's memory you used:
  12490 strings out of 467050
  195146 string characters out of 5408429
- 635642 words of memory out of 5000000
+ 636642 words of memory out of 5000000
  41639 multiletter control sequences out of 15000+600000
  643207 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -576,7 +569,7 @@ ir/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/texlive/texdir/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/texlive/texdir/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmtt10.pfb></opt/texlive/texdir/texmf-dist/fo
 nts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on density_matrix_validity.pdf (10 pages, 1611504 bytes).
+Output written on density_matrix_validity.pdf (10 pages, 1611820 bytes).
 PDF statistics:
  320 PDF objects out of 1000 (max. 8388607)
  251 compressed objects within 3 object streams
