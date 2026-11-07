@@ -13,20 +13,52 @@ def build_rgrid():
     return r_vals, theta_vals
 
 
-def compute_greens_functions(bdg, verbose=True):
-    """
-    Compute G_uu(r,theta) and F_ud(r,theta) by 2-D k-space integration.
+def compute_greens_functions(bdg, verbose=True, convention="equal_time"):
+    """Compute spatial normal and conjugate-anomalous correlators.
+
+    Parameters
+    ----------
+    bdg : dict
+        Self-consistent BdG solution.
+    verbose : bool
+        Print progress by angle.
+    convention : {"equal_time", "legacy_unsigned"}
+        ``equal_time`` (default) implements Ketterson's T=0 lesser/equal-time
+        branch, with t2=t1+0+ and r=r1-r2:
+
+            G_< = +i sum_k |v_k|^2 exp(-i k.r) / hbar,
+            F*_< = +i sum_k u_k* v_k exp(-i k.r) / hbar.
+
+        In the book's BdG convention, u_k* v_k = Delta_k*/(2 E_k).
+        This is the occupation/anomalous input required by the Oh--Kim
+        equal-time two-spin reduction in the V_SO=0 original spin basis.
+
+        ``legacy_unsigned`` preserves the archived implementation exactly:
+        the t1>t2 particle component proportional to |u_k|^2 for G and an
+        unsigned real-u,v anomalous product.  It is provided only for
+        reproduction and numerical comparison, not as the new default.
 
     Returns
     -------
     r_vals, theta_vals, G_uu_polar, F_ud_polar
+        The returned anomalous array is F* in the equal-time convention.
+        Overall Green-function phases cancel in normalized |g| and |f|.
     """
+    if convention not in {"equal_time", "legacy_unsigned"}:
+        raise ValueError(f"Unknown Green's-function convention '{convention}'")
+
     u_ks = bdg["u_ks"]
     v_ks = bdg["v_ks"]
     KX   = bdg["KX"]
     KY   = bdg["KY"]
     kx   = bdg["kx"]
     ky   = bdg["ky"]
+
+    if convention == "equal_time":
+        Delta_ks = bdg["Delta_ks"]
+        E_ks = bdg["E_ks"]
+        # Ketterson Eq. (55.13): u_k* v_k = Delta_k*/(2 E_k).
+        anomalous_coherence = np.conj(Delta_ks) / (2.0 * E_ks)
 
     r_vals, theta_vals = build_rgrid()
     Nth, Nr = len(theta_vals), len(r_vals)
@@ -36,7 +68,7 @@ def compute_greens_functions(bdg, verbose=True):
 
     for i, theta in enumerate(theta_vals):
         if verbose:
-            print(f"  [greens] theta={np.degrees(theta):.0f} deg  "
+            print(f"  [greens:{convention}] theta={np.degrees(theta):.0f} deg  "
                   f"({i+1}/{Nth})")
         rx = np.cos(theta)
         ry = np.sin(theta)
@@ -49,8 +81,16 @@ def compute_greens_functions(bdg, verbose=True):
             for s in range(2):
                 u = u_ks[:, :, s]
                 v = v_ks[:, :, s]
-                sumG += -1j * u * u * phase
-                sumF +=  1j * np.conj(v) * np.conj(u) * np.conj(phase)
+                if convention == "equal_time":
+                    # Occupation branch used by the equal-time density matrix.
+                    sumG += 1j * np.abs(v)**2 * np.conj(phase)
+                    # Conjugate anomalous correlator F* = <psi^dagger psi^dagger>.
+                    # Retain the gap sign/phase before Brillouin-zone integration.
+                    sumF += 1j * anomalous_coherence[:, :, s] * np.conj(phase)
+                else:
+                    # Exact archived implementation (do not optimize or repair).
+                    sumG += -1j * u * u * phase
+                    sumF +=  1j * np.conj(v) * np.conj(u) * np.conj(phase)
 
             G_uu_polar[i, j] = (
                 simpson(y=simpson(y=sumG, x=kx, axis=0), x=ky, axis=0)
@@ -67,8 +107,7 @@ def compute_greens_functions(bdg, verbose=True):
 def evolve_greens_functions(G_uu_polar, F_ud_polar, t_grid,
                              gamma=0.05, GammaA=0.01,
                              kind="amp", verbose=True):
-    """
-    Apply non-Markovian decay envelope to Green's functions.
+    """Apply non-Markovian decay envelope to Green's functions.
 
     Returns
     -------

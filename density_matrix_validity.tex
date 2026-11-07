@@ -38,7 +38,17 @@ The defensible conclusion is:
 The Oh--Kim reduction is used only for the spatially uniform, zero-center-of-mass-momentum BdG mean-field state at $V_{\SO}=0$. In that limit the normal Green function is spin diagonal and the anomalous Green function is an even-parity spin singlet. Together with Wick factorization and conditional two-electron normalization, these assumptions yield Oh--Kim Eqs.~(19)--(23), including for a momentum-dependent extended-$s$-wave gap. The same expression is not claimed for original-spin qubits at nonzero Rashba coupling.
 \end{quote}
 
-Thus, the matrix can be used for the present archived $V_{\SO}=0$ model, subject to the anomalous-coherence correction in Sec.~\ref{sec:signed}. It is not sufficient to defend it solely by saying that the Hamiltonian is translational invariant.
+Thus, the matrix can be used for the present archived $V_{\SO}=0$ model, subject to the equal-time normal-correlator and anomalous-coherence corrections described below. It is not sufficient to defend it solely by saying that the Hamiltonian is translational invariant.
+
+\section*{Addendum: equal-time normal-correlator correction}
+Subsequent comparison with Ketterson's Eqs.~(55.3), (55.10), and (55.12) established that the archived normal line $-iu_{\mathbf k}^2e^{i\mathbf k\cdot\mathbf r}$ is the $t_1>t_2$ particle component, not the equal-time occupation component required by Oh--Kim. The latter uses $|v_{\mathbf k}|^2$. Therefore, this report establishes the validity of the Oh--Kim matrix form, but its original discussion of archived numerical inputs was incomplete: both the normal time-ordering branch and the anomalous phase require correction.
+
+The code now defaults to Ketterson's equal-time convention,
+\begin{equation}
+G_<(\mathbf r)=+i\sum_{\mathbf k,s}|v_{\mathbf ks}|^2e^{-i\mathbf k\cdot\mathbf r},\qquad
+F^*_<(\mathbf r)=+i\sum_{\mathbf k,s}\frac{\Delta_{\mathbf ks}^*}{2E_{\mathbf ks}}e^{-i\mathbf k\cdot\mathbf r},
+\end{equation}
+with $\hbar=1$. The numerical results change substantially. For example, at $U/t=75$, $r=1.50754$, $\theta=45^\circ$, the initial values change from $F_s=0.77855$, $C=0.55710$, $\chi_P=0.88621$ bits to $F_s=0.25130$, $C=0$, $\chi_P=6.50\times10^{-6}$ bits. The complete executed comparison is provided in \texttt{reports/equal\_time\_greens\_comparison.md} and \texttt{reports/equal\_time\_vs\_legacy\_summary.json}. This addendum supersedes any implication below that the anomalous sign was the only archived-input issue.
 
 \section{Assumptions in the Oh--Kim derivation}
 

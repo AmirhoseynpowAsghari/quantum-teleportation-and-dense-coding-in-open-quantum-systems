@@ -114,7 +114,8 @@ def solve_and_build(U):
     if not bdg["converged"] or residual_max > 1e-8:
         raise RuntimeError(f"U={U}: unreliable self-consistency solution; "
                            f"flag={bdg['converged']}, residual={residual_max}")
-    r, theta, G, F = compute_greens_functions(bdg, verbose=False)
+    r, theta, G, F = compute_greens_functions(
+        bdg, verbose=False, convention="legacy_unsigned")
     rho0 = np.asarray(build_density_matrices(G, F))
     if not verify_density_matrices(rho0, atol=2e-8):
         raise RuntimeError(f"U={U}: density-matrix validation failed")

@@ -36,6 +36,22 @@ Optional analysis modules also support fidelity and Holevo-quantity calculations
 └── figures/                # Suggested location for generated figures
 ```
 
+## Green's-function conventions
+
+`compute_greens_functions` now defaults to `convention="equal_time"`, the
+zero-temperature equal-time branch used for the Oh--Kim two-spin reduction:
+
+- normal occupation correlator: `+i * |v_k|^2 * exp(-i k.r)`;
+- conjugate anomalous correlator: `+i * u_k* * v_k * exp(-i k.r)`;
+- in Ketterson's BdG convention, `u_k* v_k = Delta_k* / (2 E_k)`.
+
+The previous archived implementation remains available explicitly as
+`convention="legacy_unsigned"`. It uses the `u_k^2` particle branch and the
+unsigned real-`u,v` anomalous product; it should be selected only when
+reproducing or comparing against the old archived arrays. The script
+`analysis/compare_equal_time_greens.py` quantifies the numerical difference
+without overwriting the manuscript data.
+
 ## Supported noise models
 
 The simulation currently supports:

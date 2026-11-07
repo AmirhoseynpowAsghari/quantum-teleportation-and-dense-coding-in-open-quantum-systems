@@ -1,5 +1,7 @@
 # Applicability of the Oh–Kim two-spin density matrix to the Hubbard–Rashba BdG model
 
+> **Addendum — equal-time normal-correlator correction.** Subsequent comparison with Ketterson’s Eqs. (55.3), (55.10), and (55.12) established that the archived normal line \(-i u_{\mathbf k}^2e^{i\mathbf k\cdot\mathbf r}\) is the \(t_1>t_2\) particle component, not the equal-time occupation component required by Oh–Kim. The latter uses \(|v_{\mathbf k}|^2\). Thus the report below establishes the validity of the Oh–Kim matrix form, but its discussion of archived numerical inputs is incomplete: both the normal time-ordering branch and the anomalous phase require correction. The code has now been changed to Ketterson’s equal-time convention. See `reports/equal_time_greens_comparison.md` and `reports/equal_time_vs_legacy_summary.json` for the executed comparison. The results change substantially; for example, at \(U/t=75\), \(r=1.50754\), \(\theta=45^\circ\), the initial state changes from \(F_{\mathrm s}=0.77855\), \(C=0.55710\), \(\chi_{\mathrm P}=0.88621\) bits to \(F_{\mathrm s}=0.25130\), \(C=0\), \(\chi_{\mathrm P}=6.50\times10^{-6}\) bits.
+
 **Scientific assessment of Eq. (19) of Oh and Kim, `quant-ph/0406013`, for the model of Hutchinson, Hirsch, and Marsiglio, `arXiv:1801.08988`**
 
 **Repository state analyzed:** `dc7f25fc3757077a2a764fadbd726f27da4b6d4d`
