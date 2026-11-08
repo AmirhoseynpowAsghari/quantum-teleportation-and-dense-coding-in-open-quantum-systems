@@ -1,0 +1,394 @@
+{
+  "U_over_t": 75.0,
+  "Nk": 400,
+  "max_abs_bdg_residual": 8.85068407452394e-12,
+  "theta_deg": 45.0,
+  "noise": {
+    "gammaA": 4.5,
+    "GammaA": 0.01,
+    "gammaB": 4.5,
+    "GammaB": 0.01
+  },
+  "time_grid": {
+    "min": 0.0,
+    "max": 25.0,
+    "points": 1001
+  },
+  "radial_step_over_a": 0.0025,
+  "maximum_sampled_reviving_r_over_a": 0.3875,
+  "minimum_sampled_nonreviving_r_over_a": 0.39,
+  "boundary_bracket_over_a": [
+    0.3875,
+    0.39
+  ],
+  "events": [
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.4321849590170777,
+        22.647521207089206
+      ],
+      "regain_times_after_a_loss": [
+        19.27319686071392
+      ],
+      "first_loss_time": 3.4321849590170777,
+      "first_regain_time": 19.27319686071392,
+      "maximum_after_first_loss": 0.6855535337181323,
+      "maximum": 0.7520409979614421,
+      "final": 0.600713049969554,
+      "r_over_a": 0.36,
+      "initial_p": 0.5040819959228842
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.4000932631097953,
+        22.57707216946522
+      ],
+      "regain_times_after_a_loss": [
+        19.34289576448227
+      ],
+      "first_loss_time": 3.4000932631097953,
+      "first_regain_time": 19.34289576448227,
+      "maximum_after_first_loss": 0.6839116424475296,
+      "maximum": 0.7498801569794128,
+      "final": 0.6001382965760474,
+      "r_over_a": 0.3625,
+      "initial_p": 0.49976031395882564
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.3674047952166806,
+        22.50282808603827
+      ],
+      "regain_times_after_a_loss": [
+        19.416357084461644
+      ],
+      "first_loss_time": 3.3674047952166806,
+      "first_regain_time": 19.416357084461644,
+      "maximum_after_first_loss": 0.6822759993454306,
+      "maximum": 0.7477275390136131,
+      "final": 0.5995657303895227,
+      "r_over_a": 0.365,
+      "initial_p": 0.49545507802722616
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.334143438734784,
+        22.42423348129132
+      ],
+      "regain_times_after_a_loss": [
+        19.49416801468011
+      ],
+      "first_loss_time": 3.334143438734784,
+      "first_regain_time": 19.49416801468011,
+      "maximum_after_first_loss": 0.6806467097489164,
+      "maximum": 0.7455832826948315,
+      "final": 0.5989953882838254,
+      "r_over_a": 0.3675,
+      "initial_p": 0.49116656538966336
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.3002925860871697,
+        22.340459455277465
+      ],
+      "regain_times_after_a_loss": [
+        19.577080656335248
+      ],
+      "first_loss_time": 3.3002925860871697,
+      "first_regain_time": 19.577080656335248,
+      "maximum_after_first_loss": 0.6790238759101183,
+      "maximum": 0.7434475225938525,
+      "final": 0.5984273060528965,
+      "r_over_a": 0.37,
+      "initial_p": 0.4868950451877052
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.2657756564856344,
+        22.25065463855313
+      ],
+      "regain_times_after_a_loss": [
+        19.666166942922093
+      ],
+      "first_loss_time": 3.2657756564856344,
+      "first_regain_time": 19.666166942922093,
+      "maximum_after_first_loss": 0.6774075970361014,
+      "maximum": 0.7413203892739455,
+      "final": 0.5978615184247346,
+      "r_over_a": 0.3725,
+      "initial_p": 0.4826407785478909
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.230625030041517,
+        22.153273831208885
+      ],
+      "regain_times_after_a_loss": [
+        19.76272723538422
+      ],
+      "first_loss_time": 3.230625030041517,
+      "first_regain_time": 19.76272723538422,
+      "maximum_after_first_loss": 0.6757979693290755,
+      "maximum": 0.7392020093437844,
+      "final": 0.597298059075471,
+      "r_over_a": 0.375,
+      "initial_p": 0.4784040186875688
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.194788298874348,
+        22.04638513304774
+      ],
+      "regain_times_after_a_loss": [
+        19.86878482753931
+      ],
+      "first_loss_time": 3.194788298874348,
+      "first_regain_time": 19.86878482753931,
+      "maximum_after_first_loss": 0.6741950860268884,
+      "maximum": 0.7370925055107413,
+      "final": 0.5967369606435455,
+      "r_over_a": 0.3775,
+      "initial_p": 0.4741850110214826
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.158235845945055,
+        21.926841220142787
+      ],
+      "regain_times_after_a_loss": [
+        19.98754868200829
+      ],
+      "first_loss_time": 3.158235845945055,
+      "first_regain_time": 19.98754868200829,
+      "maximum_after_first_loss": 0.6725990374437695,
+      "maximum": 0.7349919966345064,
+      "final": 0.5961782547439689,
+      "r_over_a": 0.38,
+      "initial_p": 0.46998399326901286
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.120955061537268,
+        21.789096182446325
+      ],
+      "regain_times_after_a_loss": [
+        20.124327283614832
+      ],
+      "first_loss_time": 3.120955061537268,
+      "first_regain_time": 20.124327283614832,
+      "maximum_after_first_loss": 0.6710099110112853,
+      "maximum": 0.7329005977809896,
+      "final": 0.5956219719826591,
+      "r_over_a": 0.3825,
+      "initial_p": 0.46580119556197913
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.082887198207228,
+        21.622210247326684
+      ],
+      "regain_times_after_a_loss": [
+        20.29052571596422
+      ],
+      "first_loss_time": 3.082887198207228,
+      "first_regain_time": 20.29052571596422,
+      "maximum_after_first_loss": 0.6694277913194716,
+      "maximum": 0.7308184202764515,
+      "final": 0.59506814197084,
+      "r_over_a": 0.385,
+      "initial_p": 0.4616368405529029
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.044021811530552,
+        21.393709595429918
+      ],
+      "regain_times_after_a_loss": [
+        20.518130971896458
+      ],
+      "first_loss_time": 3.044021811530552,
+      "first_regain_time": 20.518130971896458,
+      "maximum_after_first_loss": 0.6678527601581085,
+      "maximum": 0.7287455717618251,
+      "final": 0.5945167933394901,
+      "r_over_a": 0.3875,
+      "initial_p": 0.4574911435236502
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        3.0043119855120257
+      ],
+      "regain_times_after_a_loss": [],
+      "first_loss_time": 3.0043119855120257,
+      "first_regain_time": null,
+      "maximum_after_first_loss": 0.6666666665404453,
+      "maximum": 0.726682156247183,
+      "final": 0.5939679537538298,
+      "r_over_a": 0.39,
+      "initial_p": 0.453364312494366
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        2.9637029598694564
+      ],
+      "regain_times_after_a_loss": [],
+      "first_loss_time": 2.9637029598694564,
+      "first_regain_time": null,
+      "maximum_after_first_loss": 0.6666666665394967,
+      "maximum": 0.7246282741663078,
+      "final": 0.5934216499278366,
+      "r_over_a": 0.3925,
+      "initial_p": 0.4492565483326155
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        2.922188344742833
+      ],
+      "regain_times_after_a_loss": [],
+      "first_loss_time": 2.922188344742833,
+      "first_regain_time": null,
+      "maximum_after_first_loss": 0.6666666665385527,
+      "maximum": 0.7225840224313259,
+      "final": 0.592877907638777,
+      "r_over_a": 0.395,
+      "initial_p": 0.445168044862652
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        2.8796772610174393
+      ],
+      "regain_times_after_a_loss": [],
+      "first_loss_time": 2.8796772610174393,
+      "first_regain_time": null,
+      "maximum_after_first_loss": 0.6666666665376131,
+      "maximum": 0.7205494944873693,
+      "final": 0.5923367517417452,
+      "r_over_a": 0.3975,
+      "initial_p": 0.4410989889747384
+    },
+    {
+      "initial_above": true,
+      "ever_above": true,
+      "loss_times": [
+        2.8361323362406896
+      ],
+      "regain_times_after_a_loss": [],
+      "first_loss_time": 2.8361323362406896,
+      "first_regain_time": null,
+      "maximum_after_first_loss": 0.666666666536678,
+      "maximum": 0.7185247803672224,
+      "final": 0.5917982061841993,
+      "r_over_a": 0.4,
+      "initial_p": 0.43704956073444506
+    }
+  ],
+  "exact_lattice_sites_Nk400": [
+    {
+      "site": [
+        1,
+        0
+      ],
+      "r_over_a": 1.0,
+      "theta_deg": 0.0,
+      "g2": 0.003399780924026403,
+      "f2": 0.001192665320682495,
+      "p": 0.002298759936816894,
+      "fixed_and_optimized_initial_fidelity": 0.5011493799684085
+    },
+    {
+      "site": [
+        1,
+        1
+      ],
+      "r_over_a": 1.4142135623730951,
+      "theta_deg": 45.0,
+      "g2": 0.0027437493124836585,
+      "f2": 0.0005315989287109792,
+      "p": 0.001639487517067354,
+      "fixed_and_optimized_initial_fidelity": 0.5008197437585337
+    },
+    {
+      "site": [
+        2,
+        0
+      ],
+      "r_over_a": 2.0,
+      "theta_deg": 0.0,
+      "g2": 0.001725165227243769,
+      "f2": 0.00016318145162220424,
+      "p": 0.000944911307498844,
+      "fixed_and_optimized_initial_fidelity": 0.5004724556537494
+    },
+    {
+      "site": [
+        2,
+        1
+      ],
+      "r_over_a": 2.23606797749979,
+      "theta_deg": 26.56505117707799,
+      "g2": 0.001344487031478487,
+      "f2": 6.363715691338566e-05,
+      "p": 0.000704513282070421,
+      "fixed_and_optimized_initial_fidelity": 0.5003522566410352
+    },
+    {
+      "site": [
+        2,
+        2
+      ],
+      "r_over_a": 2.8284271247461903,
+      "theta_deg": 45.0,
+      "g2": 0.0005870157723726844,
+      "f2": 2.506783268953159e-09,
+      "p": 0.0002935953117493325,
+      "fixed_and_optimized_initial_fidelity": 0.5001467976558747
+    },
+    {
+      "site": [
+        3,
+        0
+      ],
+      "r_over_a": 3.0,
+      "theta_deg": 0.0,
+      "g2": 0.00044227630964853204,
+      "f2": 6.924933288936051e-07,
+      "p": 0.00022153331425188747,
+      "fixed_and_optimized_initial_fidelity": 0.500110766657126
+    }
+  ],
+  "maximum_exact_lattice_site_p": 0.002298759936816894,
+  "any_exact_lattice_site_above_classical": false,
+  "interpretation": "The bracket concerns the first high-noise above-2/3 regain after an initial loss. It is not a thermodynamic critical point and is grid-bounded."
+}
