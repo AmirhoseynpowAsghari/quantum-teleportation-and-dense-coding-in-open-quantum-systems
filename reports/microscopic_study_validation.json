@@ -1,0 +1,497 @@
+{
+  "status": "passed",
+  "check_count": 86,
+  "passed_count": 86,
+  "physical_state_samples": 30,
+  "checks": [
+    {
+      "check": "initial x_line finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "initial y_line finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "initial p_line finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "initial x_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "initial y_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "initial p_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "initial site_p finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "initial site_x finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "initial site_y finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "initial x_line in [0,1]",
+      "passed": true,
+      "detail": {
+        "min": 2.873459708014419e-09,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "initial y_line in [0,1]",
+      "passed": true,
+      "detail": {
+        "min": 7.78478248543934e-12,
+        "max": 0.005176333551696911
+      }
+    },
+    {
+      "check": "initial p_line in [0,1]",
+      "passed": true,
+      "detail": {
+        "min": 5.5722308679522765e-08,
+        "max": 1.0000000000000002
+      }
+    },
+    {
+      "check": "initial x_full in [0,1]",
+      "passed": true,
+      "detail": {
+        "min": 1.9469199757402733e-11,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "initial y_full in [0,1]",
+      "passed": true,
+      "detail": {
+        "min": 2.2611016953504254e-12,
+        "max": 0.008199675991876303
+      }
+    },
+    {
+      "check": "initial p_full in [0,1]",
+      "passed": true,
+      "detail": {
+        "min": 3.0918034784856513e-10,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "initial site_p in [0,1]",
+      "passed": true,
+      "detail": {
+        "min": 3.8049725381988174e-05,
+        "max": 0.004448887289531919
+      }
+    },
+    {
+      "check": "initial site_x in [0,1]",
+      "passed": true,
+      "detail": {
+        "min": 7.058446715123896e-05,
+        "max": 0.0031672268446178444
+      }
+    },
+    {
+      "check": "initial site_y in [0,1]",
+      "passed": true,
+      "detail": {
+        "min": 2.343072550115546e-09,
+        "max": 0.006452255369640392
+      }
+    },
+    {
+      "check": "Werner p identity line",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "Werner p identity full",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "Exact lattice sites below Werner threshold",
+      "passed": true,
+      "detail": 0.004448887289531919
+    },
+    {
+      "check": "low_metrics finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "low_metrics metric range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "low_metrics optimized not below fixed",
+      "passed": true,
+      "detail": 2.220446049250313e-16
+    },
+    {
+      "check": "low_metrics above-threshold implies nonzero concurrence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "high_metrics finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "high_metrics metric range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "high_metrics optimized not below fixed",
+      "passed": true,
+      "detail": 2.220446049250313e-16
+    },
+    {
+      "check": "high_metrics above-threshold implies nonzero concurrence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "dephasing_independent finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "dephasing_independent metric range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "dephasing_independent optimized not below fixed",
+      "passed": true,
+      "detail": 2.220446049250313e-16
+    },
+    {
+      "check": "dephasing_independent above-threshold implies nonzero concurrence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "dephasing_common finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "dephasing_common metric range",
+      "passed": true,
+      "detail": {
+        "min": 0.15557434110166757,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "dephasing_common optimized not below fixed",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "dephasing_common above-threshold implies nonzero concurrence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "U_dynamics finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "U_dynamics metric range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 0.7188120427917024
+      }
+    },
+    {
+      "check": "U_dynamics optimized not below fixed",
+      "passed": true,
+      "detail": 2.220446049250313e-16
+    },
+    {
+      "check": "U_dynamics above-threshold implies nonzero concurrence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "map_metrics finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "map_metrics metric range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "map_metrics optimized not below fixed",
+      "passed": true,
+      "detail": 2.220446049250313e-16
+    },
+    {
+      "check": "map_metrics above-threshold implies nonzero concurrence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "markovian_metrics finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "markovian_metrics metric range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "markovian_metrics optimized not below fixed",
+      "passed": true,
+      "detail": 2.220446049250313e-16
+    },
+    {
+      "check": "markovian_metrics above-threshold implies nonzero concurrence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "exponential_metrics finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "exponential_metrics metric range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 0.9999999999999999
+      }
+    },
+    {
+      "check": "exponential_metrics optimized not below fixed",
+      "passed": true,
+      "detail": 2.220446049250313e-16
+    },
+    {
+      "check": "exponential_metrics above-threshold implies nonzero concurrence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "low_metrics initial Werner fixed fidelity",
+      "passed": true,
+      "detail": 2.220446049250313e-16
+    },
+    {
+      "check": "low_metrics initial Werner optimized fidelity",
+      "passed": true,
+      "detail": 1.1102230246251565e-16
+    },
+    {
+      "check": "low_metrics initial Werner concurrence",
+      "passed": true,
+      "detail": 4.440892098500626e-16
+    },
+    {
+      "check": "high_metrics initial Werner fixed fidelity",
+      "passed": true,
+      "detail": 2.220446049250313e-16
+    },
+    {
+      "check": "high_metrics initial Werner optimized fidelity",
+      "passed": true,
+      "detail": 1.1102230246251565e-16
+    },
+    {
+      "check": "high_metrics initial Werner concurrence",
+      "passed": true,
+      "detail": 4.440892098500626e-16
+    },
+    {
+      "check": "U_dynamics initial Werner fixed fidelity",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "U_dynamics initial Werner optimized fidelity",
+      "passed": true,
+      "detail": 1.1102230246251565e-16
+    },
+    {
+      "check": "U_dynamics initial Werner concurrence",
+      "passed": true,
+      "detail": 2.220446049250313e-16
+    },
+    {
+      "check": "map_metrics initial Werner fixed fidelity",
+      "passed": true,
+      "detail": 3.3306690738754696e-16
+    },
+    {
+      "check": "map_metrics initial Werner optimized fidelity",
+      "passed": true,
+      "detail": 2.220446049250313e-16
+    },
+    {
+      "check": "map_metrics initial Werner concurrence",
+      "passed": true,
+      "detail": 4.440892098500626e-16
+    },
+    {
+      "check": "Common dephasing preserves tested Werner resources",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "Independent dephasing has no optimized regain",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Markovian overdamped control has no optimized regain",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Exact exponential control has no optimized regain",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "High-noise r=0.30 has demonstrated regain",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "High-noise r=0.40 has no demonstrated regain",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "High-noise initially separable r=0.50 never above",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "High-noise initially separable r=1 never above",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Paired U=40.0 critical radius Nk convergence <0.001",
+      "passed": true,
+      "detail": 0.0006956240209122222
+    },
+    {
+      "check": "Paired U=75.0 critical radius Nk convergence <0.001",
+      "passed": true,
+      "detail": 0.0009301139491939558
+    },
+    {
+      "check": "Zero-gap U=115 Nk=400 explicitly labeled",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Analytic protocol errors below 1e-12",
+      "passed": true,
+      "detail": {
+        "fixed": 2.220446049250313e-16,
+        "optimized": 1.1102230246251565e-16,
+        "concurrence": 0.0,
+        "werner_matrix": 2.220446049250313e-16
+      }
+    },
+    {
+      "check": "Underdamped implementations agree",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Dephasing envelope monotonic",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Revival boundary bracket matches refinement",
+      "passed": true,
+      "detail": [
+        0.3875,
+        0.39
+      ]
+    },
+    {
+      "check": "Refined exact sites below threshold at Nk=400",
+      "passed": true,
+      "detail": 0.002298759936816894
+    },
+    {
+      "check": "Boundary arrays finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Sampled conditional outputs positive",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "Sampled conditional output traces",
+      "passed": true,
+      "detail": 2.220446049250313e-16
+    },
+    {
+      "check": "Sampled conditional outputs Hermitian",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "Sampled Bell probabilities normalized",
+      "passed": true,
+      "detail": 6.661338147750939e-16
+    }
+  ]
+}
