@@ -1,0 +1,402 @@
+{
+  "status": "passed",
+  "check_count": 64,
+  "passed_count": 64,
+  "checks": [
+    {
+      "check": "G_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "F_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "g2_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "g2_full in physical range",
+      "passed": true,
+      "detail": {
+        "min": 1.4214393237970214e-13,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "f2_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "f2_full in physical range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 0.12696750234874343
+      }
+    },
+    {
+      "check": "p_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "p_full in physical range",
+      "passed": true,
+      "detail": {
+        "min": 4.2753968409946104e-13,
+        "max": 1.0000000000000002
+      }
+    },
+    {
+      "check": "g2_fine finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "g2_fine in physical range",
+      "passed": true,
+      "detail": {
+        "min": 1.9016453107288066e-10,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "f2_fine finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "f2_fine in physical range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 0.12696750234874343
+      }
+    },
+    {
+      "check": "p_fine finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "p_fine in physical range",
+      "passed": true,
+      "detail": {
+        "min": 6.791995428294277e-08,
+        "max": 1.0000000000000002
+      }
+    },
+    {
+      "check": "normal_p_fine finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "normal_p_fine in physical range",
+      "passed": true,
+      "detail": {
+        "min": 1.691316986206332e-10,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "site_g2 finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "site_g2 in physical range",
+      "passed": true,
+      "detail": {
+        "min": 3.625458368396113e-08,
+        "max": 0.4289276523207236
+      }
+    },
+    {
+      "check": "site_f2 finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "site_f2 in physical range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 0.05533865433443286
+      }
+    },
+    {
+      "check": "site_p finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "site_p in physical range",
+      "passed": true,
+      "detail": {
+        "min": 4.128643315993237e-07,
+        "max": 0.27301584994116784
+      }
+    },
+    {
+      "check": "normal_site_p finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "normal_site_p in physical range",
+      "passed": true,
+      "detail": {
+        "min": 1.0596126038848342e-08,
+        "max": 0.27301584994116784
+      }
+    },
+    {
+      "check": "p_conv finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "p_conv in physical range",
+      "passed": true,
+      "detail": {
+        "min": 1.0475077632282534e-07,
+        "max": 1.0000000000000002
+      }
+    },
+    {
+      "check": "Werner identity full",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "Origin singlet full",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Werner identity fine",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "Origin singlet fine",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Exact-site Werner identity",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "No tested nonzero-site advantage",
+      "passed": true,
+      "detail": {
+        "maximum_p": 0.27301584994116784,
+        "maximum_Ftel": 0.636507924970584
+      }
+    },
+    {
+      "check": "No exact-site advantage on any convergence mesh",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Strongest lower-U site is U=25,n=0.5,(1,0)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Square-lattice symmetry 0/6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Square-lattice symmetry 1/5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Square-lattice symmetry 2/4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Production residual tolerance",
+      "passed": true,
+      "detail": 6.277491859663087e-10
+    },
+    {
+      "check": "Production filling matches target",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "U=15 paired at every production density",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "U=25 production zero gap only at n=0.5 and 0.75",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "U=25 zero-gap anomalous functions vanish",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "U=15 anomalous functions nonzero at every density",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Gap gauge DeltaS nonpositive on paired branches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Global stability limitation explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "U=15 six-seed paired roots at every density",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "U=25 six-seed result by density",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Multistart canonical solutions reproducible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "U=25,n=0.75 tiny coarse-mesh root explicitly mesh dependent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Convergence has every U,n,Nk combination",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Critical-radius 400-to-800 change below 0.0034a",
+      "passed": true,
+      "detail": {
+        "U=15,n=0.5": 0.0033365525453797895,
+        "U=15,n=0.75": 0.0011725403607627527,
+        "U=15,n=1": 0.0005627051034756692,
+        "U=15,n=1.25": 0.00032260993547039707,
+        "U=15,n=1.5": 0.00019784882419660033,
+        "U=15,n=1.75": 0.00012324821053305568,
+        "U=15,n=1.875": 7.929582755955566e-05,
+        "U=25,n=0.5": 0.001137630968004344,
+        "U=25,n=0.75": 0.001026460319991651,
+        "U=25,n=1": 0.0009187558593004574,
+        "U=25,n=1.25": 0.0004059598151636701,
+        "U=25,n=1.5": 0.00023457998351572584,
+        "U=25,n=1.75": 0.00014479063013000948,
+        "U=25,n=1.875": 9.451173059288331e-05
+      }
+    },
+    {
+      "check": "Nearest-site p 400-to-800 change below 0.002",
+      "passed": true,
+      "detail": {
+        "U=15,n=0.5": 0.0019686224154180643,
+        "U=15,n=0.75": 0.000589129637305702,
+        "U=15,n=1": 0.0002857907195403103,
+        "U=15,n=1.25": 0.00015682377415052184,
+        "U=15,n=1.5": 9.107653865704848e-05,
+        "U=15,n=1.75": 4.632244220323205e-05,
+        "U=15,n=1.875": 2.4171449456165776e-05,
+        "U=25,n=0.5": 0.0007912331158917985,
+        "U=25,n=0.75": 0.0006540756716601204,
+        "U=25,n=1": 0.00041286540424051443,
+        "U=25,n=1.25": 0.00018785850663229076,
+        "U=25,n=1.5": 0.00010013398433259338,
+        "U=25,n=1.75": 4.8292082658643945e-05,
+        "U=25,n=1.875": 2.490134968770319e-05
+      }
+    },
+    {
+      "check": "U=15,n=0.5 gap mesh sensitivity retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Independent critical-radius interpolation",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "No continuous concurrence regain after first loss",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "All post-loss maxima below threshold",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batched GF agrees with source implementation",
+      "passed": true,
+      "detail": 3.941291737419306e-15
+    },
+    {
+      "check": "Explicit teleportation protocol identities",
+      "passed": true,
+      "detail": {
+        "fixed": 6.661338147750939e-16,
+        "optimized": 2.220446049250313e-16,
+        "concurrence": 4.440892098500626e-16,
+        "minimum_eigenvalue": -5.551115123125783e-17,
+        "maximum_trace_error": 2.220446049250313e-16
+      }
+    },
+    {
+      "check": "Sampled states positive and normalized",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Figure exists: figs/low_U_density_bdg_solutions.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Figure exists: figs/low_U_density_resources.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Figure exists: figs/low_U_density_lattice_sites.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Figure exists: figs/low_U_density_convergence.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Data artifact exists",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}
