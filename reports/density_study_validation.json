@@ -1,0 +1,464 @@
+{
+  "status": "passed",
+  "check_count": 78,
+  "passed_count": 78,
+  "checks": [
+    {
+      "check": "G_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "F_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "F0_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "FS_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "G_fine finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "F_fine finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "site_G finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "site_F finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "g2_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "g2_full in physical range",
+      "passed": true,
+      "detail": {
+        "min": 1.0198421306876002e-10,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "f2_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "f2_full in physical range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 0.0013462606898554034
+      }
+    },
+    {
+      "check": "p_full finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "p_full in physical range",
+      "passed": true,
+      "detail": {
+        "min": 5.910106435204432e-11,
+        "max": 1.0000000000000002
+      }
+    },
+    {
+      "check": "g2_fine finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "g2_fine in physical range",
+      "passed": true,
+      "detail": {
+        "min": 3.3826339718405533e-10,
+        "max": 1.0
+      }
+    },
+    {
+      "check": "f2_fine finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "f2_fine in physical range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 0.0013465490789071686
+      }
+    },
+    {
+      "check": "p_fine finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "p_fine in physical range",
+      "passed": true,
+      "detail": {
+        "min": 1.691316986206332e-10,
+        "max": 1.0000000000000002
+      }
+    },
+    {
+      "check": "site_g2 finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "site_g2 in physical range",
+      "passed": true,
+      "detail": {
+        "min": 2.119225185314091e-08,
+        "max": 0.4289276523207236
+      }
+    },
+    {
+      "check": "site_f2 finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "site_f2 in physical range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 0.0011926653206824954
+      }
+    },
+    {
+      "check": "site_p finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "site_p in physical range",
+      "passed": true,
+      "detail": {
+        "min": 1.0596126038848342e-08,
+        "max": 0.27301584994116784
+      }
+    },
+    {
+      "check": "site_C finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "site_C in physical range",
+      "passed": true,
+      "detail": {
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    {
+      "check": "site_Ftel finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "site_Ftel in physical range",
+      "passed": true,
+      "detail": {
+        "min": 0.500000005298063,
+        "max": 0.636507924970584
+      }
+    },
+    {
+      "check": "Werner formula full",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "Concurrence formula full",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Teleportation formula full",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Origin singlet full",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Werner formula fine",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "Concurrence formula fine",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Teleportation formula fine",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Origin singlet fine",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Exact-site Werner formula",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Exact-site concurrence formula",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Exact-site teleportation formula",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "No tested nonzero lattice-site advantage",
+      "passed": true,
+      "detail": {
+        "maximum_p": 0.27301584994116784,
+        "maximum_Ftel": 0.636507924970584
+      }
+    },
+    {
+      "check": "Strongest tested site is n=0.5 nearest neighbor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Anomalous functions vanish on selected zero-gap branches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Normal-state exact-site occupancy bound",
+      "passed": true,
+      "detail": {
+        "0.5": 0.4289276523207236,
+        "0.75": 0.2678350055927532,
+        "1.0": 0.16269989287347272,
+        "1.25": 0.09627733004061105,
+        "1.5": 0.047301256037261125
+      }
+    },
+    {
+      "check": "Square-lattice angular symmetry 0/6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Square-lattice angular symmetry 1/5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Square-lattice angular symmetry 2/4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Fixed-solution anomalous decomposition",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Production residual tolerance",
+      "passed": true,
+      "detail": 8.85068407452394e-12
+    },
+    {
+      "check": "Production discrete filling matches target",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Paired branches only at n=1.75 and 1.875",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Positive quasiparticle energies on paired branches",
+      "passed": true,
+      "detail": {
+        "1.75": 0.044236650860056105,
+        "1.875": 0.15806555006211806
+      }
+    },
+    {
+      "check": "Multistart finds no lower-density paired root",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Multistart paired roots reproducible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Global stability limitation explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Convergence includes all densities and meshes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Critical radius 400-to-800 change below 0.0014a",
+      "passed": true,
+      "detail": {
+        "0.5": 0.001137630968004344,
+        "0.75": 0.001026460319991651,
+        "1.0": 0.0012811594857264907,
+        "1.25": 0.0003580544974860489,
+        "1.5": 0.000234281775517875,
+        "1.75": 0.00019022044834554608,
+        "1.875": 0.0001570876957995293
+      }
+    },
+    {
+      "check": "Nearest-site p 400-to-800 change below 0.0008",
+      "passed": true,
+      "detail": {
+        "0.5": 0.0007912331158917985,
+        "0.75": 0.0006540756716601204,
+        "1.0": 0.00045317166338541826,
+        "1.25": 0.0002329571850857165,
+        "1.5": 0.00015056658856381355,
+        "1.75": 6.605632417413815e-05,
+        "1.875": 2.2317712123071445e-05
+      }
+    },
+    {
+      "check": "All Nk=800 zero-gap fillings exact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Finite-mesh Nk=100 filling caveats retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Production G0 occupancy quadrature error below 0.51 percent",
+      "passed": true,
+      "detail": 0.005018812695948505
+    },
+    {
+      "check": "Independent critical-radius interpolation",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "check": "No continuous concurrence regain after first loss",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "All post-loss maxima remain below threshold",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batched GF agrees with repository implementation",
+      "passed": true,
+      "detail": 4.036478139673478e-15
+    },
+    {
+      "check": "Density-matrix Werner identity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Explicit fixed and optimized protocol identities",
+      "passed": true,
+      "detail": {
+        "fixed": 6.661338147750939e-16,
+        "optimized": 2.220446049250313e-16,
+        "concurrence": 4.440892098500626e-16,
+        "minimum_eigenvalue": -5.551115123125783e-17,
+        "maximum_trace_error": 2.220446049250313e-16
+      }
+    },
+    {
+      "check": "Sampled physical states positive and normalized",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Figure exists: figs/density_bdg_solutions.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Figure exists: figs/density_greens_functions.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Figure exists: figs/density_entanglement_teleportation.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Figure exists: figs/density_lattice_sites.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Figure exists: figs/density_convergence.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Figure exists: figs/density_fermi_surfaces.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Figure exists: figs/density_angular_concurrence_maps.png",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Data exists: data/density_teleportation_spatial.npz",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Data exists: data/density_teleportation_convergence.npz",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

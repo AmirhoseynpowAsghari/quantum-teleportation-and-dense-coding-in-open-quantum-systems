@@ -233,6 +233,25 @@ python -m pip freeze
 The specialized analysis scripts may override the defaults in `config.py`;
 their exported JSON/NPZ metadata is the authoritative record for those runs.
 
+### Electron-density study
+
+To re-solve the fixed-interaction BdG model at
+\(n=0.5,0.75,1.0,1.25,1.5,1.75,1.875\), recompute the equal-time Green's
+functions and teleportation resources, and run the independent artifact checks:
+
+```bash
+python analysis/run_density_teleportation_study.py
+python analysis/validate_density_study.py
+```
+
+This study compares continuous Fourier-interpolated separations with exact
+integer lattice vectors and checks momentum meshes up to \(800\times800\). Its
+outputs use the dedicated `data/density_teleportation_*.npz`,
+`reports/density_teleportation_*`, and `figs/density_*` names; it does not
+overwrite the archived fixed-density or manuscript datasets. See
+[`reports/density_teleportation_report.md`](reports/density_teleportation_report.md)
+for the numerical tables, stability caveats, and physical interpretation.
+
 ## Configuration
 
 Edit [`config.py`](config.py) to change the physical model and numerical grids.
