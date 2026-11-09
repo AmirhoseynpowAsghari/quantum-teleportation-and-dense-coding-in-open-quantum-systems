@@ -252,6 +252,19 @@ overwrite the archived fixed-density or manuscript datasets. See
 [`reports/density_teleportation_report.md`](reports/density_teleportation_report.md)
 for the numerical tables, stability caveats, and physical interpretation.
 
+The corresponding lower-interaction sweep at \(U/t=15\) and \(25\), still with
+\(\Delta_t/t=4.5\), can be reproduced with:
+
+```bash
+python analysis/run_low_U_density_study.py
+python analysis/validate_low_U_density_study.py
+```
+
+Its isolated `data/low_U_density_*`, `reports/low_U_density_*`, and
+`figs/low_U_density_*` outputs include four-mesh convergence checks and exact
+lattice-site controls. See
+[`reports/low_U_density_report.md`](reports/low_U_density_report.md).
+
 ## Configuration
 
 Edit [`config.py`](config.py) to change the physical model and numerical grids.
