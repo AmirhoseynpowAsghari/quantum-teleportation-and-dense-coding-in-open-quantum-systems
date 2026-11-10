@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  5 NOV 2026 20:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  10 NOV 2026 06:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -302,18 +302,18 @@ Class revtex4-2 Warning: Assuming \noaffiliation for authors.
 Class revtex4-2 Warning: If you want your PACS to appear in your output, use do
 cument class option showpacs.
 
-
+[1{/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 1127) in paragraph at lines 37--38
 \OT1/cmr/m/n/10 source is char-ac-ter-ized us-ing sev-eral com-ple-men-tary
  []
 
-[1{/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
 Underfull \hbox (badness 1178) in paragraph at lines 199--210
 []\OT1/cmr/m/n/10 Here, $\OML/cmm/m/it/10 U$ \OT1/cmr/m/n/10 de-notes the on-si
 te Hub-bard in-ter-ac-tion
  []
 
-<Delta_ks_heatmaps.png, id=11, 945.131pt x 297.5115pt>
+<Delta_ks_heatmaps.png, id=12, 945.131pt x 297.5115pt>
 File: Delta_ks_heatmaps.png Graphic file (type png)
 <use Delta_ks_heatmaps.png>
 Package pdftex.def Info: Delta_ks_heatmaps.png  used on input line 220.
@@ -363,7 +363,7 @@ Overfull \hbox (8.09055pt too wide) detected at line 344
  []
 
 [3 <./Delta_ks_heatmaps.png>]
-<figs/greens_angular.png, id=33, 803.0pt x 311.564pt>
+<figs/greens_angular.png, id=34, 803.0pt x 311.564pt>
 File: figs/greens_angular.png Graphic file (type png)
 <use figs/greens_angular.png>
 Package pdftex.def Info: figs/greens_angular.png  used on input line 386.
@@ -375,95 +375,126 @@ LaTeX Font Info:    Trying to load font information for U+euf on input line 810
 (/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [6]
+Underfull \hbox (badness 1281) in paragraph at lines 909--922
+[]\OT1/cmr/m/n/10 The sep-a-rate lower-interaction den-sity study uses
+ []
+
 <figs/concurrence_U_theta.png, id=49, 803.0pt x 550.055pt>
 File: figs/concurrence_U_theta.png Graphic file (type png)
 <use figs/concurrence_U_theta.png>
-Package pdftex.def Info: figs/concurrence_U_theta.png  used on input line 958.
+Package pdftex.def Info: figs/concurrence_U_theta.png  used on input line 984.
 (pdftex.def)             Requested size: 510.0pt x 349.35658pt.
+[7]
+<figs/low_U_density_bdg_solutions.png, id=54, 1236.84943pt x 355.15543pt>
+File: figs/low_U_density_bdg_solutions.png Graphic file (type png)
+<use figs/low_U_density_bdg_solutions.png>
+Package pdftex.def Info: figs/low_U_density_bdg_solutions.png  used on input li
+ne 1087.
+(pdftex.def)             Requested size: 510.0pt x 146.4438pt.
+ [8 <./figs/concurrence_U_theta.png>]
+<figs/low_U_density_resources.png, id=59, 1236.84943pt x 694.82443pt>
+File: figs/low_U_density_resources.png Graphic file (type png)
+<use figs/low_U_density_resources.png>
+Package pdftex.def Info: figs/low_U_density_resources.png  used on input line 1
+143.
+(pdftex.def)             Requested size: 510.0pt x 286.50198pt.
+<figs/low_U_density_lattice_sites.png, id=60, 1236.84943pt x 355.15543pt>
+File: figs/low_U_density_lattice_sites.png Graphic file (type png)
+<use figs/low_U_density_lattice_sites.png>
+Package pdftex.def Info: figs/low_U_density_lattice_sites.png  used on input li
+ne 1167.
+(pdftex.def)             Requested size: 510.0pt x 146.4438pt.
+ [9 <./figs/low_U_density_bdg_solutions.png>]
 <figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_C_heatmap.png, i
-d=50, 641.9985pt x 424.3855pt>
+d=65, 641.9985pt x 424.3855pt>
 File: figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_C_heatmap.p
 ng Graphic file (type png)
 <use figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_C_heatmap.pn
 g>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_
-GB0.010_C_heatmap.png  used on input line 1022.
+GB0.010_C_heatmap.png  used on input line 1220.
 (pdftex.def)             Requested size: 469.19907pt x 310.16794pt.
- [7]
 <figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_heatmap_single
-t.png, id=55, 714.67pt x 425.59pt>
+t.png, id=66, 714.67pt x 425.59pt>
 File: figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_heatmap_s
 inglet.png Graphic file (type png)
 <use figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_heatmap_si
 nglet.png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_
-GB0.010_F_heatmap_singlet.png  used on input line 1058.
+GB0.010_F_heatmap_singlet.png  used on input line 1256.
 (pdftex.def)             Requested size: 469.19907pt x 279.40962pt.
 <figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_singlet.p
-ng, id=56, 569.7285pt x 352.1155pt>
+ng, id=67, 569.7285pt x 352.1155pt>
 File: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_sing
 let.png Graphic file (type png)
 <use figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_singl
 et.png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_
-GB0.100_F_vs_t_singlet.png  used on input line 1097.
+GB0.100_F_vs_t_singlet.png  used on input line 1295.
 (pdftex.def)             Requested size: 246.0pt x 152.03532pt.
- [8 <./figs/concurrence_U_theta.png>]
-Underfull \hbox (badness 3826) in paragraph at lines 1123--1129
+ [10]
+Underfull \hbox (badness 3826) in paragraph at lines 1321--1327
 []\OT1/cmr/m/n/10 Angular de-pen-dence en-ters the cal-cu-la-tion only
  []
 
+[11 <./figs/low_U_density_resources.png> <./figs/low_U_density_lattice_sites.pn
+g>]
 <figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_singlet.
-png, id=61, 488.6255pt x 417.9615pt>
+png, id=76, 488.6255pt x 417.9615pt>
 File: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_sin
 glet.png Graphic file (type png)
 <use figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_sing
 let.png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_
-GB0.100_F_polar_singlet.png  used on input line 1144.
+GB0.100_F_polar_singlet.png  used on input line 1342.
 (pdftex.def)             Requested size: 246.0pt x 210.42795pt.
 
-Underfull \hbox (badness 1082) in paragraph at lines 1158--1164
+Underfull \hbox (badness 1082) in paragraph at lines 1356--1362
 []\OT1/cmr/m/n/10 These ob-ser-va-tions sup-port an initial-state lat-tice
  []
 
 <figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs_r.png,
- id=62, 641.9985pt x 353.32pt>
+ id=77, 641.9985pt x 353.32pt>
 File: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs_r
 .png Graphic file (type png)
 <use figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs_r.
 png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_
-GB0.100_holevo_vs_r.png  used on input line 1180.
+GB0.100_holevo_vs_r.png  used on input line 1378.
 (pdftex.def)             Requested size: 246.0pt x 135.38437pt.
-[9 <./figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_C_heatmap.p
-ng>]
+[12 <./figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_C_heatmap.
+png>]
 <figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_theta_t_h
-eatmap.png, id=67, 639.5895pt x 351.714pt>
+eatmap.png, id=82, 639.5895pt x 351.714pt>
 File: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_thet
 a_t_heatmap.png Graphic file (type png)
 <use figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_theta
 _t_heatmap.png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_
-GB0.100_holevo_theta_t_heatmap.png  used on input line 1212.
+GB0.100_holevo_theta_t_heatmap.png  used on input line 1410.
 (pdftex.def)             Requested size: 469.19907pt x 258.021pt.
- [10 <./figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_heatmap
+ [13 <./figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_heatmap
 _singlet.png> <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_
 F_vs_t_singlet.png>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 1246.
+ on input line 1445.
 
-<figs/U_dependence_fidelity_holevo.png, id=73, 803.0pt x 550.055pt>
+<figs/U_dependence_fidelity_holevo.png, id=89, 803.0pt x 550.055pt>
 File: figs/U_dependence_fidelity_holevo.png Graphic file (type png)
 <use figs/U_dependence_fidelity_holevo.png>
 Package pdftex.def Info: figs/U_dependence_fidelity_holevo.png  used on input l
-ine 1263.
+ine 1461.
 (pdftex.def)             Requested size: 479.40125pt x 328.39888pt.
-[11 <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_si
+
+Underfull \hbox (badness 1048) in paragraph at lines 1507--1517
+[]\OT1/cmr/m/n/10 We have ex-am-ined the Green's-function con-struc-
+ []
+
+[14 <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_si
 nglet.png> <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_hol
-evo_vs_r.png>] [12 <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0
-.100_holevo_theta_t_heatmap.png>] (./manuscript.bbl) [13 <./figs/U_dependence_f
+evo_vs_r.png>] [15 <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0
+.100_holevo_theta_t_heatmap.png>] (./manuscript.bbl) [16 <./figs/U_dependence_f
 idelity_holevo.png>] (./manuscript.aux)
  ***********
 LaTeX2e <2026-06-01>
@@ -471,13 +502,13 @@ L3 programming layer <2026-09-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5007 strings out of 467050
- 74137 string characters out of 5408429
- 517633 words of memory out of 5000000
- 34336 multiletter control sequences out of 15000+600000
+ 5039 strings out of 467050
+ 75326 string characters out of 5408429
+ 518372 words of memory out of 5000000
+ 34368 multiletter control sequences out of 15000+600000
  640537 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,65p,2114b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,10n,65p,2487b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
 pt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/te
 xlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></opt/texlive/
@@ -501,10 +532,10 @@ s/type1/public/amsfonts/cm/cmti9.pfb></opt/texlive/texdir/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmtt10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/pub
 lic/amsfonts/euler/eufm10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb>
-Output written on manuscript.pdf (13 pages, 1823972 bytes).
+Output written on manuscript.pdf (16 pages, 3022675 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
+ 204 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
