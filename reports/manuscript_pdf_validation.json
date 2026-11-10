@@ -1,0 +1,56 @@
+{
+  "pdf": "manuscript.pdf",
+  "latex_log": "reports/manuscript.log",
+  "compilation_performed": true,
+  "build_system": "GitHub Actions TeX Live workflow .github/workflows/build-manuscript.yml",
+  "workflow_run_id": 42771625501,
+  "workflow_url": "https://github.com/AmirhoseynpowAsghari/quantum-teleportation-and-dense-coding-in-open-quantum-systems/actions/runs/42771625501",
+  "source_commit": "021f409765920daffcc043498dd705f07b3ddb13",
+  "retrieval_method": "Compiled PDF and log committed by the workflow and retrieved with git pull --ff-only",
+  "page_count": 16,
+  "pdf_bytes": 3022743,
+  "pdf_sha256": "cd07d1b432faf30bd835d41f02d8543dc8e6218471fc987abb57259961e5ec83",
+  "fatal_latex_errors": [],
+  "undefined_warnings": [],
+  "undefined_reference_markers_in_pdf": 0,
+  "overfull_warnings": [
+    "Overfull \\hbox (28.2083pt too wide) detected at line 251",
+    "Overfull \\hbox (28.2083pt too wide) detected at line 267",
+    "Overfull \\hbox (43.20834pt too wide) detected at line 281",
+    "Overfull \\hbox (8.09055pt too wide) detected at line 344"
+  ],
+  "new_overfull_warnings_in_lower_U_tables_or_figures": [],
+  "preexisting_float_stuck_warning_retained": true,
+  "table_pages": {
+    "I": 9,
+    "II": 10
+  },
+  "figure_caption_pages": {
+    "1": 3,
+    "2": 5,
+    "3": 8,
+    "4": 9,
+    "5": 11,
+    "6": 11,
+    "7": 12,
+    "8": 13,
+    "9": 13,
+    "10": 14,
+    "11": 14,
+    "12": 15,
+    "13": 16
+  },
+  "all_13_figure_captions_present": true,
+  "all_mandatory_legacy_figures_in_source_exactly_once": true,
+  "out_of_page_text_or_image_blocks": [],
+  "lower_U_table_data_checks_passed": true,
+  "explicit_convergence_mesh_bounds_present": false,
+  "visual_inspection": {
+    "performed": true,
+    "method": "Rendered all 16 pages as a contact sheet and inspected pages 9, 10, and 11 at higher resolution; final page 16 was also inspected in the preceding build.",
+    "table_and_figure_content_legible": true,
+    "clipping_or_overlap_observed": false,
+    "notes": "Both 14-row tables fit within the text width; all three new figures and their captions are present. The pre-existing float-stuck warning does not omit any of the 13 figures."
+  },
+  "checks_passed": false
+}
