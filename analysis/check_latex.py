@@ -29,7 +29,7 @@ graphics = re.findall(r"\\includegraphics(?:\[[^]]*\])?\s*\{([^}]+)\}", text)
 # Remove comments before the basic delimiter checks.
 uncommented = "\n".join(line.split("%", 1)[0] for line in text.splitlines())
 environments = ["document", "equation", "align", "figure", "figure*",
-                "thebibliography"]
+                "table", "table*", "thebibliography"]
 result = {
     "source": SOURCE.name,
     "compilation_performed": False,

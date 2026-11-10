@@ -2,7 +2,7 @@
   "source": "manuscript.tex",
   "compilation_performed": false,
   "check_type": "static source audit only",
-  "label_count": 58,
+  "label_count": 65,
   "duplicate_labels": [],
   "undefined_references": [],
   "citation_key_count": 10,
@@ -16,8 +16,8 @@
       1
     ],
     "equation": [
-      48,
-      48
+      49,
+      49
     ],
     "align": [
       0,
@@ -28,8 +28,16 @@
       3
     ],
     "figure*": [
-      7,
-      7
+      10,
+      10
+    ],
+    "table": [
+      0,
+      0
+    ],
+    "table*": [
+      2,
+      2
     ],
     "thebibliography": [
       1,
@@ -47,6 +55,18 @@
     },
     {
       "path": "figs/concurrence_U_theta.png",
+      "exists": true
+    },
+    {
+      "path": "figs/low_U_density_bdg_solutions.png",
+      "exists": true
+    },
+    {
+      "path": "figs/low_U_density_resources.png",
+      "exists": true
+    },
+    {
+      "path": "figs/low_U_density_lattice_sites.png",
       "exists": true
     },
     {

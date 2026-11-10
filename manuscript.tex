@@ -17,7 +17,7 @@
 \date{\today}
 
 \begin{abstract}
-Quantum communication protocols rely critically on the preservation of entanglement and quantum coherence in realistic noisy environments. In this work, we investigate quantum teleportation and dense coding using correlated electron pairs described within a Hubbard--Bogoliubov--de Gennes framework and subjected to non-Markovian open-system dynamics. The superconducting correlations are obtained self-consistently, and the corresponding normal and anomalous Green's functions are employed to construct spatially dependent two-qubit density matrices. The resulting states are evolved using Kraus-operator descriptions of environmental noise, including non-Markovian amplitude damping and dephasing channels. The robustness of the quantum resources is characterized through concurrence and singlet-referenced Uhlmann fidelity, while the Holevo quantity of an equal-probability Pauli encoding ensemble is used to quantify the information available to the corresponding dense-coding protocol. For two representative non-Markovian amplitude-damping regimes, the results reveal a pronounced dependence of quantum correlations on both the spatial separation of the electron pair and the evolution time. Environmental coupling suppresses the initially available entanglement and communication resources, while the nonmonotonic survival probability produces transient revivals of concurrence and singlet fraction. The Pauli-ensemble Holevo quantity evolves differently and approaches the one-bit limit of the long-time amplitude-damped product state. A converged interaction sweep at $U/t=40$, $75$, and $115$ shows that the Hubbard interaction changes the initial spatial profiles and hence the subsequent fidelity and Holevo dynamics, but their ordering with $U$ is separation dependent rather than uniformly enhancing or suppressing. All numerical results use the repository's magnitude-amplitude Green's-function reduction; the distinct signed coherence-factor construction is derived but remains to be implemented comparatively.
+Quantum communication protocols rely critically on the preservation of entanglement and quantum coherence in realistic noisy environments. In this work, we investigate quantum teleportation and dense coding using correlated electron pairs described within a Hubbard--Bogoliubov--de Gennes framework and subjected to non-Markovian open-system dynamics. The superconducting correlations are obtained self-consistently, and the corresponding normal and anomalous Green's functions are employed to construct spatially dependent two-qubit density matrices. The resulting states are evolved using Kraus-operator descriptions of environmental noise, including non-Markovian amplitude damping and dephasing channels. The robustness of the quantum resources is characterized through concurrence and singlet-referenced Uhlmann fidelity, while the Holevo quantity of an equal-probability Pauli encoding ensemble is used to quantify the information available to the corresponding dense-coding protocol. For two representative non-Markovian amplitude-damping regimes, the results reveal a pronounced dependence of quantum correlations on both the spatial separation of the electron pair and the evolution time. Environmental coupling suppresses the initially available entanglement and communication resources, while the nonmonotonic survival probability produces transient revivals of concurrence and singlet fraction. The Pauli-ensemble Holevo quantity evolves differently and approaches the one-bit limit of the long-time amplitude-damped product state. A converged interaction sweep at $U/t=40$, $75$, and $115$ shows that the Hubbard interaction changes the initial spatial profiles and hence the subsequent fidelity and Holevo dynamics, but their ordering with $U$ is separation dependent rather than uniformly enhancing or suppressing. A separate density-resolved initial-state study at $U/t=15$ and $25$ finds nonzero-gap stationary branches at every sampled filling for $U/t=15$, and for $n\geq1$ on the production mesh for $U/t=25$. Nevertheless, none of the 140 tested nonzero lattice-site resources has nonzero concurrence or average teleportation fidelity above $2/3$. The legacy dynamics use the repository's magnitude-amplitude Green's-function reduction; the new density study uses the corrected signed equal-time construction and is not used to reinterpret those archived time-dependent results.
 \end{abstract}
 
 \pacs{74.20.Fg, 03.67.Mn, 03.65.Ud, 74.25.-q}
@@ -906,6 +906,32 @@ with no negative eigenvalues at the sampled points. The small differences in
 fidelity are consistent with the separate eigensystem implementation and its
 eigenvalue clipping.
 
+The separate lower-interaction density study uses the corrected equal-time
+normal weight $v_{\mathbf k}^2$ and signed anomalous weight
+$\Delta_{\mathbf k}/(2E_{\mathbf k})$, with the mean of the two degenerate
+helicity contributions. It varies $n$ over
+$0.5,0.75,1.0,1.25,1.5,1.75,1.875$ at fixed $U/t=15$ and $25$,
+$\Delta_t/t=4.5$, $V_{\mathrm{SO}}=0$, and $T=0$. Production results use
+$N_k=400$, with $N_k=100,200,400,800$ convergence comparisons and six
+independent solver seeds at $N_k=100$. Continuous radial curves are evaluated
+at seven angles. Exact lattice resources are separately evaluated at ten
+integer vectors from $(1,0)$ through $(4,0)$, rather than assigned from a
+continuous radial grid. The irrelevant global gap sign is fixed by choosing
+$\Delta_S\leq0$. Small residuals and seed/mesh reproducibility establish
+stationary numerical branches, not global free-energy minima.
+
+For the resulting initial Werner state, the fixed singlet-reference protocol
+and local-unitary-optimized standard protocol have the same average fidelity,
+\begin{equation}
+\overline{\mathcal F}_{\mathrm{tel}}=\frac{1+p}{2},
+\qquad
+F_{\mathrm s}=\mathfrak f=\frac{1+3p}{4}.
+\label{eq:werner_tel_lowerU}
+\end{equation}
+Consequently $\overline{\mathcal F}_{\mathrm{tel}}>2/3$ exactly when $p>1/3$
+and $C>0$. These operational identities are applied only to the new initial
+Werner resources, not retroactively to the legacy evolved X states.
+
 \section{Results and Discussion}
 
 \subsection{Spatial concurrence and interaction dependence}
@@ -1002,6 +1028,178 @@ The exact agreement between the $0^\circ$ and $90^\circ$ results, and between
 the $30^\circ$ and $60^\circ$ results, reflects the square-lattice symmetry.
 These are spatial revivals of the initial entanglement, not environmental
 memory effects; the open-system time has not yet been introduced.
+
+\subsection{Density and lower-interaction dependence of initial Werner resources}
+\label{sec:lower_U_density}
+
+The fixed-filling calculations above do not determine whether pairing or
+normal exchange controls the finite-separation resource at other densities.
+We therefore independently solved the self-consistent equations at seven
+fillings for $U/t=15$ and $25$, using the corrected equal-time construction
+and validation procedure described in Sec.~\ref{sec:validation}. Throughout
+this subsection $\Delta_t/t=4.5$, $V_{\mathrm{SO}}=0$, and $T=0$.
+Table~\ref{tab:low_U_solutions} reports the production self-consistent
+solutions.
+
+\begin{table*}[t]
+\caption{\label{tab:low_U_solutions}
+Self-consistent lower-interaction solutions at $N_k=400$. The gap gauge is
+$\Delta_S\leq0$; reversing both gap signs leaves all resource magnitudes
+unchanged. Energies are in units of $t$. The maximum residual over these 14
+selected solutions is $6.28\times10^{-10}$, and the discrete occupations
+reproduce the target fillings. These are stationary BdG branches, not proven
+global thermodynamic ground states.}
+\begin{ruledtabular}
+\begin{tabular}{cccccc}
+$U/t$ & $n$ & $\Delta_0/t$ & $\Delta_S/t$ & $\mu/t$ &
+$\max_{\mathbf k}|\Delta_{\mathbf k}|/t$ \\
+\colrule
+15 & 0.500 & +0.181123 & -0.512376 & -1.443074 & 0.693499 \\
+15 & 0.750 & +0.600845 & -2.393505 & -0.837215 & 2.994351 \\
+15 & 1.000 & +0.686216 & -3.234806 & -0.309485 & 3.921022 \\
+15 & 1.250 & +0.727005 & -3.572029 & +0.321745 & 4.299034 \\
+15 & 1.500 & +0.757316 & -3.491605 & +1.310577 & 4.248920 \\
+15 & 1.750 & +0.720193 & -2.904189 & +2.962452 & 3.624382 \\
+15 & 1.875 & +0.601116 & -2.215107 & +4.137529 & 2.816223 \\
+25 & 0.500 & 0 & 0 & -1.430404 & 0 \\
+25 & 0.750 & 0 & 0 & -0.556922 & 0 \\
+25 & 1.000 & +0.196566 & -1.854346 & -0.098078 & 2.050913 \\
+25 & 1.250 & +0.231641 & -2.363357 & +0.393635 & 2.594998 \\
+25 & 1.500 & +0.274079 & -2.561070 & +1.256200 & 2.835149 \\
+25 & 1.750 & +0.296515 & -2.291915 & +2.696877 & 2.588431 \\
+25 & 1.875 & +0.264617 & -1.798159 & +3.724770 & 2.062776 \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+At $U/t=15$, every sampled density has a nonzero-gap stationary solution.
+This contrasts with the corrected $U/t=75$ density sweep, in which such
+solutions were found only at $n=1.75$ and $1.875$. The absence of pairing at
+low density is therefore interaction dependent, not a universal property of
+the lattice model. At $U/t=25$, the production and finest meshes give zero
+gap at $n=0.5$ and $0.75$, and nonzero gaps for $n\geq1$. A small solution at
+$n=0.75,N_k=100$, with $\Delta_0/t=0.00278215$ and
+$\Delta_S/t=-0.02034372$, disappears at $N_k=200,400,800$ and is accordingly
+not presented as a robust paired state.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/low_U_density_bdg_solutions.png}
+\caption{\label{fig:low_U_solutions}
+Density dependence of the self-consistent gap parameters, chemical potential,
+and maximum momentum-space gap at $U/t=15$ and $25$, using
+$\Delta_t/t=4.5$, $V_{\mathrm{SO}}=0$, $T=0$, and $N_k=400$. The gap gauge is
+$\Delta_S\leq0$. Large order parameters at $U/t=15$ should not be interpreted
+through weak-coupling BCS estimates.}
+\end{figure*}
+
+Figure~\ref{fig:low_U_solutions} shows that the extended-$s$ component is
+large at intermediate filling for $U/t=15$. The maximum momentum-space gap
+reaches $4.299034t$ at $n=1.25$, so weak-coupling approximations are not
+appropriate. Six independent seeds reproduce each accepted coarse-mesh root
+after fixing the global gap gauge. This reproducibility does not establish
+global thermodynamic stability or exclude competing orders.
+
+The corresponding quantum-resource results are listed in
+Table~\ref{tab:low_U_resources}. The continuous critical radius $r_c$ is the
+first down-crossing of $p=1/3$ along $\theta=45^\circ$. It is a Fourier
+interpolation of the lattice model, not an additional physical sub-lattice
+detector location. In contrast, $p(a)$ and
+$\overline{\mathcal F}_{\mathrm{tel}}(a)$ are evaluated exactly at the
+nearest-neighbor vector $(1,0)$.
+
+\begin{table*}[t]
+\caption{\label{tab:low_U_resources}
+Continuous-distance critical radii and exact nearest-neighbor resources for
+the lower-interaction density sweep. The $45^\circ$ critical radii are shown
+at $N_k=400$ and $800$. Exact-site quantities use $N_k=400$. Every tabulated
+nearest-neighbor state has $C=0$; the same conclusion holds at the diagonal
+$(1,1)$ and the other eight tested nonzero vectors.}
+\begin{ruledtabular}
+\begin{tabular}{ccccccc}
+$U/t$ & $n$ & $r_c/a$ ($400$) & $r_c/a$ ($800$) & $f^2(a)$ & $p(a)$ &
+$\overline{\mathcal F}_{\mathrm{tel}}(a)$ \\
+\colrule
+15 & 0.500 & 0.896729 & 0.900066 & 0.007581 & 0.268080 & 0.634040 \\
+15 & 0.750 & 0.664634 & 0.665807 & 0.055339 & 0.130355 & 0.565177 \\
+15 & 1.000 & 0.581330 & 0.581893 & 0.050471 & 0.075884 & 0.537942 \\
+15 & 1.250 & 0.536287 & 0.536610 & 0.038341 & 0.046447 & 0.523224 \\
+15 & 1.500 & 0.505851 & 0.506049 & 0.026540 & 0.026529 & 0.513264 \\
+15 & 1.750 & 0.479129 & 0.479252 & 0.014815 & 0.011185 & 0.505593 \\
+15 & 1.875 & 0.465440 & 0.465519 & 0.008027 & 0.005023 & 0.502512 \\
+25 & 0.500 & 0.905807 & 0.906945 & 0 & 0.273016 & 0.636508 \\
+25 & 0.750 & 0.735026 & 0.736053 & 0 & 0.154624 & 0.577312 \\
+25 & 1.000 & 0.605579 & 0.606498 & 0.026865 & 0.084440 & 0.542220 \\
+25 & 1.250 & 0.543882 & 0.544288 & 0.027418 & 0.050022 & 0.525011 \\
+25 & 1.500 & 0.508550 & 0.508785 & 0.022864 & 0.027726 & 0.513863 \\
+25 & 1.750 & 0.479927 & 0.480072 & 0.014182 & 0.011450 & 0.505725 \\
+25 & 1.875 & 0.465810 & 0.465905 & 0.007915 & 0.005098 & 0.502549 \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/low_U_density_resources.png}
+\caption{\label{fig:low_U_resource_curves}
+Continuous Fourier-interpolated resources at $U/t=15$ (solid) and $25$
+(dashed), with $\Delta_t/t=4.5$ and $N_k=400$. Panels show normalized normal
+and anomalous correlators, concurrence, average teleportation fidelity, and
+the first $45^\circ$ critical radius. Concurrence is threshold-clipped even
+when the underlying correlators continue to oscillate. Continuous curves must
+be distinguished from the exact-site results in
+Fig.~\ref{fig:low_U_exact_sites}.}
+\end{figure*}
+
+The larger anomalous correlations generated at lower $U$ do not produce an
+operational finite-site advantage. For example, at $U/t=15,n=0.75$ the
+nearest-neighbor anomalous weight is $f^2(a)=0.055339$, much larger than in
+the corrected $U/t=75,n=1.875$ state. Nevertheless, $p(a)=0.130355$, far below
+$1/3$. The reason is that the Werner threshold depends on $2g^2+f^2$, and
+pairing also changes $v_{\mathbf k}^2$ and hence the normal exchange
+correlation. At $45^\circ$, every nonzero-gap lower-$U$ production branch has
+a shorter first continuous entanglement window than its same-filling
+zero-gap reference, although pairing can increase $p(a)$ at the highest three
+sampled fillings.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/low_U_density_lattice_sites.png}
+\caption{\label{fig:low_U_exact_sites}
+Exact integer-lattice-vector resources at $N_k=400$. Left: Werner parameter at
+$(1,0)$ and $(1,1)$. Center: nearest-neighbor average teleportation fidelity.
+Right: squared normal and anomalous correlators at $(1,0)$. None of the 140
+production states obtained from two interactions, seven fillings, and ten
+nonzero vectors crosses $p=1/3$ or $\overline{\mathcal F}_{\mathrm{tel}}=2/3$.
+The same negative threshold result holds on all four momentum meshes.}
+\end{figure*}
+
+Figure~\ref{fig:low_U_exact_sites} demonstrates the central result: all 140
+tested nonzero production resources have $C=0$. The strongest exact-site case
+is the zero-gap $U/t=25,n=0.5,(1,0)$ state, with
+$p=0.273016$ and $\overline{\mathcal F}_{\mathrm{tel}}=0.636508<2/3$.
+Superconductivity is therefore not a logical prerequisite for defining the
+conditional two-spin state: when $F=0$, normal exchange gives
+$p=g^2/(2-g^2)$, which can still yield entanglement if $g^2>1/2$
+\cite{Oh2004}. Conversely, a Cooper-pair anomalous function is not sufficient
+for useful teleportation. In the present site-based model, neither mechanism
+crosses the operational threshold at any tested nonzero lattice vector.
+
+The $400\to800$ change in $r_c/a$ is below $0.00118$ except for
+$U/t=15,n=0.5$, where it is $0.003337$ and the maximum gap changes from
+$0.693499$ to $0.600171$. This slowly converging case is therefore not quoted
+with continuum-limit precision; its nearest-neighbor $p$ changes only from
+$0.268080$ to $0.270049$ and remains below threshold. Across all cases the
+$400\to800$ nearest-site $p$ change is below $0.002$. No upward $p=1/3$
+recrossing after the first loss was found at any of the seven sampled angles
+out to $r=10a$ for either interaction.
+
+The corrected initial-state study passed 64 independent artifact checks,
+including filling and residual tests, seed reproducibility, Werner and
+protocol identities, positivity, angular symmetries, and exact-site checks on
+all meshes. Fixed and optimized protocol formulas were verified over 392
+sampled states. These new results do not constitute a signed-versus-unsigned
+regeneration of the legacy open-system dynamics considered below.
 
 \subsection{Non-Markovian concurrence and singlet fidelity}
 \label{sec:high_regime}
@@ -1310,7 +1508,7 @@ We have examined the Green's-function construction of two-spin BCS density
 matrices and their subsequent independent non-Markovian amplitude-damping
 dynamics. The exact signed BdG identity
 $u_{\mathbf ks}v_{\mathbf ks}^*=-\Delta_{\mathbf ks}^*/2E_{\mathbf ks}$ must
-be distinguished from the repository's current unsigned-amplitude numerical
+be distinguished from the repository's legacy unsigned-amplitude numerical
 implementation. We have also shown that taking the absolute value of an
 already real normalized Green's-function ratio does not itself alter the
 present density matrix, which depends only on $g^2$ and $f^2$; the physically
@@ -1328,14 +1526,29 @@ long times reflects the pure product fixed point and does not represent a
 residual dense-coding quantum advantage. Angular structure is inherited from
 the initial Green's functions, not introduced by the angle-independent noise.
 
-Finally, the new converged sweep at $U/t=40$, $75$, and $115$ demonstrates
+The converged sweep at $U/t=40$, $75$, and $115$ demonstrates
 interaction-dependent modifications of the initial and evolved information
 measures within the implemented convention. Their ordering changes with
 separation, precluding a universal claim of interaction-induced enhancement or
-suppression. The principal remaining tasks are a direct signed-versus-unsigned
-Green's-function comparison, a unified parameter-preserving evolution pipeline
-for all observables, and locally optimized fully entangled fractions if
-operational teleportation fidelities are to be assigned to the evolved states.
+suppression.
+
+The independent corrected equal-time density study further shows that lowering
+$U$ can create large nonzero-gap stationary branches at low density: all seven
+fillings are paired at $U/t=15$, whereas $U/t=25$ is paired for $n\geq1$ on the
+production mesh. This does not translate into useful finite-site
+teleportation. All 140 tested nonzero production states have zero concurrence,
+and the largest exact-site average fidelity is $0.636508$, below $2/3$.
+Normal exchange can define a conditional Werner resource without
+superconductivity, while a large anomalous correlator does not guarantee an
+operational advantage. Continuous critical radii below $a$ have not been
+interpreted as physical sub-lattice separations, and stationary BdG branches
+have not been identified with global free-energy minima.
+
+The principal remaining tasks are a unified signed-Green's-function
+regeneration of the legacy open-system dynamics, a parameter-preserving
+evolution pipeline for all observables, locally optimized fully entangled
+fractions for general evolved states, and free-energy or competing-order
+analyses before assigning thermodynamic phase stability.
 
 \begin{acknowledgments}
 Numerical results were obtained with a self-consistent BdG solver and open-quantum-system evolution code implemented by the author.

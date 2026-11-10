@@ -1,0 +1,61 @@
+{
+  "source": "manuscript.tex",
+  "data": "data/low_U_density_teleportation.npz",
+  "summary": "reports/low_U_density_summary.json",
+  "check_type": "table transcription and threshold consistency; not a LaTeX compile",
+  "solution_table_rows": 14,
+  "resource_table_rows": 14,
+  "maximum_solution_table_rounding_error": 4.897252386948381e-07,
+  "maximum_resource_table_rounding_error": 4.909297407484914e-07,
+  "production_nonzero_site_state_count": 140,
+  "tested_site_vectors": [
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      4,
+      0
+    ]
+  ],
+  "maximum_production_site_p": 0.27301584994116784,
+  "maximum_production_site_average_teleportation_fidelity": 0.636507924970584,
+  "maximum_production_site_concurrence": 0.0,
+  "maximum_convergence_mesh_site_p": 0.27380708305705964,
+  "maximum_400_to_800_critical_radius_change_over_a": 0.0033365525453797895,
+  "maximum_400_to_800_nearest_site_p_change": 0.0019686224154180643,
+  "errors": [],
+  "checks_passed": true
+}
