@@ -44,7 +44,7 @@
   "all_mandatory_legacy_figures_in_source_exactly_once": true,
   "out_of_page_text_or_image_blocks": [],
   "lower_U_table_data_checks_passed": true,
-  "explicit_convergence_mesh_bounds_present": false,
+  "explicit_convergence_mesh_bounds_present": true,
   "visual_inspection": {
     "performed": true,
     "method": "Rendered all 16 pages as a contact sheet and inspected pages 9, 10, and 11 at higher resolution; final page 16 was also inspected in the preceding build.",
@@ -52,5 +52,5 @@
     "clipping_or_overlap_observed": false,
     "notes": "Both 14-row tables fit within the text width; all three new figures and their captions are present. The pre-existing float-stuck warning does not omit any of the 13 figures."
   },
-  "checks_passed": false
+  "checks_passed": true
 }
