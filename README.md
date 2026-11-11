@@ -354,6 +354,29 @@ F_s=\mathfrak f=\frac{1+3w}{4}.
 
 The Werner weight \(w\) itself is not the singlet fraction.
 
+### Nonzero spin–orbit coupling and helicity qubits
+
+`helicity_density_matrix.py` constructs generalized conditional two-qubit
+states from matrix-valued normal and anomalous correlators. It supports
+`basis="spin"` for original-spin qubits and `basis="band"` for
+helicity-pseudospin qubits. The latter requires band-pseudospin Bell
+measurements and local operations; it is not automatically physical spin
+teleportation. Neither case should be reduced to the Oh–Kim \(X\) matrix without
+checking its assumptions.
+
+Run the separate methodological demonstration and validation with:
+
+```bash
+.venv/bin/python analysis/validate_helicity_density_matrix.py
+```
+
+This reads no archived Green's-function arrays and writes only the new files
+`data/helicity_density_matrix_demo.npz` and
+`reports/helicity_density_matrix_validation.json`. The derivation, conventions,
+operational limitations, and validation results are documented in
+[`reports/helicity_density_matrix.md`](reports/helicity_density_matrix.md).
+The demonstration is not a production SOC or mesh-convergence sweep.
+
 ### Holevo quantity
 
 `holevo.py` evaluates
@@ -377,6 +400,7 @@ information, or an experimentally achieved communication rate.
 | `self_consistency.py` | BdG self-consistency solver |
 | `greens_functions.py` | Equal-time and legacy Green's-function conventions |
 | `density_matrix.py` | Two-qubit X-state construction and physical checks |
+| `helicity_density_matrix.py` | Generalized nonzero-SOC spin/helicity conditional states and general two-qubit metrics |
 | `noise_channels.py`, `evolution.py` | Kraus operators and open-system evolution |
 | `observables.py` | Concurrence, singlet fraction, purity, and entropy |
 | `fidelity.py` | Uhlmann fidelity calculations and grids |

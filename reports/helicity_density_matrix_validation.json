@@ -1,0 +1,482 @@
+{
+  "repository_commit": "b61ac2965cace4fe555526bce999a9f5446f080b",
+  "scope": "Generalized conditional two-qubit matrices; methodological demo, not a production convergence study",
+  "source": "Hutchinson--Hirsch--Marsiglio arXiv:1801.08988 Eqs. (16)--(29)",
+  "parameters": {
+    "0.0": {
+      "U_over_t": 75.0,
+      "Delta_t_over_t": 4.5,
+      "n_elec": 1.875,
+      "Nk": 101,
+      "temperature": 0.0,
+      "max_abs_residual": 2.9056757000489597e-12,
+      "Delta0_over_t": -0.12536023325126736,
+      "DeltaS_over_t": -0.36117867911404516,
+      "mu_over_t": 3.2921474944417755
+    },
+    "0.5": {
+      "U_over_t": 75.0,
+      "Delta_t_over_t": 4.5,
+      "n_elec": 1.875,
+      "Nk": 101,
+      "temperature": 0.0,
+      "max_abs_residual": 3.354261313148754e-12,
+      "Delta0_over_t": -0.17016395949886892,
+      "DeltaS_over_t": -0.5522254413551639,
+      "mu_over_t": 3.673852994272815
+    }
+  },
+  "state_count": 24,
+  "checks": {
+    "maximum_bell_concurrence_error": 5.551115123125783e-16,
+    "maximum_werner_metric_error": 2.6645352591003757e-15,
+    "maximum_zero_SOC_Oh_Kim_matrix_error": 5.551115123125783e-17,
+    "maximum_same_site_singlet_error": 1.1102230246251565e-16,
+    "maximum_trace_error": 1.1102230246251565e-16,
+    "maximum_hermiticity_error": 0.0,
+    "minimum_density_eigenvalue": -1.5640622107043812e-32,
+    "maximum_normal_inversion_error": 6.5503158452884236e-15,
+    "maximum_anomalous_inversion_error": 3.297194163235928e-15,
+    "fixed_protocol_identity_error": 0.0
+  },
+  "checks_passed": true,
+  "records": [
+    {
+      "V_SO_over_t": 0.0,
+      "basis": "spin",
+      "r_vector": [
+        0,
+        0
+      ],
+      "weight": 1.7586177471490914,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.0,
+      "concurrence": 0.9999999999999999,
+      "singlet_fraction": 0.9999999999999998,
+      "fixed_reference_average_fidelity": 0.9999999999999999,
+      "fully_entangled_fraction": 1.0,
+      "optimized_average_fidelity": 1.0,
+      "same_site_singlet_error": 1.1102230246251565e-16
+    },
+    {
+      "V_SO_over_t": 0.0,
+      "basis": "band",
+      "r_vector": [
+        0,
+        0
+      ],
+      "weight": 1.7578124999994342,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.0,
+      "concurrence": 0.9999999999999999,
+      "singlet_fraction": 0.9999999999999998,
+      "fixed_reference_average_fidelity": 0.9999999999999999,
+      "fully_entangled_fraction": 1.0,
+      "optimized_average_fidelity": 1.0,
+      "same_site_singlet_error": 1.1102230246251565e-16
+    },
+    {
+      "V_SO_over_t": 0.0,
+      "basis": "spin",
+      "r_vector": [
+        1,
+        0
+      ],
+      "weight": 3.513795634323626,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.24952442550311393,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.25142672349065814,
+      "fixed_reference_average_fidelity": 0.5009511489937721,
+      "fully_entangled_fraction": 0.2514267234906582,
+      "optimized_average_fidelity": 0.5009511489937721,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.0,
+      "basis": "band",
+      "r_vector": [
+        1,
+        0
+      ],
+      "weight": 3.511440864970792,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.24969175637740534,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.2509040296815051,
+      "fixed_reference_average_fidelity": 0.5006026864543367,
+      "fully_entangled_fraction": 0.25090402968150516,
+      "optimized_average_fidelity": 0.5006026864543368,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.0,
+      "basis": "spin",
+      "r_vector": [
+        1,
+        1
+      ],
+      "weight": 3.5116242430942926,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.24955474489439924,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.2513357653168022,
+      "fixed_reference_average_fidelity": 0.5008905102112015,
+      "fully_entangled_fraction": 0.25133576531680224,
+      "optimized_average_fidelity": 0.5008905102112015,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.0,
+      "basis": "band",
+      "r_vector": [
+        1,
+        1
+      ],
+      "weight": 3.511453168664739,
+      "trace_error": 1.1102230246251565e-16,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.24956690294793843,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.25102712908577296,
+      "fixed_reference_average_fidelity": 0.5006847527238486,
+      "fully_entangled_fraction": 0.251027129085773,
+      "optimized_average_fidelity": 0.5006847527238487,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.0,
+      "basis": "spin",
+      "r_vector": [
+        2,
+        0
+      ],
+      "weight": 3.514059411287428,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.24983551757685266,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.2504934472694419,
+      "fixed_reference_average_fidelity": 0.5003289648462946,
+      "fully_entangled_fraction": 0.25049344726944195,
+      "optimized_average_fidelity": 0.5003289648462946,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.0,
+      "basis": "band",
+      "r_vector": [
+        2,
+        0
+      ],
+      "weight": 3.514603497671188,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.24979684120741774,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.25034848134864823,
+      "fixed_reference_average_fidelity": 0.5002323208990989,
+      "fully_entangled_fraction": 0.25034848134864823,
+      "optimized_average_fidelity": 0.5002323208990989,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.0,
+      "basis": "spin",
+      "r_vector": [
+        0,
+        2
+      ],
+      "weight": 3.514059411287428,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.24983551757685266,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.2504934472694419,
+      "fixed_reference_average_fidelity": 0.5003289648462946,
+      "fully_entangled_fraction": 0.25049344726944195,
+      "optimized_average_fidelity": 0.5003289648462946,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.0,
+      "basis": "band",
+      "r_vector": [
+        0,
+        2
+      ],
+      "weight": 3.514603497671188,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.24979684120741774,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.25034848134864823,
+      "fixed_reference_average_fidelity": 0.5002323208990989,
+      "fully_entangled_fraction": 0.25034848134864823,
+      "optimized_average_fidelity": 0.5002323208990989,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.0,
+      "basis": "spin",
+      "r_vector": [
+        3,
+        1
+      ],
+      "weight": 3.514882070314737,
+      "trace_error": 1.1102230246251565e-16,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.2499466123208528,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.25016016303744143,
+      "fixed_reference_average_fidelity": 0.5001067753582943,
+      "fully_entangled_fraction": 0.2501601630374415,
+      "optimized_average_fidelity": 0.5001067753582943,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.0,
+      "basis": "band",
+      "r_vector": [
+        3,
+        1
+      ],
+      "weight": 3.515184392054776,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.2499251157828833,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.2501375563126529,
+      "fixed_reference_average_fidelity": 0.5000917042084353,
+      "fully_entangled_fraction": 0.2501375563126529,
+      "optimized_average_fidelity": 0.5000917042084353,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.5,
+      "basis": "spin",
+      "r_vector": [
+        0,
+        0
+      ],
+      "weight": 1.7596783401013152,
+      "trace_error": 1.1102230246251565e-16,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": -1.5640622107043812e-32,
+      "concurrence": 0.9999999999999998,
+      "singlet_fraction": 0.9999999999999997,
+      "fixed_reference_average_fidelity": 0.9999999999999997,
+      "fully_entangled_fraction": 0.9999999999999999,
+      "optimized_average_fidelity": 1.0,
+      "same_site_singlet_error": 5.551115123125783e-17
+    },
+    {
+      "V_SO_over_t": 0.5,
+      "basis": "band",
+      "r_vector": [
+        0,
+        0
+      ],
+      "weight": 1.752433455666961,
+      "trace_error": 1.1102230246251565e-16,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.0,
+      "concurrence": 0.9999999999999994,
+      "singlet_fraction": 0.9999999999999997,
+      "fixed_reference_average_fidelity": 0.9999999999999997,
+      "fully_entangled_fraction": 0.9999999999999999,
+      "optimized_average_fidelity": 1.0,
+      "same_site_singlet_error": 5.551115123125783e-17
+    },
+    {
+      "V_SO_over_t": 0.5,
+      "basis": "spin",
+      "r_vector": [
+        1,
+        0
+      ],
+      "weight": 3.5162456236485795,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.24937286083182314,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.25140196541700965,
+      "fixed_reference_average_fidelity": 0.5009346436113398,
+      "fully_entangled_fraction": 0.25188123534638407,
+      "optimized_average_fidelity": 0.5012541568975893,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.5,
+      "basis": "band",
+      "r_vector": [
+        1,
+        0
+      ],
+      "weight": 3.5100393913048853,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.22184553957914488,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.2496093869044237,
+      "fixed_reference_average_fidelity": 0.4997395912696158,
+      "fully_entangled_fraction": 0.2504540716558683,
+      "optimized_average_fidelity": 0.5003027144372455,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.5,
+      "basis": "spin",
+      "r_vector": [
+        1,
+        1
+      ],
+      "weight": 3.5129082469084683,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.2495299564532778,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.25086480076889284,
+      "fixed_reference_average_fidelity": 0.5005765338459286,
+      "fully_entangled_fraction": 0.25140761199145834,
+      "optimized_average_fidelity": 0.5009384079943056,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.5,
+      "basis": "band",
+      "r_vector": [
+        1,
+        1
+      ],
+      "weight": 3.512595687009714,
+      "trace_error": 1.1102230246251565e-16,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.22241881796447582,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.24963798711071178,
+      "fixed_reference_average_fidelity": 0.4997586580738078,
+      "fully_entangled_fraction": 0.2507381387314028,
+      "optimized_average_fidelity": 0.5004920924876018,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.5,
+      "basis": "spin",
+      "r_vector": [
+        2,
+        0
+      ],
+      "weight": 3.514275638214853,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.24981402900645858,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.2500340806998701,
+      "fixed_reference_average_fidelity": 0.50002272046658,
+      "fully_entangled_fraction": 0.25055718712429037,
+      "optimized_average_fidelity": 0.5003714580828603,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.5,
+      "basis": "band",
+      "r_vector": [
+        2,
+        0
+      ],
+      "weight": 3.516168998720202,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.22318903901631346,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.24918265370644066,
+      "fixed_reference_average_fidelity": 0.4994551024709604,
+      "fully_entangled_fraction": 0.2509347740662492,
+      "optimized_average_fidelity": 0.5006231827108328,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.5,
+      "basis": "spin",
+      "r_vector": [
+        0,
+        2
+      ],
+      "weight": 3.514275638214853,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.24981402900645847,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.2500340806998701,
+      "fixed_reference_average_fidelity": 0.50002272046658,
+      "fully_entangled_fraction": 0.25055718712429037,
+      "optimized_average_fidelity": 0.5003714580828603,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.5,
+      "basis": "band",
+      "r_vector": [
+        0,
+        2
+      ],
+      "weight": 3.516168998720202,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.22318903901631346,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.24918265370644066,
+      "fixed_reference_average_fidelity": 0.4994551024709604,
+      "fully_entangled_fraction": 0.2509347740662492,
+      "optimized_average_fidelity": 0.5006231827108328,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.5,
+      "basis": "spin",
+      "r_vector": [
+        3,
+        1
+      ],
+      "weight": 3.5150823619291462,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.24996064174906785,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.249970296966637,
+      "fixed_reference_average_fidelity": 0.499980197977758,
+      "fully_entangled_fraction": 0.25011687673329747,
+      "optimized_average_fidelity": 0.5000779178221983,
+      "same_site_singlet_error": null
+    },
+    {
+      "V_SO_over_t": 0.5,
+      "basis": "band",
+      "r_vector": [
+        3,
+        1
+      ],
+      "weight": 3.5157026319887414,
+      "trace_error": 0.0,
+      "hermiticity_error": 0.0,
+      "minimum_eigenvalue": 0.22311758895200506,
+      "concurrence": 0.0,
+      "singlet_fraction": 0.24923046710033703,
+      "fixed_reference_average_fidelity": 0.49948697806689135,
+      "fully_entangled_fraction": 0.25078874888375613,
+      "optimized_average_fidelity": 0.5005258325891707,
+      "same_site_singlet_error": null
+    }
+  ],
+  "interpretation": {
+    "spin": "Original-spin conditional state; ordinary spin-qubit resource",
+    "band": "Helicity-band-lattice pseudospin state; operations are band-pseudospin operations, not automatically physical spin operations",
+    "fixed_vs_optimized": "Fixed singlet-reference and locally optimized teleportation are distinct for general non-Werner matrices"
+  }
+}
