@@ -1,0 +1,994 @@
+{
+  "repository_commit": "0d444dc0451339a0564c49062e3ce90a45c97cdf",
+  "parameters": {
+    "U_over_t": 75.0,
+    "n_elec": 1.875,
+    "temperature": 0.0,
+    "Nk": 201,
+    "Delta_t_over_t": [
+      3.5,
+      4.0,
+      4.5,
+      5.0,
+      6.0
+    ],
+    "V_SO_over_t_min": 0.0,
+    "V_SO_over_t_max": 1.5,
+    "n_V_SO_points": 151,
+    "dV_SO_over_t": 0.01,
+    "r_wick": [
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4
+    ],
+    "legacy_r": [
+      0.25,
+      0.5,
+      1.0,
+      1.5
+    ]
+  },
+  "diagnostics": {
+    "max_solver_residual": 2.6367796834847468e-14,
+    "n_fallback_solves": 22,
+    "max_trace_error": 4.440892098500626e-16,
+    "max_hermiticity_error": 0.0,
+    "min_density_eigenvalue": 0.025201838227361658
+  },
+  "transition_candidates": [
+    {
+      "Delta_t_over_t": 3.5,
+      "V_pair_onset": 0.77,
+      "V_gap_minimum": 0.02,
+      "V_lifshitz_mu_eq_4t": 0.687484660129031,
+      "min_gap_over_t": 0.00012156774161997593,
+      "abs_DeltaS_at_Vmax": 0.7744048361990425
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "V_pair_onset": 0.72,
+      "V_gap_minimum": 0.01,
+      "V_lifshitz_mu_eq_4t": 0.7055276141948364,
+      "min_gap_over_t": 0.02949076667006006,
+      "abs_DeltaS_at_Vmax": 1.0853292747185832
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "V_pair_onset": 0.75,
+      "V_gap_minimum": 0.0,
+      "V_lifshitz_mu_eq_4t": 0.7083324186361549,
+      "min_gap_over_t": 0.16242001184974414,
+      "abs_DeltaS_at_Vmax": 1.4006039844830047
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "V_pair_onset": 0.82,
+      "V_gap_minimum": 0.0,
+      "V_lifshitz_mu_eq_4t": 0.6848429764483629,
+      "min_gap_over_t": 0.36171950561737737,
+      "abs_DeltaS_at_Vmax": 1.719393229644164
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "V_pair_onset": 0.87,
+      "V_gap_minimum": 0.0,
+      "V_lifshitz_mu_eq_4t": 0.5835580452140434,
+      "min_gap_over_t": 0.8613760675185562,
+      "abs_DeltaS_at_Vmax": 2.362379950460308
+    }
+  ],
+  "dC_dV_extrema_wick": [
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "spin",
+      "r": 0.15,
+      "V_SO_min_dC": 0.95,
+      "min_dC_dV": -0.0080759668872048,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00014462781903201716
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "spin",
+      "r": 0.2,
+      "V_SO_min_dC": 0.95,
+      "min_dC_dV": -0.012604194271538915,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00022277068120191146
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "spin",
+      "r": 0.25,
+      "V_SO_min_dC": 0.96,
+      "min_dC_dV": -0.016824863895966047,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0002924990609831646
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "spin",
+      "r": 0.3,
+      "V_SO_min_dC": 0.96,
+      "min_dC_dV": -0.020241434301386363,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003451312004520979
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "spin",
+      "r": 0.35,
+      "V_SO_min_dC": 0.96,
+      "min_dC_dV": -0.02260226457332415,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00037712785443400065
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "spin",
+      "r": 0.4,
+      "V_SO_min_dC": 0.97,
+      "min_dC_dV": -0.02385519560683047,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003889002237245087
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "band",
+      "r": 0.15,
+      "V_SO_min_dC": 0.97,
+      "min_dC_dV": -0.009365299841761043,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0001666923671206355
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "band",
+      "r": 0.2,
+      "V_SO_min_dC": 0.97,
+      "min_dC_dV": -0.014571396793279234,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00024759906183113856
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "band",
+      "r": 0.25,
+      "V_SO_min_dC": 0.97,
+      "min_dC_dV": -0.019387305384956477,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00030986089392115446
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "band",
+      "r": 0.3,
+      "V_SO_min_dC": 0.97,
+      "min_dC_dV": -0.02325486420039624,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003440145906863368
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "band",
+      "r": 0.35,
+      "V_SO_min_dC": 0.97,
+      "min_dC_dV": -0.02591266126623637,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003485317125184739
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "band",
+      "r": 0.4,
+      "V_SO_min_dC": 0.97,
+      "min_dC_dV": -0.027330998987721067,
+      "V_SO_max_dC": 0.01,
+      "max_dC_dV": -0.0003158852893312414
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "spin",
+      "r": 0.15,
+      "V_SO_min_dC": 0.86,
+      "min_dC_dV": -0.00794002281290318,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -6.412242733455642e-05
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "spin",
+      "r": 0.2,
+      "V_SO_min_dC": 0.86,
+      "min_dC_dV": -0.012416186854267153,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -9.853447392460524e-05
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "spin",
+      "r": 0.25,
+      "V_SO_min_dC": 0.86,
+      "min_dC_dV": -0.016613567786365024,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00012911845317375992
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "spin",
+      "r": 0.3,
+      "V_SO_min_dC": 0.86,
+      "min_dC_dV": -0.020043524268370305,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00015223023219212983
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "spin",
+      "r": 0.35,
+      "V_SO_min_dC": 0.86,
+      "min_dC_dV": -0.0224546166080426,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00016658291482340992
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "spin",
+      "r": 0.4,
+      "V_SO_min_dC": 0.87,
+      "min_dC_dV": -0.02379168696419498,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00017263705324177536
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "band",
+      "r": 0.15,
+      "V_SO_min_dC": 0.87,
+      "min_dC_dV": -0.009434308108581035,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -8.12175547038052e-05
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "band",
+      "r": 0.2,
+      "V_SO_min_dC": 0.87,
+      "min_dC_dV": -0.01466873390705814,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00011738030872843197
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "band",
+      "r": 0.25,
+      "V_SO_min_dC": 0.87,
+      "min_dC_dV": -0.01950218659091263,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00014134364413331824
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "band",
+      "r": 0.3,
+      "V_SO_min_dC": 0.87,
+      "min_dC_dV": -0.02337548075935203,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00014878702683795986
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "band",
+      "r": 0.35,
+      "V_SO_min_dC": 0.87,
+      "min_dC_dV": -0.02603058079665388,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0001399811997815359
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "band",
+      "r": 0.4,
+      "V_SO_min_dC": 0.88,
+      "min_dC_dV": -0.027444059783241492,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00011825485133898361
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "spin",
+      "r": 0.15,
+      "V_SO_min_dC": 0.75,
+      "min_dC_dV": -0.007701066815684499,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00012209093772641566
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "spin",
+      "r": 0.2,
+      "V_SO_min_dC": 0.75,
+      "min_dC_dV": -0.012044481760433712,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0001877891137924692
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "spin",
+      "r": 0.25,
+      "V_SO_min_dC": 0.75,
+      "min_dC_dV": -0.01612110983036885,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00024634007256274515
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "spin",
+      "r": 0.3,
+      "V_SO_min_dC": 0.76,
+      "min_dC_dV": -0.019459739954832855,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0002907416903508153
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "spin",
+      "r": 0.35,
+      "V_SO_min_dC": 0.76,
+      "min_dC_dV": -0.021823298074981068,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003184204303674498
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "spin",
+      "r": 0.4,
+      "V_SO_min_dC": 0.77,
+      "min_dC_dV": -0.023155012076686354,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003300975996545219
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "band",
+      "r": 0.15,
+      "V_SO_min_dC": 0.76,
+      "min_dC_dV": -0.009298564750544358,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00014286833953658373
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "band",
+      "r": 0.2,
+      "V_SO_min_dC": 0.77,
+      "min_dC_dV": -0.014407656998564278,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00021324703206593298
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "band",
+      "r": 0.25,
+      "V_SO_min_dC": 0.77,
+      "min_dC_dV": -0.019080493836280965,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00026874498557649673
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "band",
+      "r": 0.3,
+      "V_SO_min_dC": 0.78,
+      "min_dC_dV": -0.022775831813167002,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00030130847969989105
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "band",
+      "r": 0.35,
+      "V_SO_min_dC": 0.79,
+      "min_dC_dV": -0.025259481780009807,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00030946062568038
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "band",
+      "r": 0.4,
+      "V_SO_min_dC": 0.8,
+      "min_dC_dV": -0.026529833651934176,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00029635122128501834
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "spin",
+      "r": 0.15,
+      "V_SO_min_dC": 0.61,
+      "min_dC_dV": -0.007630434983695977,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00014353496298191715
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "spin",
+      "r": 0.2,
+      "V_SO_min_dC": 0.61,
+      "min_dC_dV": -0.01191583724062184,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00021695443042091256
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "spin",
+      "r": 0.25,
+      "V_SO_min_dC": 0.62,
+      "min_dC_dV": -0.01592253106396413,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00027881145758801296
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "spin",
+      "r": 0.3,
+      "V_SO_min_dC": 0.63,
+      "min_dC_dV": -0.019187978832192698,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00032192755018423114
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "spin",
+      "r": 0.35,
+      "V_SO_min_dC": 0.64,
+      "min_dC_dV": -0.021484980679963073,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003452722864394353
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "spin",
+      "r": 0.4,
+      "V_SO_min_dC": 0.65,
+      "min_dC_dV": -0.02277212826266517,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00035197683472820707
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "band",
+      "r": 0.15,
+      "V_SO_min_dC": 0.62,
+      "min_dC_dV": -0.009292999687829706,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00014877572467320022
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "band",
+      "r": 0.2,
+      "V_SO_min_dC": 0.64,
+      "min_dC_dV": -0.014309973753839245,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00022347692559820942
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "band",
+      "r": 0.25,
+      "V_SO_min_dC": 0.66,
+      "min_dC_dV": -0.018820145772462382,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00028409792209860285
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "band",
+      "r": 0.3,
+      "V_SO_min_dC": 0.68,
+      "min_dC_dV": -0.022306170272948123,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00032220495072010635
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "band",
+      "r": 0.35,
+      "V_SO_min_dC": 0.7,
+      "min_dC_dV": -0.024569225819675466,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003358893339688862
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "band",
+      "r": 0.4,
+      "V_SO_min_dC": 0.72,
+      "min_dC_dV": -0.0256412544915543,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00032787925143829
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "spin",
+      "r": 0.15,
+      "V_SO_min_dC": 0.56,
+      "min_dC_dV": -0.00704632472871225,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00017607283679943464
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "spin",
+      "r": 0.2,
+      "V_SO_min_dC": 0.57,
+      "min_dC_dV": -0.010995533796162249,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00025794755371677525
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "spin",
+      "r": 0.25,
+      "V_SO_min_dC": 0.57,
+      "min_dC_dV": -0.01468493128135151,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003186990547354718
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "spin",
+      "r": 0.3,
+      "V_SO_min_dC": 0.57,
+      "min_dC_dV": -0.017696084401695344,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00035153722639513774
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "spin",
+      "r": 0.35,
+      "V_SO_min_dC": 0.58,
+      "min_dC_dV": -0.01983183581632808,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003591954920501017
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "spin",
+      "r": 0.4,
+      "V_SO_min_dC": 0.59,
+      "min_dC_dV": -0.021062895954335303,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003501674126937804
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "band",
+      "r": 0.15,
+      "V_SO_min_dC": 0.58,
+      "min_dC_dV": -0.008772207733926507,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00013993285832292202
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "band",
+      "r": 0.2,
+      "V_SO_min_dC": 0.59,
+      "min_dC_dV": -0.013479460699130641,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.00021195182753341868
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "band",
+      "r": 0.25,
+      "V_SO_min_dC": 0.6,
+      "min_dC_dV": -0.017670921957506636,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.000272515241839244
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "band",
+      "r": 0.3,
+      "V_SO_min_dC": 0.62,
+      "min_dC_dV": -0.020854186801926744,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003136608128284646
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "band",
+      "r": 0.35,
+      "V_SO_min_dC": 0.63,
+      "min_dC_dV": -0.022851217019622894,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003331541576945263
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "band",
+      "r": 0.4,
+      "V_SO_min_dC": 0.65,
+      "min_dC_dV": -0.02371207918071061,
+      "V_SO_max_dC": 0.0,
+      "max_dC_dV": -0.0003328825327830742
+    }
+  ],
+  "dC_dV_extrema_lattice": [
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "spin",
+      "V_SO_min_dC": 0.0,
+      "min_dC_dV": 0.0
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "basis": "band",
+      "V_SO_min_dC": 0.0,
+      "min_dC_dV": 0.0
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "spin",
+      "V_SO_min_dC": 0.0,
+      "min_dC_dV": 0.0
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "basis": "band",
+      "V_SO_min_dC": 0.0,
+      "min_dC_dV": 0.0
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "spin",
+      "V_SO_min_dC": 0.0,
+      "min_dC_dV": 0.0
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "basis": "band",
+      "V_SO_min_dC": 0.0,
+      "min_dC_dV": 0.0
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "spin",
+      "V_SO_min_dC": 0.0,
+      "min_dC_dV": 0.0
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "basis": "band",
+      "V_SO_min_dC": 0.0,
+      "min_dC_dV": 0.0
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "spin",
+      "V_SO_min_dC": 0.0,
+      "min_dC_dV": 0.0
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "basis": "band",
+      "V_SO_min_dC": 0.0,
+      "min_dC_dV": 0.0
+    }
+  ],
+  "legacy_ESD_EB_events": [
+    {
+      "Delta_t_over_t": 3.5,
+      "r": 0.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 1.4300000025648048
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "r": 1.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.8400000101759483
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "r": 0.5,
+      "theta_deg": 45.0,
+      "event": "birth",
+      "V_SO": 1.2600000495957207
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "r": 1.5,
+      "theta_deg": 45.0,
+      "event": "death",
+      "V_SO": 1.0499999869423609
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "r": 0.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 1.1700002876040194
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "r": 1.0,
+      "theta_deg": 0.0,
+      "event": "death",
+      "V_SO": 1.4599999954440384
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "r": 1.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.6800000017478821
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "r": 0.5,
+      "theta_deg": 45.0,
+      "event": "birth",
+      "V_SO": 1.020000002007075
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "r": 1.5,
+      "theta_deg": 45.0,
+      "event": "death",
+      "V_SO": 0.9399999974044149
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "r": 0.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.9600000139800274
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "r": 1.0,
+      "theta_deg": 0.0,
+      "event": "death",
+      "V_SO": 1.3099999953748558
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "r": 1.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.5200000017416244
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "r": 0.5,
+      "theta_deg": 45.0,
+      "event": "birth",
+      "V_SO": 0.8000000027383117
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "r": 1.5,
+      "theta_deg": 45.0,
+      "event": "death",
+      "V_SO": 0.8499999955748242
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "r": 0.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.7700000031314956
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "r": 1.0,
+      "theta_deg": 0.0,
+      "event": "death",
+      "V_SO": 1.1799999962371837
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "r": 1.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.3400000062815916
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "r": 0.5,
+      "theta_deg": 45.0,
+      "event": "birth",
+      "V_SO": 0.5700000044185093
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "r": 1.5,
+      "theta_deg": 45.0,
+      "event": "death",
+      "V_SO": 0.7799999969264954
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "r": 0.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.33000001004629775
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "r": 1.0,
+      "theta_deg": 0.0,
+      "event": "death",
+      "V_SO": 0.9899999430321565
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "r": 1.5,
+      "theta_deg": 45.0,
+      "event": "death",
+      "V_SO": 0.6799999983928171
+    }
+  ],
+  "small_gap_mesh_sensitivity": {
+    "criterion": "min_k E_k < 0.1 t (gray-shaded figure region)",
+    "V_max_per_Delta_t": {
+      "3.5": 0.79,
+      "4.0": 0.48,
+      "4.5": 0.0,
+      "5.0": 0.0,
+      "6.0": 0.0
+    },
+    "note": "Below this region |Delta_S|(V_SO) oscillates with a mesh-dependent pattern (see meshcheck figure): a finite BZ-sampling artifact of the exponentially small gap, not physical structure. C(V_SO) remains smooth; the residual dC/dV noise there is below the QPT-feature scale.",
+    "DeltaS_mesh_comparison": {
+      "V_SO": [
+        0.15,
+        0.155,
+        0.16,
+        0.165,
+        0.17,
+        0.175,
+        0.18,
+        0.185,
+        0.19,
+        0.195,
+        0.2,
+        0.205,
+        0.21
+      ],
+      "Nk201": [
+        0.0008903606889287263,
+        0.001059863536291453,
+        0.0010351280335491432,
+        0.0007454525929943616,
+        0.0008055752795786829,
+        0.0019348599839616638,
+        0.003581493419948714,
+        0.0018899758906093151,
+        0.0012760341941409382,
+        0.002332187016678042,
+        0.0010933067875941282,
+        0.0016939506053130278,
+        0.0015204517311409177
+      ],
+      "Nk401": [
+        0.0013617239349060697,
+        0.0008575774385300859,
+        0.0003580365828791347,
+        0.0014526286394573222,
+        0.0013424697184545602,
+        0.0010924040431366474,
+        0.00026003445875584594,
+        0.0012250908736989267,
+        0.0014055043474321737,
+        0.0006725508470896189,
+        0.000975277378704946,
+        0.0007409750232563536,
+        0.0002341246667921781
+      ],
+      "Nk601": [
+        0.0007368733855465965,
+        0.0008030235591414292,
+        0.00040418475840123865,
+        0.0002506673113508231,
+        0.0008306110671790582,
+        0.0007599464796152182,
+        0.0002678956895373675,
+        0.0005132872348438217,
+        0.0009300969788978291,
+        0.0006616473405058691,
+        0.0007598755264452752,
+        0.0007802748151351397,
+        0.0007336313211078805
+      ]
+    }
+  },
+  "mesh_convergence_QPT_region": {
+    "mean_offset": 0.001848252427437802,
+    "spread": 0.0001528322900107293,
+    "details": [
+      {
+        "Delta_t_over_t": 3.5,
+        "V_SO": 0.6,
+        "C_Nk201": 0.5482146378096772,
+        "C_Nk401": 0.5499806845966393,
+        "offset": 0.0017660467869621277
+      },
+      {
+        "Delta_t_over_t": 3.5,
+        "V_SO": 0.8,
+        "C_Nk201": 0.5465722360395419,
+        "C_Nk401": 0.5484577196629746,
+        "offset": 0.001885483623432771
+      },
+      {
+        "Delta_t_over_t": 3.5,
+        "V_SO": 1.0,
+        "C_Nk201": 0.5433301698829214,
+        "C_Nk401": 0.5452490489598942,
+        "offset": 0.001918879076972857
+      },
+      {
+        "Delta_t_over_t": 4.5,
+        "V_SO": 0.6,
+        "C_Nk201": 0.5458269722166293,
+        "C_Nk401": 0.5476633471372985,
+        "offset": 0.001836374920669126
+      },
+      {
+        "Delta_t_over_t": 4.5,
+        "V_SO": 0.8,
+        "C_Nk201": 0.5426379168005846,
+        "C_Nk401": 0.5445052592833559,
+        "offset": 0.001867342482771317
+      },
+      {
+        "Delta_t_over_t": 4.5,
+        "V_SO": 1.0,
+        "C_Nk201": 0.5395543388828506,
+        "C_Nk401": 0.5414279977853176,
+        "offset": 0.0018736589024669348
+      },
+      {
+        "Delta_t_over_t": 6.0,
+        "V_SO": 0.6,
+        "C_Nk201": 0.5415136416692077,
+        "C_Nk401": 0.5433417695535077,
+        "offset": 0.0018281278842999793
+      },
+      {
+        "Delta_t_over_t": 6.0,
+        "V_SO": 0.8,
+        "C_Nk201": 0.5386752121329419,
+        "C_Nk401": 0.5405043679294276,
+        "offset": 0.001829155796485682
+      },
+      {
+        "Delta_t_over_t": 6.0,
+        "V_SO": 1.0,
+        "C_Nk201": 0.5361667740605509,
+        "C_Nk401": 0.5379959764334303,
+        "offset": 0.0018292023728794238
+      }
+    ]
+  },
+  "generated_figures": [
+    "figs/concurrence_dense_vso_deriv_wick_spin.png",
+    "figs/concurrence_dense_vso_deriv_wick_band.png",
+    "figs/concurrence_dense_vso_deriv_lattice.png",
+    "figs/concurrence_dense_vso_deriv_lattice_pair.png",
+    "figs/concurrence_dense_vso_deriv_legacy.png",
+    "figs/concurrence_dense_vso_deriv_qpt.png",
+    "figs/concurrence_dense_vso_deriv_meshcheck.png"
+  ]
+}
