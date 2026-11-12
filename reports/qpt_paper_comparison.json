@@ -1,0 +1,250 @@
+{
+  "repository_commit": "96d3fd11af6aeecd150ceef8c9855d0f8c71e1c7",
+  "paper": "arXiv:2011.14038 (Ebrahimian, Khosrojerdi, Afzali)",
+  "paper_criteria": [
+    "turning point: minimum of dC/dv with d2C/dv2 = 0",
+    "local maximum point: dC/dv = 0 with d2C/dv2 minimum",
+    "QPT positions displace with couplings J, Delta; invariant vs impurity concentration and pair distance",
+    "cross-check via energy derivatives"
+  ],
+  "turning_points_Vstar": [
+    {
+      "Delta_t_over_t": 3.5,
+      "Vstar_spin_r025": 0.96,
+      "Vstar_band_r025": 0.97,
+      "Vstar_spin_spread_over_r": [
+        0.95,
+        0.97
+      ],
+      "Vstar_band_spread_over_r": [
+        0.97,
+        0.97
+      ],
+      "d2C_sign_change_at_Vstar_all_r_basis": true,
+      "V_lifshitz_mu_eq_4t": 0.687484660129031,
+      "V_pair_onset": 0.77
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "Vstar_spin_r025": 0.86,
+      "Vstar_band_r025": 0.87,
+      "Vstar_spin_spread_over_r": [
+        0.86,
+        0.87
+      ],
+      "Vstar_band_spread_over_r": [
+        0.87,
+        0.88
+      ],
+      "d2C_sign_change_at_Vstar_all_r_basis": true,
+      "V_lifshitz_mu_eq_4t": 0.7055276141948364,
+      "V_pair_onset": 0.72
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "Vstar_spin_r025": 0.75,
+      "Vstar_band_r025": 0.77,
+      "Vstar_spin_spread_over_r": [
+        0.75,
+        0.77
+      ],
+      "Vstar_band_spread_over_r": [
+        0.76,
+        0.8
+      ],
+      "d2C_sign_change_at_Vstar_all_r_basis": true,
+      "V_lifshitz_mu_eq_4t": 0.7083324186361549,
+      "V_pair_onset": 0.75
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "Vstar_spin_r025": 0.62,
+      "Vstar_band_r025": 0.66,
+      "Vstar_spin_spread_over_r": [
+        0.61,
+        0.65
+      ],
+      "Vstar_band_spread_over_r": [
+        0.62,
+        0.72
+      ],
+      "d2C_sign_change_at_Vstar_all_r_basis": true,
+      "V_lifshitz_mu_eq_4t": 0.6848429764483629,
+      "V_pair_onset": 0.82
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "Vstar_spin_r025": 0.57,
+      "Vstar_band_r025": 0.6,
+      "Vstar_spin_spread_over_r": [
+        0.56,
+        0.59
+      ],
+      "Vstar_band_spread_over_r": [
+        0.58,
+        0.65
+      ],
+      "d2C_sign_change_at_Vstar_all_r_basis": true,
+      "V_lifshitz_mu_eq_4t": 0.5835580452140434,
+      "V_pair_onset": 0.87
+    }
+  ],
+  "interior_local_maxima_of_C_outside_small_gap": [],
+  "legacy_nonanalytic_events": [
+    {
+      "Delta_t_over_t": 3.5,
+      "r": 0.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 1.4300000025648048
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "r": 1.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.8400000101759483
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "r": 0.5,
+      "theta_deg": 45.0,
+      "event": "birth",
+      "V_SO": 1.2600000495957207
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "r": 1.5,
+      "theta_deg": 45.0,
+      "event": "death",
+      "V_SO": 1.0499999869423609
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "r": 0.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 1.1700002876040194
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "r": 1.0,
+      "theta_deg": 0.0,
+      "event": "death",
+      "V_SO": 1.4599999954440384
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "r": 1.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.6800000017478821
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "r": 0.5,
+      "theta_deg": 45.0,
+      "event": "birth",
+      "V_SO": 1.020000002007075
+    },
+    {
+      "Delta_t_over_t": 4.0,
+      "r": 1.5,
+      "theta_deg": 45.0,
+      "event": "death",
+      "V_SO": 0.9399999974044149
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "r": 0.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.9600000139800274
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "r": 1.0,
+      "theta_deg": 0.0,
+      "event": "death",
+      "V_SO": 1.3099999953748558
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "r": 1.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.5200000017416244
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "r": 0.5,
+      "theta_deg": 45.0,
+      "event": "birth",
+      "V_SO": 0.8000000027383117
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "r": 1.5,
+      "theta_deg": 45.0,
+      "event": "death",
+      "V_SO": 0.8499999955748242
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "r": 0.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.7700000031314956
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "r": 1.0,
+      "theta_deg": 0.0,
+      "event": "death",
+      "V_SO": 1.1799999962371837
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "r": 1.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.3400000062815916
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "r": 0.5,
+      "theta_deg": 45.0,
+      "event": "birth",
+      "V_SO": 0.5700000044185093
+    },
+    {
+      "Delta_t_over_t": 5.0,
+      "r": 1.5,
+      "theta_deg": 45.0,
+      "event": "death",
+      "V_SO": 0.7799999969264954
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "r": 0.5,
+      "theta_deg": 0.0,
+      "event": "birth",
+      "V_SO": 0.33000001004629775
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "r": 1.0,
+      "theta_deg": 0.0,
+      "event": "death",
+      "V_SO": 0.9899999430321565
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "r": 1.5,
+      "theta_deg": 45.0,
+      "event": "death",
+      "V_SO": 0.6799999983928171
+    }
+  ],
+  "figure": "figs/qpt_signature_paper_comparison.png"
+}
