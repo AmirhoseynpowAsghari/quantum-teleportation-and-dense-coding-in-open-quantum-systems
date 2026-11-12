@@ -1,0 +1,15 @@
+{
+  "source_data": "data/helicity_density_matrix_demo.npz",
+  "source_data_sha256": "26d6517d696b3abce742bc9cfe9fe99c962b8f56bf6e11eb1377e222d62df908",
+  "validation_passed": true,
+  "generated_files": [
+    "reports/helicity_demo_resources.tex",
+    "reports/helicity_demo_matrices.tex",
+    "reports/helicity_demo_validation.tex",
+    "reports/helicity_demo_macros.tex",
+    "figs/helicity_density_matrix_resources.png",
+    "figs/helicity_density_matrix_offdiagonal.png"
+  ],
+  "resource_rows": 12,
+  "matrix_count": 2
+}

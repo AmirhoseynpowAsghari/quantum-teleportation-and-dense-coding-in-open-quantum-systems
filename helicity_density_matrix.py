@@ -208,6 +208,64 @@ def resource_metrics(rho: np.ndarray) -> dict:
     }
 
 
+def entropy_bits(rho: np.ndarray) -> float:
+    """Von Neumann entropy in bits, rejecting more than roundoff negativity."""
+    eigenvalues = np.linalg.eigvalsh(np.asarray(rho, dtype=complex))
+    if np.min(eigenvalues) < -1e-10:
+        raise ValueError("Cannot take entropy of a nonpositive density matrix")
+    eigenvalues = np.clip(eigenvalues.real, 0.0, 1.0)
+    nonzero = eigenvalues > 1e-15
+    return float(-np.sum(eigenvalues[nonzero] * np.log2(eigenvalues[nonzero])))
+
+
+def reduced_state_b(rho: np.ndarray) -> np.ndarray:
+    """Trace out subsystem A from a two-qubit state ordered as |A B>."""
+    rho = np.asarray(rho, dtype=complex)
+    if rho.shape != (4, 4):
+        raise ValueError("rho must be a two-qubit 4x4 matrix")
+    return np.trace(rho.reshape(2, 2, 2, 2), axis1=0, axis2=2)
+
+
+def pauli_ensemble_average(rho: np.ndarray) -> np.ndarray:
+    """Average over I,X,Y,Z applied to A with equal probability."""
+    rho = np.asarray(rho, dtype=complex)
+    identity = np.eye(2, dtype=complex)
+    pauli_x = np.array([[0.0, 1.0], [1.0, 0.0]], dtype=complex)
+    averaged = np.zeros((4, 4), dtype=complex)
+    for pauli in (identity, pauli_x, PAULI_Y, np.diag([1.0, -1.0])):
+        unitary = np.kron(pauli, identity)
+        averaged += unitary @ rho @ unitary.conj().T
+    return averaged / 4.0
+
+
+def dense_coding_metrics(rho: np.ndarray) -> dict:
+    """Implemented Pauli-ensemble Holevo quantity, not a general capacity.
+
+    The ideal protocol uses local Pauli encodings on A, noiseless transmission
+    of A to B, and asymptotic joint decoding.  In the helicity-band basis the
+    encodings are band-pseudospin operations, not original-spin rotations.
+    """
+    rho = np.asarray(rho, dtype=complex)
+    rho_b = reduced_state_b(rho)
+    averaged = pauli_ensemble_average(rho)
+    identity = np.kron(np.eye(2) / 2.0, rho_b)
+    average_error = float(np.max(np.abs(averaged - identity)))
+    entropy_ab = entropy_bits(rho)
+    entropy_b = entropy_bits(rho_b)
+    entropy_average = entropy_bits(averaged)
+    chi = 1.0 + entropy_b - entropy_ab
+    if chi < -1e-10 or chi > 2.0 + 1e-10:
+        raise ValueError(f"Pauli-ensemble Holevo quantity outside [0,2]: {chi}")
+    return {
+        "holevo_pauli_bits": float(np.clip(chi, 0.0, 2.0)),
+        "entropy_AB_bits": entropy_ab,
+        "entropy_B_bits": entropy_b,
+        "pauli_averaged_entropy_bits": entropy_average,
+        "pauli_average_identity_error": average_error,
+        "above_one_bit_benchmark": bool(chi > 1.0),
+    }
+
+
 def physical_diagnostics(rho: np.ndarray) -> dict:
     """Return normalization and positivity diagnostics without clipping them."""
     rho = np.asarray(rho, dtype=complex)
