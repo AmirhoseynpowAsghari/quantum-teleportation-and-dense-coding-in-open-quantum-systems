@@ -1,0 +1,136 @@
+{
+  "repository_commit": "07ebda2ad79473fce543ef50a53d9f1c4c169dff",
+  "parameters": {
+    "U_over_t": 75.0,
+    "n_elec": 1.875,
+    "temperature": 0.0,
+    "Nk_primary": 101,
+    "Nk_convergence_check": 201,
+    "Delta_t_over_t": [
+      3.5,
+      4.0,
+      4.5,
+      5.0,
+      6.0
+    ],
+    "V_SO_over_t": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2
+    ]
+  },
+  "diagnostics": {
+    "max_solver_residual_Nk101": 1.915134717478395e-15,
+    "max_trace_error": 2.220446049250313e-16,
+    "max_hermiticity_error": 0.0,
+    "min_density_eigenvalue": -1.6653345369377348e-16,
+    "max_nonzero_lattice_concurrence_spin": 0.0,
+    "max_nonzero_lattice_concurrence_band": 0.0
+  },
+  "mesh_convergence_Nk101_vs_Nk201": [
+    {
+      "Delta_t_over_t": 3.5,
+      "V_SO_over_t": 0.0,
+      "abs_diff_Delta0": 0.0008533906930310018,
+      "abs_diff_DeltaS": 0.001294492238706907,
+      "abs_diff_C_spin_r025": 0.00352089541110856,
+      "abs_diff_C_band_r025": 0.0035209569417385955,
+      "C_spin_r10_Nk101": 0.0,
+      "C_spin_r10_Nk201": 0.0
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "V_SO_over_t": 0.5,
+      "abs_diff_Delta0": 0.0016799711166046293,
+      "abs_diff_DeltaS": 0.0026965284338277586,
+      "abs_diff_C_spin_r025": 0.0035500393401107777,
+      "abs_diff_C_band_r025": 0.0035319566635655386,
+      "C_spin_r10_Nk101": 0.0,
+      "C_spin_r10_Nk201": 0.0
+    },
+    {
+      "Delta_t_over_t": 3.5,
+      "V_SO_over_t": 1.0,
+      "abs_diff_Delta0": 0.005349126260039416,
+      "abs_diff_DeltaS": 0.008098590777945891,
+      "abs_diff_C_spin_r025": 0.003827970508152645,
+      "abs_diff_C_band_r025": 0.003832639000252658,
+      "C_spin_r10_Nk101": 0.0,
+      "C_spin_r10_Nk201": 0.0
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "V_SO_over_t": 0.0,
+      "abs_diff_Delta0": 0.005832617377077229,
+      "abs_diff_DeltaS": 0.015376226224685818,
+      "abs_diff_C_spin_r025": 0.0035667522126872075,
+      "abs_diff_C_band_r025": 0.0035826136043073387,
+      "C_spin_r10_Nk101": 0.0,
+      "C_spin_r10_Nk201": 0.0
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "V_SO_over_t": 0.5,
+      "abs_diff_Delta0": 0.006134553984140284,
+      "abs_diff_DeltaS": 0.016449941435443982,
+      "abs_diff_C_spin_r025": 0.0036299974618835273,
+      "abs_diff_C_band_r025": 0.0036340467636738483,
+      "C_spin_r10_Nk101": 0.0,
+      "C_spin_r10_Nk201": 0.0
+    },
+    {
+      "Delta_t_over_t": 4.5,
+      "V_SO_over_t": 1.0,
+      "abs_diff_Delta0": 0.0049648186641478576,
+      "abs_diff_DeltaS": 0.010036971729561639,
+      "abs_diff_C_spin_r025": 0.003737599387842905,
+      "abs_diff_C_band_r025": 0.0037408714367950235,
+      "C_spin_r10_Nk101": 0.0,
+      "C_spin_r10_Nk201": 0.0
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "V_SO_over_t": 0.0,
+      "abs_diff_Delta0": 0.004629943891596572,
+      "abs_diff_DeltaS": 0.01936608616813018,
+      "abs_diff_C_spin_r025": 0.0036542794462220973,
+      "abs_diff_C_band_r025": 0.0036790017161827393,
+      "C_spin_r10_Nk101": 0.0,
+      "C_spin_r10_Nk201": 0.0
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "V_SO_over_t": 0.5,
+      "abs_diff_Delta0": 0.004549831099585344,
+      "abs_diff_DeltaS": 0.017808053180025096,
+      "abs_diff_C_spin_r025": 0.003648426375374658,
+      "abs_diff_C_band_r025": 0.003656981495086753,
+      "C_spin_r10_Nk101": 0.0,
+      "C_spin_r10_Nk201": 0.0
+    },
+    {
+      "Delta_t_over_t": 6.0,
+      "V_SO_over_t": 1.0,
+      "abs_diff_Delta0": 0.004637843321377573,
+      "abs_diff_DeltaS": 0.012598936321779552,
+      "abs_diff_C_spin_r025": 0.0036496160681660506,
+      "abs_diff_C_band_r025": 0.0036526423771070515,
+      "C_spin_r10_Nk101": 0.0,
+      "C_spin_r10_Nk201": 0.0
+    }
+  ],
+  "generated_figures": [
+    "figs/concurrence_vso_r_deltat_wick.png",
+    "figs/concurrence_vso_r_deltat_lattice_and_legacy.png"
+  ]
+}
