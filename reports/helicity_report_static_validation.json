@@ -1,7 +1,10 @@
 {
   "source": "helicity_density_matrix_report.tex",
-  "compilation_performed": false,
-  "check_type": "Static source, generated-asset hash, and NPZ transcription checks",
+  "compilation_performed": true,
+  "pdf_file": "helicity_density_matrix_report.pdf",
+  "pdf_size_bytes": 711115,
+  "latex_log_warnings_or_errors": [],
+  "check_type": "Static source, compiled PDF/log, generated-asset hash, and NPZ transcription checks",
   "duplicate_labels": [],
   "undefined_references": [],
   "duplicate_bibitems": [],

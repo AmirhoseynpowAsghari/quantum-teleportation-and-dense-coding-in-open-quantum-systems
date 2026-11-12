@@ -49,10 +49,24 @@ def main() -> int:
             expected = f"{float(data[f'holevo_{basis}'][1, 1]):.9f}"
             if f"\\newcommand{{\\{name}ChiNonzero}}{{{expected}}}" not in macro_text:
                 numeric_errors.append(f"Macro {name}ChiNonzero mismatch")
+    pdf_path = ROOT / "helicity_density_matrix_report.pdf"
+    log_path = ROOT / "reports" / "helicity_density_matrix_report.log"
+    pdf_exists = pdf_path.is_file() and pdf_path.stat().st_size > 0
+    log_warnings = []
+    if log_path.is_file():
+        for line in log_path.read_text(encoding="utf-8", errors="replace").splitlines():
+            if any(token in line for token in (
+                "LaTeX Warning", "LaTeX Error", "Undefined control sequence",
+                "Missing character", "Overfull \\hbox"
+            )):
+                log_warnings.append(line)
     result = {
         "source": SOURCE.name,
-        "compilation_performed": False,
-        "check_type": "Static source, generated-asset hash, and NPZ transcription checks",
+        "compilation_performed": pdf_exists and log_path.is_file(),
+        "pdf_file": pdf_path.name if pdf_exists else None,
+        "pdf_size_bytes": pdf_path.stat().st_size if pdf_exists else 0,
+        "latex_log_warnings_or_errors": log_warnings,
+        "check_type": "Static source, compiled PDF/log, generated-asset hash, and NPZ transcription checks",
         "duplicate_labels": sorted(k for k, v in Counter(labels).items() if v > 1),
         "undefined_references": sorted(set(refs) - set(labels)),
         "duplicate_bibitems": sorted(k for k, v in Counter(bibitems).items() if v > 1),
