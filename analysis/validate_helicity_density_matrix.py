@@ -23,6 +23,7 @@ import self_consistency
 from helicity_density_matrix import (
     SINGLET,
     concurrence,
+    dense_coding_metrics,
     density_at_separation,
     momentum_correlators,
     physical_diagnostics,
@@ -30,6 +31,7 @@ from helicity_density_matrix import (
 )
 from self_consistency import run_selfconsistency
 from teleportation import average_teleportation_fidelity
+from holevo import compute_holevo as repository_compute_holevo
 
 
 def oh_kim_reference(N_A, N_AB, F_AB):
@@ -71,7 +73,12 @@ def main():
         SINGLET,
     ]
     for vector in bell_vectors:
-        bell_errors.append(abs(concurrence(np.outer(vector, vector.conj())) - 1.0))
+        bell = np.outer(vector, vector.conj())
+        bell_errors.append(abs(concurrence(bell) - 1.0))
+        bell_errors.append(abs(dense_coding_metrics(bell)["holevo_pauli_bits"] - 2.0))
+    product = np.zeros((4, 4), dtype=complex)
+    product[0, 0] = 1.0
+    product_holevo_error = abs(dense_coding_metrics(product)["holevo_pauli_bits"] - 1.0)
     werner_errors = []
     for p in np.linspace(0.0, 1.0, 21):
         rho = (1.0 - p) * np.eye(4) / 4.0 + p * np.outer(SINGLET, SINGLET.conj())
@@ -79,6 +86,15 @@ def main():
         werner_errors.append(abs(metrics["concurrence"] - max(0.0, (3.0 * p - 1.0) / 2.0)))
         werner_errors.append(abs(metrics["fully_entangled_fraction"] - (1.0 + 3.0 * p) / 4.0))
         werner_errors.append(abs(metrics["optimized_average_fidelity"] - (1.0 + p) / 2.0))
+        lambda_s = (1.0 + 3.0 * p) / 4.0
+        lambda_t = (1.0 - p) / 4.0
+        entropy = 0.0
+        for eigenvalue, multiplicity in ((lambda_s, 1), (lambda_t, 3)):
+            if eigenvalue > 0.0:
+                entropy -= multiplicity * eigenvalue * np.log2(eigenvalue)
+        expected_chi = 2.0 - entropy
+        werner_errors.append(abs(
+            dense_coding_metrics(rho)["holevo_pauli_bits"] - expected_chi))
 
     vso_values = np.array([0.0, 0.5])
     r_vectors = np.array([[0, 0], [1, 0], [1, 1], [2, 0], [0, 2], [3, 1]], dtype=int)
@@ -89,6 +105,8 @@ def main():
         "concurrence_spin", "concurrence_band", "fef_spin", "fef_band",
         "fixed_fidelity_spin", "fixed_fidelity_band",
         "optimized_fidelity_spin", "optimized_fidelity_band",
+        "holevo_spin", "holevo_band", "entropy_AB_spin", "entropy_AB_band",
+        "entropy_B_spin", "entropy_B_band",
     )}
     solutions = {}
     max_oh_kim_error = 0.0
@@ -99,6 +117,10 @@ def main():
     max_inversion_normal_error = 0.0
     max_inversion_pair_error = 0.0
     fixed_protocol_error = 0.0
+    max_pauli_average_error = 0.0
+    max_holevo_crosscheck_error = 0.0
+    holevo_min = np.inf
+    holevo_max = -np.inf
 
     for iu, vso in enumerate(vso_values):
         bdg, residual = solve(float(vso))
@@ -127,6 +149,15 @@ def main():
                 rho = result["rho"]
                 diagnostics = physical_diagnostics(rho)
                 metrics = resource_metrics(rho)
+                dense = dense_coding_metrics(rho)
+                repository_chi, _, _ = repository_compute_holevo(rho)
+                max_holevo_crosscheck_error = max(
+                    max_holevo_crosscheck_error,
+                    abs(repository_chi - dense["holevo_pauli_bits"]))
+                max_pauli_average_error = max(
+                    max_pauli_average_error, dense["pauli_average_identity_error"])
+                holevo_min = min(holevo_min, dense["holevo_pauli_bits"])
+                holevo_max = max(holevo_max, dense["holevo_pauli_bits"])
                 max_trace_error = max(max_trace_error, diagnostics["trace_error"])
                 max_hermiticity_error = max(max_hermiticity_error,
                                             diagnostics["hermiticity_error"])
@@ -149,13 +180,16 @@ def main():
                     f"fef_{basis}": metrics["fully_entangled_fraction"],
                     f"fixed_fidelity_{basis}": metrics["fixed_reference_average_fidelity"],
                     f"optimized_fidelity_{basis}": metrics["optimized_average_fidelity"],
+                    f"holevo_{basis}": dense["holevo_pauli_bits"],
+                    f"entropy_AB_{basis}": dense["entropy_AB_bits"],
+                    f"entropy_B_{basis}": dense["entropy_B_bits"],
                 }
                 for key, value in values.items():
                     per_basis[basis][key].append(value)
                 records.append({
                     "V_SO_over_t": float(vso), "basis": basis,
                     "r_vector": r.tolist(), "weight": result["weight"],
-                    **diagnostics, **metrics,
+                    **diagnostics, **metrics, **dense,
                     "same_site_singlet_error": r0_error if np.all(r == 0) else None,
                 })
                 if vso == 0.5 and basis == "spin" and np.array_equal(r, [1, 0]):
@@ -178,6 +212,11 @@ def main():
         "maximum_normal_inversion_error": max_inversion_normal_error,
         "maximum_anomalous_inversion_error": max_inversion_pair_error,
         "fixed_protocol_identity_error": fixed_protocol_error,
+        "product_state_holevo_error": product_holevo_error,
+        "maximum_pauli_average_identity_error": max_pauli_average_error,
+        "maximum_holevo_repository_crosscheck_error": max_holevo_crosscheck_error,
+        "minimum_holevo_pauli_bits": float(holevo_min),
+        "maximum_holevo_pauli_bits": float(holevo_max),
     }
     passed = (
         checks["maximum_bell_concurrence_error"] < 1e-10
@@ -190,6 +229,11 @@ def main():
         and checks["maximum_normal_inversion_error"] < 1e-12
         and checks["maximum_anomalous_inversion_error"] < 1e-12
         and checks["fixed_protocol_identity_error"] < 1e-10
+        and checks["product_state_holevo_error"] < 1e-12
+        and checks["maximum_pauli_average_identity_error"] < 1e-12
+        and checks["maximum_holevo_repository_crosscheck_error"] < 1e-10
+        and checks["minimum_holevo_pauli_bits"] >= 0.0
+        and checks["maximum_holevo_pauli_bits"] <= 2.0
     )
     report = {
         "repository_commit": subprocess.check_output(
@@ -205,6 +249,7 @@ def main():
             "spin": "Original-spin conditional state; ordinary spin-qubit resource",
             "band": "Helicity-band-lattice pseudospin state; operations are band-pseudospin operations, not automatically physical spin operations",
             "fixed_vs_optimized": "Fixed singlet-reference and locally optimized teleportation are distinct for general non-Werner matrices",
+            "dense_coding": "Equal-probability Pauli-ensemble Holevo quantity in the selected spin or band-pseudospin basis; not a general optimized capacity or accessible-information result",
         },
     }
     REPORTS = ROOT / "reports"

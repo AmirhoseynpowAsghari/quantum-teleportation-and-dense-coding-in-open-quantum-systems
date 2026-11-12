@@ -1,5 +1,5 @@
 {
-  "repository_commit": "b61ac2965cace4fe555526bce999a9f5446f080b",
+  "repository_commit": "5e8c9cdc63c74d44e0715f1e7c097a0ef1ca061c",
   "scope": "Generalized conditional two-qubit matrices; methodological demo, not a production convergence study",
   "source": "Hutchinson--Hirsch--Marsiglio arXiv:1801.08988 Eqs. (16)--(29)",
   "parameters": {
@@ -37,7 +37,12 @@
     "minimum_density_eigenvalue": -1.5640622107043812e-32,
     "maximum_normal_inversion_error": 6.5503158452884236e-15,
     "maximum_anomalous_inversion_error": 3.297194163235928e-15,
-    "fixed_protocol_identity_error": 0.0
+    "fixed_protocol_identity_error": 0.0,
+    "product_state_holevo_error": 0.0,
+    "maximum_pauli_average_identity_error": 2.7755575615628914e-17,
+    "maximum_holevo_repository_crosscheck_error": 2.220446049250313e-16,
+    "minimum_holevo_pauli_bits": 5.255053148189859e-08,
+    "maximum_holevo_pauli_bits": 2.0
   },
   "checks_passed": true,
   "records": [
@@ -57,6 +62,12 @@
       "fixed_reference_average_fidelity": 0.9999999999999999,
       "fully_entangled_fraction": 1.0,
       "optimized_average_fidelity": 1.0,
+      "holevo_pauli_bits": 2.0,
+      "entropy_AB_bits": -0.0,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 0.0,
+      "above_one_bit_benchmark": true,
       "same_site_singlet_error": 1.1102230246251565e-16
     },
     {
@@ -75,6 +86,12 @@
       "fixed_reference_average_fidelity": 0.9999999999999999,
       "fully_entangled_fraction": 1.0,
       "optimized_average_fidelity": 1.0,
+      "holevo_pauli_bits": 2.0,
+      "entropy_AB_bits": -0.0,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 0.0,
+      "above_one_bit_benchmark": true,
       "same_site_singlet_error": 1.1102230246251565e-16
     },
     {
@@ -93,6 +110,12 @@
       "fixed_reference_average_fidelity": 0.5009511489937721,
       "fully_entangled_fraction": 0.2514267234906582,
       "optimized_average_fidelity": 0.5009511489937721,
+      "holevo_pauli_bits": 7.821203818147993e-06,
+      "entropy_AB_bits": 1.9999921787961819,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 0.0,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -111,6 +134,12 @@
       "fixed_reference_average_fidelity": 0.5006026864543367,
       "fully_entangled_fraction": 0.25090402968150516,
       "optimized_average_fidelity": 0.5006026864543368,
+      "holevo_pauli_bits": 3.1424930750922897e-06,
+      "entropy_AB_bits": 1.999996857506925,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 1.3129010682441655e-20,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -129,6 +158,12 @@
       "fixed_reference_average_fidelity": 0.5008905102112015,
       "fully_entangled_fraction": 0.25133576531680224,
       "optimized_average_fidelity": 0.5008905102112015,
+      "holevo_pauli_bits": 6.8562909127933835e-06,
+      "entropy_AB_bits": 1.9999931437090872,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 2.7755575615628914e-17,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -147,6 +182,12 @@
       "fixed_reference_average_fidelity": 0.5006847527238486,
       "fully_entangled_fraction": 0.251027129085773,
       "optimized_average_fidelity": 0.5006847527238487,
+      "holevo_pauli_bits": 4.197725682608677e-06,
+      "entropy_AB_bits": 1.9999958022743174,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 1.9999999999999998,
+      "pauli_average_identity_error": 2.7755575615628914e-17,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -165,6 +206,12 @@
       "fixed_reference_average_fidelity": 0.5003289648462946,
       "fully_entangled_fraction": 0.25049344726944195,
       "optimized_average_fidelity": 0.5003289648462946,
+      "holevo_pauli_bits": 9.363419015695484e-07,
+      "entropy_AB_bits": 1.9999990636580984,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 2.7755575615628914e-17,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -183,6 +230,12 @@
       "fixed_reference_average_fidelity": 0.5002323208990989,
       "fully_entangled_fraction": 0.25034848134864823,
       "optimized_average_fidelity": 0.5002323208990989,
+      "holevo_pauli_bits": 5.981326949289212e-07,
+      "entropy_AB_bits": 1.999999401867305,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 6.776263578034403e-21,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -201,6 +254,12 @@
       "fixed_reference_average_fidelity": 0.5003289648462946,
       "fully_entangled_fraction": 0.25049344726944195,
       "optimized_average_fidelity": 0.5003289648462946,
+      "holevo_pauli_bits": 9.363419015695484e-07,
+      "entropy_AB_bits": 1.9999990636580984,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 2.7755575615628914e-17,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -219,6 +278,12 @@
       "fixed_reference_average_fidelity": 0.5002323208990989,
       "fully_entangled_fraction": 0.25034848134864823,
       "optimized_average_fidelity": 0.5002323208990989,
+      "holevo_pauli_bits": 5.981326949289212e-07,
+      "entropy_AB_bits": 1.999999401867305,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 1.3552527156068805e-20,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -237,6 +302,12 @@
       "fixed_reference_average_fidelity": 0.5001067753582943,
       "fully_entangled_fraction": 0.2501601630374415,
       "optimized_average_fidelity": 0.5001067753582943,
+      "holevo_pauli_bits": 9.867475458946728e-08,
+      "entropy_AB_bits": 1.9999999013252454,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 2.7755575615628914e-17,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -255,6 +326,12 @@
       "fixed_reference_average_fidelity": 0.5000917042084353,
       "fully_entangled_fraction": 0.2501375563126529,
       "optimized_average_fidelity": 0.5000917042084353,
+      "holevo_pauli_bits": 8.7380619628874e-08,
+      "entropy_AB_bits": 1.9999999126193804,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 1.6940658945086007e-21,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -273,6 +350,12 @@
       "fixed_reference_average_fidelity": 0.9999999999999997,
       "fully_entangled_fraction": 0.9999999999999999,
       "optimized_average_fidelity": 1.0,
+      "holevo_pauli_bits": 1.9999999999999993,
+      "entropy_AB_bits": 6.406853007629834e-16,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 1.9999999999999998,
+      "pauli_average_identity_error": 2.0290123273799745e-35,
+      "above_one_bit_benchmark": true,
       "same_site_singlet_error": 5.551115123125783e-17
     },
     {
@@ -291,6 +374,12 @@
       "fixed_reference_average_fidelity": 0.9999999999999997,
       "fully_entangled_fraction": 0.9999999999999999,
       "optimized_average_fidelity": 1.0,
+      "holevo_pauli_bits": 1.9999999999999998,
+      "entropy_AB_bits": 1.6017132519074586e-16,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 1.9999999999999998,
+      "pauli_average_identity_error": 0.0,
+      "above_one_bit_benchmark": true,
       "same_site_singlet_error": 5.551115123125783e-17
     },
     {
@@ -309,6 +398,12 @@
       "fixed_reference_average_fidelity": 0.5009346436113398,
       "fully_entangled_fraction": 0.25188123534638407,
       "optimized_average_fidelity": 0.5012541568975893,
+      "holevo_pauli_bits": 1.359270444356575e-05,
+      "entropy_AB_bits": 1.9999864072955564,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 1.9999999999999998,
+      "pauli_average_identity_error": 2.7755575615628914e-17,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -327,6 +422,12 @@
       "fixed_reference_average_fidelity": 0.4997395912696158,
       "fully_entangled_fraction": 0.2504540716558683,
       "optimized_average_fidelity": 0.5003027144372455,
+      "holevo_pauli_bits": 0.0023510212890109905,
+      "entropy_AB_bits": 1.9953003046804616,
+      "entropy_B_bits": 0.9976513259694727,
+      "pauli_averaged_entropy_bits": 1.9976513259694728,
+      "pauli_average_identity_error": 8.470329472543003e-22,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -345,6 +446,12 @@
       "fixed_reference_average_fidelity": 0.5005765338459286,
       "fully_entangled_fraction": 0.25140761199145834,
       "optimized_average_fidelity": 0.5009384079943056,
+      "holevo_pauli_bits": 7.613212142931758e-06,
+      "entropy_AB_bits": 1.999992386787857,
+      "entropy_B_bits": 1.0,
+      "pauli_averaged_entropy_bits": 1.9999999999999998,
+      "pauli_average_identity_error": 9.64480581580497e-21,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -363,6 +470,12 @@
       "fixed_reference_average_fidelity": 0.4997586580738078,
       "fully_entangled_fraction": 0.2507381387314028,
       "optimized_average_fidelity": 0.5004920924876018,
+      "holevo_pauli_bits": 0.0022855674468202913,
+      "entropy_AB_bits": 1.9954298979572735,
+      "entropy_B_bits": 0.997715465404094,
+      "pauli_averaged_entropy_bits": 1.9977154654040938,
+      "pauli_average_identity_error": 0.0,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -381,6 +494,12 @@
       "fixed_reference_average_fidelity": 0.50002272046658,
       "fully_entangled_fraction": 0.25055718712429037,
       "optimized_average_fidelity": 0.5003714580828603,
+      "holevo_pauli_bits": 1.1937981843068712e-06,
+      "entropy_AB_bits": 1.9999988062018157,
+      "entropy_B_bits": 0.9999999999999999,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 3.3881317890172014e-21,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -399,6 +518,12 @@
       "fixed_reference_average_fidelity": 0.4994551024709604,
       "fully_entangled_fraction": 0.2509347740662492,
       "optimized_average_fidelity": 0.5006231827108328,
+      "holevo_pauli_bits": 0.002201481584457765,
+      "entropy_AB_bits": 1.9955971568922393,
+      "entropy_B_bits": 0.997798638476697,
+      "pauli_averaged_entropy_bits": 1.9977986384766968,
+      "pauli_average_identity_error": 7.52316384526264e-37,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -417,6 +542,12 @@
       "fixed_reference_average_fidelity": 0.50002272046658,
       "fully_entangled_fraction": 0.25055718712429037,
       "optimized_average_fidelity": 0.5003714580828603,
+      "holevo_pauli_bits": 1.1937981847509604e-06,
+      "entropy_AB_bits": 1.9999988062018152,
+      "entropy_B_bits": 0.9999999999999999,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 3.3881317890172014e-21,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -435,6 +566,12 @@
       "fixed_reference_average_fidelity": 0.4994551024709604,
       "fully_entangled_fraction": 0.2509347740662492,
       "optimized_average_fidelity": 0.5006231827108328,
+      "holevo_pauli_bits": 0.002201481584457765,
+      "entropy_AB_bits": 1.9955971568922393,
+      "entropy_B_bits": 0.997798638476697,
+      "pauli_averaged_entropy_bits": 1.9977986384766968,
+      "pauli_average_identity_error": 3.009265538105056e-36,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -453,6 +590,12 @@
       "fixed_reference_average_fidelity": 0.499980197977758,
       "fully_entangled_fraction": 0.25011687673329747,
       "optimized_average_fidelity": 0.5000779178221983,
+      "holevo_pauli_bits": 5.255053148189859e-08,
+      "entropy_AB_bits": 1.9999999474494685,
+      "entropy_B_bits": 0.9999999999999999,
+      "pauli_averaged_entropy_bits": 2.0,
+      "pauli_average_identity_error": 2.7755575615628914e-17,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     },
     {
@@ -471,12 +614,19 @@
       "fixed_reference_average_fidelity": 0.49948697806689135,
       "fully_entangled_fraction": 0.25078874888375613,
       "optimized_average_fidelity": 0.5005258325891707,
+      "holevo_pauli_bits": 0.002207541392460488,
+      "entropy_AB_bits": 1.9955849195354693,
+      "entropy_B_bits": 0.9977924609279298,
+      "pauli_averaged_entropy_bits": 1.9977924609279296,
+      "pauli_average_identity_error": 2.7755575615628914e-17,
+      "above_one_bit_benchmark": false,
       "same_site_singlet_error": null
     }
   ],
   "interpretation": {
     "spin": "Original-spin conditional state; ordinary spin-qubit resource",
     "band": "Helicity-band-lattice pseudospin state; operations are band-pseudospin operations, not automatically physical spin operations",
-    "fixed_vs_optimized": "Fixed singlet-reference and locally optimized teleportation are distinct for general non-Werner matrices"
+    "fixed_vs_optimized": "Fixed singlet-reference and locally optimized teleportation are distinct for general non-Werner matrices",
+    "dense_coding": "Equal-probability Pauli-ensemble Holevo quantity in the selected spin or band-pseudospin basis; not a general optimized capacity or accessible-information result"
   }
 }
