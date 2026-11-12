@@ -33,7 +33,10 @@ def main() -> int:
     with np.load(data_path) as data:
         numeric_errors = []
         resource_text = (ROOT / "reports/helicity_demo_resources.tex").read_text()
-        row_count = sum(1 for line in resource_text.splitlines() if "&" in line)
+        row_count = sum(
+            1 for line in resource_text.splitlines()
+            if "&" in line and not line.startswith("Basis")
+        )
         for basis in ("spin", "band"):
             for ir in range(6):
                 for key in ("concurrence", "fixed_fidelity", "optimized_fidelity",

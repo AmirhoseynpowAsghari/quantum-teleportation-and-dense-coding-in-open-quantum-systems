@@ -1,0 +1,81 @@
+{
+  "source": "helicity_density_matrix_report.tex",
+  "compilation_performed": false,
+  "check_type": "Static source, generated-asset hash, and NPZ transcription checks",
+  "duplicate_labels": [],
+  "undefined_references": [],
+  "duplicate_bibitems": [],
+  "undefined_citations": [],
+  "uncited_bibitems": [],
+  "brace_balance": 0,
+  "environment_balance": {
+    "document": [
+      1,
+      1
+    ],
+    "equation": [
+      33,
+      33
+    ],
+    "figure": [
+      2,
+      2
+    ],
+    "table": [
+      2,
+      2
+    ],
+    "itemize": [
+      3,
+      3
+    ],
+    "enumerate": [
+      3,
+      3
+    ],
+    "pmatrix": [
+      4,
+      4
+    ],
+    "thebibliography": [
+      1,
+      1
+    ],
+    "verbatim": [
+      2,
+      2
+    ]
+  },
+  "graphics": [
+    {
+      "path": "figs/helicity_density_matrix_offdiagonal.png",
+      "exists": true
+    },
+    {
+      "path": "figs/helicity_density_matrix_resources.png",
+      "exists": true
+    }
+  ],
+  "inputs": [
+    {
+      "path": "reports/helicity_demo_macros.tex",
+      "exists": true
+    },
+    {
+      "path": "reports/helicity_demo_validation.tex",
+      "exists": true
+    },
+    {
+      "path": "reports/helicity_demo_matrices.tex",
+      "exists": true
+    },
+    {
+      "path": "reports/helicity_demo_resources.tex",
+      "exists": true
+    }
+  ],
+  "resource_table_rows": 12,
+  "source_data_sha256_matches_manifest": true,
+  "numeric_transcription_errors": [],
+  "static_checks_passed": true
+}

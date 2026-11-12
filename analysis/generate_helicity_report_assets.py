@@ -45,7 +45,12 @@ def main() -> None:
 
     r_labels = [f"({x},{y})" for x, y in r_vectors]
     # All nonzero-SOC resource rows, generated directly from the NPZ arrays.
-    lines = []
+    lines = [
+        "\\begin{tabular}{lllllll}",
+        "\\toprule",
+        "Basis & $\\rr$ & $C$ & $\\Fbar_{\\rm ref}$ & $\\Fbar_{\\rm opt}$ & $\\chi_{\\rm P}$ & $S_2(\\rho_B)$ \\\\",
+        "\\midrule",
+    ]
     for basis in ("spin", "band"):
         for ir, label in enumerate(r_labels):
             lines.append(
@@ -55,6 +60,10 @@ def main() -> None:
                 f"{fmt(arrays[f'holevo_{basis}'][1, ir])} & "
                 f"{fmt(arrays[f'entropy_B_{basis}'][1, ir])} \\\\"
             )
+    lines.extend([
+        "\\bottomrule",
+        "\\end{tabular}",
+    ])
     (REPORTS / "helicity_demo_resources.tex").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     matrices = (
@@ -81,11 +90,19 @@ def main() -> None:
         ("Bell/Werner metric error", checks["maximum_werner_metric_error"]),
     ]
     validation_lines = [
-        f"{name} & ${value:.3e}$ \\\\" for name, value in check_rows
+        "\\begin{tabular}{lc}",
+        "\\toprule",
+        "Diagnostic & Maximum absolute value \\\\",
+        "\\midrule",
     ]
-    validation_lines.append(
-        f"Minimum density-matrix eigenvalue & ${checks['minimum_density_eigenvalue']:.3e}$ \\\\"
+    validation_lines.extend(
+        f"{name} & ${value:.3e}$ \\\\" for name, value in check_rows
     )
+    validation_lines.extend([
+        f"Minimum density-matrix eigenvalue & ${checks['minimum_density_eigenvalue']:.3e}$ \\\\",
+        "\\bottomrule",
+        "\\end{tabular}",
+    ])
     (REPORTS / "helicity_demo_validation.tex").write_text(
         "\n".join(validation_lines) + "\n", encoding="utf-8")
 
