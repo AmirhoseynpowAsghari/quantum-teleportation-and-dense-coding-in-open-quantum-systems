@@ -1,0 +1,94 @@
+{
+  "repository_commit": "bca14d3bf489f0a93665535053d23cbc6883029c",
+  "parameters": {
+    "U_over_t": 75.0,
+    "n_elec": 1.875,
+    "Nk_primary": 201,
+    "Delta_t_figure": 4.5
+  },
+  "test1_Lifshitz": {
+    "V_lifshitz": 0.7083324186361549,
+    "pocket_area_before_Vminus0.10": 0.00168312665528081,
+    "pocket_area_after_Vplus0.10": 0.0,
+    "pocket_area_at_max_V": 0.0,
+    "dos_at_EF_before": 0.15306715530727918,
+    "dos_at_EF_after": 0.17130343052897468,
+    "note": "pocket area <theta(eps0-mu)> must vanish at V_lifshitz; N(E_F) shows a kink there (2nd-order Ehrenfest signature)"
+  },
+  "test2_hysteresis": {
+    "protocol": "ascending V_SO continuation vs stored descending sweep",
+    "per_Delta_t": {
+      "3.5": {
+        "max_abs_diff_DeltaS": 3.552713678800501e-14,
+        "max_abs_diff_mu": 1.7763568394002505e-14
+      },
+      "4.5": {
+        "max_abs_diff_DeltaS": 7.66053886991358e-15,
+        "max_abs_diff_mu": 4.440892098500626e-15
+      }
+    },
+    "conclusion": "differences at machine precision exclude branch coexistence (no first-order hysteresis loop)"
+  },
+  "test3_finite_size_scaling": {
+    "Delta_t": 4.5,
+    "metrics": {
+      "101": {
+        "peak_height_dDeltaS_dV": 0.9463228689648417,
+        "peak_position": 0.75,
+        "max_abs_curvature_near_peak": 0.5377039164514414,
+        "fwhm": 1.18
+      },
+      "201": {
+        "peak_height_dDeltaS_dV": 0.9633190104797578,
+        "peak_position": 0.75,
+        "max_abs_curvature_near_peak": 0.6040596126897668,
+        "fwhm": 1.18
+      },
+      "401": {
+        "peak_height_dDeltaS_dV": 0.9718976132484229,
+        "peak_position": 0.75,
+        "max_abs_curvature_near_peak": 0.640446937635808,
+        "fwhm": 1.17
+      }
+    },
+    "interpretation": "peak height/curvature growing with Nk signals a singular (critical) onset; saturation signals a smooth crossover"
+  },
+  "test4_pair_instability": {
+    "3.5": {
+      "lambda_min": 0.9664148046159653,
+      "lambda_max": 5.252661836201355,
+      "lambda_at_Vmax": 5.030224751136075,
+      "crossings_of_1": [
+        0.15,
+        0.17,
+        0.18
+      ]
+    },
+    "4.5": {
+      "lambda_min": 6.847104885894623,
+      "lambda_max": 357.2033631706404,
+      "lambda_at_Vmax": 279.5280587898927,
+      "crossings_of_1": []
+    },
+    "dip_check_Nk401_Deltat3.5": {
+      "401": {
+        "V_range": [
+          0.1,
+          0.3
+        ],
+        "lambda_min": 0.8757071833290695,
+        "crossings_of_1": [
+          0.26,
+          0.27
+        ]
+      }
+    },
+    "interpretation": "Delta_t=4.5: lambda>>1 everywhere -> normal state unstable to pairing at all V (pairing onset is a crossover). Delta_t=3.5: lambda grazes below 1 near V=[0.15, 0.17, 0.18] (if it persists at Nk=401: normal state locally stable there while nonzero Delta_S self-consistently exists -> multistability, candidate first-order pairing region requiring a grand-potential comparison)."
+  },
+  "notes": [
+    "N(E_F) shows a secondary van-Hove-like structure near V_SO/t ~ 1.2-1.3 (mu vs band-1 saddle/edge), flagged for separate study; the primary Lifshitz kink is at V_Lifshitz."
+  ],
+  "figures": [
+    "figs/qpt_diagnostic_tests.png"
+  ]
+}
