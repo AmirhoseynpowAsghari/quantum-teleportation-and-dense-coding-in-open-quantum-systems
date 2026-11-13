@@ -1,0 +1,297 @@
+{
+  "repository_commit": "93fbb4a4cef778505ba8cedddca2db6c6231066a",
+  "parameters": {
+    "U_over_t": [
+      40.0,
+      75.0,
+      115.0
+    ],
+    "Delta_t_over_t": [
+      3.5,
+      4.5,
+      6.0
+    ],
+    "V_SO_over_t_min": 0.0,
+    "V_SO_over_t_max": 1.5,
+    "n_V_SO_points": 61,
+    "dV_SO_over_t": 0.025,
+    "n_elec": 1.875,
+    "temperature": 0.0,
+    "Nk_solve": 201,
+    "Nk_eval": 401,
+    "gap_form": "Delta_{k,s} = Delta_0 - (Delta_S/4t) eps_{k,s}",
+    "small_gap_threshold": 0.1,
+    "representative_combo": {
+      "U_over_t": 75.0,
+      "Delta_t_over_t": 4.5
+    }
+  },
+  "diagnostics": {
+    "max_solver_residual": 0.00024442464295437727,
+    "n_fallback_solves": 758,
+    "n_trivial_retries": 0,
+    "n_mesh_floor_points": 39,
+    "n_unpaired_points_absDS_le_1e-3": 57,
+    "n_normal_state_points": 22
+  },
+  "combos": [
+    {
+      "U_over_t": 40.0,
+      "Delta_t_over_t": 3.5,
+      "Delta0_range": [
+        -0.09816919801691455,
+        0.18683067538870718
+      ],
+      "DeltaS_range": [
+        -1.3706188841369982,
+        -0.5798940337616089
+      ],
+      "Delta0_sign_change_V": [
+        1.0518
+      ],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 0.37263524339131654,
+      "V_at_gap_spec_min": 0.0,
+      "V_range_gap_below_0p1t": null,
+      "max_absD_at_Vmax": 2.184829925366134,
+      "helicity_split_at_Vmax": 2.9075217221868312,
+      "unpaired_points_absDS_le_1e-3": 0,
+      "unpaired_V_ranges": [],
+      "mesh_floor_points": 0,
+      "max_abs_residual": 3.885780586188048e-15
+    },
+    {
+      "U_over_t": 40.0,
+      "Delta_t_over_t": 4.5,
+      "Delta0_range": [
+        -0.019377235468505307,
+        0.637036475180493
+      ],
+      "DeltaS_range": [
+        -2.046563056408266,
+        -1.2610141163941087
+      ],
+      "Delta0_sign_change_V": [
+        0.2839
+      ],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 1.0084464386641077,
+      "V_at_gap_spec_min": 0.0,
+      "V_range_gap_below_0p1t": null,
+      "max_absD_at_Vmax": 3.6203832676842747,
+      "helicity_split_at_Vmax": 4.341415845936455,
+      "unpaired_points_absDS_le_1e-3": 0,
+      "unpaired_V_ranges": [],
+      "mesh_floor_points": 0,
+      "max_abs_residual": 6.505213034913027e-16
+    },
+    {
+      "U_over_t": 40.0,
+      "Delta_t_over_t": 6.0,
+      "Delta0_range": [
+        0.2485750269002691,
+        1.4049157561527226
+      ],
+      "DeltaS_range": [
+        -3.0556094035172308,
+        -2.27813612838042
+      ],
+      "Delta0_sign_change_V": [],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 2.159703820789463,
+      "V_at_gap_spec_min": 0.0,
+      "V_range_gap_below_0p1t": null,
+      "max_absD_at_Vmax": 5.859184821835005,
+      "helicity_split_at_Vmax": 6.481926389653248,
+      "unpaired_points_absDS_le_1e-3": 0,
+      "unpaired_V_ranges": [],
+      "mesh_floor_points": 0,
+      "max_abs_residual": 1.3322676295501878e-15
+    },
+    {
+      "U_over_t": 75.0,
+      "Delta_t_over_t": 3.5,
+      "Delta0_range": [
+        -0.31199622853996395,
+        -0.0005829016685808961
+      ],
+      "DeltaS_range": [
+        -0.7744048361990425,
+        -0.0008869540197040286
+      ],
+      "Delta0_sign_change_V": [],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 0.00014479287932581868,
+      "V_at_gap_spec_min": 0.05,
+      "V_range_gap_below_0p1t": [
+        0.0,
+        0.775
+      ],
+      "max_absD_at_Vmax": 1.4408733364012074,
+      "helicity_split_at_Vmax": 1.6427607331800016,
+      "unpaired_points_absDS_le_1e-3": 4,
+      "unpaired_V_ranges": [
+        [
+          0.025,
+          0.05
+        ],
+        [
+          0.125,
+          0.15
+        ]
+      ],
+      "mesh_floor_points": 0,
+      "max_abs_residual": 1.743180252922194e-15
+    },
+    {
+      "U_over_t": 75.0,
+      "Delta_t_over_t": 4.5,
+      "Delta0_range": [
+        -0.21601137093319075,
+        -0.11952761587224031
+      ],
+      "DeltaS_range": [
+        -1.4006039844830047,
+        -0.3458024528821519
+      ],
+      "Delta0_sign_change_V": [],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 0.16241324554410477,
+      "V_at_gap_spec_min": 0.0,
+      "V_range_gap_below_0p1t": null,
+      "max_absD_at_Vmax": 2.171518075265844,
+      "helicity_split_at_Vmax": 2.971129725554492,
+      "unpaired_points_absDS_le_1e-3": 0,
+      "unpaired_V_ranges": [],
+      "mesh_floor_points": 0,
+      "max_abs_residual": 5.523359547510154e-15
+    },
+    {
+      "U_over_t": 75.0,
+      "Delta_t_over_t": 6.0,
+      "Delta0_range": [
+        -0.15096755761592714,
+        0.38117749971754583
+      ],
+      "DeltaS_range": [
+        -2.362379950460308,
+        -1.250943846162835
+      ],
+      "Delta0_sign_change_V": [
+        0.9299
+      ],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 0.8613760601674828,
+      "V_at_gap_spec_min": 0.0,
+      "V_range_gap_below_0p1t": null,
+      "max_absD_at_Vmax": 3.824901662436453,
+      "helicity_split_at_Vmax": 5.011364648128873,
+      "unpaired_points_absDS_le_1e-3": 0,
+      "unpaired_V_ranges": [],
+      "mesh_floor_points": 0,
+      "max_abs_residual": 2.220446049250313e-15
+    },
+    {
+      "U_over_t": 115.0,
+      "Delta_t_over_t": 3.5,
+      "Delta0_range": [
+        -0.22657366414548752,
+        -6.78823531452568e-11
+      ],
+      "DeltaS_range": [
+        -0.23512670420865686,
+        -7.466872069441742e-11
+      ],
+      "Delta0_sign_change_V": [],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 2.547188035245404e-07,
+      "V_at_gap_spec_min": 0.85,
+      "V_range_gap_below_0p1t": [
+        0.0,
+        1.5
+      ],
+      "max_absD_at_Vmax": 0.5693261127624178,
+      "helicity_split_at_Vmax": 0.49877906095195446,
+      "unpaired_points_absDS_le_1e-3": 44,
+      "unpaired_V_ranges": [
+        [
+          0.0,
+          1.075
+        ]
+      ],
+      "mesh_floor_points": 37,
+      "max_abs_residual": 0.00024442464295437727
+    },
+    {
+      "U_over_t": 115.0,
+      "Delta_t_over_t": 4.5,
+      "Delta0_range": [
+        -0.4173903195632901,
+        -1.079300537368443e-05
+      ],
+      "DeltaS_range": [
+        -0.8482910365793848,
+        -1.3607545274913396e-05
+      ],
+      "Delta0_sign_change_V": [],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 3.4695237513209737e-06,
+      "V_at_gap_spec_min": 0.15,
+      "V_range_gap_below_0p1t": [
+        0.0,
+        0.8
+      ],
+      "max_absD_at_Vmax": 1.6539739347929596,
+      "helicity_split_at_Vmax": 1.7994970331551459,
+      "unpaired_points_absDS_le_1e-3": 9,
+      "unpaired_V_ranges": [
+        [
+          0.025,
+          0.15
+        ],
+        [
+          0.2,
+          0.225
+        ],
+        [
+          0.35,
+          0.35
+        ]
+      ],
+      "mesh_floor_points": 2,
+      "max_abs_residual": 5.259268085355817e-05
+    },
+    {
+      "U_over_t": 115.0,
+      "Delta_t_over_t": 6.0,
+      "Delta0_range": [
+        -0.29160090419627105,
+        -0.16658046100198273
+      ],
+      "DeltaS_range": [
+        -1.7247208683486195,
+        -0.4779547458298521
+      ],
+      "Delta0_sign_change_V": [],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 0.2221788752938168,
+      "V_at_gap_spec_min": 0.0,
+      "V_range_gap_below_0p1t": null,
+      "max_absD_at_Vmax": 2.7292644142809674,
+      "helicity_split_at_Vmax": 3.6586854649897784,
+      "unpaired_points_absDS_le_1e-3": 0,
+      "unpaired_V_ranges": [],
+      "mesh_floor_points": 0,
+      "max_abs_residual": 7.993605777301127e-15
+    }
+  ],
+  "interpretation_notes": [
+    "At fixed Delta_t pairing weakens with increasing U in this parameter set (|Delta_S|(V=1.5): U40 > U75 > U115).",
+    "Delta_0 sign changes (s+-type relative-sign reorganization of the harmonics) occur only for U/t=40 (Delta_t=3.5, 4.5) and U/t=75, Delta_t=6.0 -- see Delta0_sign_change_V per combo.",
+    "For U/t=115, Delta_t=3.5 (and 4.5) pairing collapses to mesh resolution at low V_SO: exact roots become |Delta|~1e-4 (unpaired points) and below V~0.9 (3.5) the T=0 number equation hits its finite-mesh residual floor (<=2.5e-4, flagged mesh_floor_points); Delta_spec there measures min_k|eps-mu| of the normal state (mesh-limited).",
+    "min_k|Delta_k| = 0 where the extended-s harmonic crosses zero (nodal/s+- lines); plot values < 1e-4 are clipped in the log-scale panel (c)."
+  ],
+  "generated_figures": [
+    "figs/gap_function_vs_so.png"
+  ]
+}
