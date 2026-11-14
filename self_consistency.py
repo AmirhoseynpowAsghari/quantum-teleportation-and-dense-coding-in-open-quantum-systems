@@ -1,8 +1,10 @@
 # =============================================================================
 # self_consistency.py
 # BdG self-consistency via fsolve.
-# Residuals derived directly from the iterative update rules so that
-# the two methods give identical results at T = 0.
+# Residuals implement the gap equations of arXiv:1801.08988 (Eqs. 32-34
+# with ansatz Eq. 37, plus number Eq. 38) with full-BZ x both-helicity
+# counting; validated pointwise against the paper's master Eq. (30)
+# (analysis/validate_counting_conventions.py).
 # =============================================================================
 
 import numpy as np
@@ -38,17 +40,28 @@ def residual(x, epsilon_ks, s_k_factor, sqrt_sin,
     """
     F(x) = 0   for  x = (Delta0, DeltaS, mu).
 
-    Derivation (T=0):
-      iterative:  Delta0_new = -(1/2) SUM kernel*Delta/E / (4*N^2)
-                             = -SUM kernel*Delta/E / (8*N^2)
-      residual:   r1 = Delta0 + SUM kernel*Delta*th/E / (8*N^2)
+    Counting conventions derived from arXiv:1801.08988 (Phase-1 validated,
+    see reports/counting_validation.json): full-BZ sums over N = Nk^2
+    k-points, both helicity branches s = +/-1, pair (k,-k) handled by the
+    paper's 1/(2N) prefactors.  Paper Eqs. (32)-(34) with the ansatz
+    Eq. (37) and number Eq. (38), at tanh-factor th:
 
-      iterative:  DeltaS_new = -8*Dt * (1/2) SUM Delta/E / (4*N^2)
-                             = -Dt * SUM Delta/E / N^2
-      residual:   r2 = DeltaS + Dt * SUM Delta*th/E / N^2
+      Delta0 = -(1/4N) SUM_{k,s} [U + 8 Dt s_k + 4 (Dt/t) Vso s lam_k]
+                          * Db * th/E
+      DeltaS = -(2 Dt/N) SUM_{k,s} Db * th/E
+      n      = 1 - (1/2N) SUM_{k,s} (eps-mu)/E * th
 
-      number eq:  n  = 1 - SUM (eps-mu)*th/E / (2*N^2)
-      residual:   r3 = SUM (eps-mu)*th/E / (2*N^2) - (1-n)
+    residuals:
+
+      r1 = Delta0 + SUM kernel*Db*th/E / (4 N^2)
+      r2 = DeltaS + 2 Dt * SUM Db*th/E / N^2
+      r3 = SUM (eps-mu)*th/E / (2 N^2) - (1-n)
+
+    FIX (factor-of-two): the previous version divided r1 by 8 N^2 and used
+    Dt (not 2 Dt) in r2 -- exactly 1/2 of the paper's gap equations, i.e.
+    it solved the paper at (U/2, Dt/2) while the number equation was
+    correct.  Verified pointwise against the paper's master gap equation
+    Eq. (30): corrected residual -> 1e-15, old -> O(Delta).
     """
     D0, DS, mu = float(x[0]), float(x[1]), float(x[2])
 
@@ -69,8 +82,8 @@ def residual(x, epsilon_ks, s_k_factor, sqrt_sin,
 
     N2 = float(Nk_loc**2)
 
-    r1 = D0  + np.sum(kernel * Dks * th_over_E) / (8.0 * N2)
-    r2 = DS  + Dt_loc * np.sum(Dks * th_over_E) / N2
+    r1 = D0  + np.sum(kernel * Dks * th_over_E) / (4.0 * N2)
+    r2 = DS  + 2.0 * Dt_loc * np.sum(Dks * th_over_E) / N2
     r3 = np.sum(((epsilon_ks - mu) / Eks) * th) / (2.0 * N2) - (1.0 - n_loc)
 
     return [r1, r2, r3]
