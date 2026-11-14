@@ -114,15 +114,25 @@ def _dedupe(sols, tol=1e-6):
 
 
 def solve_sc(args, seeds, accept_trivial=False):
-    """Residual-gated multi-start solve of the corrected gap+number system."""
+    """Residual-gated multi-start solve of the corrected gap+number system.
+
+    Seeds are tried in priority order (continuation first, then strong
+    seeds of both DeltaS signs, then fallbacks).  Once at least one
+    non-trivial root is found and both strong signs have been tried, the
+    loop exits early -- this keeps the high-Nk sweeps tractable.
+    """
     sols = []
-    for x0 in seeds:
+    n_seeds = len(seeds)
+    for i, x0 in enumerate(seeds):
+        got = False
         for method in ("fsolve", "lm"):
+            if method == "lm" and i >= 6:
+                break  # LM only for the high-priority seeds
             try:
                 if method == "fsolve":
                     sol, info, ier, _ = fsolve(
                         residual, x0, args=args, full_output=True,
-                        xtol=1.49e-10, maxfev=6000)
+                        xtol=1.49e-10, maxfev=3000)
                     cand = np.asarray(sol, float)
                 else:
                     sol = least_squares(residual, x0, args=args,
@@ -134,7 +144,12 @@ def solve_sc(args, seeds, accept_trivial=False):
             r = float(np.max(np.abs(residual(cand, *args))))
             if r < 1e-10:
                 sols.append(_canon(cand))
+                got = True
                 break
+        if got and len(sols) >= 1 and i >= 3:
+            break   # continuation + both strong DeltaS signs covered
+        if got and len(sols) >= 2 and i >= 1:
+            break   # two distinct roots already found
     sols = _dedupe(sols)
     if not accept_trivial:
         sols = [s for s in sols
@@ -180,22 +195,23 @@ def run_sweep(U, Dt, Vs, Nk, t=1.0, n=N_ELEC, seed=T_SEEDS):
         norm = normal_state(eps, n)
         mu_n = norm["mu"]
 
-        # seeds: previous solutions (continuation), gap guesses, random.
-        # Strong seeds cover the corrected-convention regime
-        # (|D0|~0.25-0.3, |DS|~1.5-2.5); the config init [0.7,0.48] is
-        # the historically reliable starter at V=0.
-        seeds = list(prev_sols)
-        seeds += [[0.7, 0.48, mu_n], [0.3, 1.9, mu_n],
-                  [0.27, 2.4, mu_n], [0.5, 0.4, mu_n],
-                  [0.12, 0.05, mu_n], [0.02, 0.01, mu_n],
+        # Seeds in priority order: continuation, then strong seeds of
+        # BOTH DeltaS signs (corrected regime |D0|~0.25-0.3,
+        # |DS|~1.5-3), then fallbacks.  solve_sc exits early once the
+        # main branch and both signs are covered.
+        seeds = list(prev_sols[:2])
+        seeds += [[0.30, 1.9, mu_n], [0.30, -1.9, mu_n],
+                  [0.27, 2.4, mu_n], [0.27, -2.4, mu_n]]
+        if prev_sols:
+            seeds.append(list(np.array(prev_sols[0]) * 1.2))
+        seeds += [[0.7, 0.48, mu_n], [0.5, 0.4, mu_n],
                   [float(rng.uniform(0.1, 1.4)),
-                   float(rng.uniform(0.05, 1.0)),
+                   float(rng.uniform(0.05, 2.4)),
                    float(rng.uniform(eps.min(), eps.max()))],
                   [float(rng.uniform(0.1, 1.4)),
                    float(rng.uniform(-2.4, -0.05)),
-                   float(rng.uniform(eps.min(), eps.max()))]]
-        if prev_sols:
-            seeds.append(list(np.array(prev_sols[0]) * 1.2))
+                   float(rng.uniform(eps.min(), eps.max()))],
+                  [0.12, 0.05, mu_n], [0.02, 0.01, mu_n]]
         sols = solve_sc(args, seeds)
 
         normal["mu"].append(norm["mu"])
@@ -214,9 +230,12 @@ def run_sweep(U, Dt, Vs, Nk, t=1.0, n=N_ELEC, seed=T_SEEDS):
         # branch matching to previous V: scaled metric (mu moves ~1 per
         # 0.25 in V at high SO, so plain max-norm kills valid branches)
         def _bdist(a, b):
-            return max(abs(a[0] - b[0]) / 0.5,
-                       abs(a[1] - b[1]) / 3.0,
-                       abs(a[2] - b[2]) / 3.0)
+            # distance up to the gauge (D0, DS) -> (-D0, -DS): canonical D0>=0
+            # reflects when the physical D0 crosses zero, so compare both images
+            def _m(u, v):
+                return max(abs(u[0] - v[0]) / 0.5, abs(u[1] - v[1]) / 3.0,
+                           abs(u[2] - v[2]) / 3.0)
+            return min(_m(a, b), _m(a, (-b[0], -b[1], b[2])))
 
         new_branches = []
         for br in branches:
@@ -248,13 +267,21 @@ def run_sweep(U, Dt, Vs, Nk, t=1.0, n=N_ELEC, seed=T_SEEDS):
             is_new = True
             for br in branches:
                 if len(br["Vs"]) and br["Vs"][-1] == V:
-                    if np.max(np.abs(np.array(e["x"])
-                                     - np.array(br["xs"][-1]))) < 1e-6:
+                    last = np.array(br["xs"][-1])
+                    x = np.array(e["x"])
+                    if min(np.max(np.abs(x - last)),
+                           np.max(np.abs(x - (-last[0], -last[1], last[2])))) < 1e-6:
                         is_new = False
                         break
             if is_new:
                 branches.append({"Vs": [V], "xs": [e["x"]],
                                 "es": [e["e"]]})
+        import os as _os
+        if _os.environ.get("GSE_DEBUG"):
+            desc = [(len(b["Vs"]), round(float(b["Vs"][0]), 3),
+                     round(float(b["Vs"][-1]), 3)) for b in branches]
+            print("    V=%.4f entries=%d branches=%s" % (V, len(entries), desc),
+                  flush=True)
         # prune branches with < 2 points at the end (handled later)
 
     return {"V": np.array(Vs), "branches": branches, "normal": normal,
@@ -484,7 +511,7 @@ def main():
         # ---- figure ----
         Nk_main = int(list(case_rep["sweeps"])[0])
         sw = case_rep["sweeps"][str(Nk_main)]
-        V = np.linspace(v0, v1, sw["V_grid"][2])
+        V = np.linspace(v0, v1, case_rep["V_grid"][2])
         eN = np.array(sw["e_N"])
         e_gs = np.array(sw["e_GS"])
         de = np.array(sw["de_GS"])
