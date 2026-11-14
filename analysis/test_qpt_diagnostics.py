@@ -120,6 +120,9 @@ def continuation(vso_values: np.ndarray, dt: float, nk: int,
     order = np.argsort(vso_values) if ascending else np.argsort(-vso_values)
     sols = np.zeros((len(vso_values), 3))
     prev = None
+    # seeds cover both the corrected-convention regime (|D0|~0.3,
+    # |DS|~1.5-2.5, see reports/counting_validation.json) and the
+    # small-gap regime near a possible pairing collapse
     tiny = np.array([-1e-3, -2e-3, 3.32])
     small = np.array([-0.02, -0.04, 3.4])
     mid = np.array([-0.15, -0.45, 4.0])
@@ -127,9 +130,15 @@ def continuation(vso_values: np.ndarray, dt: float, nk: int,
     for i in order:
         vso = float(vso_values[i])
         args = make_args(vso, dt, nk)
-        seeds = [tiny.copy(), small.copy(), mid.copy(), large.copy()]
+        mu_n = normal_mu(vso, dt, nk, args)
+        strong1 = np.array([-0.30, -1.9, mu_n])
+        strong2 = np.array([-0.27, -2.4, mu_n])
+        strong3 = np.array([0.30, 1.9, mu_n])
+        seeds = [tiny.copy(), small.copy(), mid.copy(), large.copy(),
+                 strong1, strong2, strong3]
         if prev is not None:
             seeds.insert(0, prev.copy())
+            seeds.insert(1, prev * 1.2)
         x, _ = best_solve(args, prev, seeds)
         prev = x.copy()
         sols[i] = x
@@ -165,14 +174,35 @@ def instability_eigenvalue(vso: float, dt: float, nk: int) -> tuple[float, float
 
 
 def main() -> int:
-    d = np.load(DATA / "concurrence_dense_vso_deriv.npz")
-    v = d["V_SO_over_t"]
-    dts_stored = d["Delta_t_over_t"]
-    DS_down = d["DeltaS_over_t"]
-    mu_down = d["mu_over_t"]
-    v_life = d["V_lifshitz"]
+    # Self-contained under the Phase-1 corrected gap equations: the V grid
+    # matches the archived dense sweep, but descending solutions and the
+    # Lifshitz crossing are recomputed fresh (the stored npz was produced
+    # with the legacy factor-1/2 convention and must not be mixed in).
+    v = np.linspace(0.0, 1.5, 151)
+    dts_stored = np.array([3.5, 4.0, 4.5, 5.0, 6.0])
+    DS_down = np.full((len(dts_stored), len(v)), np.nan)
+    mu_down = np.full((len(dts_stored), len(v)), np.nan)
+    v_life = np.full(len(dts_stored), np.nan)
 
     idt_fig = int(np.argmin(np.abs(dts_stored - DT_FIG)))
+    print("[battery] fresh descending sweeps (corrected convention) ...",
+          flush=True)
+    for dt in DT_HYST:
+        idt = int(np.argmin(np.abs(dts_stored - dt)))
+        sols_down = continuation(v, dt, 201, ascending=False)
+        DS_down[idt] = sols_down[:, 1]
+        mu_down[idt] = sols_down[:, 2]
+        # Lifshitz: first crossing of the (pi,pi) band edge 4t
+        mu = sols_down[:, 2]
+        v_life[idt] = np.nan
+        for i in range(1, len(v)):
+            if (mu[i - 1] - 4.0) * (mu[i] - 4.0) <= 0 and mu[i] != mu[i - 1]:
+                w = (4.0 - mu[i - 1]) / (mu[i] - mu[i - 1])
+                v_life[idt] = float(v[i - 1] + w * (v[i] - v[i - 1]))
+                break
+        print(f"  dt={dt}: V_lifshitz={v_life[idt]} "
+              f"DS[0]={DS_down[idt, 0]:.4f} DS[-1]={DS_down[idt, -1]:.4f}",
+              flush=True)
     v_lif_fig = float(v_life[idt_fig])
 
     results: dict = {
@@ -250,6 +280,7 @@ def main() -> int:
         else:
             sols = continuation(v, DT_FIG, nk, ascending=False)
             DS_nk[nk] = np.abs(sols[:, 1])
+    # (nk=201 uses the fresh descending sweep computed above)
     for nk in NK_SCALE:
         g1 = np.gradient(DS_nk[nk], v)
         g2 = np.gradient(g1, v)
