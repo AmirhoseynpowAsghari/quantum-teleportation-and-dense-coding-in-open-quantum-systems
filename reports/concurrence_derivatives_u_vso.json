@@ -1,0 +1,65 @@
+{
+  "parameters": {
+    "Nk": 201,
+    "n_elec": 1.875,
+    "T": 0.0,
+    "r": 0.25,
+    "theta_deg": 0.0,
+    "Delta_t_over_t": 4.5,
+    "U_sweep": {
+      "V_SO_over_t": 0.7,
+      "U_grid": [
+        20.0,
+        160.0,
+        2.0
+      ],
+      "n_points": 71
+    },
+    "V_sweep": {
+      "U_over_t": 75.0,
+      "V_grid": [
+        0.0,
+        1.5,
+        0.01
+      ],
+      "n_points": 151
+    }
+  },
+  "diagnostics": {
+    "max_residual_U": 1.6292522886374172e-14,
+    "max_residual_V": 4.1772141301521515e-15,
+    "n_fallback_V": 0
+  },
+  "lifshitz": {
+    "U_crossing_at_V0p7": 118.04194475332962,
+    "V_crossing_at_U75": 0.548749552243085,
+    "V_pairing_onset_dDS": 0.97
+  },
+  "d2C_extrema": {
+    "U_spin": {
+      "x_at_min": 160.0,
+      "min": -1.8227648434787636e-06,
+      "x_at_max": 28.0,
+      "max": 4.903085484016245e-06
+    },
+    "U_band": {
+      "x_at_min": 160.0,
+      "min": -2.0270127801882976e-06,
+      "x_at_max": 40.0,
+      "max": 6.294650961025106e-07
+    },
+    "V_spin": {
+      "x_at_min": 0.03,
+      "min": -0.04829294312731492,
+      "x_at_max": 1.06,
+      "max": 0.01155432540809187
+    },
+    "V_band": {
+      "x_at_min": 0.0,
+      "min": -0.054987373339265844,
+      "x_at_max": 1.1,
+      "max": 0.011199045697019017
+    }
+  },
+  "generated_figure": "figs/concurrence_derivatives_u_vso.png"
+}
