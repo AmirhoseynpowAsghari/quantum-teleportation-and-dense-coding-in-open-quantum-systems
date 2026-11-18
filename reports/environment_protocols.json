@@ -1,0 +1,411 @@
+{
+  "paper": {
+    "title": "Quantum Advantages of Teleportation and Dense Coding Protocols in an Open System",
+    "authors": "Haddadi, Hadipour, Haseli, Rahman, Czerwinski",
+    "journal": "Mathematics 11, 1407 (2023)",
+    "doi": "10.3390/math11061407",
+    "analog_figures": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "stark_shift": "beta = 0 (excluded by request)"
+  },
+  "regime_mapping": {
+    "paper_ode": "eps'' + lam eps' + g0 lam eps = 0 (beta=0)",
+    "repo_ode": "eta'' + Gamma eta' + (gamma Gamma/2) eta = 0",
+    "map": "Gamma = lam, gamma = 2 g0, tau = g0 t (g0 = 1)",
+    "non_markovian": {
+      "lam": "0.1 gamma0",
+      "gamma": 2.0,
+      "Gamma": 0.1
+    },
+    "markovian": {
+      "lam": "10 gamma0",
+      "gamma": 2.0,
+      "Gamma": 10.0
+    }
+  },
+  "model": {
+    "U_over_t": 75.0,
+    "Nk": 400,
+    "theta_deg": [
+      45.0
+    ],
+    "Delta_t_over_t": 4.5,
+    "n_elec": 1.875
+  },
+  "resources": {
+    "0.00": {
+      "fixed_average_fidelity": 0.9999999999999997,
+      "optimized_average_fidelity": 0.9999999999999999,
+      "holevo_pauli_bits": 1.9999999999999998,
+      "concurrence": 0.9999999999999998
+    },
+    "0.30": {
+      "fixed_average_fidelity": 0.8038469106535077,
+      "optimized_average_fidelity": 0.8038469106535079,
+      "holevo_pauli_bits": 0.6595346155364445,
+      "concurrence": 0.4115407319605239
+    },
+    "0.50": {
+      "fixed_average_fidelity": 0.6442137416222732,
+      "optimized_average_fidelity": 0.6442137416222734,
+      "holevo_pauli_bits": 0.15741356405120044,
+      "concurrence": 0.0
+    },
+    "1.00": {
+      "fixed_average_fidelity": 0.5043389911806105,
+      "optimized_average_fidelity": 0.5043389911806105,
+      "holevo_pauli_bits": 0.00016203965530259268,
+      "concurrence": 0.0
+    }
+  },
+  "dynamics": {
+    "non_markovian": {
+      "0.00": {
+        "fixed_fidelity": {
+          "initial": 0.9999999999999999,
+          "minimum": 0.33333333405267423,
+          "final": 0.3658111649188133,
+          "first_loss_time": 2.5500000000000003,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 1.0,
+          "minimum": 0.6666666666666666,
+          "final": 0.6666666666666666,
+          "first_loss_time": 2.5500000000000003,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 2.0,
+          "minimum": 0.7284468446064168,
+          "final": 0.8843368123292895,
+          "first_loss_time": 2.0,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 1.0,
+          "minimum": 1.0790112478008084e-09,
+          "final": 0.04871674737821997,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      },
+      "0.30": {
+        "fixed_fidelity": {
+          "initial": 0.8038469106535077,
+          "minimum": 0.3333333339115732,
+          "final": 0.3592853598049277,
+          "first_loss_time": 1.9500000000000002,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 0.8038469106535079,
+          "minimum": 0.6141370279240074,
+          "final": 0.6604512177790183,
+          "first_loss_time": 1.9500000000000002,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 0.6595346155364445,
+          "minimum": 0.3726541069356144,
+          "final": 0.8490380449416242,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.4115407319605239,
+          "minimum": 0.0,
+          "final": 0.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      },
+      "0.50": {
+        "fixed_fidelity": {
+          "initial": 0.6442137416222734,
+          "minimum": 0.33333333379674257,
+          "final": 0.3539745336829407,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 0.6442137416222734,
+          "minimum": 0.56323588998209,
+          "final": 0.6553929655424995,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 0.15741356405120066,
+          "minimum": 0.12449081815344432,
+          "final": 0.837803310772102,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.0,
+          "minimum": 0.0,
+          "final": 0.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      },
+      "1.00": {
+        "fixed_fidelity": {
+          "initial": 0.5043389911806105,
+          "minimum": 0.333333333696125,
+          "final": 0.34932104917868556,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 0.5043389911806105,
+          "minimum": 0.5026561218519069,
+          "final": 0.6509607928709439,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 0.00016203965530259268,
+          "minimum": 0.00016197708900778096,
+          "final": 0.834745353695765,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.0,
+          "minimum": 0.0,
+          "final": 0.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      }
+    },
+    "markovian": {
+      "0.00": {
+        "fixed_fidelity": {
+          "initial": 0.9999999999999999,
+          "minimum": 0.3333333333333333,
+          "final": 0.3333333333333333,
+          "first_loss_time": 0.4,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 1.0,
+          "minimum": 0.6666666666666666,
+          "final": 0.6666666666666666,
+          "first_loss_time": 0.4,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 2.0,
+          "minimum": 0.7286410168097817,
+          "final": 1.0,
+          "first_loss_time": 0.25,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 1.0,
+          "minimum": 5.630685324082182e-30,
+          "final": 5.630685324082182e-30,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      },
+      "0.30": {
+        "fixed_fidelity": {
+          "initial": 0.8038469106535077,
+          "minimum": 0.33333333333333326,
+          "final": 0.3333333333333333,
+          "first_loss_time": 0.25,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 0.8038469106535079,
+          "minimum": 0.6159392523874283,
+          "final": 0.6666666666666666,
+          "first_loss_time": 0.25,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 0.6595346155364445,
+          "minimum": 0.3726415358669728,
+          "final": 1.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.4115407319605239,
+          "minimum": 0.0,
+          "final": 0.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      },
+      "0.50": {
+        "fixed_fidelity": {
+          "initial": 0.6442137416222734,
+          "minimum": 0.33333333333333326,
+          "final": 0.3333333333333333,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 0.6442137416222734,
+          "minimum": 0.5626051939879807,
+          "final": 0.6666666666666666,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 0.15741356405120066,
+          "minimum": 0.12573275997991074,
+          "final": 1.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.0,
+          "minimum": 0.0,
+          "final": 0.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      },
+      "1.00": {
+        "fixed_fidelity": {
+          "initial": 0.5043389911806105,
+          "minimum": 0.33333333333333326,
+          "final": 0.3333333333333333,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 0.5043389911806105,
+          "minimum": 0.503075525198405,
+          "final": 0.6666666666666666,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 0.00016203965530259268,
+          "minimum": 0.00016203965530259268,
+          "final": 1.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.0,
+          "minimum": 0.0,
+          "final": 0.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      }
+    }
+  },
+  "spectral_width_scan": {
+    "gamma": 2.0,
+    "Gamma_range": [
+      0.01,
+      20.000000000000004
+    ],
+    "selected": {
+      "0.01": {
+        "underdamped": true,
+        "fixed_fidelity_final": 0.8097916236010422,
+        "holevo_final": 1.077867209491318,
+        "concurrence_final": 0.7146874354015634,
+        "holevo_minimum": 0.7284474166266601
+      },
+      "0.0977933": {
+        "underdamped": true,
+        "fixed_fidelity_final": 0.3661830456660516,
+        "holevo_final": 0.8834325729346986,
+        "concurrence_final": 0.049274568499077395,
+        "holevo_minimum": 0.7284475246928331
+      },
+      "0.956352": {
+        "underdamped": true,
+        "fixed_fidelity_final": 0.3333333333336362,
+        "holevo_final": 0.9999999999905863,
+        "concurrence_final": 4.5428698657171777e-13,
+        "holevo_minimum": 0.7285157828775359
+      },
+      "3.85307": {
+        "underdamped": true,
+        "fixed_fidelity_final": 0.3333333333333333,
+        "holevo_final": 1.0,
+        "concurrence_final": 1.3432954377993247e-49,
+        "holevo_minimum": 0.7287665135556405
+      },
+      "10.6156": {
+        "underdamped": false,
+        "fixed_fidelity_final": 0.3333333333333333,
+        "holevo_final": 1.0,
+        "concurrence_final": 9.654159213569222e-30,
+        "holevo_minimum": 0.7285526477437656
+      },
+      "20": {
+        "underdamped": false,
+        "fixed_fidelity_final": 0.3333333333333333,
+        "holevo_final": 1.0,
+        "concurrence_final": 3.467311229909123e-28,
+        "holevo_minimum": 0.7285983850996061
+      }
+    }
+  },
+  "validation": {
+    "cross_implementation_max_abs_error": 0.0,
+    "fidelity_range": [
+      0.33333333333333326,
+      0.9999999999999999
+    ],
+    "holevo_range": [
+      0.00016197708900778096,
+      2.0
+    ],
+    "concurrence_range": [
+      0.0,
+      1.0
+    ],
+    "fixed_vs_optimized_max_gap": 0.33333333333333337
+  },
+  "git_commit": "334d7f0aececd06195345ec8dcfa80fc84de4dd7"
+}

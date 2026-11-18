@@ -134,11 +134,19 @@ def evolve_greens_functions(G_uu_polar, F_ud_polar, t_grid,
             print(f"  [greens_evolve] t={t:.2f}  ({k+1}/{Nt})")
 
         if kind == "amp":
+            # Exact Lorentzian envelope: oscillatory (underdamped) or cosh
+            # (overdamped); the old critical-damping fallback was wrong for
+            # GammaA < 2*gamma. Matches fidelity.eta_amp_lorentz.
             d2  = 2.0 * gamma * GammaA - GammaA**2
             if d2 > 0.0:
                 d = np.sqrt(d2)
                 P = np.exp(-GammaA * t) * (
                     np.cos(0.5*d*t) + (GammaA/d)*np.sin(0.5*d*t)
+                )**2
+            elif d2 < 0.0:
+                d = np.sqrt(-d2)
+                P = np.exp(-GammaA * t) * (
+                    np.cosh(0.5*d*t) + (GammaA/d)*np.sinh(0.5*d*t)
                 )**2
             else:
                 P = np.exp(-GammaA * t) * (1.0 + 0.5*GammaA*t)**2
