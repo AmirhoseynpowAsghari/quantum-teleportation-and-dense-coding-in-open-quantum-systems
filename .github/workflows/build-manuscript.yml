@@ -24,9 +24,12 @@ jobs:
           args: -pdf -interaction=nonstopmode -halt-on-error manuscript.tex
 
       - name: Prepare LaTeX log
+        if: always()
         run: |
           mkdir -p reports
-          cp manuscript.log reports/manuscript.log
+          if [ -f manuscript.log ]; then
+            cp manuscript.log reports/manuscript.log
+          fi
 
       - name: Commit compiled files through the GitHub Contents API
         env:
