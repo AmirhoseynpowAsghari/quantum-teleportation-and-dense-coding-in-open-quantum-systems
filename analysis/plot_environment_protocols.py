@@ -5,7 +5,8 @@ and concurrence.
 Analog of Haddadi, Hadipour, Haseli, Rahman & Czerwinski, Mathematics 11,
 1407 (2023), Figures 2, 3, 5 and 6 (their teleportation F_A, dense-coding
 Holevo chi, and time/regime scans) for this repository's BdG two-qubit
-resources, with beta = 0 (no Stark shift).
+resources at V_SO/t = 0.5 (helicity conditional-Wick states transformed to
+the original-spin basis), with beta = 0 (no Stark shift).
 
 Regime mapping (analytic, verified numerically against fidelity.py):
     paper (two-photon):        eps'' + lam eps' + g0 lam eps = 0
@@ -64,9 +65,10 @@ REPORTS = ROOT / "reports"
 
 # --- experiment design -------------------------------------------------------
 U_VALUE = 75.0
+VSO_VALUE = 0.5                        # nonzero spin-orbit coupling (helicity)
 NK = 400
 THETA_DEG = (45.0,)
-R_POINTS = (0.0, 0.30, 0.50, 1.0)      # r=0 -> maximally entangled Werner
+R_POINTS = (0.0, 0.30, 0.50, 1.0)      # r=0 -> pure singlet at any V_SO
 TAU = np.linspace(0.0, 30.0, 601)      # tau = gamma0 t, gamma0 = 1
 REGIMES = {                            # Gamma = lam, gamma = 2 gamma0
     "non_markovian": dict(gamma=2.0, Gamma=0.1, lam="0.1 gamma0"),
@@ -102,14 +104,20 @@ class temporary_spatial_grid:
         return False
 
 
-def solve_bdg(U, nk):
+def solve_bdg(U, nk, vso=VSO_VALUE):
     old_sc_nk, old_k_nk = sc_module.Nk, kspace_setup.Nk
+    old_vso = {m: float(getattr(m, "V_SO"))
+               for m in (config, kspace_setup, sc_module)}
     sc_module.Nk = kspace_setup.Nk = int(nk)
+    for m in (config, kspace_setup, sc_module):
+        m.V_SO = float(vso)
     try:
         bdg = run_selfconsistency(seed=42, U_override=float(U),
                                   kBT_override=0.0, verbose=False)
     finally:
         sc_module.Nk, kspace_setup.Nk = old_sc_nk, old_k_nk
+        for m, value in old_vso.items():
+            m.V_SO = value
     residual = maxabs(bdg["residuals"])
     paired = max(abs(float(bdg["Delta0"])), abs(float(bdg["DeltaS"]))) > 1e-5
     if residual > 1e-8 or not paired or not bdg["converged"]:
@@ -276,14 +284,14 @@ def main():
           f"Delta0={float(bdg['Delta0']):.6f}, "
           f"DeltaS={float(bdg['DeltaS']):.6f}", flush=True)
 
-    print("Stage 2/4: resource states", flush=True)
+    print("Stage 2/4: resource states (helicity spin basis, V_SO/t=0.5)",
+          flush=True)
+    from helicity_density_matrix import density_at_separation
     states, initial_metrics, rho_initial = [], [], []
+    th = np.deg2rad(THETA_DEG[0])
     for radius in R_POINTS:
-        if radius == 0.0:
-            rho = werner_matrix(1.0)
-        else:
-            _, _, G, F = greens_on_grid(bdg, float(radius), 2)
-            rho = np.asarray(build_density_matrices(G, F))[0, 1]
+        r_vec = np.array([radius * np.cos(th), radius * np.sin(th)])
+        rho = density_at_separation(bdg, r_vec, basis="spin")["rho"]
         states.append(np.asarray(rho))
         rho_initial.append(rho)
         initial_metrics.append(dict(zip(METRIC_KEYS, metric_row(rho))))
@@ -421,7 +429,9 @@ def main():
             "non_markovian": {"lam": "0.1 gamma0", "gamma": 2.0, "Gamma": 0.1},
             "markovian": {"lam": "10 gamma0", "gamma": 2.0, "Gamma": 10.0},
         },
-        "model": {"U_over_t": U_VALUE, "Nk": NK, "theta_deg": list(THETA_DEG),
+        "model": {"U_over_t": U_VALUE, "V_SO_over_t": VSO_VALUE,
+                  "state_construction": "helicity conditional Wick, spin basis",
+                  "Nk": NK, "theta_deg": list(THETA_DEG),
                   "Delta_t_over_t": float(config.Delta_t),
                   "n_elec": float(config.n_elec)},
         "resources": {f"{r:.2f}": init

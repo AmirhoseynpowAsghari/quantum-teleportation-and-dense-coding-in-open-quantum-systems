@@ -193,7 +193,7 @@ def plot_greens_angular(U, solution):
         ax.set_xlim(r[0], r[-1])
         ax.grid(alpha=0.25)
         ax.legend()
-    fig.suptitle(fr"Implemented magnitude-amplitude correlators, $U/t={U}$")
+    fig.suptitle(fr"Spin-basis correlators, $U/t={U}$")
     fig.savefig(FIGS / "greens_angular.png", dpi=180, bbox_inches="tight")
     plt.close(fig)
 

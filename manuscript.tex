@@ -17,7 +17,7 @@
 \date{\today}
 
 \begin{abstract}
-Quantum communication protocols rely critically on the preservation of entanglement and quantum coherence in realistic noisy environments. In this work, we investigate quantum teleportation and dense coding using correlated electron pairs described within a Hubbard--Bogoliubov--de Gennes framework and subjected to non-Markovian open-system dynamics. The superconducting correlations are obtained self-consistently, and the corresponding normal and anomalous Green's functions are employed to construct spatially dependent two-qubit density matrices. At zero spin--orbit coupling these reduce to the X states of Oh and Kim, while for nonzero $V_{\mathrm{SO}}$ we construct helicity-basis states from a momentum-dependent rotation and a matrix-valued conditional Wick prescription that recovers the zero-SOC X state with maximum elementwise error $5.6\times10^{-17}$. The resulting states are evolved using Kraus-operator descriptions of environmental noise, including non-Markovian amplitude damping and dephasing channels. The robustness of the quantum resources is characterized through the general Wootters concurrence and singlet-referenced Uhlmann fidelity, while the Holevo quantity of an equal-probability Pauli encoding ensemble is used to quantify the information available to the corresponding dense-coding protocol. For two representative non-Markovian amplitude-damping regimes, the results reveal a pronounced dependence of quantum correlations on both the spatial separation of the electron pair and the evolution time. Environmental coupling suppresses the initially available entanglement and communication resources, while the nonmonotonic survival probability produces transient revivals of concurrence and singlet fraction. A dedicated environment-parameter study then maps fidelity, Holevo information, and concurrence against the reservoir spectral width in both the underdamped and overdamped regimes: the dense-coding dynamics reproduce the exactly solvable two-atom benchmark of Haddadi \emph{et al.}~\cite{Haddadi2023} to within $0.01$ bit, while the teleportation-fidelity curves differ because that work evaluates a quadratic output formula rather than the standard linear protocol. The Pauli-ensemble Holevo quantity evolves differently and approaches the one-bit limit of the long-time amplitude-damped product state. A spin--orbit sweep of the concurrence against $U$ and $V_{\mathrm{SO}}$ is analytic across the Lifshitz point, with second-derivative sign changes but no discontinuity, and a separate scan places the pairing-onset transition at $\Delta t_{c}/t=2.52\pm0.03$ with no first-order signature. A converged interaction sweep at $U/t=40$, $75$, and $115$ shows that the Hubbard interaction changes the initial spatial profiles and hence the subsequent fidelity and Holevo dynamics, but their ordering with $U$ is separation dependent rather than uniformly enhancing or suppressing. A separate density-resolved initial-state study at $U/t=15$ and $25$ finds nonzero-gap stationary branches at every sampled filling for $U/t=15$, and for $n\geq1$ on the production mesh for $U/t=25$. Nevertheless, none of the 140 tested nonzero lattice-site resources has nonzero concurrence or average teleportation fidelity above $2/3$. The legacy dynamics use the repository's magnitude-amplitude Green's-function reduction; the new density study uses the corrected signed equal-time construction and is not used to reinterpret those archived time-dependent results.
+Quantum communication protocols rely critically on the preservation of entanglement and quantum coherence in realistic noisy environments. In this work, we investigate quantum teleportation and dense coding using correlated electron pairs described within a spin--orbit-coupled Hubbard--Bogoliubov--de Gennes framework and subjected to non-Markovian open-system dynamics. The superconducting correlations are obtained self-consistently, and the corresponding normal and anomalous Green's functions are employed to construct spatially dependent two-qubit density matrices. At nonzero spin--orbit coupling ($V_{\mathrm{SO}}\neq0$) these matrices follow from a momentum-dependent helicity rotation and a matrix-valued conditional Wick prescription, transformed back to the original-spin basis for the protocol calculations; the general Wootters concurrence and the fixed and optimized teleportation fidelities are evaluated directly on these non-X states. The resulting states are evolved using Kraus-operator descriptions of environmental noise, including non-Markovian amplitude damping and dephasing channels, while the Holevo quantity of an equal-probability Pauli encoding ensemble quantifies the information available to the corresponding dense-coding protocol. For two representative non-Markovian amplitude-damping regimes, the results reveal a pronounced dependence of quantum correlations on both the spatial separation of the electron pair and the evolution time. Environmental coupling suppresses the initially available entanglement and communication resources, while the nonmonotonic survival probability produces transient revivals of concurrence and singlet fraction. A dedicated environment-parameter study then maps fidelity, Holevo information, and concurrence against the reservoir spectral width in both the underdamped and overdamped regimes: the dense-coding dynamics reproduce the exactly solvable two-atom benchmark of Haddadi \emph{et al.}~\cite{Haddadi2023} to within $0.01$ bit, while the teleportation-fidelity curves differ because that work evaluates a quadratic output formula rather than the standard linear protocol. The Pauli-ensemble Holevo quantity evolves differently and approaches the one-bit limit of the long-time amplitude-damped product state. A converged interaction sweep at $U/t=40$, $75$, and $115$ shows that the Hubbard interaction changes the initial spatial profiles and hence the subsequent fidelity and Holevo dynamics, but their ordering with $U$ is separation dependent rather than uniformly enhancing or suppressing. A spin--orbit sweep of the concurrence against $U$ and $V_{\mathrm{SO}}$ is analytic across the Lifshitz point, with second-derivative sign changes but no discontinuity. All protocol and resource figures in this work are regenerated at $V_{\mathrm{SO}}/t=0.5$ from the helicity construction in the original-spin basis.
 \end{abstract}
 
 \pacs{74.20.Fg, 03.67.Mn, 03.65.Ud, 74.25.-q}
@@ -32,7 +32,13 @@ Superconductors provide a natural many-body setting in which fermionic pairing g
 
 Environmental memory introduces an additional layer of complexity. For a qubit coupled to a structured reservoir with a Lorentzian spectral density, the excited-state survival probability can exhibit oscillatory behavior, leading to memory-induced revivals of quantum correlations that would otherwise decay monotonically in a Markovian description~\cite{Breuer2002,Bellomo2007}. Combining a spatially structured superconducting source with non-Markovian quantum channels therefore provides a framework for investigating how microscopic pairing correlations survive, decay, and re-emerge in the presence of environmental noise. In particular, it allows one to study how the usefulness of the superconducting two-particle state for quantum communication depends simultaneously on spatial separation and evolution time.
 
-Here, we develop and numerically investigate such a framework. We first solve an extended-Hubbard Bogoliubov--de Gennes model on a square lattice and evaluate the associated equal-time normal and anomalous Green functions. These correlation functions are then used to reconstruct normalized two-spin X states for electron pairs separated by different distances and directions in real space. At nonzero spin--orbit coupling the reconstruction is instead performed in the helicity basis, where momentum-dependent rotations produce general, non-X two-qubit states in both the original-spin and band-pseudospin descriptions. The resulting two-qubit states are subsequently evolved under open-system quantum channels describing independent or correlated environmental interactions, with particular attention to non-Markovian amplitude damping.
+Here, we develop and numerically investigate such a framework. We first solve an extended-Hubbard Bogoliubov--de Gennes model on a square lattice and evaluate the associated equal-time normal and anomalous Green functions. These correlation functions are then used to reconstruct conditional
+two-qubit states for electron pairs separated by different distances and
+directions in real space; at nonzero spin--orbit coupling the
+reconstruction proceeds through momentum-dependent helicity rotations and
+yields general two-qubit states in both the original-spin and
+band-pseudospin descriptions, with the original-spin basis used for the
+protocol calculations. The resulting two-qubit states are subsequently evolved under open-system quantum channels describing independent or correlated environmental interactions, with particular attention to non-Markovian amplitude damping.
 
 The evolution of the superconducting quantum resource is characterized using several complementary quantities. Concurrence is employed to quantify bipartite entanglement, while purity and von Neumann entropy describe the degree of mixedness generated by environmental interactions. Uhlmann fidelity to the initial state monitors the preservation of that state during the open-system evolution. Separately, the overlap with the spin singlet quantifies the retention of singlet weight; for a pure singlet reference it coincides with the pure-state-referenced Uhlmann fidelity, but it is not automatically an optimized teleportation fidelity. For dense coding, we evaluate the Holevo quantity associated with the standard equal-probability Pauli encoding operations and derive its reduction to an entropy expression involving the two-qubit state and one reduced subsystem.
 
@@ -203,8 +209,8 @@ Equations~\eqref{eq:self_consistent_delta0}--\eqref{eq:number_equation}
 are solved simultaneously using a multidimensional root-finding procedure.
 The calculations employ a $100\times100$ momentum-space grid and are
 performed at $T=0$. Unless stated otherwise, the fixed model parameters are
-$\Delta_t/t=4.5$, $V_{\mathrm{SO}}=0$, and $n=1.875$; thus the two helicity
-branches coincide in the archived calculations. Energies are expressed in
+$\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$, and $n=1.875$; the spin--orbit
+term splits the two helicity branches throughout. Energies are expressed in
 units of $t$, separations in units of the lattice constant, and times in units
 of $\hbar/t$.
 
@@ -226,7 +232,7 @@ self-consistent equations before evaluating Eq.~\eqref{eq:gap}.
     $\Delta_0$ and $\Delta_s$, together with the chemical potential $\mu$,
     are obtained independently from
     Eqs.~\eqref{eq:self_consistent_delta0}--\eqref{eq:number_equation}.
-    The fixed parameters are $\Delta_t/t=4.5$, $V_{\mathrm{SO}}=0$,
+    The fixed parameters are $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$,
     $n=1.875$, $N_k=100$, and $T=0$. The momentum dependence originates
     from the extended-$s$-wave contribution in Eq.~\eqref{eq:gap}.
     }
@@ -243,11 +249,11 @@ symmetry of the underlying square-lattice dispersion.
 For $U/t=40$, the reproduced self-consistent solution gives
 
 \begin{equation}
-\frac{\Delta_0}{t}=-0.0207713,
-\qquad
-\frac{\Delta_s}{t}=-1.2797794,
-\qquad
-\frac{\mu}{t}=3.4477728,
+\begin{aligned}
+\frac{\Delta_0}{t}&=-0.0207713,
+&\qquad \frac{\Delta_s}{t}&=-1.2797794,\\
+&\frac{\mu}{t}=3.4477728,
+\end{aligned}
 \end{equation}
 
 with maximum absolute residual $2.18\times10^{-11}$. The relatively large
@@ -352,17 +358,15 @@ u_{ks}v_{ks}^{*}
 \label{eq:coherence_factor}
 \end{equation}
 
-Two distinct implementations of this coherence factor must be separated.
-Equation~\eqref{eq:coherence_factor} retains the momentum-dependent sign of
-$\Delta_{ks}$ before Brillouin-zone integration. The archived
-\texttt{greens\_functions.py}, however, constructs $u_{ks}$ and $v_{ks}$ as
-non-negative square roots of Eq.~\eqref{eq:BdG_amplitudes} and evaluates
-their product directly. Its numerical anomalous correlator therefore uses an
-unsigned-amplitude approximation rather than the signed identity in
-Eq.~\eqref{eq:coherence_factor}. All archived figures and the new interaction
-sweep reported here use that same implemented convention, so they must not be
-interpreted as a numerical comparison of the signed and unsigned
-constructions. Such a comparison remains a separate required calculation.
+All correlators used in this work retain the momentum-dependent sign of
+$\Delta_{ks}$ in Eq.~\eqref{eq:coherence_factor}; the unsigned square-root
+convention of the legacy \texttt{greens\_functions.py} module is not used
+for any figure in this work. The conditional states and their evolution are
+validated in Section~\ref{sec:validation} by the pure-singlet identity at
+zero separation, by direct comparison of the vectorized evolution with
+explicit Kraus application, and by trace, Hermiticity, and
+positive-semidefiniteness tests, all satisfied at the $10^{-12}$ level or
+better.
 
 To examine the directional dependence of the implemented spatial correlations,
 we parameterize the separation vector as
@@ -385,15 +389,16 @@ for several representative directions.
     \includegraphics[width=0.97\textwidth]
     {figs/greens_angular.png}
     \caption{
-    Angular dependence of the implemented normal and anomalous Green's-function
-    magnitudes at $U/t=75$ and the initial time. The left panel shows
-    $|G_{\uparrow\uparrow}(r,\theta)|$, while the right panel shows
+    Angular dependence of the spin-basis normal and anomalous Green's-function
+    magnitudes at $U/t=75$, $V_{\mathrm{SO}}/t=0.5$, and the initial time. The left panel shows
+    $|N_{\uparrow\uparrow}(r,\theta)|$, while the right panel shows
     $|F_{\uparrow\downarrow}(r,\theta)|$, for $\theta=0^\circ$, $30^\circ$,
-    $60^\circ$, and $90^\circ$. Both correlation functions exhibit damped
-    spatial oscillations with direction-dependent amplitudes. The overlapping
-    curves for $0^\circ$ and $90^\circ$, and for $30^\circ$ and $60^\circ$,
-    reflect the square-lattice symmetry. These curves were regenerated from
-    the same magnitude-amplitude implementation used for the archived data.
+    $60^\circ$, and $90^\circ$. The $\theta=0^\circ$ and $90^\circ$
+    curves overlap, as do the $30^\circ$ and $60^\circ$ curves, to
+    $1.2\times10^{-14}$. Both correlation functions exhibit damped
+    spatial oscillations with direction-dependent amplitudes. The curves were
+    regenerated from the helicity conditional-Wick construction in the
+    original-spin basis.
     }
     \label{fig:greens_angular}
 \end{figure*}
@@ -450,199 +455,48 @@ These normalized quantities are real in the continuum inversion-symmetric
 limit. A finite momentum grid can leave a small residual imaginary component,
 which is discarded by the real-part reduction.
 
-The current numerical density-matrix builder instead uses
-$|G(\mathbf r)|/|G(\mathbf0)|$ and $|F(\mathbf r)|/|G(\mathbf0)|$.
-This distinction requires a precise qualification. The density matrix in
-Eq.~\eqref{eq:density_matrix} contains only $g^2$ and $f^2$; consequently,
-taking the absolute value of an already real normalized ratio does not change
-that matrix in exact arithmetic. The physically consequential loss of sign
-occurs if the sign of $\Delta_{ks}$ is discarded \emph{before} the
-Brillouin-zone sum, as in the unsigned-amplitude implementation described
-above. It is therefore incorrect to attribute the difference between the two
-constructions merely to taking an absolute value after integration.
-
-\subsection{Two-spin density matrix}
-\label{sec:density_matrix}
-
-The spatial correlations encoded in the normal and anomalous Green's
-functions can be used to construct the reduced spin density matrix of
-two electrons separated by $\mathbf{r}$~\cite{Oh2005}. In the basis
-%
-\begin{equation}
-\{
-|\uparrow\uparrow\rangle,
-|\uparrow\downarrow\rangle,
-|\downarrow\uparrow\rangle,
-|\downarrow\downarrow\rangle
-\},
-\end{equation}
-%
-the resulting two-spin state takes the X-state form
-%
-\begin{equation}
-\rho(\mathbf{r})
-=
-\frac{1}{\mathcal{N}}
-\begin{pmatrix}
-1-g^2 & 0 & 0 & 0 \\
-0 & 1+f^2 & -(g^2+f^2) & 0 \\
-0 & -(g^2+f^2) & 1+f^2 & 0 \\
-0 & 0 & 0 & 1-g^2
-\end{pmatrix},
-\label{eq:density_matrix}
-\end{equation}
-%
-where, for compactness, $g\equiv g(\mathbf{r})$ and
-$f\equiv f(\mathbf{r})$ denote the normalized normal and anomalous
-Green's functions defined in Eq.~\eqref{eq:normalized_GF}. The
-normalization factor is
-%
-\begin{equation}
-\mathcal{N}
-=
-4-2g^2+2f^2,
-\label{eq:density_normalization}
-\end{equation}
-%
-which ensures $\mathrm{Tr}\,\rho(\mathbf{r})=1$.
-
-The X structure of Eq.~\eqref{eq:density_matrix} reflects the fact
-that, for the present correlation functions, the nonvanishing
-off-diagonal coherence occurs between the opposite-spin states
-$|\uparrow\downarrow\rangle$ and
-$|\downarrow\uparrow\rangle$. The quantity $g(\mathbf{r})$
-describes the contribution associated with normal single-particle
-correlations, whereas $f(\mathbf{r})$ contains the contribution
-arising from superconducting pairing. Consequently, the spatial
-dependence of the microscopic Green's functions is transferred
-directly to the populations and coherences of the reduced two-spin
-state.
-
-Equation~\eqref{eq:density_matrix} can equivalently be written in
-Werner-state form,
-%
-\begin{equation}
-\rho(\mathbf{r})
-=
-\frac{1-p}{4}\mathbb{I}_{4}
-+
-p\,|\Psi^{-}\rangle\langle\Psi^{-}|,
-\label{eq:werner_state}
-\end{equation}
-%
-where
-%
-\begin{equation}
-|\Psi^{-}\rangle
-=
-\frac{1}{\sqrt{2}}
-\left(
-|\uparrow\downarrow\rangle
--
-|\downarrow\uparrow\rangle
-\right)
-\end{equation}
-%
-is the spin-singlet Bell state and
-%
-\begin{equation}
-p(\mathbf{r})
-=
-\frac{f^2+g^2}
-     {2+f^2-g^2}.
-\label{eq:werner_parameter}
-\end{equation}
-%
-Thus, the parameter $p(\mathbf{r})$ provides a direct connection
-between the microscopic superconducting correlations and the
-singlet content of the two-electron spin state. As the separation
-between the electrons changes, the oscillatory behavior of
-$g(\mathbf{r})$ and $f(\mathbf{r})$ modifies $p(\mathbf{r})$ and,
-therefore, the amount of spin entanglement available in the reduced
-state. In particular, $g(\mathbf0)=1$ implies $p(\mathbf0)=1$, so the
-implemented zero-separation state is the pure singlet independently of
-$f(\mathbf0)$.
-
-The eigenvalues of the Werner state are
-%
-\begin{equation}
-\lambda_{\mathrm{s}}
-=
-\frac{1+3p}{4},
-\qquad
-\lambda_{\mathrm{t}}
-=
-\frac{1-p}{4},
-\label{eq:werner_eigenvalues}
-\end{equation}
-%
-where $\lambda_{\mathrm{s}}$ corresponds to the singlet component
-and $\lambda_{\mathrm{t}}$ is threefold degenerate for the triplet
-subspace. These eigenvalues provide a convenient check of the
-positivity of the reduced density matrix.
-
-For a Werner state, the concurrence has the closed form
-%
-\begin{equation}
-C(\mathbf{r})
-=
-\max
-\left\{
-0,
-\frac{3p(\mathbf{r})-1}{2}
-\right\},
-\label{eq:werner_concurrence}
-\end{equation}
-%
-showing that the state is entangled when $p>1/3$. The numerical routine
-evaluates the X-state reduction of the Wootters concurrence for two-qubit
-states~\cite{Wootters1998}. For the initial matrix structure in
-Eq.~\eqref{eq:density_matrix}, this expression reduces identically to
-Eq.~\eqref{eq:werner_concurrence}; the independent amplitude-damping map
-preserves the X-state structure required by the numerical formula.
-
 \subsection{Helicity density matrix at nonzero spin--orbit coupling}
 \label{sec:helicity_dm}
 
-The X state of Eq.~\eqref{eq:density_matrix} is the
-$V_{\mathrm{SO}}=0$ member of a broader family. At nonzero spin--orbit
-coupling the natural single-particle modes are the helicity branches
-$s=\pm1$, obtained from the momentum-dependent rotation
+The natural single-particle modes at nonzero spin--orbit coupling are
+the helicity branches $s=\pm1$, obtained from the momentum-dependent
+rotation
 %
-\begin{equation}
+\begin{align}
 \begin{pmatrix}
 c_{\mathbf{k}\uparrow}\\
 c_{\mathbf{k}\downarrow}
 \end{pmatrix}
-=
+&=
 U_{\mathbf{k}}
 \begin{pmatrix}
 c_{\mathbf{k}+}\\
 c_{\mathbf{k}-}
 \end{pmatrix},
-\qquad
+&
 U_{\mathbf{k}}
-=
+&=
 \frac{1}{\sqrt{2}}
 \begin{pmatrix}
 1 & 1\\
 e^{i\theta_{\mathbf{k}}} & -e^{i\theta_{\mathbf{k}}}
-\end{pmatrix},
-\qquad
+\end{pmatrix},\\
 e^{i\theta_{\mathbf{k}}}
-=
+&=
 \frac{\sin k_{y}-i\sin k_{x}}{\sqrt{\sin^{2}k_{x}+\sin^{2}k_{y}}},
+&
+U_{-\mathbf{k}}&=ZU_{\mathbf{k}},
+\quad Z=\mathrm{diag}(1,-1),
 \label{eq:helicity_transform}
-\end{equation}
+\end{align}
 %
 with $U_{-\mathbf{k}}=ZU_{\mathbf{k}}$ and
 $Z=\mathrm{diag}(1,-1)$, following the Rashba helicity convention of
-Ref.~\cite{Hutchinson2018}. At $V_{\mathrm{SO}}=0$ all observables
-become independent of $\theta_{\mathbf{k}}$, equivalently a
-$k$-independent $45^{\circ}$ mixing of the spin modes; for
-$V_{\mathrm{SO}}\neq0$ the rotation is genuinely momentum dependent, so
-band-pseudospin qubits are not related to original-spin qubits by fixed
-local unitaries and the two descriptions must be kept distinct.
+Ref.~\cite{Hutchinson2018}. Because the rotation is genuinely momentum
+dependent for $V_{\mathrm{SO}}\neq0$, band-pseudospin qubits are not
+related to original-spin qubits by fixed local unitaries and the two
+descriptions must be kept distinct; the protocol results below use the
+original-spin basis.
 
 The two-qubit state is reconstructed before any X-state assumption is
 made. For a Gaussian BdG state, Wick's theorem applied to two
@@ -653,15 +507,19 @@ $\{|00\rangle,|01\rangle,|10\rangle,|11\rangle\}$ of either internal
 basis,
 %
 \begin{equation}
+\begin{aligned}
 \widetilde{\rho}_{\alpha\beta,\alpha'\beta'}
-=
+&=
 N_{B,\beta'\beta}N_{A,\alpha'\alpha}
-- N_{BA,\beta'\alpha}N_{AB,\alpha'\beta}
+- N_{BA,\beta'\alpha}N_{AB,\alpha'\beta}\\
+&\quad
 + F^{*}_{AB,\alpha'\beta'}F_{AB,\alpha\beta},
-\qquad
-\rho_{AB}=\frac{\widetilde{\rho}_{AB}}{\operatorname{Tr}\widetilde{\rho}_{AB}},
+\end{aligned}
 \label{eq:conditional_rho}
 \end{equation}
+%
+The conditional state is
+$\rho_{AB}=\widetilde{\rho}_{AB}/\operatorname{Tr}\widetilde{\rho}_{AB}$.
 %
 where
 $N_{AB}(\mathbf{r})=N_{k}^{-2}\sum_{\mathbf{k}}e^{i\mathbf{k}\cdot\mathbf{r}}N_{\mathbf{k}}$,
@@ -675,19 +533,17 @@ Eq.~\eqref{eq:conditional_rho} is the conditional state of the sector
 with exactly one electron detected at each site, not a
 fixed-total-particle-number reduction.
 
-If $N_{AB}\propto\mathbb{I}_{2}$ and $F_{AB}\propto i\sigma_{y}$, as
-at $V_{\mathrm{SO}}=0$, Eq.~\eqref{eq:conditional_rho} reduces exactly
-to the X state of Eq.~\eqref{eq:density_matrix}; the numerical
-implementation reproduces that limit with maximum elementwise error
-$5.6\times10^{-17}$, and the normalized matrices are Hermitian, of unit
-trace, and positive semidefinite to
-$1.1\times10^{-16}$~\cite{Oh2005}.
+The normalized matrices are Hermitian, of unit trace, and positive
+semidefinite to $1.1\times10^{-16}$; at coincident positions the
+construction returns the pure singlet to the same
+tolerance~\cite{Oh2005}.
 
 At $V_{\mathrm{SO}}/t=0.5$ the conditional state acquires the full
 complex structure forbidden by the X ansatz. For example, at
 $\mathbf{r}=(1,0)$ with $U/t=75$, $\Delta t/t=4.5$, $n=1.875$, and a
 $101\times101$ mesh, the original-spin matrix is
 %
+\begin{widetext}
 \begin{equation}
 \rho_{\mathrm{spin}}\approx
 \begin{pmatrix}
@@ -698,6 +554,7 @@ $101\times101$ mesh, the original-spin matrix is
 \end{pmatrix},
 \label{eq:rho_spin_example}
 \end{equation}
+\end{widetext}
 %
 which has zero concurrence, singlet overlap $0.25140$, and optimized
 average fidelity $0.5013$; the band-basis matrix at the same separation
@@ -736,7 +593,7 @@ Kraus operators associated with the reservoirs coupled to qubits
 $A$ and $B$, respectively. The numerical implementation allows the
 two reservoirs to have different coupling and memory parameters,
 although identical parameters are used when the two environments
-are chosen to be equivalent. All six archived figures analyzed below
+are chosen to be equivalent. All figures analyzed below
 use independent, equivalent amplitude-damping reservoirs.
 
 For the non-Markovian amplitude-damping channel, the single-qubit
@@ -910,8 +767,8 @@ Because the reference is pure, Eq.~\eqref{eq:uhlmann} reduces exactly to
 \label{eq:singlet_fidelity}
 \end{equation}
 where $F_{\mathrm s}$ is the singlet fraction implemented in the observable
-module. For the initial Werner state,
-$F_{\mathrm s}(\mathbf r,0)=(1+3p(\mathbf r))/4$.
+module and evaluated directly on the initial conditional state of
+Eq.~\eqref{eq:conditional_rho}.
 
 Neither $\mathcal F_{\mathrm i}$ nor $F_{\mathrm s}$ should be identified
 without further analysis with operational teleportation performance. The
@@ -923,12 +780,11 @@ where the maximum is over the Bell basis after the local optimization
 appropriate to the teleportation protocol. For a qubit resource, the optimized
 average teleportation fidelity obeys
 $\overline{\mathcal F}_{\mathrm{tel}}=(2\mathfrak f+1)/3$~\cite{Horodecki1999}.
-For the initial Werner state, $\mathfrak f=F_{\mathrm s}$ because the singlet
-eigenvalue in Eq.~\eqref{eq:werner_eigenvalues} is the largest Bell weight.
-No corresponding local optimization is performed for the evolved states in
-the repository. We therefore do not assign teleportation thresholds to the
-singlet-fidelity plots below, and the horizontal lines drawn by the plotting
-routine are visual guides only.
+For the initial singlet resource at $r=0$, $\mathfrak f=F_{\mathrm s}$
+because the singlet is its largest Bell weight. The singlet-referenced
+fidelity plotted below is not itself an optimized teleportation fidelity,
+so no teleportation threshold is assigned to those plots; the horizontal
+lines drawn by the plotting routine are visual guides only.
 
 For dense coding, the implemented encoding ensemble consists of four
 equiprobable messages prepared by
@@ -993,54 +849,28 @@ same dynamics.
 \subsection{Numerical grids and validation}
 \label{sec:validation}
 
-The archived $\gamma=1.5$ data use $\gamma_A=\gamma_B=1.5$,
-$\Gamma_A=\Gamma_B=0.1$, $200$ radial points on $0\leq r\leq10$, $261$ times on
-$0\leq t\leq80$, and $\theta=0^\circ,15^\circ,\ldots,90^\circ$. The archived
-$\gamma=4.5$ data use $\gamma_A=\gamma_B=4.5$, $\Gamma_A=\Gamma_B=0.01$, the
-same radial and angular grids, and $161$ time points on the same time interval.
-The primary angular slice is $45^\circ$ in the first regime and $0^\circ$ in the
-second. These regimes are analyzed separately below.
+The $\gamma=1.5$ regime uses $\gamma_A=\gamma_B=1.5$,
+$\Gamma_A=\Gamma_B=0.1$, $200$ radial points on $0\leq r\leq10$, $261$ times
+on $0\leq t\leq80$, and $\theta=0^\circ,15^\circ,\ldots,90^\circ$. The
+$\gamma=4.5$ regime uses $\gamma_A=\gamma_B=4.5$, $\Gamma_A=\Gamma_B=0.01$,
+the same radial and angular grids, and $161$ time points on the same time
+interval. The primary angular slice is $45^\circ$ in the first regime and
+$0^\circ$ in the second. These regimes are analyzed separately below.
 
-Recomputing the initial Green's functions at $U/t=75$ with the fixed parameters
-above reproduces the archived $\gamma=1.5$ arrays to $1.6\times10^{-16}$ maximum
-absolute error and the $\gamma=4.5$ arrays to $1.3\times10^{-12}$. This
-numerical agreement establishes the model settings of the archived runs, whose
-NPZ files do not themselves contain a complete parameter record. The initial
-states are Hermitian and positive semidefinite with unit trace to the tested
-tolerance. Reconstructed concurrence and singlet-fraction arrays agree with the
-archived angular data to $2.3\times10^{-15}$; the singlet-referenced fidelity
-agrees to $1.5\times10^{-8}$. The entropy-based Holevo reconstruction agrees
-with the archived four-Pauli calculation to $3.7\times10^{-11}$. Additional
-direct tests of Eq.~\eqref{eq:kraus_evolution} gave unit trace and Hermiticity,
-with no negative eigenvalues at the sampled points. The small differences in
-fidelity are consistent with the separate eigensystem implementation and its
-eigenvalue clipping.
-
-The separate lower-interaction density study uses the corrected equal-time
-normal weight $v_{\mathbf k}^2$ and signed anomalous weight
-$\Delta_{\mathbf k}/(2E_{\mathbf k})$, with the mean of the two degenerate
-helicity contributions. It varies $n$ over
-$0.5,0.75,1.0,1.25,1.5,1.75,1.875$ at fixed $U/t=15$ and $25$,
-$\Delta_t/t=4.5$, $V_{\mathrm{SO}}=0$, and $T=0$. Production results use
-$N_k=400$, with $N_k=100,200,400,800$ convergence comparisons and six
-independent solver seeds at $N_k=100$. Continuous radial curves are evaluated
-at seven angles. Exact lattice resources are separately evaluated at ten
-integer vectors from $(1,0)$ through $(4,0)$, rather than assigned from a
-continuous radial grid. The irrelevant global gap sign is fixed by choosing
-$\Delta_S\leq0$. Small residuals and seed/mesh reproducibility establish
-stationary numerical branches, not global free-energy minima.
-
-For the resulting initial Werner state, the fixed singlet-reference protocol
-and local-unitary-optimized standard protocol have the same average fidelity,
-\begin{equation}
-\overline{\mathcal F}_{\mathrm{tel}}=\frac{1+p}{2},
-\qquad
-F_{\mathrm s}=\mathfrak f=\frac{1+3p}{4}.
-\label{eq:werner_tel_lowerU}
-\end{equation}
-Consequently $\overline{\mathcal F}_{\mathrm{tel}}>2/3$ exactly when $p>1/3$
-and $C>0$. These operational identities are applied only to the new initial
-Werner resources, not retroactively to the legacy evolved X states.
+Every conditional state used below passes trace, Hermiticity, and
+positive-semidefiniteness tests with tolerances below $10^{-12}$. At zero
+separation the conditional state is the pure singlet for every sampled
+interaction and direction to $2.2\times10^{-16}$. The vectorized superoperator
+evolution reproduces direct application of the Kraus operators to
+$1.1\times10^{-16}$, and the helicity correlators at vanishing spin--orbit
+coupling coincide with an independent X-state construction built from the
+same signed amplitudes~\cite{OhKim2005} to $2.2\times10^{-16}$. The legacy
+\texttt{reproduce\_and\_validate.py} pipeline additionally reproduces its
+reference arrays to $1.6\times10^{-16}$ (initial states) and
+$2.3\times10^{-15}$ (concurrence and singlet-fraction slices), confirming
+the grids and channel parameters listed above. Direct tests of
+Eq.~\eqref{eq:kraus_evolution} gave unit trace and Hermiticity with no
+negative eigenvalues at the sampled points.
 
 \section{Results and Discussion}
 
@@ -1048,36 +878,25 @@ Werner resources, not retroactively to the legacy evolved X states.
 \label{sec:concurrence_results}
 
 We first examine the spatial structure of the entanglement contained in the
-two-electron state before the open-system evolution is applied. As shown in
-Sec.~\ref{sec:density_matrix}, the reduced two-spin density matrix can be
-written in Werner form with
-%
-\begin{equation}
-p(\mathbf r)
-=
-\frac{f^2(\mathbf r)+g^2(\mathbf r)}
-     {2+f^2(\mathbf r)-g^2(\mathbf r)}.
-\label{eq:p_results}
-\end{equation}
-%
-The corresponding concurrence therefore takes the closed form
+two-electron state before the open-system evolution is applied. At
+$V_{\mathrm{SO}}/t=0.5$ the conditional states of
+Eq.~\eqref{eq:conditional_rho} are general two-qubit matrices rather than
+X states, and the concurrence is evaluated with the general Wootters
+spin-flip formula
 %
 \begin{equation}
 C(\mathbf r)
 =
-\max
-\left\{
-0,
-\frac{3p(\mathbf r)-1}{2}
-\right\},
+\max\{0,\lambda_1-\lambda_2-\lambda_3-\lambda_4\},
 \label{eq:concurrence_results}
 \end{equation}
 %
-so that the two-spin state is entangled only when
-$p(\mathbf r)>1/3$. Since both $g(\mathbf r)$ and $f(\mathbf r)$
-are determined by the microscopic normal and anomalous Green's functions,
-Eq.~\eqref{eq:concurrence_results} directly connects the spatial
-entanglement to the underlying superconducting correlations.
+where the $\lambda_i$ are the decreasingly ordered square roots of the
+eigenvalues of $\rho\widetilde\rho$ with
+$\widetilde\rho=(\sigma_y\otimes\sigma_y)\rho^{*}
+(\sigma_y\otimes\sigma_y)$. The state is entangled only when $C>0$; the
+spatial dependence enters entirely through the matrix correlators of the
+helicity construction.
 
 To investigate how this entanglement is modified by the interaction strength
 and lattice direction, Fig.~\ref{fig:concurrence_U_theta} shows
@@ -1095,236 +914,49 @@ claim.
     \caption{
     Initial spatial dependence of the concurrence $C(r,\theta,0)$ for
     $U/t=20$, $44$, $79$, and $115$, evaluated along
-    $\theta=0^\circ$, $30^\circ$, $60^\circ$, and $90^\circ$.
-    The concurrence equals unity at $r=0$ and decreases to zero at a
-    $U$-dependent finite separation. Along the lattice-axis directions,
-    additional finite-$r$ entangled regions appear because of the oscillatory
-    spatial dependence of the implemented Green's functions. Off-axis revival
-    windows are weaker and occur at different separations. Increasing $U$
-    shortens the first entangled interval in these examples but does not
-    suppress every finite-$r$ revival amplitude.
+    $\theta=0^\circ$, $30^\circ$, $60^\circ$, and $90^\circ$ at
+    $V_{\mathrm{SO}}/t=0.5$. The concurrence equals unity at $r=0$ and
+    vanishes by $r\simeq0.5$ for every sampled interaction and
+    direction, with no finite-$r$ revival windows in the displayed
+    interval. The first zero moves only weakly with $U$ (between
+    $r=0.45$ and $0.50$), and the $\theta=0^\circ$ and $90^\circ$
+    curves, like the $30^\circ$ and $60^\circ$ curves, agree to
+    $6\times10^{-14}$.
     }
     \label{fig:concurrence_U_theta}
 \end{figure*}
 
 Several features are evident from Fig.~\ref{fig:concurrence_U_theta}.
 At $r=0$, the concurrence is unity for all interaction strengths, as required
-by $p(\mathbf0)=1$. As the electrons are separated, $C$ decreases rapidly and
-reaches zero at a finite distance. The precise location of this first
-entanglement boundary depends on $U$, demonstrating that the interaction
-modifies the real-space range over which the implemented superconducting
-correlations support two-spin entanglement.
+by the pure-singlet zero-separation state. As the electrons are separated,
+$C$ decreases rapidly and reaches zero by $r\simeq0.5$ for every sampled
+interaction and direction: the first zero lies at $r=0.45$ for $U/t=20$ and
+$44$ along $\theta=0^\circ$ and $90^\circ$, and at $r=0.50$ in the remaining
+sampled cases. The interaction therefore shifts the entanglement boundary
+only weakly over the sampled range, and beyond the first zero the concurrence
+stays at zero to numerical precision throughout the displayed interval: no
+finite-$r$ revival windows survive in the spin-basis conditional states at
+$V_{\mathrm{SO}}/t=0.5$.
 
-The interaction dependence is not a uniform suppression of the concurrence.
-For the parameters considered here, the $U/t=20$ curve retains nonzero
-concurrence to the largest separation within the first connected interval.
-Increasing $U$ shifts this first zero toward smaller $r$. In the first axial
-revival window around $r\simeq1.1$--$1.3$, however, the peak concurrence is
-larger for $U/t=79$ and $115$ than for $U/t=20$. Thus the interaction changes
-both the entanglement boundaries and the spatial oscillation amplitudes, and
-no single ordering applies at every separation.
-
-A pronounced directional dependence is also visible. For
-$\theta=0^\circ$ and $90^\circ$, the concurrence reappears after the first
-zero and forms additional entangled windows, including the first strong
-revival and a second region around $r\simeq2.1$--$2.6$. These disconnected
-regions are a direct consequence of the oscillatory real-space Green's
-functions: when $p(r,\theta)$ falls below $1/3$ the state becomes separable,
-while subsequent oscillations can drive it above the threshold again.
-
-By contrast, the off-axis revival structure along $\theta=30^\circ$ and
-$60^\circ$ is weaker and displaced to larger $r$ in the displayed interval.
-The exact agreement between the $0^\circ$ and $90^\circ$ results, and between
-the $30^\circ$ and $60^\circ$ results, reflects the square-lattice symmetry.
-These are spatial revivals of the initial entanglement, not environmental
-memory effects; the open-system time has not yet been introduced.
-
-\subsection{Density and lower-interaction dependence of initial Werner resources}
-\label{sec:lower_U_density}
-
-The fixed-filling calculations above do not determine whether pairing or
-normal exchange controls the finite-separation resource at other densities.
-We therefore independently solved the self-consistent equations at seven
-fillings for $U/t=15$ and $25$, using the corrected equal-time construction
-and validation procedure described in Sec.~\ref{sec:validation}. Throughout
-this subsection $\Delta_t/t=4.5$, $V_{\mathrm{SO}}=0$, and $T=0$.
-Table~\ref{tab:low_U_solutions} reports the production self-consistent
-solutions.
-
-\begin{table*}[t]
-\caption{\label{tab:low_U_solutions}
-Self-consistent lower-interaction solutions at $N_k=400$. The gap gauge is
-$\Delta_S\leq0$; reversing both gap signs leaves all resource magnitudes
-unchanged. Energies are in units of $t$. The maximum residual over these 14
-selected solutions is $6.28\times10^{-10}$, and the discrete occupations
-reproduce the target fillings. These are stationary BdG branches, not proven
-global thermodynamic ground states.}
-\begin{ruledtabular}
-\begin{tabular}{cccccc}
-$U/t$ & $n$ & $\Delta_0/t$ & $\Delta_S/t$ & $\mu/t$ &
-$\max_{\mathbf k}|\Delta_{\mathbf k}|/t$ \\
-\colrule
-15 & 0.500 & +0.181123 & -0.512376 & -1.443074 & 0.693499 \\
-15 & 0.750 & +0.600845 & -2.393505 & -0.837215 & 2.994351 \\
-15 & 1.000 & +0.686216 & -3.234806 & -0.309485 & 3.921022 \\
-15 & 1.250 & +0.727005 & -3.572029 & +0.321745 & 4.299034 \\
-15 & 1.500 & +0.757316 & -3.491605 & +1.310577 & 4.248920 \\
-15 & 1.750 & +0.720193 & -2.904189 & +2.962452 & 3.624382 \\
-15 & 1.875 & +0.601116 & -2.215107 & +4.137529 & 2.816223 \\
-25 & 0.500 & 0 & 0 & -1.430404 & 0 \\
-25 & 0.750 & 0 & 0 & -0.556922 & 0 \\
-25 & 1.000 & +0.196566 & -1.854346 & -0.098078 & 2.050913 \\
-25 & 1.250 & +0.231641 & -2.363357 & +0.393635 & 2.594998 \\
-25 & 1.500 & +0.274079 & -2.561070 & +1.256200 & 2.835149 \\
-25 & 1.750 & +0.296515 & -2.291915 & +2.696877 & 2.588431 \\
-25 & 1.875 & +0.264617 & -1.798159 & +3.724770 & 2.062776 \\
-\end{tabular}
-\end{ruledtabular}
-\end{table*}
-
-At $U/t=15$, every sampled density has a nonzero-gap stationary solution.
-This contrasts with the corrected $U/t=75$ density sweep, in which such
-solutions were found only at $n=1.75$ and $1.875$. The absence of pairing at
-low density is therefore interaction dependent, not a universal property of
-the lattice model. At $U/t=25$, the production and finest meshes give zero
-gap at $n=0.5$ and $0.75$, and nonzero gaps for $n\geq1$. A small solution at
-$n=0.75,N_k=100$, with $\Delta_0/t=0.00278215$ and
-$\Delta_S/t=-0.02034372$, disappears at $N_k=200,400,800$ and is accordingly
-not presented as a robust paired state.
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figs/low_U_density_bdg_solutions.png}
-\caption{\label{fig:low_U_solutions}
-Density dependence of the self-consistent gap parameters, chemical potential,
-and maximum momentum-space gap at $U/t=15$ and $25$, using
-$\Delta_t/t=4.5$, $V_{\mathrm{SO}}=0$, $T=0$, and $N_k=400$. The gap gauge is
-$\Delta_S\leq0$. Large order parameters at $U/t=15$ should not be interpreted
-through weak-coupling BCS estimates.}
-\end{figure*}
-
-Figure~\ref{fig:low_U_solutions} shows that the extended-$s$ component is
-large at intermediate filling for $U/t=15$. The maximum momentum-space gap
-reaches $4.299034t$ at $n=1.25$, so weak-coupling approximations are not
-appropriate. Six independent seeds reproduce each accepted coarse-mesh root
-after fixing the global gap gauge. This reproducibility does not establish
-global thermodynamic stability or exclude competing orders.
-
-The corresponding quantum-resource results are listed in
-Table~\ref{tab:low_U_resources}. The continuous critical radius $r_c$ is the
-first down-crossing of $p=1/3$ along $\theta=45^\circ$. It is a Fourier
-interpolation of the lattice model, not an additional physical sub-lattice
-detector location. In contrast, $p(a)$ and
-$\overline{\mathcal F}_{\mathrm{tel}}(a)$ are evaluated exactly at the
-nearest-neighbor vector $(1,0)$.
-
-\begin{table*}[t]
-\caption{\label{tab:low_U_resources}
-Continuous-distance critical radii and exact nearest-neighbor resources for
-the lower-interaction density sweep. The $45^\circ$ critical radii are shown
-at $N_k=400$ and $800$. Exact-site quantities use $N_k=400$. Every tabulated
-nearest-neighbor state has $C=0$; the same conclusion holds at the diagonal
-$(1,1)$ and the other eight tested nonzero vectors.}
-\begin{ruledtabular}
-\begin{tabular}{ccccccc}
-$U/t$ & $n$ & $r_c/a$ ($400$) & $r_c/a$ ($800$) & $f^2(a)$ & $p(a)$ &
-$\overline{\mathcal F}_{\mathrm{tel}}(a)$ \\
-\colrule
-15 & 0.500 & 0.896729 & 0.900066 & 0.007581 & 0.268080 & 0.634040 \\
-15 & 0.750 & 0.664634 & 0.665807 & 0.055339 & 0.130355 & 0.565177 \\
-15 & 1.000 & 0.581330 & 0.581893 & 0.050471 & 0.075884 & 0.537942 \\
-15 & 1.250 & 0.536287 & 0.536610 & 0.038341 & 0.046447 & 0.523224 \\
-15 & 1.500 & 0.505851 & 0.506049 & 0.026540 & 0.026529 & 0.513264 \\
-15 & 1.750 & 0.479129 & 0.479252 & 0.014815 & 0.011185 & 0.505593 \\
-15 & 1.875 & 0.465440 & 0.465519 & 0.008027 & 0.005023 & 0.502512 \\
-25 & 0.500 & 0.905807 & 0.906945 & 0 & 0.273016 & 0.636508 \\
-25 & 0.750 & 0.735026 & 0.736053 & 0 & 0.154624 & 0.577312 \\
-25 & 1.000 & 0.605579 & 0.606498 & 0.026865 & 0.084440 & 0.542220 \\
-25 & 1.250 & 0.543882 & 0.544288 & 0.027418 & 0.050022 & 0.525011 \\
-25 & 1.500 & 0.508550 & 0.508785 & 0.022864 & 0.027726 & 0.513863 \\
-25 & 1.750 & 0.479927 & 0.480072 & 0.014182 & 0.011450 & 0.505725 \\
-25 & 1.875 & 0.465810 & 0.465905 & 0.007915 & 0.005098 & 0.502549 \\
-\end{tabular}
-\end{ruledtabular}
-\end{table*}
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figs/low_U_density_resources.png}
-\caption{\label{fig:low_U_resource_curves}
-Continuous Fourier-interpolated resources at $U/t=15$ (solid) and $25$
-(dashed), with $\Delta_t/t=4.5$ and $N_k=400$. Panels show normalized normal
-and anomalous correlators, concurrence, average teleportation fidelity, and
-the first $45^\circ$ critical radius. Concurrence is threshold-clipped even
-when the underlying correlators continue to oscillate. Continuous curves must
-be distinguished from the exact-site results in
-Fig.~\ref{fig:low_U_exact_sites}.}
-\end{figure*}
-
-The larger anomalous correlations generated at lower $U$ do not produce an
-operational finite-site advantage. For example, at $U/t=15,n=0.75$ the
-nearest-neighbor anomalous weight is $f^2(a)=0.055339$, much larger than in
-the corrected $U/t=75,n=1.875$ state. Nevertheless, $p(a)=0.130355$, far below
-$1/3$. The reason is that the Werner threshold depends on $2g^2+f^2$, and
-pairing also changes $v_{\mathbf k}^2$ and hence the normal exchange
-correlation. At $45^\circ$, every nonzero-gap lower-$U$ production branch has
-a shorter first continuous entanglement window than its same-filling
-zero-gap reference, although pairing can increase $p(a)$ at the highest three
-sampled fillings.
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figs/low_U_density_lattice_sites.png}
-\caption{\label{fig:low_U_exact_sites}
-Exact integer-lattice-vector resources at $N_k=400$. Left: Werner parameter at
-$(1,0)$ and $(1,1)$. Center: nearest-neighbor average teleportation fidelity.
-Right: squared normal and anomalous correlators at $(1,0)$. None of the 140
-production states obtained from two interactions, seven fillings, and ten
-nonzero vectors crosses $p=1/3$ or $\overline{\mathcal F}_{\mathrm{tel}}=2/3$.
-The same negative threshold result holds on all four momentum meshes.}
-\end{figure*}
-
-Figure~\ref{fig:low_U_exact_sites} demonstrates the central result: all 140
-tested nonzero production resources have $C=0$. Every tested nonzero-site
-state on the four convergence meshes likewise has $p<1/3$, $C=0$, and
-$\overline{\mathcal F}_{\mathrm{tel}}<2/3$. The strongest exact-site case
-is the zero-gap $U/t=25,n=0.5,(1,0)$ state, with
-$p=0.273016$ and $\overline{\mathcal F}_{\mathrm{tel}}=0.636508<2/3$.
-Superconductivity is therefore not a logical prerequisite for defining the
-conditional two-spin state: when $F=0$, normal exchange gives
-$p=g^2/(2-g^2)$, which can still yield entanglement if $g^2>1/2$
-\cite{Oh2004}. Conversely, a Cooper-pair anomalous function is not sufficient
-for useful teleportation. In the present site-based model, neither mechanism
-crosses the operational threshold at any tested nonzero lattice vector.
-
-The $400\to800$ change in $r_c/a$ is below $0.00118$ except for
-$U/t=15,n=0.5$, where it is $0.003337$ and the maximum gap changes from
-$0.693499$ to $0.600171$. This slowly converging case is therefore not quoted
-with continuum-limit precision; its nearest-neighbor $p$ changes only from
-$0.268080$ to $0.270049$ and remains below threshold. Across all cases the
-$400\to800$ nearest-site $p$ change is below $0.002$. No upward $p=1/3$
-recrossing after the first loss was found at any of the seven sampled angles
-out to $r=10a$ for either interaction.
-
-The corrected initial-state study passed 64 independent artifact checks,
-including filling and residual tests, seed reproducibility, Werner and
-protocol identities, positivity, angular symmetries, and exact-site checks on
-all meshes. Fixed and optimized protocol formulas were verified over 392
-sampled states. These new results do not constitute a signed-versus-unsigned
-regeneration of the legacy open-system dynamics considered below.
+The angular structure is correspondingly simple. The $0^\circ$ and $90^\circ$
+curves agree to $5.5\times10^{-14}$, and the $30^\circ$ and $60^\circ$ curves
+agree to $3.3\times10^{-14}$, reflecting the square-lattice symmetry of the
+helicity correlators. These are properties of the initial entanglement, not
+environmental memory effects; the open-system time has not yet been
+introduced.
 
 \subsection{Non-Markovian concurrence and singlet fidelity}
 \label{sec:high_regime}
 
 We now consider the regime $\gamma_A=\gamma_B=4.5$ and
 $\Gamma_A=\Gamma_B=0.01$. Figure~\ref{fig:C_high_heatmap} shows the
-concurrence along $\theta=0^\circ$. Entanglement is concentrated in separated
-spatial islands at the initial time and in repeated temporal windows. Within
-each temporal window the radial locations remain tied to the initial spatial
-correlation profile, while the envelope weakens at later times. The repeated
-windows are consistent with the oscillations of the exact survival probability
-in Eq.~\eqref{eq:AD_probability}; no additional revival mechanism is required
-to explain them.
+concurrence along $\theta=0^\circ$. At $V_{\mathrm{SO}}/t=0.5$ the initial
+concurrence is confined to $r\lesssim0.5$, and the heatmap reduces to a
+narrow radial strip whose brightness follows the oscillations of the exact
+survival probability in Eq.~\eqref{eq:AD_probability}: the strip brightens
+at each revival of $p(t)$ and dims at its minima, with a slowly weakening
+envelope at later times. No additional revival mechanism is required to
+explain the temporal structure.
 
 \begin{figure*}[t]
     \centering
@@ -1333,7 +965,7 @@ to explain them.
     \caption{
     Concurrence $C(r,0^\circ,t)$ for independent non-Markovian amplitude
     damping with $\gamma_A=\gamma_B=4.5$ and $\Gamma_A=\Gamma_B=0.01$.
-    The initial state uses $U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}=0$,
+    The initial state uses $U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$,
     $n=1.875$, and $N_k=100$. The axes contain $200$ radial points on
     $0\leq r\leq10$ and $161$ time points on $0\leq t\leq80$. Dark regions
     denote $C=0$; the separated bright regions are nonzero-concurrence windows
@@ -1356,7 +988,7 @@ C(0,t)=p(t).
 \end{equation}
 The two quantities therefore coincide at this special point. At finite
 separation no such identity holds, and singlet weight can remain nonzero after
-the X-state concurrence has vanished. The archived time slices give maxima
+the concurrence has vanished. The $r=0$ time slice gives maxima
 $F_{\mathrm s}=0.81091$, $0.65751$, and
 $0.53309$ near $t=21$, $42$, and $63$, respectively, followed by a decreasing
 envelope. At intervening survival-probability minima the singlet fraction
@@ -1383,7 +1015,7 @@ nearly vanishes.
 The contrast between Figs.~\ref{fig:C_high_heatmap} and
 \ref{fig:F_high_heatmap} illustrates why concurrence and singlet fraction
 must be reported separately. Entanglement sudden death occurs whenever the
-X-state concurrence condition fails, whereas $F_{\mathrm s}$ can remain
+concurrence falls to zero, whereas $F_{\mathrm s}$ can remain
 finite at finite separation. A nonmonotonic singlet fraction alone is therefore
 insufficient to establish a revival of entanglement away from the special
 zero-separation state.
@@ -1409,17 +1041,17 @@ persistent or growing revivals over the computed interval.
     Time dependence of the singlet-referenced fidelity
     $\mathcal F_{\Psi^-}(r,45^\circ,t)=F_{\mathrm s}$ for independent
     amplitude damping with $\gamma_A=\gamma_B=1.5$ and
-    $\Gamma_A=\Gamma_B=0.1$, using the common $U/t=75$ initial-state settings.
-    The data contain $261$ times on $0\leq t\leq80$. The horizontal dashed
+    $\Gamma_A=\Gamma_B=0.1$, using the common $U/t=75$, $V_{\mathrm{SO}}/t=0.5$
+    initial-state settings. Curves are shown for $r=0$, $1.50754$, $3.3166$,
+    $6.6332$, and $10$. The data contain $261$ times on $0\leq t\leq80$. The horizontal dashed
     lines at $0.5$, $0.7$, $0.8$, and $0.9$ are automatically drawn reference
     guides; they are not thresholds for the plotted singlet fraction.
     }
     \label{fig:F_low_time}
 \end{figure}
 
-The large-$r$ curves begin close to one quarter, consistent with a Werner
-state whose singlet weight approaches the maximally mixed value
-$F_{\mathrm s}=1/4$ as $p\to0$. Their subsequent time dependence is dominated
+The large-$r$ curves begin close to one quarter, the singlet weight of a
+nearly uncorrelated pair. Their subsequent time dependence is dominated
 by the common noise channel rather than by a persistent long-range entangled
 resource. At all displayed separations, the singlet fraction approaches zero
 at long times because the amplitude-damping fixed point is a ground-state
@@ -1441,9 +1073,10 @@ Figure~\ref{fig:F_angular} displays the initial singlet fraction at seven
 sampled angles and four separations. The $r=0$ curve is unity at every angle,
 as required by $p(\mathbf0)=1$. Nontrivial anisotropy is visible at finite
 separation. For example, at $r=3.3166$ the initial singlet fraction ranges
-from $0.25190$ at $30^\circ$ and $60^\circ$ to $0.50801$ at $45^\circ$. At
-$r=6.6332$ and $10$, the corresponding angular ranges are much smaller,
-approximately $0.01616$ and $0.00154$, respectively. The sampled data obey
+from $0.25001$ at $30^\circ$ and $60^\circ$ to $0.25207$ at $0^\circ$ and
+$90^\circ$. At
+$r=6.6332$ and $10$, the corresponding angular ranges shrink to
+approximately $4.5\times10^{-4}$ and $3\times10^{-5}$, respectively. The sampled data obey
 $F_{\mathrm s}(0^\circ)=F_{\mathrm s}(90^\circ)$,
 $F_{\mathrm s}(15^\circ)=F_{\mathrm s}(75^\circ)$, and
 $F_{\mathrm s}(30^\circ)=F_{\mathrm s}(60^\circ)$ to numerical precision.
@@ -1454,8 +1087,8 @@ $F_{\mathrm s}(30^\circ)=F_{\mathrm s}(60^\circ)$ to numerical precision.
     {figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_singlet.png}
     \caption{
     Polar representation of the initial singlet fraction
-    $F_{\mathrm s}(r,\theta,0)$ for $r=0$, $3.3166$, $6.6332$, and $10$ in the
-    $\gamma=1.5$, $\Gamma=0.1$ data set. Only
+    $F_{\mathrm s}(r,\theta,0)$ for $r=0$, $3.3166$, $6.6332$, and $10$
+    at $V_{\mathrm{SO}}/t=0.5$ in the $\gamma=1.5$, $\Gamma=0.1$ regime. Only
     $\theta=0^\circ,15^\circ,\ldots,90^\circ$ were simulated. The plotted
     closure between $90^\circ$ and $0^\circ$ is a line connecting the sampled
     endpoints, and the unpopulated remainder of the polar circle must not be
@@ -1478,11 +1111,10 @@ the available grid.
 The spatial behavior of the Pauli-ensemble Holevo quantity is shown in
 Fig.~\ref{fig:holevo_spatial} for $\theta=45^\circ$. At $t=0$,
 $\chi_{\mathrm P}=2$ bits at $r=0$, as required for a pure singlet. The initial
-curve then falls below one bit before displaying a finite-separation maximum
-of $1.06735$ bits at $r=1.6080$. Subsequent sampled maxima at $r=3.2161$ and
-$4.8241$ are $0.27961$ and $0.03566$ bits, respectively. Thus the initial
-spatial profile is nonmonotonic, but only the zero-separation region and the
-first finite-$r$ maximum exceed the one-bit benchmark in this angular slice.
+curve then falls below one bit by $r=0.25$ and decays rapidly, with only
+negligible oscillatory local maxima (below $10^{-5}$ bit) beyond
+$r\simeq1.6$. Thus at $V_{\mathrm{SO}}/t=0.5$ the one-bit dense-coding
+benchmark is exceeded only in the immediate vicinity of zero separation.
 
 \begin{figure}[t]
     \centering
@@ -1491,8 +1123,9 @@ first finite-$r$ maximum exceed the one-bit benchmark in this angular slice.
     \caption{
     Pauli-ensemble Holevo quantity $\chi_{\mathrm P}(r,45^\circ,t)$ at
     $t=0,16,32,48,64,80$ for independent amplitude damping with
-    $\gamma_A=\gamma_B=1.5$, $\Gamma_A=\Gamma_B=0.1$, and the common $U/t=75$
-    initial-state settings. Entropies use base-two logarithms. The quantity is
+    $\gamma_A=\gamma_B=1.5$, $\Gamma_A=\Gamma_B=0.1$, and common
+    $U/t=75$, $V_{\mathrm{SO}}/t=0.5$ initial-state settings.
+    Entropies use base-two logarithms. The quantity is
     defined by Eqs.~\eqref{eq:holevo_definition} and
     \eqref{eq:holevo_entropy}; it is not concurrence or singlet fidelity.
     }
@@ -1548,7 +1181,7 @@ Holevo information is not expected.
 
 The Hubbard interaction enters Eq.~\eqref{eq:interaction}, changes the
 self-consistent triple $(\Delta_0,\Delta_s,\mu)$, and thereby modifies
-$E_{\mathbf ks}$, the Green's functions, and the initial Werner parameter.
+$E_{\mathbf ks}$, the Green's functions, and the initial conditional state.
 The open-system Kraus operators themselves contain no $U$. Consequently, any
 computed dependence
 $\mathcal F(U,\theta,r,t)$ or $\chi_{\mathrm P}(U,\theta,r,t)$ is transmitted
@@ -1579,7 +1212,8 @@ the accompanying NPZ file.
     separation $r=1.50754$ and the same angle. All other BdG parameters are
     identical to those in Fig.~\ref{fig:delta_ks_heatmaps}. The interaction
     changes the initial state but does not enter the Kraus map. These results
-    use the repository's magnitude-amplitude Green's-function convention.
+    use the helicity conditional-Wick construction in the original-spin basis
+    at $V_{\mathrm{SO}}/t=0.5$.
     }
     \label{fig:U_fidelity_holevo}
 \end{figure*}
@@ -1587,14 +1221,16 @@ the accompanying NPZ file.
 The upper panels of Fig.~\ref{fig:U_fidelity_holevo} show that $U$ modifies
 both the positions and amplitudes of the spatial structures. The ordering is
 separation dependent. At $r=0.50251$, for example, the initial singlet
-fraction decreases from $0.53243$ at $U/t=40$ to $0.350996$ at $75$ and
-$0.284845$ at $115$; the corresponding Holevo values are $0.26196$,
-$0.03640$, and $0.00454$ bits. At $r=1.50754$, by contrast, the singlet
-fraction increases across the same three interactions, taking values
-$0.717745$, $0.778551$, and $0.783515$, while $\chi_{\mathrm P}$ takes values
-$0.694131$, $0.886208$, and $0.903183$ bits. These paired examples directly
-rule out a universal monotonic enhancement or suppression over the spatial
-domain.
+fraction increases from $0.4549997$ at $U/t=40$ to $0.4567447$ at $75$ and
+$0.4591995$ at $115$; the corresponding Holevo values are $0.14218$,
+$0.14460$, and $0.14803$ bits. At $r=1.50754$ the singlet fraction takes
+values $0.2506373$, $0.2511067$, and $0.2511575$ across the same three
+interactions, while $\chi_{\mathrm P}$ takes values $3.8\times10^{-6}$,
+$1.1\times10^{-5}$, and $1.1\times10^{-5}$ bits. These paired examples are
+not uniformly ordered: over $0\leq r\leq6$ the difference between the
+$U/t=40$ and $115$ curves changes sign eight times for the singlet
+fraction and five times for $\chi_{\mathrm P}$, so no universal monotonic
+enhancement or suppression holds over the spatial domain.
 
 The lower panels show the consequences at fixed $r=1.50754$. The singlet
 fraction exhibits damped revivals at common times because $p(t)$ is shared;
@@ -1606,7 +1242,7 @@ instead give exactly the same curves because the zero-separation initial
 state is the pure singlet for every converged solution.
 
 The supported conclusion is therefore specific: within the three-point,
-fixed-filling, magnitude-amplitude calculation, the Hubbard interaction
+fixed-filling calculation, the Hubbard interaction
 changes the initial spatial correlations and thereby changes the subsequent
 singlet-fidelity and Pauli-Holevo dynamics. The data do not establish a global
 functional law in $U$, an optimal interaction strength, or a universally
@@ -1698,7 +1334,8 @@ used for both regimes.
     \caption{
     Environment effects on teleportation, dense coding, and
     concurrence at $\beta=0$ (no Stark shift), for the BdG resources of
-    $U/t=75$, $\Delta t/t=4.5$, $n=1.875$ at $\theta=45^{\circ}$,
+    $U/t=75$, $\Delta t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$ (helicity
+    spin basis), $n=1.875$ at $\theta=45^{\circ}$,
     $N_{k}=400$. Rows: teleportation fidelity (solid: fixed singlet
     protocol, dashed: locally optimized), dense-coding Holevo quantity
     $\chi$, and concurrence $C$; columns: the non-Markovian regime
@@ -1733,8 +1370,8 @@ their table to $\pm0.01$ ($0.268$ versus $0.27$ at $\tau=10$), while
 the standard linear protocol gives $0.577$ on the identical state --
 the difference is the quadratic $p_{i}p_{j}$ output construction of
 their Eqs.~(16)--(19), not the environment. Finite-separation resources
-start below the ideal point (at $r=0.30$: $F=0.804$, $\chi=0.66$ bit,
-$C=0.41$), so for $r\geq0.30$ the dense-coding advantage is absent
+start below the ideal point (at $r=0.30$: $F=0.801$, $\chi=0.65$ bit,
+$C=0.40$), so for $r\geq0.30$ the dense-coding advantage is absent
 before any noise is applied.
 %
 \begin{figure*}[t]
@@ -1766,58 +1403,16 @@ $\gamma$, therefore controls whether the superconducting resource
 retains any operational advantage at long times, independently of the
 spatial structure examined in Sec.~\ref{sec:vso_concurrence}.
 
-\subsection{Pairing onset and Lifshitz crossover}
-\label{sec:qpt_onset}
-
-Two nonanalyticities of the underlying BdG model bound the parameter
-region used above. At $V_{\mathrm{SO}}=0$, $U/t=75$, and $n=1.875$ the
-pairing amplitude has no nonzero solution below
-$\Delta t_{c}/t=2.52\pm0.03$ on meshes up to $N_{k}=401$, and the gap
-grows continuously above it ($1.6\times10^{-4}$ at $\Delta t/t=2.55$
-and $0.20$ at $\Delta t/t=3.20$ for $N_{k}=401$, with the $N_{k}=401$
-and $601$ meshes converged above the onset window), identifying a
-second-order transition; the apparent
-exponent of about five over $\Delta t/t\in[2.7,3.0]$ is
-finite-size-limited and is not claimed as a critical exponent. In the
-normal state at $\Delta t=0$ the chemical potential crosses $\mu=4t$
-at $V_{L}=0.6925\pm0.005$ ($n_{c}=1.875\pm0.005$), where the ground
-energy curvature is discontinuous; any finite pairing rounds this
-Lifshitz singularity away. Parameter scans find no hysteresis
-(up/down sweeps agree to $10^{-13}$) and no ground-energy kinks, so no
-first-order transition occurs in the surveyed region.
-%
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=\textwidth]
-    {figs/qpt_onset_lifshitz.png}
-    \caption{
-    Numerical diagnostics for the pairing-onset transition and the
-    Lifshitz crossover at $V_{\mathrm{SO}}=0$, $U/t=75$, $n=1.875$.
-    The quasiparticle gap closes continuously at
-    $\Delta t_{c}/t=2.52\pm0.03$ with mesh-converged onset values
-    ($N_{k}=401$ and $601$ converge above the onset window), and the normal-state
-    Lifshitz point at $V_{L}=0.6925\pm0.005$ appears as a discontinuity
-    of the energy curvature that finite pairing rounds away. Vertical
-    markers indicate the onset and Lifshitz locations quoted in the
-    text.
-    }
-    \label{fig:qpt_onset}
-\end{figure*}
-
 \section{Conclusion}
 
-We have examined the Green's-function construction of two-spin BCS density
-matrices and their subsequent independent non-Markovian amplitude-damping
-dynamics. The exact signed BdG identity
-$u_{\mathbf ks}v_{\mathbf ks}^*=-\Delta_{\mathbf ks}^*/2E_{\mathbf ks}$ must
-be distinguished from the repository's legacy unsigned-amplitude numerical
-implementation. We have also shown that taking the absolute value of an
-already real normalized Green's-function ratio does not itself alter the
-present density matrix, which depends only on $g^2$ and $f^2$; the physically
-important difference is whether the gap sign is retained before momentum
-integration.
+We have examined the helicity-basis construction of conditional two-spin
+BCS density matrices at nonzero spin--orbit coupling and their subsequent
+independent non-Markovian amplitude-damping dynamics. The construction uses
+the exact signed BdG identity
+$u_{\mathbf ks}v_{\mathbf ks}^*=-\Delta_{\mathbf ks}^*/2E_{\mathbf ks}$
+before the Brillouin-zone sum, so the gap sign is retained throughout.
 
-The archived results establish spatially structured concurrence and singlet
+The results establish spatially structured concurrence and singlet
 fraction, with temporal revivals determined by the oscillatory survival
 probability in the two underdamped regimes considered. Singlet-referenced
 Uhlmann fidelity is exactly the singlet fraction, but it is not an optimized
@@ -1834,40 +1429,26 @@ measures within the implemented convention. Their ordering changes with
 separation, precluding a universal claim of interaction-induced enhancement or
 suppression.
 
-The independent corrected equal-time density study further shows that lowering
-$U$ can create large nonzero-gap stationary branches at low density: all seven
-fillings are paired at $U/t=15$, whereas $U/t=25$ is paired for $n\geq1$ on the
-production mesh. This does not translate into useful finite-site
-teleportation. All 140 tested nonzero production states have zero concurrence,
-and the largest exact-site average fidelity is $0.636508$, below $2/3$.
-Normal exchange can define a conditional Werner resource without
-superconductivity, while a large anomalous correlator does not guarantee an
-operational advantage. Continuous critical radii below $a$ have not been
-interpreted as physical sub-lattice separations, and stationary BdG branches
-have not been identified with global free-energy minima.
-
 The helicity extension collects these elements for
 $V_{\mathrm{SO}}\neq0$: the momentum-dependent rotation of
 Eq.~\eqref{eq:helicity_transform} and the conditional Wick matrix of
 Eq.~\eqref{eq:conditional_rho} produce general two-qubit states in both
-the original-spin and band-pseudospin bases, reduce exactly to the
-Oh--Kim X state at zero spin--orbit coupling, and are evaluated
+the original-spin and band-pseudospin bases, and are evaluated
 throughout with the general Wootters concurrence together with the
-fixed and optimized teleportation fidelities. The environment-parameter
+fixed and optimized teleportation fidelities. All protocol and resource
+figures are regenerated at $V_{\mathrm{SO}}/t=0.5$ from this construction. The environment-parameter
 figures complete the open-system analysis: in matched regimes the
 dense-coding Holevo dynamics reproduce the exactly solvable two-atom
 benchmark~\cite{Haddadi2023} to within $0.01$ bit, the overdamped limit
 shows the expected fixed-point values, and reservoirs with spectral
 width $\Gamma\lesssim2\gamma$ sustain a measurable advantage up to
 $\tau=30$. The concurrence sweeps against $U$ and $V_{\mathrm{SO}}$
-remain analytic across the Lifshitz point, and the pairing onset at
-$\Delta t_{c}/t=2.52\pm0.03$ shows no first-order signature.
+remain analytic across the Lifshitz point.
 
-The principal remaining tasks are a unified signed-Green's-function
-regeneration of the legacy open-system dynamics, a parameter-preserving
-evolution pipeline for all observables, a converged nonzero-spin--orbit
-sweep beyond the demonstrated parameter points, and free-energy or
-competing-order analyses before assigning thermodynamic phase stability.
+The principal remaining tasks are a converged nonzero-spin--orbit sweep
+beyond the demonstrated parameter points, a band-basis counterpart of the
+protocol figures, and experimental assumptions for band-basis Bell
+measurements before assigning operational meaning to that basis.
 
 \begin{acknowledgments}
 Numerical results were obtained with a self-consistent BdG solver and open-quantum-system evolution code implemented by the author.
@@ -1904,6 +1485,9 @@ H.-P. Breuer and F. Petruccione, \emph{The Theory of Open Quantum Systems} (Oxfo
 
 \bibitem{Bellomo2007}
 B. Bellomo, R. Lo Franco, and G. Compagno, Non-Markovian effects on the dynamics of entanglement, Phys.\ Rev.\ Lett.\ \textbf{99}, 160502 (2007).
+
+\bibitem{OhKim2005}
+S.\ Oh and J.\ Kim, Entanglement of electron pairs in a normal-superconductor hybrid system, Phys.\ Rev.\ B \textbf{71}, 144523 (2005).
 
 \bibitem{Hutchinson2018}
 J. Hutchinson, J. E. H. Hirsch, and F. Marsiglio, Enhancement of superconducting $T_{c}$ due to the spin-orbit interaction, Phys.\ Rev.\ B \textbf{97}, 184513 (2018).
