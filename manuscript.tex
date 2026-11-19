@@ -8,7 +8,7 @@
 
 \begin{document}
 
-\title{Quantum Teleportation and Super Dense Coding in Open Quantum Systems}
+\title{Quantum Teleportation and Dense Coding of Helicity Qubits in a Spin--Orbit-Coupled Hubbard Superconductor under Non-Markovian Noise}
 
 \author{R Afzali}
 \author{A. H Asghari}
@@ -17,7 +17,7 @@
 \date{\today}
 
 \begin{abstract}
-Quantum communication protocols rely critically on the preservation of entanglement and quantum coherence in realistic noisy environments. In this work, we investigate quantum teleportation and dense coding using correlated electron pairs described within a Hubbard--Bogoliubov--de Gennes framework and subjected to non-Markovian open-system dynamics. The superconducting correlations are obtained self-consistently, and the corresponding normal and anomalous Green's functions are employed to construct spatially dependent two-qubit density matrices. The resulting states are evolved using Kraus-operator descriptions of environmental noise, including non-Markovian amplitude damping and dephasing channels. The robustness of the quantum resources is characterized through concurrence and singlet-referenced Uhlmann fidelity, while the Holevo quantity of an equal-probability Pauli encoding ensemble is used to quantify the information available to the corresponding dense-coding protocol. For two representative non-Markovian amplitude-damping regimes, the results reveal a pronounced dependence of quantum correlations on both the spatial separation of the electron pair and the evolution time. Environmental coupling suppresses the initially available entanglement and communication resources, while the nonmonotonic survival probability produces transient revivals of concurrence and singlet fraction. The Pauli-ensemble Holevo quantity evolves differently and approaches the one-bit limit of the long-time amplitude-damped product state. A converged interaction sweep at $U/t=40$, $75$, and $115$ shows that the Hubbard interaction changes the initial spatial profiles and hence the subsequent fidelity and Holevo dynamics, but their ordering with $U$ is separation dependent rather than uniformly enhancing or suppressing. A separate density-resolved initial-state study at $U/t=15$ and $25$ finds nonzero-gap stationary branches at every sampled filling for $U/t=15$, and for $n\geq1$ on the production mesh for $U/t=25$. Nevertheless, none of the 140 tested nonzero lattice-site resources has nonzero concurrence or average teleportation fidelity above $2/3$. The legacy dynamics use the repository's magnitude-amplitude Green's-function reduction; the new density study uses the corrected signed equal-time construction and is not used to reinterpret those archived time-dependent results.
+Quantum communication protocols rely critically on the preservation of entanglement and quantum coherence in realistic noisy environments. In this work, we investigate quantum teleportation and dense coding using correlated electron pairs described within a Hubbard--Bogoliubov--de Gennes framework and subjected to non-Markovian open-system dynamics. The superconducting correlations are obtained self-consistently, and the corresponding normal and anomalous Green's functions are employed to construct spatially dependent two-qubit density matrices. At zero spin--orbit coupling these reduce to the X states of Oh and Kim, while for nonzero $V_{\mathrm{SO}}$ we construct helicity-basis states from a momentum-dependent rotation and a matrix-valued conditional Wick prescription that recovers the zero-SOC X state with maximum elementwise error $5.6\times10^{-17}$. The resulting states are evolved using Kraus-operator descriptions of environmental noise, including non-Markovian amplitude damping and dephasing channels. The robustness of the quantum resources is characterized through the general Wootters concurrence and singlet-referenced Uhlmann fidelity, while the Holevo quantity of an equal-probability Pauli encoding ensemble is used to quantify the information available to the corresponding dense-coding protocol. For two representative non-Markovian amplitude-damping regimes, the results reveal a pronounced dependence of quantum correlations on both the spatial separation of the electron pair and the evolution time. Environmental coupling suppresses the initially available entanglement and communication resources, while the nonmonotonic survival probability produces transient revivals of concurrence and singlet fraction. A dedicated environment-parameter study then maps fidelity, Holevo information, and concurrence against the reservoir spectral width in both the underdamped and overdamped regimes: the dense-coding dynamics reproduce the exactly solvable two-atom benchmark of Haddadi \emph{et al.}~\cite{Haddadi2023} to within $0.01$ bit, while the teleportation-fidelity curves differ because that work evaluates a quadratic output formula rather than the standard linear protocol. The Pauli-ensemble Holevo quantity evolves differently and approaches the one-bit limit of the long-time amplitude-damped product state. A spin--orbit sweep of the concurrence against $U$ and $V_{\mathrm{SO}}$ is analytic across the Lifshitz point, with second-derivative sign changes but no discontinuity, and a separate scan places the pairing-onset transition at $\Delta t_{c}/t=2.52\pm0.03$ with no first-order signature. A converged interaction sweep at $U/t=40$, $75$, and $115$ shows that the Hubbard interaction changes the initial spatial profiles and hence the subsequent fidelity and Holevo dynamics, but their ordering with $U$ is separation dependent rather than uniformly enhancing or suppressing. A separate density-resolved initial-state study at $U/t=15$ and $25$ finds nonzero-gap stationary branches at every sampled filling for $U/t=15$, and for $n\geq1$ on the production mesh for $U/t=25$. Nevertheless, none of the 140 tested nonzero lattice-site resources has nonzero concurrence or average teleportation fidelity above $2/3$. The legacy dynamics use the repository's magnitude-amplitude Green's-function reduction; the new density study uses the corrected signed equal-time construction and is not used to reinterpret those archived time-dependent results.
 \end{abstract}
 
 \pacs{74.20.Fg, 03.67.Mn, 03.65.Ud, 74.25.-q}
@@ -32,7 +32,7 @@ Superconductors provide a natural many-body setting in which fermionic pairing g
 
 Environmental memory introduces an additional layer of complexity. For a qubit coupled to a structured reservoir with a Lorentzian spectral density, the excited-state survival probability can exhibit oscillatory behavior, leading to memory-induced revivals of quantum correlations that would otherwise decay monotonically in a Markovian description~\cite{Breuer2002,Bellomo2007}. Combining a spatially structured superconducting source with non-Markovian quantum channels therefore provides a framework for investigating how microscopic pairing correlations survive, decay, and re-emerge in the presence of environmental noise. In particular, it allows one to study how the usefulness of the superconducting two-particle state for quantum communication depends simultaneously on spatial separation and evolution time.
 
-Here, we develop and numerically investigate such a framework. We first solve an extended-Hubbard Bogoliubov--de Gennes model on a square lattice and evaluate the associated equal-time normal and anomalous Green functions. These correlation functions are then used to reconstruct normalized two-spin X states for electron pairs separated by different distances and directions in real space. The resulting two-qubit states are subsequently evolved under open-system quantum channels describing independent or correlated environmental interactions, with particular attention to non-Markovian amplitude damping.
+Here, we develop and numerically investigate such a framework. We first solve an extended-Hubbard Bogoliubov--de Gennes model on a square lattice and evaluate the associated equal-time normal and anomalous Green functions. These correlation functions are then used to reconstruct normalized two-spin X states for electron pairs separated by different distances and directions in real space. At nonzero spin--orbit coupling the reconstruction is instead performed in the helicity basis, where momentum-dependent rotations produce general, non-X two-qubit states in both the original-spin and band-pseudospin descriptions. The resulting two-qubit states are subsequently evolved under open-system quantum channels describing independent or correlated environmental interactions, with particular attention to non-Markovian amplitude damping.
 
 The evolution of the superconducting quantum resource is characterized using several complementary quantities. Concurrence is employed to quantify bipartite entanglement, while purity and von Neumann entropy describe the degree of mixedness generated by environmental interactions. Uhlmann fidelity to the initial state monitors the preservation of that state during the open-system evolution. Separately, the overlap with the spin singlet quantifies the retention of singlet weight; for a pure singlet reference it coincides with the pure-state-referenced Uhlmann fidelity, but it is not automatically an optimized teleportation fidelity. For dense coding, we evaluate the Holevo quantity associated with the standard equal-probability Pauli encoding operations and derive its reduction to an entropy expression involving the two-qubit state and one reduced subsystem.
 
@@ -600,6 +600,116 @@ states~\cite{Wootters1998}. For the initial matrix structure in
 Eq.~\eqref{eq:density_matrix}, this expression reduces identically to
 Eq.~\eqref{eq:werner_concurrence}; the independent amplitude-damping map
 preserves the X-state structure required by the numerical formula.
+
+\subsection{Helicity density matrix at nonzero spin--orbit coupling}
+\label{sec:helicity_dm}
+
+The X state of Eq.~\eqref{eq:density_matrix} is the
+$V_{\mathrm{SO}}=0$ member of a broader family. At nonzero spin--orbit
+coupling the natural single-particle modes are the helicity branches
+$s=\pm1$, obtained from the momentum-dependent rotation
+%
+\begin{equation}
+\begin{pmatrix}
+c_{\mathbf{k}\uparrow}\\
+c_{\mathbf{k}\downarrow}
+\end{pmatrix}
+=
+U_{\mathbf{k}}
+\begin{pmatrix}
+c_{\mathbf{k}+}\\
+c_{\mathbf{k}-}
+\end{pmatrix},
+\qquad
+U_{\mathbf{k}}
+=
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 & 1\\
+e^{i\theta_{\mathbf{k}}} & -e^{i\theta_{\mathbf{k}}}
+\end{pmatrix},
+\qquad
+e^{i\theta_{\mathbf{k}}}
+=
+\frac{\sin k_{y}-i\sin k_{x}}{\sqrt{\sin^{2}k_{x}+\sin^{2}k_{y}}},
+\label{eq:helicity_transform}
+\end{equation}
+%
+with $U_{-\mathbf{k}}=ZU_{\mathbf{k}}$ and
+$Z=\mathrm{diag}(1,-1)$, following the Rashba helicity convention of
+Ref.~\cite{Hutchinson2018}. At $V_{\mathrm{SO}}=0$ all observables
+become independent of $\theta_{\mathbf{k}}$, equivalently a
+$k$-independent $45^{\circ}$ mixing of the spin modes; for
+$V_{\mathrm{SO}}\neq0$ the rotation is genuinely momentum dependent, so
+band-pseudospin qubits are not related to original-spin qubits by fixed
+local unitaries and the two descriptions must be kept distinct.
+
+The two-qubit state is reconstructed before any X-state assumption is
+made. For a Gaussian BdG state, Wick's theorem applied to two
+detections at sites $A$ and $B$ with
+$\mathbf{r}=\mathbf{R}_{B}-\mathbf{R}_{A}$ gives the unnormalized
+conditional matrix in the basis
+$\{|00\rangle,|01\rangle,|10\rangle,|11\rangle}$ of either internal
+basis,
+%
+\begin{equation}
+\widetilde{\rho}_{\alpha\beta,\alpha'\beta'}
+=
+N_{B,\beta'\beta}N_{A,\alpha'\alpha}
+- N_{BA,\beta'\alpha}N_{AB,\alpha'\beta}
++ F^{*}_{AB,\alpha'\beta'}F_{AB,\alpha\beta},
+\qquad
+\rho_{AB}=\frac{\widetilde{\rho}_{AB}}{\operatorname{Tr}\widetilde{\rho}_{AB}},
+\label{eq:conditional_rho}
+\end{equation}
+%
+where
+$N_{AB}(\mathbf{r})=N_{k}^{-2}\sum_{\mathbf{k}}e^{i\mathbf{k}\cdot\mathbf{r}}N_{\mathbf{k}}$,
+$F_{AB}(\mathbf{r})=N_{k}^{-2}\sum_{\mathbf{k}}e^{-i\mathbf{k}\cdot\mathbf{r}}F_{\mathbf{k}}$,
+$N_{A}=N_{B}=N_{AB}(\mathbf{0})$, and
+$N_{BA}=N_{AB}^{\dagger}$. The three terms are the direct,
+normal-exchange, and anomalous-pair contributions; the sign of the last
+term follows from $F_{BA}=-F_{AB}^{T}$ at coincident positions and is
+required to recover the negative singlet coherence. The matrix of
+Eq.~\eqref{eq:conditional_rho} is the conditional state of the sector
+with exactly one electron detected at each site, not a
+fixed-total-particle-number reduction.
+
+If $N_{AB}\propto\mathbb{I}_{2}$ and $F_{AB}\propto i\sigma_{y}$, as
+at $V_{\mathrm{SO}}=0$, Eq.~\eqref{eq:conditional_rho} reduces exactly
+to the X state of Eq.~\eqref{eq:density_matrix}; the numerical
+implementation reproduces that limit with maximum elementwise error
+$5.6\times10^{-17}$, and the normalized matrices are Hermitian, of unit
+trace, and positive semidefinite to
+$1.1\times10^{-16}$~\cite{Oh2005}.
+
+At $V_{\mathrm{SO}}/t=0.5$ the conditional state acquires the full
+complex structure forbidden by the X ansatz. For example, at
+$\mathbf{r}=(1,0)$ with $U/t=75$, $\Delta t/t=4.5$, $n=1.875$, and a
+$101\times101$ mesh, the original-spin matrix is
+%
+\begin{equation}
+\rho_{\mathrm{spin}}\approx
+\begin{pmatrix}
+0.24961259 & -0.00049305 & 0.00049305 & 0.00023973\\
+-0.00049305 & 0.25038741 & -0.00101455 & -0.00049305\\
+0.00049305 & -0.00101455 & 0.25038741 & 0.00049305\\
+0.00023973 & -0.00049305 & 0.00049305 & 0.24961259
+\end{pmatrix},
+\label{eq:rho_spin_example}
+\end{equation}
+%
+which has zero concurrence, singlet overlap $0.25140$, and optimized
+average fidelity $0.5013$; the band-basis matrix at the same separation
+differs, with singlet overlap $0.24961$. Because these states are not
+of X type, concurrence is evaluated with the general Wootters spin-flip
+formula~\cite{Wootters1998}, and teleportation fidelities are reported
+both for the fixed singlet protocol and for the locally optimized
+protocol governed by the fully entangled
+fraction~\cite{Horodecki1999}. Band-basis statements assume ideal Bell
+measurement and feedforward in the nonlocal helicity modes
+$d_{i,s}=N_{k}^{-1}\sum_{\mathbf{k}}e^{i\mathbf{k}\cdot\mathbf{R}_{i}}c_{\mathbf{k}s}$
+and are not claims about a specific microscopic device.
 
 \subsection{Open-system evolution}
 \label{sec:open_system}
@@ -1504,6 +1614,196 @@ beneficial interaction effect. A denser sweep and a comparative implementation
 of the signed coherence factor would be required before extending these
 conclusions beyond the present implementation and parameter set.
 
+\subsection{Spin--orbit dependence of concurrence}
+\label{sec:vso_concurrence}
+
+The helicity construction of Sec.~\ref{sec:helicity_dm} makes it
+possible to follow the concurrence itself as a function of the
+spin--orbit coupling. We evaluate the exact conditional Wick states at
+$r=0.25$, $\theta=0^{\circ}$, $\Delta t/t=4.5$, $n=1.875$, $T=0$, and
+$N_{k}=201$ along two sweeps: $U/t\in[20,160]$ at fixed
+$V_{\mathrm{SO}}/t=0.7$, and $V_{\mathrm{SO}}/t\in[0,1.5]$ at fixed
+$U/t=75$. Both the original-spin and helicity-band bases are retained,
+and the finite-difference identities used for the derivatives are
+satisfied to residuals of $1.7\times10^{-14}$ or
+better~\cite{Hutchinson2018}.
+%
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]
+    {figs/concurrence_derivatives_u_vso.png}
+    \caption{
+    Concurrence and its first and second derivatives along the two
+    spin--orbit parameter sweeps, for the original-spin (blue) and
+    helicity-band (orange) bases at $r=0.25$, $\theta=0^{\circ}$,
+    $\Delta t/t=4.5$, $n=1.875$, $T=0$, and $N_{k}=201$.
+    Row (a): $C(U)$, $dC/dU$, and $d^{2}C/dU^{2}$ at
+    $V_{\mathrm{SO}}/t=0.7$; the green line marks the Lifshitz crossing
+    $\mu=4t$ at $U/t=118.04$. Row (b): $C(V_{\mathrm{SO}})$,
+    $dC/dV_{\mathrm{SO}}$, and $d^{2}C/dV_{\mathrm{SO}}^{2}$ at
+    $U/t=75$; the green line marks $\mu=4t$ at
+    $V_{\mathrm{SO}}/t=0.549$. All curves are analytic on the sampled
+    grids; no discontinuity accompanies either Lifshitz crossing.
+    }
+    \label{fig:concurrence_derivatives}
+\end{figure*}
+%
+Figure~\ref{fig:concurrence_derivatives} shows that along the
+interaction sweep the concurrence varies smoothly and weakly: $C$ rises
+from $0.5378$ to $0.5467$ (spin) and from $0.5297$ to $0.5462$ (band)
+over $U/t\in[20,160]$, with $|dC/dU|\leq1.1\times10^{-4}$ and
+$d^{2}C/dU^{2}$ of order $10^{-6}$. The second derivative changes sign
+near $U/t=112$ (spin) and $U/t=90$ (band), close to the Lifshitz
+crossing at $U/t=118.04$, but the response remains analytic. Along the
+spin--orbit sweep the variation is larger: $C$ falls from $0.5461$ to
+$0.5293$ (spin) and from $0.5451$ to $0.5252$ (band) over
+$V_{\mathrm{SO}}/t\in[0,1.5]$, with the steepest descent
+$dC/dV_{\mathrm{SO}}=-0.0155$ (spin) and $-0.0178$ (band) at
+$V_{\mathrm{SO}}/t=0.58$ and $0.60$ and zero crossings of
+$d^{2}C/dV_{\mathrm{SO}}^{2}$ at $0.57$ and $0.59$, both adjacent to
+the Lifshitz value $V_{\mathrm{SO}}/t=0.5487$. The pairing onset at
+$V_{\mathrm{SO}}/t=0.97$ coincides with the broad maximum of
+$d^{2}C/dV_{\mathrm{SO}}^{2}$ near $V_{\mathrm{SO}}/t=1.06$. The
+spin and band curves coincide at $V_{\mathrm{SO}}=0$ and separate
+progressively as the momentum-dependent rotation of
+Eq.~\eqref{eq:helicity_transform} becomes active; the two bases must
+therefore be reported separately for $V_{\mathrm{SO}}\neq0$.
+
+\subsection{Environment-parameter dependence of the protocols}
+\label{sec:environment_scan}
+
+To separate environmental effects from the resource structure, the
+open-system layer is benchmarked against the exactly solvable two-atom
+model of Haddadi \emph{et al.}~\cite{Haddadi2023}, with the Stark shift
+switched off ($\beta=0$). Their two-photon envelope obeys
+$\ddot{\varepsilon}+\lambda\dot{\varepsilon}+\gamma_{0}\lambda\varepsilon=0$,
+whereas the Lorentzian Kraus envelope used here obeys
+$\ddot{\eta}+\Gamma\dot{\eta}+(\gamma\Gamma/2)\eta=0$; the two
+coincide under the parameter map $\Gamma=\lambda$,
+$\gamma=2\gamma_{0}$, $\tau=\gamma_{0}t$, which is used throughout
+this subsection. With that map, the evolved channel states agree with
+their Eq.~(14) to $1.1\times10^{-16}$, and the dense-coding quantity
+reduces to the same expression
+$\chi=1+S_{2}(\rho_{B})-S_{2}(\rho_{AB})$ as their Eq.~(26). The
+underdamped branch $2\gamma\Gamma>\Gamma^{2}$ is precisely the region
+in which the instantaneous decay rate required by any time-local
+Lindblad description becomes negative~\cite{Breuer2009}, which is why
+the exact Kraus envelope, rather than a master-equation integration, is
+used for both regimes.
+%
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]
+    {figs/environment_protocols_regimes.png}
+    \caption{
+    Environment effects on teleportation, dense coding, and
+    concurrence at $\beta=0$ (no Stark shift), for the BdG resources of
+    $U/t=75$, $\Delta t/t=4.5$, $n=1.875$ at $\theta=45^{\circ}$,
+    $N_{k}=400$. Rows: teleportation fidelity (solid: fixed singlet
+    protocol, dashed: locally optimized), dense-coding Holevo quantity
+    $\chi$, and concurrence $C$; columns: the non-Markovian regime
+    $\lambda=0.1\gamma_{0}$ ($\gamma=2$, $\Gamma=0.1$) and the
+    Markovian regime $\lambda=10\gamma_{0}$ ($\gamma=2$, $\Gamma=10$),
+    versus $\tau=\gamma_{0}t$. Curves correspond to separations
+    $r=0$, $0.30$, $0.50$, and $1.0$; dotted lines mark the classical
+    bounds $2/3$ and $1$ bit. The $r=0$ resource starts at the ideal
+    values $(1,2,1)$, exactly as the maximally entangled initial state
+    of Ref.~\cite{Haddadi2023}.
+    }
+    \label{fig:environment_regimes}
+\end{figure*}
+%
+Figure~\ref{fig:environment_regimes} displays the three protocol
+metrics in both regimes. In the Markovian column the fixed-protocol
+fidelity of the $r=0$ resource falls below $2/3$ by $\tau=0.4$ and
+settles at exactly $1/3$, the optimized fidelity approaches $2/3$, the
+Holevo quantity converges to exactly $1$ bit, and the concurrence
+vanishes -- the fixed-point values reported in
+Ref.~\cite{Haddadi2023} within their table rounding. In the
+non-Markovian column the first loss of the teleportation advantage
+occurs at $\tau=2.55$; the Holevo quantity dips to $0.73$ bit and
+recovers to $0.88$ bit by $\tau=30$, and the concurrence revives to
+$0.049$ after nearly vanishing, all characteristic of information
+backflow. At the table times of Ref.~\cite{Haddadi2023} our
+dense-coding values agree with theirs to within $0.01$ bit ($0.945$
+versus $0.95$ at $\tau=5$, $0.739$ versus $0.74$ at $\tau=10$,
+$0.884$ versus $0.89$ at $\tau=30$). The teleportation fidelities do
+not coincide: their Eq.~(23) evaluated on our evolved states reproduces
+their table to $\pm0.01$ ($0.268$ versus $0.27$ at $\tau=10$), while
+the standard linear protocol gives $0.577$ on the identical state --
+the difference is the quadratic $p_{i}p_{j}$ output construction of
+their Eqs.~(16)--(19), not the environment. Finite-separation resources
+start below the ideal point (at $r=0.30$: $F=0.804$, $\chi=0.66$ bit,
+$C=0.41$), so for $r\geq0.30$ the dense-coding advantage is absent
+before any noise is applied.
+%
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]
+    {figs/environment_parameter_scan.png}
+    \caption{
+    Reservoir spectral-width scan at $\gamma=2$ for the maximally
+    entangled $r=0$ resource, with $\beta=0$: teleportation fidelity
+    (fixed protocol), dense-coding Holevo quantity $\chi$, and
+    concurrence as functions of $\tau=\gamma_{0}t$ and $\Gamma$
+    (logarithmic axis). White contours mark the classical bounds
+    $F=2/3$ and $\chi=1$ bit; the dashed line at
+    $\Gamma=2\gamma=4$ separates the underdamped (revival) branch from
+    the overdamped branch. Strong memory ($\Gamma=0.01$) sustains all
+    three advantages to $\tau=30$, whereas $\Gamma\gtrsim4$ drives
+    every metric to its monotonic fixed point.
+    }
+    \label{fig:environment_scan}
+\end{figure*}
+%
+Figure~\ref{fig:environment_scan} resolves the memory-strength
+dependence directly. At $\tau=30$ the spectral width $\Gamma=0.01$
+leaves $F=0.81$, $\chi=1.08$ bit, and $C=0.71$ -- all three
+advantages intact -- while widths beyond the $\Gamma=2\gamma$ crossover
+reduce the fixed fidelity to $1/3$, the Holevo quantity to $1$ bit, and
+the concurrence to zero. The environment, through $\Gamma$ relative to
+$\gamma$, therefore controls whether the superconducting resource
+retains any operational advantage at long times, independently of the
+spatial structure examined in Sec.~\ref{sec:vso_concurrence}.
+
+\subsection{Pairing onset and Lifshitz crossover}
+\label{sec:qpt_onset}
+
+Two nonanalyticities of the underlying BdG model bound the parameter
+region used above. At $V_{\mathrm{SO}}=0$, $U/t=75$, and $n=1.875$ the
+pairing amplitude has no nonzero solution below
+$\Delta t_{c}/t=2.52\pm0.03$ on meshes up to $N_{k}=401$, and the gap
+grows continuously above it ($1.6\times10^{-4}$ at $\Delta t/t=2.55$
+and $0.20$ at $\Delta t/t=3.20$ for $N_{k}=401$, with the $N_{k}=401$
+and $601$ meshes converged above the onset window), identifying a
+second-order transition; the apparent
+exponent of about five over $\Delta t/t\in[2.7,3.0]$ is
+finite-size-limited and is not claimed as a critical exponent. In the
+normal state at $\Delta t=0$ the chemical potential crosses $\mu=4t$
+at $V_{L}=0.6925\pm0.005$ ($n_{c}=1.875\pm0.005$), where the ground
+energy curvature is discontinuous; any finite pairing rounds this
+Lifshitz singularity away. Parameter scans find no hysteresis
+(up/down sweeps agree to $10^{-13}$) and no ground-energy kinks, so no
+first-order transition occurs in the surveyed region.
+%
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]
+    {figs/qpt_onset_lifshitz.png}
+    \caption{
+    Numerical diagnostics for the pairing-onset transition and the
+    Lifshitz crossover at $V_{\mathrm{SO}}=0$, $U/t=75$, $n=1.875$.
+    The quasiparticle gap closes continuously at
+    $\Delta t_{c}/t=2.52\pm0.03$ with mesh-converged onset values
+    ($N_{k}=401$ and $601$ converge above the onset window), and the normal-state
+    Lifshitz point at $V_{L}=0.6925\pm0.005$ appears as a discontinuity
+    of the energy curvature that finite pairing rounds away. Vertical
+    markers indicate the onset and Lifshitz locations quoted in the
+    text.
+    }
+    \label{fig:qpt_onset}
+\end{figure*}
+
 \section{Conclusion}
 
 We have examined the Green's-function construction of two-spin BCS density
@@ -1546,11 +1846,28 @@ operational advantage. Continuous critical radii below $a$ have not been
 interpreted as physical sub-lattice separations, and stationary BdG branches
 have not been identified with global free-energy minima.
 
+The helicity extension collects these elements for
+$V_{\mathrm{SO}}\neq0$: the momentum-dependent rotation of
+Eq.~\eqref{eq:helicity_transform} and the conditional Wick matrix of
+Eq.~\eqref{eq:conditional_rho} produce general two-qubit states in both
+the original-spin and band-pseudospin bases, reduce exactly to the
+Oh--Kim X state at zero spin--orbit coupling, and are evaluated
+throughout with the general Wootters concurrence together with the
+fixed and optimized teleportation fidelities. The environment-parameter
+figures complete the open-system analysis: in matched regimes the
+dense-coding Holevo dynamics reproduce the exactly solvable two-atom
+benchmark~\cite{Haddadi2023} to within $0.01$ bit, the overdamped limit
+shows the expected fixed-point values, and reservoirs with spectral
+width $\Gamma\lesssim2\gamma$ sustain a measurable advantage up to
+$\tau=30$. The concurrence sweeps against $U$ and $V_{\mathrm{SO}}$
+remain analytic across the Lifshitz point, and the pairing onset at
+$\Delta t_{c}/t=2.52\pm0.03$ shows no first-order signature.
+
 The principal remaining tasks are a unified signed-Green's-function
 regeneration of the legacy open-system dynamics, a parameter-preserving
-evolution pipeline for all observables, locally optimized fully entangled
-fractions for general evolved states, and free-energy or competing-order
-analyses before assigning thermodynamic phase stability.
+evolution pipeline for all observables, a converged nonzero-spin--orbit
+sweep beyond the demonstrated parameter points, and free-energy or
+competing-order analyses before assigning thermodynamic phase stability.
 
 \begin{acknowledgments}
 Numerical results were obtained with a self-consistent BdG solver and open-quantum-system evolution code implemented by the author.
@@ -1587,6 +1904,15 @@ H.-P. Breuer and F. Petruccione, \emph{The Theory of Open Quantum Systems} (Oxfo
 
 \bibitem{Bellomo2007}
 B. Bellomo, R. Lo Franco, and G. Compagno, Non-Markovian effects on the dynamics of entanglement, Phys.\ Rev.\ Lett.\ \textbf{99}, 160502 (2007).
+
+\bibitem{Hutchinson2018}
+J. Hutchinson, J. E. H. Hirsch, and F. Marsiglio, Enhancement of superconducting $T_{c}$ due to the spin-orbit interaction, Phys.\ Rev.\ B \textbf{97}, 184513 (2018).
+
+\bibitem{Haddadi2023}
+S. Haddadi, M. Hadipour, S. Haseli, A. U. Rahman, and A. Czerwinski, Quantum advantages of teleportation and dense coding protocols in an open system, Mathematics \textbf{11}, 1407 (2023).
+
+\bibitem{Breuer2009}
+H.-P. Breuer, E.-M. Laine, and J. Piilo, Measure for the degree of non-Markovian behavior of quantum processes in open systems, Phys.\ Rev.\ Lett.\ \textbf{96}, 105701 (2009).
 
 \end{thebibliography}
 
