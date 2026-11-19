@@ -2,10 +2,10 @@
   "source": "manuscript.tex",
   "compilation_performed": false,
   "check_type": "static source audit only",
-  "label_count": 65,
+  "label_count": 76,
   "duplicate_labels": [],
   "undefined_references": [],
-  "citation_key_count": 10,
+  "citation_key_count": 13,
   "duplicate_bibitems": [],
   "undefined_citations": [],
   "uncited_bibitems": [],
@@ -16,8 +16,8 @@
       1
     ],
     "equation": [
-      49,
-      49
+      52,
+      52
     ],
     "align": [
       0,
@@ -28,8 +28,8 @@
       3
     ],
     "figure*": [
-      10,
-      10
+      14,
+      14
     ],
     "table": [
       0,
@@ -95,6 +95,22 @@
     },
     {
       "path": "figs/U_dependence_fidelity_holevo.png",
+      "exists": true
+    },
+    {
+      "path": "figs/concurrence_derivatives_u_vso.png",
+      "exists": true
+    },
+    {
+      "path": "figs/environment_protocols_regimes.png",
+      "exists": true
+    },
+    {
+      "path": "figs/environment_parameter_scan.png",
+      "exists": true
+    },
+    {
+      "path": "figs/qpt_onset_lifshitz.png",
       "exists": true
     }
   ],
