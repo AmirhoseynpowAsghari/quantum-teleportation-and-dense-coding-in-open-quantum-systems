@@ -2,10 +2,10 @@
   "source": "manuscript.tex",
   "compilation_performed": false,
   "check_type": "static source audit only",
-  "label_count": 76,
+  "label_count": 59,
   "duplicate_labels": [],
   "undefined_references": [],
-  "citation_key_count": 13,
+  "citation_key_count": 14,
   "duplicate_bibitems": [],
   "undefined_citations": [],
   "uncited_bibitems": [],
@@ -16,28 +16,28 @@
       1
     ],
     "equation": [
-      52,
-      52
+      41,
+      41
     ],
     "align": [
-      0,
-      0
+      1,
+      1
     ],
     "figure": [
       3,
       3
     ],
     "figure*": [
-      14,
-      14
+      10,
+      10
     ],
     "table": [
       0,
       0
     ],
     "table*": [
-      2,
-      2
+      0,
+      0
     ],
     "thebibliography": [
       1,
@@ -55,18 +55,6 @@
     },
     {
       "path": "figs/concurrence_U_theta.png",
-      "exists": true
-    },
-    {
-      "path": "figs/low_U_density_bdg_solutions.png",
-      "exists": true
-    },
-    {
-      "path": "figs/low_U_density_resources.png",
-      "exists": true
-    },
-    {
-      "path": "figs/low_U_density_lattice_sites.png",
       "exists": true
     },
     {
@@ -107,10 +95,6 @@
     },
     {
       "path": "figs/environment_parameter_scan.png",
-      "exists": true
-    },
-    {
-      "path": "figs/qpt_onset_lifshitz.png",
       "exists": true
     }
   ],
