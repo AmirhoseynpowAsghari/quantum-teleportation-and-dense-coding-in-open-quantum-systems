@@ -55,6 +55,30 @@ result = {
 result["all_graphics_found"] = all(item["exists"] for item in result["graphics"])
 result["all_mandatory_figures_exactly_once"] = all(
     count == 1 for count in result["mandatory_figure_include_counts"].values())
+# Inline-math sanity: inside $...$ the set delimiters \{ and \} must pair,
+# and braces left after removing escaped ones must balance. This catches
+# TeX-semantic errors such as "$\{...\rangle}$" (unescaped closing brace)
+# that a raw character count treats as balanced.
+math_brace_issues = []
+for match in re.finditer(r"\$([^$\n]+?)\$", uncommented):
+    seg = match.group(1)
+    line_no = uncommented[:match.start()].count("\n") + 1
+    if seg.count(r"\{") != seg.count(r"\}"):
+        math_brace_issues.append(
+            {"line": line_no, "issue": r"unmatched \{ vs \} in math",
+             "context": seg[:90]})
+        continue
+    stripped = seg.replace(r"\{", "").replace(r"\}", "")
+    if stripped.count("{") != stripped.count("}"):
+        math_brace_issues.append(
+            {"line": line_no, "issue": "unbalanced braces in math",
+             "context": seg[:90]})
+dollar_total = uncommented.count("$") - 2 * uncommented.count(r"\$")
+if dollar_total % 2:
+    math_brace_issues.append(
+        {"line": None, "issue": "odd number of $ delimiters",
+         "context": f"count={dollar_total}"})
+result["math_brace_issues"] = math_brace_issues
 result["static_checks_passed"] = (
     not result["duplicate_labels"] and not result["undefined_references"]
     and not result["duplicate_bibitems"] and not result["undefined_citations"]
@@ -62,6 +86,7 @@ result["static_checks_passed"] = (
     and all(begin == end for begin, end in result["environment_balance"].values())
     and result["all_graphics_found"]
     and result["all_mandatory_figures_exactly_once"]
+    and not result["math_brace_issues"]
 )
 REPORT.write_text(json.dumps(result, indent=2), encoding="utf-8")
 print(json.dumps(result, indent=2))
