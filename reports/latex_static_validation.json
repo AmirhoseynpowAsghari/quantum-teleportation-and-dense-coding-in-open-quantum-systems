@@ -124,5 +124,6 @@
   },
   "all_graphics_found": true,
   "all_mandatory_figures_exactly_once": true,
+  "math_brace_issues": [],
   "static_checks_passed": true
 }
