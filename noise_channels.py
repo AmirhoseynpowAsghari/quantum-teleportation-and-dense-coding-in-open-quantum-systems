@@ -11,10 +11,17 @@ def p_dephasing(t, gamma, Gamma):
 
 
 def p_amplitude_damping(t, gamma, Gamma):
+    # Exact Lorentzian envelope |eta(t)|^2 (same as fidelity.eta_amp_lorentz):
+    # underdamped (2 gamma Gamma > Gamma^2) -> oscillatory cos branch;
+    # overdamped -> cosh branch (the previous critical-damping form
+    # (1+Gamma t/2)^2 was only valid at Gamma = 2 gamma exactly).
     d2 = 2.0*gamma*Gamma - Gamma**2
     if d2 > 0.0:
         d   = np.sqrt(d2)
         val = np.exp(-Gamma*t)*(np.cos(0.5*d*t)+(Gamma/d)*np.sin(0.5*d*t))**2
+    elif d2 < 0.0:
+        d   = np.sqrt(-d2)
+        val = np.exp(-Gamma*t)*(np.cosh(0.5*d*t)+(Gamma/d)*np.sinh(0.5*d*t))**2
     else:
         val = np.exp(-Gamma*t)*(1.0 + 0.5*Gamma*t)**2
     return float(np.clip(val, 0.0, 1.0))
