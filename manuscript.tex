@@ -96,7 +96,7 @@ where $\mu$ is the chemical potential. The corresponding coherence factors
 are given by
 
 \begin{equation}\boxed{
-u_{\mathbf{k}s}^{2}
+|u_{\mathbf{k}s}|^{2}
 =
 \frac{1}{2}
 \left(
@@ -105,7 +105,7 @@ u_{\mathbf{k}s}^{2}
 {E_{\mathbf{k}s}}
 \right),
 \qquad
-v_{\mathbf{k}s}^{2}
+|v_{\mathbf{k}s}|^{2}
 =
 \frac{1}{2}
 \left(
@@ -241,13 +241,13 @@ For $U/t=40$, the reproduced self-consistent solution gives
 
 \begin{equation}\boxed{
 \begin{aligned}
-\frac{\Delta_0}{t}&=-0.0207713,
-&\qquad \frac{\Delta_s}{t}&=-1.2797794,\\
-&\frac{\mu}{t}=3.4477728,
+\frac{\Delta_0}{t}&=-0.3121263,
+&\qquad \frac{\Delta_s}{t}&=3.2268726,\\
+&\frac{\mu}{t}=4.9515521,
 \end{aligned}
 }\end{equation}
 
-with maximum absolute residual $2.18\times10^{-11}$. The relatively large
+with maximum absolute residual $1.77\times10^{-13}$. The relatively large
 magnitude of $\Delta_s$ produces a strong variation of
 $\Delta_{\mathbf{k}s}$ throughout momentum space. The gap changes sign
 between different regions of the Brillouin zone because the two terms in
@@ -256,31 +256,32 @@ Eq.~\eqref{eq:gap} have different momentum dependence.
 At the intermediate interaction strength $U/t=75$, the parameters become
 
 \begin{equation}\boxed{
-\frac{\Delta_0}{t}=-0.1254786,
-\qquad
-\frac{\Delta_s}{t}=-0.3614892,
-\qquad
-\frac{\mu}{t}=3.2926234,
+\begin{aligned}
+\frac{\Delta_0}{t}&=0.2485808,
+&\qquad \frac{\Delta_s}{t}&=1.7801622,\\
+&\frac{\mu}{t}=3.9293268,
+\end{aligned}
 }\end{equation}
 
-with maximum absolute residual $2.36\times10^{-12}$. The reduction in the
+with maximum absolute residual $1.29\times10^{-11}$. The reduction in the
 magnitude of $\Delta_s$ suppresses the momentum-dependent variation of the
 superconducting gap, although the characteristic structure remains visible.
 
 For $U/t=115$, the solution is
 
 \begin{equation}\boxed{
-\frac{\Delta_0}{t}=-0.00255853,
-\qquad
-\frac{\Delta_s}{t}=-0.00355528,
-\qquad
-\frac{\mu}{t}=3.29365466,
+\begin{aligned}
+\frac{\Delta_0}{t}&=-0.3001766,
+&\qquad \frac{\Delta_s}{t}&=-0.8258708,\\
+&\frac{\mu}{t}=3.6814756,
+\end{aligned}
 }\end{equation}
 
-with maximum absolute residual $2.39\times10^{-10}$. Both superconducting
-components are therefore strongly reduced, resulting in a nearly vanishing
-$\Delta_{\mathbf{k}s}$ throughout the Brillouin zone on the common scale of
-Fig.~\ref{fig:delta_ks_heatmaps}.
+with maximum absolute residual $5.96\times10^{-13}$. The extended-$s$
+component is strongly reduced with respect to $U/t=75$ while the uniform
+component remains finite and changes sign across the band, so
+$\Delta_{\mathbf{k}s}$ retains visible momentum-space structure on the
+common scale of Fig.~\ref{fig:delta_ks_heatmaps}.
 
 The comparison demonstrates that, for these converged solutions, the
 interaction strength strongly influences both the magnitude and
@@ -291,7 +292,7 @@ normal and anomalous Green functions used to construct the reduced
 two-particle spin state. Variations in the microscopic pairing structure are
 therefore transferred to the spatial quantum correlations examined below.
 
-\subsection{Green's functions and the sign of the coherence factor}
+\subsection{Green's functions and coherence factors}
 \label{sec:greens}
 
 The normal and anomalous Green's functions are obtained by summing
@@ -322,19 +323,21 @@ e^{-i\mathbf{k}\cdot\mathbf{r}}.
 The corresponding BdG amplitudes satisfy
 %
 \begin{equation}\boxed{
+\begin{aligned}
 |u_{ks}|^2
-=
+&=
 \frac{1}{2}
 \left(
 1+\frac{\epsilon_{ks}-\mu}{E_{ks}}
 \right),
-\qquad
+\\
 |v_{ks}|^2
-=
+&=
 \frac{1}{2}
 \left(
 1-\frac{\epsilon_{ks}-\mu}{E_{ks}}
 \right),
+\end{aligned}
 }\label{eq:BdG_amplitudes}\end{equation}
 %
 while the anomalous coherence factor obeys the exact BdG identity
@@ -465,7 +468,7 @@ e^{i\theta_{\mathbf{k}}} & -e^{i\theta_{\mathbf{k}}}
 e^{i\theta_{\mathbf{k}}}
 &=
 \frac{\sin k_{y}-i\sin k_{x}}{\sqrt{\sin^{2}k_{x}+\sin^{2}k_{y}}},
-&
+\\
 U_{-\mathbf{k}}&=ZU_{\mathbf{k}},
 \quad Z=\mathrm{diag}(1,-1),
 \end{aligned}}\label{eq:helicity_transform}\end{equation}
