@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  19 NOV 2026 09:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  22 NOV 2026 10:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -308,7 +308,7 @@ Underfull \hbox (badness 1127) in paragraph at lines 43--44
  []
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 205--216
+Underfull \hbox (badness 1178) in paragraph at lines 196--207
 []\OT1/cmr/m/n/10 Here, $\OML/cmm/m/it/10 U$ \OT1/cmr/m/n/10 de-notes the on-si
 te Hub-bard in-ter-ac-tion
  []
@@ -317,96 +317,88 @@ te Hub-bard in-ter-ac-tion
 <Delta_ks_heatmaps.png, id=24, 945.131pt x 300.322pt>
 File: Delta_ks_heatmaps.png Graphic file (type png)
 <use Delta_ks_heatmaps.png>
-Package pdftex.def Info: Delta_ks_heatmaps.png  used on input line 226.
+Package pdftex.def Info: Delta_ks_heatmaps.png  used on input line 217.
 (pdftex.def)             Requested size: 510.0pt x 162.05232pt.
 
-Overfull \hbox (28.2083pt too wide) detected at line 273
-[][] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\
-OT1/cmr/m/n/10 1254786\OML/cmm/m/it/10 ;  [] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10
- ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 3614892\OML/cmm/m/it/10 
-;  [] \OT1/cmr/m/n/10 = 3\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2926234\OML/cmm/m/it
-/10 ;
+Overfull \hbox (35.00829pt too wide) detected at line 264
+[][]
  []
 
 
-Underfull \hbox (badness 2343) in paragraph at lines 275--278
+Underfull \hbox (badness 2343) in paragraph at lines 266--269
 \OT1/cmr/m/n/10 re-duc-tion in the mag-ni-tude of $^^A[]$ sup-presses the
  []
 
 
-Overfull \hbox (43.20834pt too wide) detected at line 287
-[][] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\
-OT1/cmr/m/n/10 00255853\OML/cmm/m/it/10 ;  [] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/1
-0 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 00355528\OML/cmm/m/it/1
-0 ;  [] \OT1/cmr/m/n/10 = 3\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 29365466\OML/cmm/m
-/it/10 ;
+Overfull \hbox (50.00833pt too wide) detected at line 278
+[][]
  []
 
 
-Underfull \hbox (badness 1043) in paragraph at lines 294--302
+Underfull \hbox (badness 1043) in paragraph at lines 285--293
 \OT1/cmr/m/n/10 be-hav-ior is im-por-tant for the sub-se-quent quantum-
  []
 
 
-Overfull \hbox (8.09055pt too wide) detected at line 350
-[]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 u[]\OMS/cmsy/m/n/10 j[] \OT1/cmr/m/n/10 = 
-[] [] \OML/cmm/m/it/10 ;  \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 v[]\OMS/cmsy/m/n/1
-0 j[] \OT1/cmr/m/n/10 = [] [] \OML/cmm/m/it/10 ;
+Overfull \hbox (14.89053pt too wide) detected at line 338
+[][]
  []
 
-<figs/greens_angular.png, id=26, 803.0pt x 311.564pt>
+[3]
+<figs/greens_angular.png, id=33, 803.0pt x 311.564pt>
 File: figs/greens_angular.png Graphic file (type png)
 <use figs/greens_angular.png>
-Package pdftex.def Info: figs/greens_angular.png  used on input line 390.
+Package pdftex.def Info: figs/greens_angular.png  used on input line 373.
 (pdftex.def)             Requested size: 494.70062pt x 191.95062pt.
-[3] [4 <./Delta_ks_heatmaps.png> <./figs/greens_angular.png>]
-Overfull \hbox (28.18225pt too wide) detected at line 491
-[]
+
+Overfull \hbox (34.98224pt too wide) detected at line 471
+[][]
  []
 
 
-Underfull \hbox (badness 6944) in paragraph at lines 519--535
+Underfull \hbox (badness 6944) in paragraph at lines 498--514
 \OT1/cmr/m/n/10 The con-di-tional state is $\OML/cmm/m/it/10 ^^Z[] \OT1/cmr/m/n
 /10 = []\OML/cmm/m/it/10 = [] []$\OT1/cmr/m/n/10 .
  []
 
 
-Underfull \hbox (badness 7326) in paragraph at lines 519--535
+Underfull \hbox (badness 7326) in paragraph at lines 498--514
 \OT1/cmr/m/n/10 where $\OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 r\
 OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 N[] [][] e[]N[]$\OT1/cmr/m/n/10 , $\OML/cmm
 /m/it/10 F[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 r\OT1/cmr/m/n/10 ) =
  []
 
-[5]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 777
+[4 <./Delta_ks_heatmaps.png>] [5 <./figs/greens_angular.png>]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 747
 .
- (/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/ueuf.fd
+
+(/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [6]
-<figs/concurrence_U_theta.png, id=51, 803.0pt x 550.055pt>
+<figs/concurrence_U_theta.png, id=51, 803.0pt x 318.791pt>
 File: figs/concurrence_U_theta.png Graphic file (type png)
 <use figs/concurrence_U_theta.png>
-Package pdftex.def Info: figs/concurrence_U_theta.png  used on input line 913.
-(pdftex.def)             Requested size: 510.0pt x 349.35658pt.
+Package pdftex.def Info: figs/concurrence_U_theta.png  used on input line 878.
+(pdftex.def)             Requested size: 510.0pt x 202.47382pt.
+ [7]
 <figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_C_heatmap.png, i
-d=52, 715.0715pt x 426.393pt>
+d=57, 715.473pt x 426.393pt>
 File: figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_C_heatmap.p
 ng Graphic file (type png)
 <use figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_C_heatmap.pn
 g>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_
-GB0.010_C_heatmap.png  used on input line 964.
-(pdftex.def)             Requested size: 469.19907pt x 279.78067pt.
+GB0.010_C_heatmap.png  used on input line 933.
+(pdftex.def)             Requested size: 469.19907pt x 279.62453pt.
 <figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_heatmap_single
-t.png, id=53, 714.67pt x 425.9915pt>
+t.png, id=58, 714.67pt x 425.9915pt>
 File: figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_heatmap_s
 inglet.png Graphic file (type png)
 <use figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_heatmap_si
 nglet.png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_
-GB0.010_F_heatmap_singlet.png  used on input line 1000.
+GB0.010_F_heatmap_singlet.png  used on input line 970.
 (pdftex.def)             Requested size: 469.19907pt x 279.67323pt.
- [7]
 <figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_singlet.p
 ng, id=59, 512.7155pt x 354.123pt>
 File: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_sing
@@ -414,10 +406,10 @@ let.png Graphic file (type png)
 <use figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_singl
 et.png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_
-GB0.100_F_vs_t_singlet.png  used on input line 1039.
+GB0.100_F_vs_t_singlet.png  used on input line 1009.
 (pdftex.def)             Requested size: 246.0pt x 169.90685pt.
 
-Underfull \hbox (badness 3826) in paragraph at lines 1065--1071
+Underfull \hbox (badness 3826) in paragraph at lines 1035--1041
 []\OT1/cmr/m/n/10 Angular de-pen-dence en-ters the cal-cu-la-tion only
  []
 
@@ -429,10 +421,10 @@ glet.png Graphic file (type png)
 <use figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_sing
 let.png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_
-GB0.100_F_polar_singlet.png  used on input line 1087.
+GB0.100_F_polar_singlet.png  used on input line 1057.
 (pdftex.def)             Requested size: 246.0pt x 207.8543pt.
 
-Underfull \hbox (badness 1082) in paragraph at lines 1101--1107
+Underfull \hbox (badness 1082) in paragraph at lines 1071--1077
 []\OT1/cmr/m/n/10 These ob-ser-va-tions sup-port an initial-state lat-tice
  []
 
@@ -443,7 +435,7 @@ File: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs_r
 <use figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs_r.
 png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_
-GB0.100_holevo_vs_r.png  used on input line 1122.
+GB0.100_holevo_vs_r.png  used on input line 1092.
 (pdftex.def)             Requested size: 246.0pt x 169.90685pt.
 <figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_theta_t_h
 eatmap.png, id=66, 715.0715pt x 325.215pt>
@@ -452,7 +444,7 @@ a_t_heatmap.png Graphic file (type png)
 <use figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_theta
 _t_heatmap.png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_
-GB0.100_holevo_theta_t_heatmap.png  used on input line 1155.
+GB0.100_holevo_theta_t_heatmap.png  used on input line 1125.
 (pdftex.def)             Requested size: 469.19907pt x 213.39204pt.
 [9 <./figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_C_heatmap.p
 ng>] [10 <./figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_hea
@@ -460,19 +452,19 @@ tmap_singlet.png> <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.
 100_F_vs_t_singlet.png>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 1202.
+ on input line 1172.
 
 <figs/U_dependence_fidelity_holevo.png, id=76, 803.0pt x 550.055pt>
 File: figs/U_dependence_fidelity_holevo.png Graphic file (type png)
 <use figs/U_dependence_fidelity_holevo.png>
 Package pdftex.def Info: figs/U_dependence_fidelity_holevo.png  used on input l
-ine 1206.
+ine 1176.
 (pdftex.def)             Requested size: 479.40125pt x 328.39888pt.
 <figs/concurrence_derivatives_u_vso.png, id=77, 1200.53224pt x 600.69124pt>
 File: figs/concurrence_derivatives_u_vso.png Graphic file (type png)
 <use figs/concurrence_derivatives_u_vso.png>
 Package pdftex.def Info: figs/concurrence_derivatives_u_vso.png  used on input 
-line 1270.
+line 1239.
 (pdftex.def)             Requested size: 510.0pt x 255.18498pt.
 [11 <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_si
 nglet.png> <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_hol
@@ -490,27 +482,32 @@ Package pdftex.def Info: figs/environment_parameter_scan.png  used on input lin
 e 1380.
 (pdftex.def)             Requested size: 510.0pt x 569.73042pt.
  [12 <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_th
-eta_t_heatmap.png>]
-Underfull \hbox (badness 1168) in paragraph at lines 1432--1447
+eta_t_heatmap.png>] [13 <./figs/U_dependence_fidelity_holevo.png>]
+Underfull \hbox (badness 1168) in paragraph at lines 1432--1451
 []\OT1/cmr/m/n/10 The he-lic-ity ex-ten-sion col-lects these el-e-ments for
  []
 
-[13 <./figs/U_dependence_fidelity_holevo.png>] [14 <./figs/concurrence_derivati
-ves_u_vso.png>] (./manuscript.bbl) [15 <./figs/environment_protocols_regimes.pn
-g>] [16 <./figs/environment_parameter_scan.png>] (./manuscript.aux)
+[14 <./figs/concurrence_derivatives_u_vso.png>] [15 <./figs/environment_protoco
+ls_regimes.png>]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 1474.
+
+(./manuscript.bbl) [16] [17 <./figs/environment_parameter_scan.png>]
+(./manuscript.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5044 strings out of 467050
- 75464 string characters out of 5408429
- 519375 words of memory out of 5000000
- 34373 multiletter control sequences out of 15000+600000
+ 5051 strings out of 467050
+ 75547 string characters out of 5408429
+ 519624 words of memory out of 5000000
+ 34380 multiletter control sequences out of 15000+600000
  640537 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,16n,65p,2977b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,17n,65p,3226b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
 pt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/te
 xlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></opt/texlive/
@@ -537,10 +534,10 @@ fonts/cm/cmtt10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts
 /euler/eufm10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on manuscript.pdf (16 pages, 2110423 bytes).
+Output written on manuscript.pdf (17 pages, 2232000 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
+ 222 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
