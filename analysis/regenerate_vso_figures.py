@@ -285,15 +285,20 @@ def fig7_8_heatmaps(st75: States) -> None:
     rho_t = evolve_stack(rho0, t_grid, **HIGH)         # (200,161,4,4)
     obs = observables(rho_t)
     # --- concurrence heatmap (custom, mirrors the fidelity style) ---
+    # Display window: the initial concurrence is confined to r <~ 0.5 and
+    # cannot revive beyond it, so only the structured radial range is shown.
+    r_mask = R_GRID <= 1.51
     fig, ax = plt.subplots(figsize=(10, 6))
-    im = ax.imshow(obs["C"], aspect="auto", origin="lower", cmap="RdYlBu_r",
-                   extent=[t_grid[0], t_grid[-1], R_GRID[0], R_GRID[-1]],
+    im = ax.imshow(obs["C"][r_mask], aspect="auto", origin="lower",
+                   cmap="RdYlBu_r",
+                   extent=[t_grid[0], t_grid[-1],
+                           R_GRID[r_mask][0], R_GRID[r_mask][-1]],
                    vmin=0.0, vmax=1.0, interpolation="bilinear")
     levels = np.array([0.1, 0.2, 0.3, 0.5, 0.7])
-    levels = levels[levels <= float(np.nanmax(obs["C"]))]
+    levels = levels[levels <= float(np.nanmax(obs["C"][r_mask]))]
     if levels.size:
-        cs = ax.contour(t_grid, R_GRID, obs["C"], levels=levels,
-                        colors="white", linewidths=0.9)
+        cs = ax.contour(t_grid, R_GRID[r_mask], obs["C"][r_mask],
+                        levels=levels, colors="white", linewidths=0.9)
         ax.clabel(cs, inline=True, fontsize=9, fmt="C=%.2f")
     div = __import__("mpl_toolkits.axes_grid1", fromlist=["make_axes_locatable"])
     cax = div.make_axes_locatable(ax).append_axes("right", size="4%", pad=0.08)
