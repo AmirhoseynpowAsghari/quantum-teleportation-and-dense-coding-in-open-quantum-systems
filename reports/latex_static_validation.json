@@ -2,10 +2,10 @@
   "source": "manuscript.tex",
   "compilation_performed": false,
   "check_type": "static source audit only",
-  "label_count": 59,
+  "label_count": 60,
   "duplicate_labels": [],
   "undefined_references": [],
-  "citation_key_count": 14,
+  "citation_key_count": 16,
   "duplicate_bibitems": [],
   "undefined_citations": [],
   "uncited_bibitems": [],
@@ -16,12 +16,12 @@
       1
     ],
     "equation": [
-      41,
-      41
+      42,
+      42
     ],
     "align": [
-      1,
-      1
+      0,
+      0
     ],
     "figure": [
       3,

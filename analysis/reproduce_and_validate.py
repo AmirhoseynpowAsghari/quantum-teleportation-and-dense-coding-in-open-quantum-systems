@@ -199,25 +199,32 @@ def plot_greens_angular(U, solution):
 
 
 def plot_concurrence_U_theta(solutions):
+    """Angular dependence of C at two fixed separations (theta-dependence).
+
+    The initial concurrence dies at r~0.5 for every direction, so a radial
+    axis beyond the first zero carries no information; the lattice-direction
+    (theta) dependence at fixed r inside the entangled region is the
+    meaningful profile.  r=0.30 sits well inside the region for all
+    directions, r=0.45 sits at the axis first zero where the diagonal
+    direction still retains finite concurrence.
+    """
     U_values = [20, 44, 79, 115]
-    angles = [0, 30, 60, 90]
-    fig, axes = plt.subplots(2, 2, figsize=(11, 7.5), sharex=True, sharey=True,
+    r_targets = [0.30, 0.45]
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.3),
                              constrained_layout=True)
-    for ax, angle in zip(axes.flat, angles):
+    for ax, r_target in zip(axes, r_targets):
         for U in U_values:
             sol = solutions[U]
-            i = int(np.argmin(np.abs(np.degrees(sol["theta"])-angle)))
-            C = sol["initial_obs"]["C"][i, :, 0]
-            ax.plot(sol["r"], C, label=fr"$U/t={U}$")
-        ax.set_title(fr"$\theta={angle}^\circ$")
-        ax.set_xlim(0, 4)
-        ax.set_ylim(0, 1.02)
+            ir = int(np.argmin(np.abs(sol["r"] - r_target)))
+            C_theta = sol["initial_obs"]["C"][:, ir, 0]
+            ax.plot(np.degrees(sol["theta"]), C_theta, marker="o",
+                    markersize=4.5, label=fr"$U/t={U}$")
+        ax.set_title(fr"$r={sol['r'][ir]:.3f}$")
+        ax.set_xlabel(r"$\theta$ (degrees)")
+        ax.set_xlim(0, 90)
         ax.grid(alpha=0.25)
         ax.legend(fontsize=8)
-    for ax in axes[-1]:
-        ax.set_xlabel(r"$r$")
-    for ax in axes[:, 0]:
-        ax.set_ylabel(r"$C(r,\theta,t=0)$")
+    axes[0].set_ylabel(r"$C(r,\theta,t=0)$")
     fig.savefig(FIGS / "concurrence_U_theta.png", dpi=180, bbox_inches="tight")
     plt.close(fig)
 
