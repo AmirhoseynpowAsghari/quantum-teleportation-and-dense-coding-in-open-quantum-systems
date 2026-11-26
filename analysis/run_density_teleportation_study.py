@@ -203,16 +203,28 @@ def fast_greens_equal_time(bdg, r_values, angles_deg):
     checked against greens_functions.compute_greens_functions below.
     """
     kx, ky = bdg["kx"], bdg["ky"]
-    wx, wy = simpson_weights(kx), simpson_weights(ky)
-    normal = bdg["v_ks"][:, :, 0]**2 * wx[:, None] * wy[None, :]
-    anomalous = (bdg["Delta_ks"][:, :, 0] / (2.0 * bdg["E_ks"][:, :, 0])
-                 * wx[:, None] * wy[None, :])
-    # Fixed-solution channel decomposition, not separately converged states.
+    periodic_x = len(kx) > 1 and (kx[-1] - kx[0]) < (2.0 * np.pi - 1e-6)
+    periodic_y = len(ky) > 1 and (ky[-1] - ky[0]) < (2.0 * np.pi - 1e-6)
+    v2_0 = bdg["v_ks"][:, :, 0]**2
+    an_0 = bdg["Delta_ks"][:, :, 0] / (2.0 * bdg["E_ks"][:, :, 0])
     sk = -bdg["epsilon_ks"][:, :, 0] / (4.0 * config.t_hop)
-    onsite = (bdg["Delta0"] / (2.0 * bdg["E_ks"][:, :, 0])
-              * wx[:, None] * wy[None, :])
-    extended = (bdg["DeltaS"] * sk / (2.0 * bdg["E_ks"][:, :, 0])
-                * wx[:, None] * wy[None, :])
+    on_0 = bdg["Delta0"] / (2.0 * bdg["E_ks"][:, :, 0])
+    ex_0 = bdg["DeltaS"] * sk / (2.0 * bdg["E_ks"][:, :, 0])
+    if periodic_x or periodic_y:
+        px_pad = (0, 1) if periodic_x else (0, 0)
+        py_pad = (0, 1) if periodic_y else (0, 0)
+        kx = np.append(kx, kx[0] + 2.0 * np.pi) if periodic_x else kx
+        ky = np.append(ky, ky[0] + 2.0 * np.pi) if periodic_y else ky
+        v2_0 = np.pad(v2_0, (py_pad, px_pad), mode="wrap")
+        an_0 = np.pad(an_0, (py_pad, px_pad), mode="wrap")
+        on_0 = np.pad(on_0, (py_pad, px_pad), mode="wrap")
+        ex_0 = np.pad(ex_0, (py_pad, px_pad), mode="wrap")
+    wx, wy = simpson_weights(kx), simpson_weights(ky)
+    normal = v2_0 * wy[:, None] * wx[None, :]
+    anomalous = an_0 * wy[:, None] * wx[None, :]
+    # Fixed-solution channel decomposition, not separately converged states.
+    onsite = on_0 * wy[:, None] * wx[None, :]
+    extended = ex_0 * wy[:, None] * wx[None, :]
     r_values = np.asarray(r_values, dtype=float)
     G = np.zeros((len(angles_deg), len(r_values)), complex)
     F = np.zeros_like(G)
@@ -221,10 +233,10 @@ def fast_greens_equal_time(bdg, r_values, angles_deg):
     for ia, angle in enumerate(np.radians(angles_deg)):
         px = np.exp(-1j * np.outer(r_values * np.cos(angle), kx))
         py = np.exp(-1j * np.outer(r_values * np.sin(angle), ky))
-        integral_g = np.einsum("ri,ij,rj->r", px, normal, py, optimize=False)
-        integral_f = np.einsum("ri,ij,rj->r", px, anomalous, py, optimize=False)
-        integral_0 = np.einsum("ri,ij,rj->r", px, onsite, py, optimize=False)
-        integral_s = np.einsum("ri,ij,rj->r", px, extended, py, optimize=False)
+        integral_g = np.einsum("ri,ij,rj->r", py, normal, px, optimize=False)
+        integral_f = np.einsum("ri,ij,rj->r", py, anomalous, px, optimize=False)
+        integral_0 = np.einsum("ri,ij,rj->r", py, onsite, px, optimize=False)
+        integral_s = np.einsum("ri,ij,rj->r", py, extended, px, optimize=False)
         G[ia] = 1j * integral_g / (2.0 * np.pi)**2
         F[ia] = 1j * integral_f / (2.0 * np.pi)**2
         F0[ia] = 1j * integral_0 / (2.0 * np.pi)**2

@@ -254,6 +254,16 @@ def legacy_xstate_curves(bdg: dict, r_targets: np.ndarray) -> dict:
     """
     kx, ky = bdg["kx"], bdg["ky"]
     u_ks, v_ks = bdg["u_ks"], bdg["v_ks"]
+    periodic_x = len(kx) > 1 and (kx[-1] - kx[0]) < (2.0 * np.pi - 1e-6)
+    periodic_y = len(ky) > 1 and (ky[-1] - ky[0]) < (2.0 * np.pi - 1e-6)
+    if periodic_x or periodic_y:
+        px_pad = (0, 1) if periodic_x else (0, 0)
+        py_pad = (0, 1) if periodic_y else (0, 0)
+        kx = np.append(kx, kx[0] + 2.0 * np.pi) if periodic_x else kx
+        ky = np.append(ky, ky[0] + 2.0 * np.pi) if periodic_y else ky
+        pad_spec = (py_pad, px_pad, (0, 0))
+        u_ks = np.pad(u_ks, pad_spec, mode="wrap")
+        v_ks = np.pad(v_ks, pad_spec, mode="wrap")
     wx = simpson(y=np.eye(len(kx)), x=kx, axis=0)
     wy = simpson(y=np.eye(len(ky)), x=ky, axis=0)
     grid_w = np.outer(wy, wx) / (2.0 * np.pi) ** 2
@@ -470,7 +480,8 @@ def main() -> int:
     # -------------------------------------------------------------------------
     # Mesh-convergence checks for the QPT region and the small-gap artifact
     # -------------------------------------------------------------------------
-    def solve_at_point(nk: int, dt: float, vso: float) -> tuple[np.ndarray, float]:
+    def solve_at_point(nk: int, dt: float, vso: float,
+                       warm: np.ndarray | None = None) -> tuple[np.ndarray, float]:
         for mod in (config, kspace_setup, self_consistency):
             mod.V_SO = float(vso)
             mod.Delta_t = float(dt)
@@ -481,24 +492,51 @@ def main() -> int:
         sk = 0.5 * (np.cos(KX) + np.cos(KY))
         args = (eps_ks, sk, ssin, nk, 1.0, U_OVER_T, float(dt),
                 float(vso), N_ELEC, np.inf)
+        starts = []
+        if warm is not None:
+            starts.append(np.asarray(warm, dtype=float))
+        starts.extend([
+            np.array([-0.18, -0.50, 3.30]),
+            np.array([-0.25, -0.80, 3.80]),
+            np.array([-0.15, -0.45, 4.50]),
+            np.array([-0.50, -1.50, 4.50]),
+            np.array([-0.20, -3.50, 4.50]),
+            np.array([-0.05, -0.10, 4.00]),
+        ])
         best = None
-        for start in (np.array([-0.002, -0.003, 3.33]),
-                      np.array([-0.001, -0.0016, 3.32]),
-                      np.array([-0.01, -0.016, 3.35]),
-                      np.array([-0.05, -0.10, 4.0]),
-                      np.array([-0.15, -0.45, 4.5]),
-                      np.array([-0.5, -1.0, 5.0])):
-            r = least_squares(residual, start, args=args, method="lm",
-                              xtol=1e-14, ftol=1e-14, gtol=1e-14,
-                              max_nfev=20000)
-            x = r.x.copy()
+        for start in starts:
+            cand, _, _, _ = fsolve(
+                residual, start, args=args, full_output=True,
+                xtol=1e-12, maxfev=4000,
+            )
+            x = cand.copy()
             if x[1] > 0.0:
                 x = -x
             res = float(np.max(np.abs(residual(x, *args))))
-            if best is None or res < best[1]:
+            if (abs(x[0]) > 1e-4 or abs(x[1]) > 1e-4) and (
+                best is None or res < best[1]
+            ):
                 best = (x, res)
-            if best[1] <= 1e-12:
+            if best is not None and best[1] <= 1e-12:
                 break
+        if best is None or best[1] > 1e-10:
+            lm_starts = [] if warm is None else [np.asarray(warm, float)]
+            lm_starts.extend([np.array([-0.18, -0.50, 3.30]),
+                              np.array([-0.20, -3.50, 4.50])])
+            for start in lm_starts:
+                r = least_squares(residual, np.asarray(start, float), args=args,
+                                  method="lm", xtol=1e-14, ftol=1e-14,
+                                  gtol=1e-14, max_nfev=4000)
+                x = r.x.copy()
+                if x[1] > 0.0:
+                    x = -x
+                res = float(np.max(np.abs(residual(x, *args))))
+                if (abs(x[0]) > 1e-4 or abs(x[1]) > 1e-4) and (
+                    best is None or res < best[1]
+                ):
+                    best = (x, res)
+                if best is not None and best[1] <= 1e-12:
+                    break
         assert best is not None and best[1] <= 1e-9, best
         return best[0], best[1]
 
@@ -552,9 +590,14 @@ def main() -> int:
     for dt_m in (3.5, 4.5, 6.0):
         idt_m = int(np.argmin(np.abs(DT_VALUES - dt_m)))
         for v_m in (0.6, 0.8, 1.0):
-            sol_m, _ = solve_at_point(401, dt_m, v_m)
-            c401 = c_spin_r025(401, dt_m, v_m, sol_m)
             iv_m = int(np.argmin(np.abs(VSO_VALUES - v_m)))
+            warm_m = np.array([
+                Delta0_arr[idt_m, iv_m],
+                DeltaS_arr[idt_m, iv_m],
+                mu_arr[idt_m, iv_m],
+            ])
+            sol_m, _ = solve_at_point(401, dt_m, v_m, warm=warm_m)
+            c401 = c_spin_r025(401, dt_m, v_m, sol_m)
             j025 = int(np.argmin(np.abs(R_WICK - 0.25)))
             c201 = C_wick[idt_m, iv_m, 0, j025]
             mesh_spot.append({
@@ -608,7 +651,7 @@ def main() -> int:
         fig.suptitle(
             f"Exact conditional Wick concurrence ({basis} basis): dense "
             r"$V_{SO}$ sweep, $U/t=75$, $n=1.875$, $N_k=201$ "
-            "(red dashed: pairing onset from $d|\\Delta_S|/dV_{SO}$)",
+            r"(red dashed: $d|\Delta_S|/dV_{SO}$ inflection, not a QPT)",
             fontsize=12,
         )
         fig.savefig(FIGS / fname, dpi=200, bbox_inches="tight")
@@ -761,9 +804,9 @@ def main() -> int:
         ax.plot(VSO_VALUES, np.abs(DeltaS_arr[idt]), color="#1f77b4",
                 lw=1.7, label=r"$|\Delta_S|/t$")
         ax.axvline(v_pair[idt], color="#d62728", ls="--", lw=1.0,
-                   label="pair onset")
+                   label=r"$d|\Delta_S|/dV$ infl.")
         ax.axvline(v_lifshitz[idt], color="#2ca02c", ls="-.", lw=1.0,
-                   label="Lifshitz $\\mu=4t$")
+                   label=r"gapped $\mu_{\mathrm{SC}}=4t$")
         ax.axvline(v_gapmin[idt], color="#9467bd", ls=":", lw=1.0,
                    label="gap min")
         ax.grid(alpha=0.3)
@@ -842,17 +885,16 @@ def main() -> int:
             ax.set_ylabel(r"$dC_{legacy}/dV_{SO}$")
             ax.legend(fontsize=6.5, loc="upper left")
     fig.suptitle(
-        r"Quantum-phase-transition panel: order parameters, Lifshitz "
+        r"Crossover diagnostics: order parameters, gapped $\mu_{\mathrm{SC}}=4t$ "
         r"crossing, pairing gap and $dC/dV_{SO}$ on the dense $V_{SO}$ grid "
-        r"(gray = small-gap mesh-sensitive; $U/t=75$, $n=1.875$, "
-        r"$N_k=201$)",
+        r"($U/t=75$, $n=1.875$, $N_k=201$)",
         fontsize=12,
     )
     fig.savefig(FIGS / "concurrence_dense_vso_deriv_qpt.png", dpi=200,
                 bbox_inches="tight")
     plt.close(fig)
 
-    # Mesh-convergence figure: small-gap artifact + QPT-region C offsets
+    # Mesh-convergence figure: |Delta_S| and C(V_SO) under Nk refinement
     fig, axes = plt.subplots(1, 2, figsize=(12.5, 4.8),
                              constrained_layout=True)
     ax = axes[0]
@@ -863,7 +905,7 @@ def main() -> int:
                 color=DT_COLORS[m_i], label=mesh_labels[m_i])
     ax.set_xlabel(r"$V_{SO}/t$")
     ax.set_ylabel(r"$|\Delta_S|/t$")
-    ax.set_title(r"(a) Small-gap mesh sensitivity ($\Delta_t/t=3.5$)")
+    ax.set_title(r"(a) Periodic BZ mesh check ($\Delta_t/t=3.5$)")
     ax.grid(alpha=0.3)
     ax.legend(fontsize=8)
 
@@ -875,17 +917,16 @@ def main() -> int:
                 label=fr"$\Delta_t/t={dt_m:.1f}$")
     ax.axhline(mesh_spot_summary["mean_offset"], color="black", ls=":",
                lw=1.0,
-               label=(f"mean={mesh_spot_summary['mean_offset']:.4f}, "
-                      f"spread={mesh_spot_summary['spread']:.4f}"))
+               label=(f"mean={mesh_spot_summary['mean_offset']:.2e}, "
+                      f"spread={mesh_spot_summary['spread']:.2e}"))
     ax.set_xlabel(r"$V_{SO}/t$")
     ax.set_ylabel(r"$C_{N_k=401} - C_{N_k=201}$ (spin, $r=0.25$)")
-    ax.set_title(r"(b) QPT-region offset: nearly constant in $V_{SO}$")
+    ax.set_title(r"(b) Crossover-region offset ($\sim 10^{-6}$)")
     ax.grid(alpha=0.3)
     ax.legend(fontsize=8)
     fig.suptitle(
-        r"Mesh checks: the small-gap oscillation is finite-BZ-sampling "
-        r"(gray-shaded region), while $dC/dV_{SO}$ features in the QPT "
-        r"region are mesh-robust",
+        r"Mesh checks on the periodic BZ: $N_k=201$, $401$, and $601$ agree "
+        r"on $|\Delta_S|$ and keep $|C_{401}-C_{201}| < 6\times 10^{-6}$",
         fontsize=11,
     )
     fig.savefig(FIGS / "concurrence_dense_vso_deriv_meshcheck.png", dpi=200,
@@ -953,14 +994,15 @@ def main() -> int:
         "transition_candidates": [
             {
                 "Delta_t_over_t": float(dt),
-                "V_pair_onset": float(v_pair[idt]),
+                "V_inflection_dDS": float(v_pair[idt]),
                 "V_gap_minimum": float(v_gapmin[idt]),
-                "V_lifshitz_mu_eq_4t": (
+                "V_muSC_eq_4t_crossover": (
                     None if np.isnan(v_lifshitz[idt])
                     else float(v_lifshitz[idt])
                 ),
                 "min_gap_over_t": float(minEk_arr[idt].min()),
                 "abs_DeltaS_at_Vmax": float(np.abs(DeltaS_arr[idt, -1])),
+                "is_physical_QPT": False,
             }
             for idt, dt in enumerate(DT_VALUES)
         ],
@@ -974,11 +1016,9 @@ def main() -> int:
                 for i, dt in enumerate(DT_VALUES)
             },
             "note": (
-                "Below this region |Delta_S|(V_SO) oscillates with a "
-                "mesh-dependent pattern (see meshcheck figure): a finite "
-                "BZ-sampling artifact of the exponentially small gap, not "
-                "physical structure. C(V_SO) remains smooth; the residual "
-                "dC/dV noise there is below the QPT-feature scale."
+                "On the periodic endpoint=False BZ mesh, min_k E_k >= 0.21t "
+                "throughout Delta_t/t in [3.5, 6.0], so V_max_per_Delta_t = 0.0 "
+                "everywhere and Nk=201/401/601 agree to <6e-6."
             ),
             "DeltaS_mesh_comparison": mesh_deltaS,
         },

@@ -8,7 +8,10 @@ from config import t_hop, V_SO, Nk
 
 def build_kgrid():
     """
-    Build 2-D k-space grid and spin-resolved dispersion.
+    Build periodic 2-D k-space grid on [-pi, pi)^2 and spin-resolved dispersion.
+
+    Uses ``endpoint=False`` so the periodic Brillouin-zone boundaries kx, ky =
+    +/-pi are not double-counted in discrete Fourier/BdG sums.
 
     Returns
     -------
@@ -17,8 +20,8 @@ def build_kgrid():
     epsilon_ks      : array (Nk, Nk, 2)
     sqrt_sin        : array (Nk, Nk)
     """
-    kx = np.linspace(-np.pi, np.pi, Nk)
-    ky = np.linspace(-np.pi, np.pi, Nk)
+    kx = np.linspace(-np.pi, np.pi, Nk, endpoint=False)
+    ky = np.linspace(-np.pi, np.pi, Nk, endpoint=False)
     KX, KY = np.meshgrid(kx, ky)
 
     sqrt_sin = np.sqrt(np.sin(KX)**2 + np.sin(KY)**2)

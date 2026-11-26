@@ -1,5 +1,5 @@
 {
-  "repository_commit": "6ef5c49faf09494a25777d85591a6be0cf732446",
+  "repository_commit": "eb29fd167307f7c502341b60bdc1f07e049c98ff",
   "implementation_scope": "Current magnitude-amplitude Green's-function implementation; the signed Delta/(2E) coherence factor is not used by greens_functions.py.",
   "python": {
     "numpy": "2.4.6"
@@ -11,17 +11,17 @@
     "high_C_minus_p": 0.0
   },
   "archived_low_greens_max_abs_error": {
-    "G": 7.648631835675112e-17,
-    "F": 1.5265815529288592e-16
+    "G": 0.03144876589308624,
+    "F": 0.14575399455622706
   },
   "archived_high_greens_max_abs_error": {
-    "G": 2.8579922022925946e-13,
-    "F": 1.2312234565214908e-12
+    "G": 0.031448765892952056,
+    "F": 0.145753994554996
   },
   "archived_low_observable_max_abs_error": {
-    "C_all": 2.220446049250313e-15,
-    "Fs_all": 1.1102230246251565e-15,
-    "F_pure": 1.4728672614872096e-08
+    "C_all": 0.4857390410790908,
+    "Fs_all": 0.24634156125690732,
+    "F_pure": 0.24634156125690732
   },
   "archived_fidelity_bounds": {
     "F_init_min": 8.340175713126382e-08,
@@ -41,10 +41,10 @@
     "F_ptp_max_over_t": 0.0
   },
   "archived_low_holevo_max_abs_error": {
-    "chi_all": 3.671873916033519e-11,
-    "S_rho_all": 3.671859881036396e-11,
+    "chi_all": 0.6291482503619223,
+    "S_rho_all": 0.6291482503619222,
     "S_tilde_all": 4.440892098500626e-16,
-    "chi_rt": 3.650557633960716e-11
+    "chi_rt": 0.6286616336330606
   },
   "holevo_bounds": {
     "chi_min": 6.111924300000737e-10,
@@ -57,7 +57,7 @@
     "final_time_max_abs_deviation_from_1": 0.001639519445505111
   },
   "archived_high_fidelity_max_abs_error": {
-    "F_pure": 1.4062869535536038e-08
+    "F_pure": 0.2463415612543859
   },
   "high_fidelity_bounds": {
     "F_init_min": 4.8391868105219306e-05,
@@ -74,7 +74,7 @@
     "C": 2.7755575615628914e-17,
     "Fs": 2.220446049250313e-16,
     "chi": 8.537615059367454e-14,
-    "pure_fidelity": 4.253727980962907e-09,
+    "pure_fidelity": 1.7248344419407147e-09,
     "trace": 2.220446049250313e-16,
     "hermiticity": 0.0,
     "minimum_eigenvalue": 0.0
@@ -102,59 +102,59 @@
     },
     "solutions": {
       "40": {
-        "Delta0_over_t": -0.02077126220404008,
-        "DeltaS_over_t": -1.2797794065624788,
-        "mu_over_t": 3.4477727948269283,
-        "max_absolute_residual": 2.171322149857602e-11,
+        "Delta0_over_t": 0.16851565230203927,
+        "DeltaS_over_t": -2.9188976442258596,
+        "mu_over_t": 4.138280308905938,
+        "max_absolute_residual": 1.0596323818390374e-10,
         "initial_density_matrix_min_eigenvalue": 0.0,
         "C_range": [
           0.0,
           1.0
         ],
         "F_singlet_range": [
-          4.170090344523561e-08,
+          4.1700886834631194e-08,
           1.0
         ],
         "chi_range": [
-          8.815170815523743e-13,
+          1.247890679678676e-13,
           2.0
         ]
       },
       "75": {
-        "Delta0_over_t": -0.1254786056413186,
-        "DeltaS_over_t": -0.3614892375310815,
-        "mu_over_t": 3.2926233911958276,
-        "max_absolute_residual": 2.353062189541788e-12,
+        "Delta0_over_t": 0.2423406278740535,
+        "DeltaS_over_t": 1.472279655744649,
+        "mu_over_t": 3.3723770658852055,
+        "max_absolute_residual": 7.963574244485017e-12,
         "initial_density_matrix_min_eigenvalue": 0.0,
         "C_range": [
           0.0,
           1.0
         ],
         "F_singlet_range": [
-          4.1701577642160644e-08,
+          4.17008823664758e-08,
           1.0
         ],
         "chi_range": [
-          6.111924300000737e-10,
+          3.8191672047105385e-14,
           2.0
         ]
       },
       "115": {
-        "Delta0_over_t": -0.002558527404665663,
-        "DeltaS_over_t": -0.0035552806886527876,
-        "mu_over_t": 3.293654657620537,
-        "max_absolute_residual": 2.3869880507940144e-10,
+        "Delta0_over_t": -0.20214039963889738,
+        "DeltaS_over_t": -0.5271545134253479,
+        "mu_over_t": 3.2423592056047323,
+        "max_absolute_residual": 3.502335088612085e-10,
         "initial_density_matrix_min_eigenvalue": 0.0,
         "C_range": [
           0.0,
           1.0
         ],
         "F_singlet_range": [
-          4.1700938172759276e-08,
+          4.170122871215961e-08,
           1.0
         ],
         "chi_range": [
-          4.68336480707876e-12,
+          1.5409051812298458e-10,
           2.0
         ]
       }
@@ -166,32 +166,32 @@
     "40": {
       "Fs_r0": 1.0,
       "chi_r0": 2.0,
-      "Fs_fixed_r_t0": 0.7177450544290792,
-      "chi_fixed_r_t0": 0.6941313279175969,
-      "Fs_fixed_r_t80": 0.0001828394804320207,
-      "chi_fixed_r_t80": 0.9984285904284275,
+      "Fs_fixed_r_t0": 0.6291997506710184,
+      "chi_fixed_r_t0": 0.46101094536069676,
+      "Fs_fixed_r_t80": 0.00016954291802047475,
+      "chi_fixed_r_t80": 0.99840399722382,
       "C_max_r": 0.0,
-      "largest_initial_Fs_at_nonzero_r": 0.9944742970040523
+      "largest_initial_Fs_at_nonzero_r": 0.9968051257428596
     },
     "75": {
       "Fs_r0": 1.0,
       "chi_r0": 2.0,
-      "Fs_fixed_r_t0": 0.7785512318755969,
-      "chi_fixed_r_t0": 0.8862079050515035,
-      "Fs_fixed_r_t80": 0.00019197054779652287,
-      "chi_fixed_r_t80": 0.998449705753826,
+      "Fs_fixed_r_t0": 0.696334739680919,
+      "chi_fixed_r_t0": 0.6329767035168958,
+      "Fs_fixed_r_t80": 0.00017962436258593347,
+      "chi_fixed_r_t80": 0.9984220220396716,
       "C_max_r": 0.0,
-      "largest_initial_Fs_at_nonzero_r": 0.9838628502268594
+      "largest_initial_Fs_at_nonzero_r": 0.9947737089625237
     },
     "115": {
       "Fs_r0": 1.0,
       "chi_r0": 2.0,
-      "Fs_fixed_r_t0": 0.7835152903910201,
-      "chi_fixed_r_t0": 0.9031833133585379,
-      "Fs_fixed_r_t80": 0.0001927159844381458,
-      "chi_fixed_r_t80": 0.9984516054908963,
+      "Fs_fixed_r_t0": 0.7468285398572103,
+      "chi_fixed_r_t0": 0.782466546896412,
+      "Fs_fixed_r_t80": 0.00018720685354756247,
+      "chi_fixed_r_t80": 0.9984382126868714,
       "C_max_r": 0.0,
-      "largest_initial_Fs_at_nonzero_r": 0.9712714704956764
+      "largest_initial_Fs_at_nonzero_r": 0.9868541449419934
     }
   }
 }

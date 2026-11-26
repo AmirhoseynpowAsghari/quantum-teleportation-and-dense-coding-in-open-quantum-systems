@@ -132,8 +132,18 @@ def main():
             "mu_over_t": float(bdg["mu"]),
         }
         N_band_k, F_band_k = momentum_correlators(bdg, basis="band")
+        kx = bdg["kx"]
+        ky = bdg["ky"]
+        periodic_x = len(kx) > 1 and (kx[-1] - kx[0]) < (2.0 * np.pi - 1e-6)
+        periodic_y = len(ky) > 1 and (ky[-1] - ky[0]) < (2.0 * np.pi - 1e-6)
         N_reverse = N_band_k[::-1, ::-1]
         F_reverse = F_band_k[::-1, ::-1]
+        if periodic_y:
+            N_reverse = np.roll(N_reverse, 1, axis=0)
+            F_reverse = np.roll(F_reverse, 1, axis=0)
+        if periodic_x:
+            N_reverse = np.roll(N_reverse, 1, axis=1)
+            F_reverse = np.roll(F_reverse, 1, axis=1)
         off_trim = bdg["sqrt_sin"] > 1e-14
         max_inversion_normal_error = max(
             max_inversion_normal_error, float(np.max(np.abs(N_band_k - N_reverse))))

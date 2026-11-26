@@ -26,39 +26,42 @@
     }
   },
   "diagnostics": {
-    "max_residual_U": 1.6292522886374172e-14,
-    "max_residual_V": 4.1772141301521515e-15,
+    "max_residual_U": 2.9781732635569824e-14,
+    "max_residual_V": 4.315992008230296e-15,
     "n_fallback_V": 0
   },
-  "lifshitz": {
-    "U_crossing_at_V0p7": 118.04194475332962,
-    "V_crossing_at_U75": 0.548749552243085,
-    "V_pairing_onset_dDS": 0.97
+  "crossings_and_crossovers": {
+    "U_muSC_eq_4t_at_V0p7": 111.6824533385679,
+    "V_muSC_eq_4t_at_U75": 0.5618656739622317,
+    "V_inflection_dDS": 0.96,
+    "V_normal_Dirac_Lifshitz_muN_eq_4t": 0.6942,
+    "is_physical_QPT": false,
+    "note": "Both mu_SC=4t crossings and the d|Delta_S|/dV_SO inflection peak lie deep inside the gapped SC phase (min E_k >= 0.94t); all concurrence and derivative curves are smooth crossovers."
   },
   "d2C_extrema": {
     "U_spin": {
       "x_at_min": 160.0,
-      "min": -1.8227648434787636e-06,
+      "min": -1.970803429500456e-06,
       "x_at_max": 28.0,
-      "max": 4.903085484016245e-06
+      "max": 4.912629044284689e-06
     },
     "U_band": {
       "x_at_min": 160.0,
-      "min": -2.0270127801882976e-06,
+      "min": -2.1875102453119966e-06,
       "x_at_max": 40.0,
-      "max": 6.294650961025106e-07
+      "max": 6.429140128605404e-07
     },
     "V_spin": {
       "x_at_min": 0.03,
-      "min": -0.04829294312731492,
-      "x_at_max": 1.06,
-      "max": 0.01155432540809187
+      "min": -0.04847459689738543,
+      "x_at_max": 1.07,
+      "max": 0.011560245779485001
     },
     "V_band": {
       "x_at_min": 0.0,
-      "min": -0.054987373339265844,
+      "min": -0.055351509981704794,
       "x_at_max": 1.1,
-      "max": 0.011199045697019017
+      "max": 0.011220878326412276
     }
   },
   "generated_figure": "figs/concurrence_derivatives_u_vso.png"

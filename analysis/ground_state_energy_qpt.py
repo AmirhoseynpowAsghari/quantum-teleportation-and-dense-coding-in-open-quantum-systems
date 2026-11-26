@@ -53,7 +53,7 @@ CASES = {
 # Grid / normal state / energy
 # ---------------------------------------------------------------------------
 def make_grid(Nk, t, Vso):
-    kx = np.linspace(-np.pi, np.pi, Nk)
+    kx = np.linspace(-np.pi, np.pi, Nk, endpoint=False)
     KX, KY = np.meshgrid(kx, kx)
     ssin = np.sqrt(np.sin(KX) ** 2 + np.sin(KY) ** 2)
     sk = 0.5 * (np.cos(KX) + np.cos(KY))

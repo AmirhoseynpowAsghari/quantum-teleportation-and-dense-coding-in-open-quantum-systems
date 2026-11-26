@@ -25,7 +25,7 @@ import pathlib
 import sys
 
 import numpy as np
-from scipy.optimize import fsolve as _fsolve
+from scipy.optimize import brentq as _brentq
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -64,13 +64,12 @@ def normal_root(n: float, eps: np.ndarray, sk: np.ndarray,
     """Chemical potential from the number equation at Delta = 0."""
     beta = np.inf
 
-    def eq(mu: np.ndarray) -> np.ndarray:
-        return residual([0.0, 0.0, float(mu[0])], eps, sk, ssin, NK,
-                        config.t_hop, U_VAL, DT_VAL, VSO, n, beta)[2]
+    def eq(mu: float) -> float:
+        return float(residual([0.0, 0.0, float(mu)], eps, sk, ssin, NK,
+                              config.t_hop, U_VAL, DT_VAL, VSO, n, beta)[2])
 
-    mu0 = float(np.mean(eps))
-    mu = _fsolve(eq, [mu0], xtol=1.49e-10, full_output=False)
-    return float(mu[0])
+    return float(_brentq(eq, float(eps.min()) - 2.0, float(eps.max()) + 2.0,
+                         xtol=1e-12))
 
 
 def normal_bdgs(eps: np.ndarray, mu: float, KX: np.ndarray,

@@ -1,5 +1,5 @@
 {
-  "repository_commit": "93fbb4a4cef778505ba8cedddca2db6c6231066a",
+  "repository_commit": "eb29fd167307f7c502341b60bdc1f07e049c98ff",
   "parameters": {
     "U_over_t": [
       40.0,
@@ -27,262 +27,244 @@
     }
   },
   "diagnostics": {
-    "max_solver_residual": 0.00024442464295437727,
-    "n_fallback_solves": 758,
+    "max_solver_residual": 3.128605689961539e-06,
+    "n_fallback_solves": 595,
     "n_trivial_retries": 0,
-    "n_mesh_floor_points": 39,
-    "n_unpaired_points_absDS_le_1e-3": 57,
-    "n_normal_state_points": 22
+    "n_mesh_floor_points": 2,
+    "n_unpaired_points_absDS_le_1e-3": 9,
+    "n_normal_state_points": 0
   },
   "combos": [
     {
       "U_over_t": 40.0,
       "Delta_t_over_t": 3.5,
       "Delta0_range": [
-        -0.09816919801691455,
-        0.18683067538870718
+        -0.0975410664292482,
+        0.6876409269305681
       ],
       "DeltaS_range": [
-        -1.3706188841369982,
-        -0.5798940337616089
+        -2.9048369255162125,
+        -1.7109246848691153
       ],
       "Delta0_sign_change_V": [
-        1.0518
+        0.6095
       ],
       "DeltaS_sign_change_V": [],
-      "gap_spec_min": 0.37263524339131654,
+      "gap_spec_min": 1.2837581404664145,
       "V_at_gap_spec_min": 0.0,
       "V_range_gap_below_0p1t": null,
-      "max_absD_at_Vmax": 2.184829925366134,
-      "helicity_split_at_Vmax": 2.9075217221868312,
+      "max_absD_at_Vmax": 4.922132015450024,
+      "helicity_split_at_Vmax": 6.162089664820788,
       "unpaired_points_absDS_le_1e-3": 0,
       "unpaired_V_ranges": [],
       "mesh_floor_points": 0,
-      "max_abs_residual": 3.885780586188048e-15
+      "max_abs_residual": 2.706168622523819e-15
     },
     {
       "U_over_t": 40.0,
       "Delta_t_over_t": 4.5,
       "Delta0_range": [
-        -0.019377235468505307,
-        0.637036475180493
+        0.16851565230380705,
+        1.6011221497442323
       ],
       "DeltaS_range": [
-        -2.046563056408266,
-        -1.2610141163941087
+        -4.193443859132285,
+        -2.918897644102336
       ],
-      "Delta0_sign_change_V": [
-        0.2839
-      ],
+      "Delta0_sign_change_V": [],
       "DeltaS_sign_change_V": [],
-      "gap_spec_min": 1.0084464386641077,
+      "gap_spec_min": 2.5755024074068165,
       "V_at_gap_spec_min": 0.0,
       "V_range_gap_below_0p1t": null,
-      "max_absD_at_Vmax": 3.6203832676842747,
-      "helicity_split_at_Vmax": 4.341415845936455,
+      "max_absD_at_Vmax": 7.714064496257099,
+      "helicity_split_at_Vmax": 8.895637767952572,
       "unpaired_points_absDS_le_1e-3": 0,
       "unpaired_V_ranges": [],
       "mesh_floor_points": 0,
-      "max_abs_residual": 6.505213034913027e-16
+      "max_abs_residual": 1.7763568394002505e-15
     },
     {
       "U_over_t": 40.0,
       "Delta_t_over_t": 6.0,
       "Delta0_range": [
-        0.2485750269002691,
-        1.4049157561527226
+        0.7433346306370442,
+        3.1154648141159083
       ],
       "DeltaS_range": [
-        -3.0556094035172308,
-        -2.27813612838042
+        -6.144789165939106,
+        -4.785358139131118
       ],
       "Delta0_sign_change_V": [],
       "DeltaS_sign_change_V": [],
-      "gap_spec_min": 2.159703820789463,
+      "gap_spec_min": 4.72980322099639,
       "V_at_gap_spec_min": 0.0,
       "V_range_gap_below_0p1t": null,
-      "max_absD_at_Vmax": 5.859184821835005,
-      "helicity_split_at_Vmax": 6.481926389653248,
+      "max_absD_at_Vmax": 12.072957310661502,
+      "helicity_split_at_Vmax": 13.035066264591514,
       "unpaired_points_absDS_le_1e-3": 0,
       "unpaired_V_ranges": [],
       "mesh_floor_points": 0,
-      "max_abs_residual": 1.3322676295501878e-15
+      "max_abs_residual": 3.1086244689504383e-15
     },
     {
       "U_over_t": 75.0,
       "Delta_t_over_t": 3.5,
       "Delta0_range": [
-        -0.31199622853996395,
-        -0.0005829016685808961
+        -0.34562015487847025,
+        -0.1746575768366548
       ],
       "DeltaS_range": [
-        -0.7744048361990425,
-        -0.0008869540197040286
+        -1.8442216576628987,
+        -0.4780577562534889
       ],
       "Delta0_sign_change_V": [],
       "DeltaS_sign_change_V": [],
-      "gap_spec_min": 0.00014479287932581868,
-      "V_at_gap_spec_min": 0.05,
+      "gap_spec_min": 0.2113255252060811,
+      "V_at_gap_spec_min": 0.0,
+      "V_range_gap_below_0p1t": null,
+      "max_absD_at_Vmax": 2.9829425037224535,
+      "helicity_split_at_Vmax": 3.912184920433594,
+      "unpaired_points_absDS_le_1e-3": 0,
+      "unpaired_V_ranges": [],
+      "mesh_floor_points": 0,
+      "max_abs_residual": 4.9682480351975755e-15
+    },
+    {
+      "U_over_t": 75.0,
+      "Delta_t_over_t": 4.5,
+      "Delta0_range": [
+        -0.24234062787323968,
+        0.21546278100928043
+      ],
+      "DeltaS_range": [
+        -2.9973790941456517,
+        -1.4722796557445987
+      ],
+      "Delta0_sign_change_V": [
+        1.2314
+      ],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 0.9374457421513492,
+      "V_at_gap_spec_min": 0.0,
+      "V_range_gap_below_0p1t": null,
+      "max_absD_at_Vmax": 4.584856102742393,
+      "helicity_split_at_Vmax": 6.3584012497715445,
+      "unpaired_points_absDS_le_1e-3": 0,
+      "unpaired_V_ranges": [],
+      "mesh_floor_points": 0,
+      "max_abs_residual": 1.8318679906315083e-15
+    },
+    {
+      "U_over_t": 75.0,
+      "Delta_t_over_t": 6.0,
+      "Delta0_range": [
+        -0.03821065895335735,
+        1.2819089081669701
+      ],
+      "DeltaS_range": [
+        -4.795654163557493,
+        -3.0032947113538464
+      ],
+      "Delta0_sign_change_V": [
+        0.297
+      ],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 2.411471189473839,
+      "V_at_gap_spec_min": 0.0,
+      "V_range_gap_below_0p1t": null,
+      "max_absD_at_Vmax": 8.272716082513492,
+      "helicity_split_at_Vmax": 10.173118737831011,
+      "unpaired_points_absDS_le_1e-3": 0,
+      "unpaired_V_ranges": [],
+      "mesh_floor_points": 0,
+      "max_abs_residual": 1.7763568394002505e-15
+    },
+    {
+      "U_over_t": 115.0,
+      "Delta_t_over_t": 3.5,
+      "Delta0_range": [
+        -0.5716919746908471,
+        -1.4709872418513509e-06
+      ],
+      "DeltaS_range": [
+        -1.0689652077311853,
+        -2.102767300683145e-06
+      ],
+      "Delta0_sign_change_V": [],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 1.8749502471963437e-05,
+      "V_at_gap_spec_min": 0.0,
       "V_range_gap_below_0p1t": [
         0.0,
         0.775
       ],
-      "max_absD_at_Vmax": 1.4408733364012074,
-      "helicity_split_at_Vmax": 1.6427607331800016,
-      "unpaired_points_absDS_le_1e-3": 4,
-      "unpaired_V_ranges": [
-        [
-          0.025,
-          0.05
-        ],
-        [
-          0.125,
-          0.15
-        ]
-      ],
-      "mesh_floor_points": 0,
-      "max_abs_residual": 1.743180252922194e-15
-    },
-    {
-      "U_over_t": 75.0,
-      "Delta_t_over_t": 4.5,
-      "Delta0_range": [
-        -0.21601137093319075,
-        -0.11952761587224031
-      ],
-      "DeltaS_range": [
-        -1.4006039844830047,
-        -0.3458024528821519
-      ],
-      "Delta0_sign_change_V": [],
-      "DeltaS_sign_change_V": [],
-      "gap_spec_min": 0.16241324554410477,
-      "V_at_gap_spec_min": 0.0,
-      "V_range_gap_below_0p1t": null,
-      "max_absD_at_Vmax": 2.171518075265844,
-      "helicity_split_at_Vmax": 2.971129725554492,
-      "unpaired_points_absDS_le_1e-3": 0,
-      "unpaired_V_ranges": [],
-      "mesh_floor_points": 0,
-      "max_abs_residual": 5.523359547510154e-15
-    },
-    {
-      "U_over_t": 75.0,
-      "Delta_t_over_t": 6.0,
-      "Delta0_range": [
-        -0.15096755761592714,
-        0.38117749971754583
-      ],
-      "DeltaS_range": [
-        -2.362379950460308,
-        -1.250943846162835
-      ],
-      "Delta0_sign_change_V": [
-        0.9299
-      ],
-      "DeltaS_sign_change_V": [],
-      "gap_spec_min": 0.8613760601674828,
-      "V_at_gap_spec_min": 0.0,
-      "V_range_gap_below_0p1t": null,
-      "max_absD_at_Vmax": 3.824901662436453,
-      "helicity_split_at_Vmax": 5.011364648128873,
-      "unpaired_points_absDS_le_1e-3": 0,
-      "unpaired_V_ranges": [],
-      "mesh_floor_points": 0,
-      "max_abs_residual": 2.220446049250313e-15
-    },
-    {
-      "U_over_t": 115.0,
-      "Delta_t_over_t": 3.5,
-      "Delta0_range": [
-        -0.22657366414548752,
-        -6.78823531452568e-11
-      ],
-      "DeltaS_range": [
-        -0.23512670420865686,
-        -7.466872069441742e-11
-      ],
-      "Delta0_sign_change_V": [],
-      "DeltaS_sign_change_V": [],
-      "gap_spec_min": 2.547188035245404e-07,
-      "V_at_gap_spec_min": 0.85,
-      "V_range_gap_below_0p1t": [
-        0.0,
-        1.5
-      ],
-      "max_absD_at_Vmax": 0.5693261127624178,
-      "helicity_split_at_Vmax": 0.49877906095195446,
-      "unpaired_points_absDS_le_1e-3": 44,
-      "unpaired_V_ranges": [
-        [
-          0.0,
-          1.075
-        ]
-      ],
-      "mesh_floor_points": 37,
-      "max_abs_residual": 0.00024442464295437727
-    },
-    {
-      "U_over_t": 115.0,
-      "Delta_t_over_t": 4.5,
-      "Delta0_range": [
-        -0.4173903195632901,
-        -1.079300537368443e-05
-      ],
-      "DeltaS_range": [
-        -0.8482910365793848,
-        -1.3607545274913396e-05
-      ],
-      "Delta0_sign_change_V": [],
-      "DeltaS_sign_change_V": [],
-      "gap_spec_min": 3.4695237513209737e-06,
-      "V_at_gap_spec_min": 0.15,
-      "V_range_gap_below_0p1t": [
-        0.0,
-        0.8
-      ],
-      "max_absD_at_Vmax": 1.6539739347929596,
-      "helicity_split_at_Vmax": 1.7994970331551459,
+      "max_absD_at_Vmax": 2.12993783493273,
+      "helicity_split_at_Vmax": 2.2676176417176226,
       "unpaired_points_absDS_le_1e-3": 9,
       "unpaired_V_ranges": [
         [
-          0.025,
-          0.15
+          0.0,
+          0.05
         ],
         [
-          0.2,
+          0.15,
           0.225
         ],
         [
-          0.35,
-          0.35
+          0.275,
+          0.3
         ]
       ],
       "mesh_floor_points": 2,
-      "max_abs_residual": 5.259268085355817e-05
+      "max_abs_residual": 3.128605689961539e-06
+    },
+    {
+      "U_over_t": 115.0,
+      "Delta_t_over_t": 4.5,
+      "Delta0_range": [
+        -0.44800646912705255,
+        -0.20214041875255387
+      ],
+      "DeltaS_range": [
+        -2.056868559559501,
+        -0.5271545631991174
+      ],
+      "Delta0_sign_change_V": [],
+      "DeltaS_sign_change_V": [],
+      "gap_spec_min": 0.22323544929782943,
+      "V_at_gap_spec_min": 0.0,
+      "V_range_gap_below_0p1t": null,
+      "max_absD_at_Vmax": 3.4256083376045456,
+      "helicity_split_at_Vmax": 4.363277119421788,
+      "unpaired_points_absDS_le_1e-3": 0,
+      "unpaired_V_ranges": [],
+      "mesh_floor_points": 0,
+      "max_abs_residual": 7.605027718682322e-15
     },
     {
       "U_over_t": 115.0,
       "Delta_t_over_t": 6.0,
       "Delta0_range": [
-        -0.29160090419627105,
-        -0.16658046100198273
+        -0.28891377258328454,
+        0.1966386303201134
       ],
       "DeltaS_range": [
-        -1.7247208683486195,
-        -0.4779547458298521
+        -3.642012857683248,
+        -1.8179205918309838
       ],
-      "Delta0_sign_change_V": [],
+      "Delta0_sign_change_V": [
+        1.2844
+      ],
       "DeltaS_sign_change_V": [],
-      "gap_spec_min": 0.2221788752938168,
+      "gap_spec_min": 1.1696660019561804,
       "V_at_gap_spec_min": 0.0,
       "V_range_gap_below_0p1t": null,
-      "max_absD_at_Vmax": 2.7292644142809674,
-      "helicity_split_at_Vmax": 3.6586854649897784,
+      "max_absD_at_Vmax": 5.505739067134606,
+      "helicity_split_at_Vmax": 7.725875966509264,
       "unpaired_points_absDS_le_1e-3": 0,
       "unpaired_V_ranges": [],
       "mesh_floor_points": 0,
-      "max_abs_residual": 7.993605777301127e-15
+      "max_abs_residual": 3.2751579226442118e-15
     }
   ],
   "interpretation_notes": [

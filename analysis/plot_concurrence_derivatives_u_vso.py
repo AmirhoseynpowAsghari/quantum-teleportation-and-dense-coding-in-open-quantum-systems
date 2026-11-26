@@ -252,16 +252,19 @@ def main() -> int:
                    fr"$\Delta_t/t={DT_FIXED}$)",
              d1lab=r"$dC/dU$", d2lab=r"$d^2C/dU^2$",
              vmark=u_lifshitz,
-             vlabel=(fr"Lifshitz $\mu=4t$: $U/t={u_lifshitz:.1f}$"
-                     if u_lifshitz else None)),
+             vlabel=(fr"gapped $\mu_{{\mathrm{{SC}}}}=4t$: $U/t={u_lifshitz:.1f}$"
+                     if u_lifshitz else None),
+             vnorm=None, vnorm_label=None),
         dict(row=1, x=VSO_VALUES, C=C_v, d1=d1v, d2=d2v,
              xlabel=r"$V_{SO}/t$",
              title=fr"(b) $C(V_{{SO}})$  ($U/t={U_FIXED}$, "
                    fr"$\Delta_t/t={DT_FIXED}$)",
              d1lab=r"$dC/dV_{SO}$", d2lab=r"$d^2C/dV_{SO}^2$",
              vmark=v_lifshitz,
-             vlabel=(fr"Lifshitz $\mu=4t$: $V_{{SO}}/t={v_lifshitz:.3f}$"
-                     if v_lifshitz else None)),
+             vlabel=(fr"gapped $\mu_{{\mathrm{{SC}}}}=4t$: $V_{{SO}}/t={v_lifshitz:.3f}$"
+                     if v_lifshitz else None),
+             vnorm=0.6942,
+             vnorm_label=r"normal Dirac $\mu_N=4t$: $0.694$"),
     ]
     for s in sweeps:
         ax = axes[s["row"], 0]
@@ -275,7 +278,11 @@ def main() -> int:
         if s["vmark"]:
             ax.axvline(s["vmark"], color="#2ca02c", ls="-.", lw=1.1,
                        label=s["vlabel"])
-            ax.legend(fontsize=7.5)
+        if s["vnorm"]:
+            ax.axvline(s["vnorm"], color="#9467bd", ls=":", lw=1.2,
+                       label=s["vnorm_label"])
+        if s["vmark"] or s["vnorm"]:
+            ax.legend(fontsize=7.2)
 
         ax = axes[s["row"], 1]
         for b in ("spin", "band"):
@@ -283,6 +290,8 @@ def main() -> int:
         ax.axhline(0.0, color="black", lw=0.7, ls=":")
         if s["vmark"]:
             ax.axvline(s["vmark"], color="#2ca02c", ls="-.", lw=1.1)
+        if s["vnorm"]:
+            ax.axvline(s["vnorm"], color="#9467bd", ls=":", lw=1.2)
         ax.set_title(s["d1lab"], fontsize=11)
         ax.set_ylabel(s["d1lab"])
         ax.grid(alpha=0.3)
@@ -293,6 +302,8 @@ def main() -> int:
         ax.axhline(0.0, color="black", lw=0.7, ls=":")
         if s["vmark"]:
             ax.axvline(s["vmark"], color="#2ca02c", ls="-.", lw=1.1)
+        if s["vnorm"]:
+            ax.axvline(s["vnorm"], color="#9467bd", ls=":", lw=1.2)
         ax.set_title(s["d2lab"], fontsize=11)
         ax.set_ylabel(s["d2lab"])
         ax.grid(alpha=0.3)
@@ -303,7 +314,7 @@ def main() -> int:
     fig.suptitle(
         r"Exact conditional Wick concurrence $C$ (spin/band basis, "
         r"$r=0.25$, $\theta=0^\circ$) and its first/second derivatives "
-        r"($N_k=201$, $n=1.875$, $T=0$; green dash-dot: Lifshitz $\mu=4t$)",
+        r"($N_k=201$, $n=1.875$, $T=0$; green: gapped $\mu_{\mathrm{SC}}=4t$)",
         fontsize=12,
     )
     fig.savefig(FIGS / "concurrence_derivatives_u_vso.png", dpi=170,
@@ -350,10 +361,17 @@ def main() -> int:
             "max_residual_V": float(resids_v.max()),
             "n_fallback_V": int(n_fb),
         },
-        "lifshitz": {
-            "U_crossing_at_V0p7": u_lifshitz,
-            "V_crossing_at_U75": v_lifshitz,
-            "V_pairing_onset_dDS": v_pair,
+        "crossings_and_crossovers": {
+            "U_muSC_eq_4t_at_V0p7": u_lifshitz,
+            "V_muSC_eq_4t_at_U75": v_lifshitz,
+            "V_inflection_dDS": v_pair,
+            "V_normal_Dirac_Lifshitz_muN_eq_4t": 0.6942,
+            "is_physical_QPT": False,
+            "note": (
+                "Both mu_SC=4t crossings and the d|Delta_S|/dV_SO inflection "
+                "peak lie deep inside the gapped SC phase (min E_k >= 0.94t); "
+                "all concurrence and derivative curves are smooth crossovers."
+            ),
         },
         "d2C_extrema": {
             "U_spin": extrema(d2u["spin"], U_VALUES),
@@ -366,7 +384,7 @@ def main() -> int:
     (REPORTS / "concurrence_derivatives_u_vso.json").write_text(
         json.dumps(summary, indent=2) + "\n", encoding="utf-8"
     )
-    print(json.dumps(summary["lifshitz"], indent=2))
+    print(json.dumps(summary["crossings_and_crossovers"], indent=2))
     print(json.dumps(summary["d2C_extrema"], indent=2))
     return 0
 

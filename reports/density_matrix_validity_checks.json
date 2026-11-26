@@ -1,5 +1,5 @@
 {
-  "repository_commit_at_analysis": "dc7f25fc3757077a2a764fadbd726f27da4b6d4d",
+  "repository_commit_at_analysis": "eb29fd167307f7c502341b60bdc1f07e049c98ff",
   "archived_source": "data/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_greens.npz",
   "archived_parameters": {
     "U_over_t": 75,
@@ -25,17 +25,17 @@
   "self_consistency": {
     "0.0": {
       "converged": true,
-      "max_abs_residual": 2.353062189541788e-12,
-      "Delta0_over_t": -0.1254786056413186,
-      "DeltaS_over_t": -0.3614892375310815,
-      "mu_over_t": 3.2926233911958276
+      "max_abs_residual": 7.963574244485017e-12,
+      "Delta0_over_t": 0.2423406278740535,
+      "DeltaS_over_t": 1.472279655744649,
+      "mu_over_t": 3.3723770658852055
     },
     "0.5": {
       "converged": true,
-      "max_abs_residual": 3.5259017927558034e-12,
-      "Delta0_over_t": -0.17028841723192548,
-      "DeltaS_over_t": -0.5525568356776209,
-      "mu_over_t": 3.674253830223897
+      "max_abs_residual": 1.0172274134134796e-10,
+      "Delta0_over_t": 0.2328867246919296,
+      "DeltaS_over_t": 1.7428065266414003,
+      "mu_over_t": 3.8715297094593337
     }
   },
   "original_spin_basis_normal_offdiagonal": {
@@ -44,15 +44,15 @@
       "max_abs_k_resolved_weight": 0.0
     },
     "0.5": {
-      "max_abs_G_up_down": 0.031753310196917496,
-      "max_abs_k_resolved_weight": 0.43758367031999235
+      "max_abs_G_up_down": 0.025661727043739733,
+      "max_abs_k_resolved_weight": 0.2502337459565792
     }
   },
   "signed_coherence_comparison": {
     "convention": "u v* = -Delta*/(2E), with the same archived normal G and quadrature",
-    "max_abs_F_signed_minus_archived": 0.13954891361320035,
-    "max_abs_p_signed_minus_unsigned": 0.15042557695644454,
-    "minimum_signed_density_eigenvalue": 1.0082561473079015e-16,
+    "max_abs_F_signed_minus_archived": 0.11316965504517029,
+    "max_abs_p_signed_minus_unsigned": 0.2860536083539461,
+    "minimum_signed_density_eigenvalue": 5.551115123125783e-17,
     "signed_trace_max_abs_error": 2.220446049250313e-16,
     "interpretation": "A separate input-correlator issue; it does not invalidate the Oh--Kim matrix algebra."
   }

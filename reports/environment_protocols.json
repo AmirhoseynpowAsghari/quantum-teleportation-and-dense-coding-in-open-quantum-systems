@@ -40,27 +40,27 @@
   },
   "resources": {
     "0.00": {
-      "fixed_average_fidelity": 0.9999999999999997,
+      "fixed_average_fidelity": 0.9999999999999999,
       "optimized_average_fidelity": 1.0,
-      "holevo_pauli_bits": 1.9999999999999993,
-      "concurrence": 0.9999999999999999
+      "holevo_pauli_bits": 1.9999999999999987,
+      "concurrence": 1.0
     },
     "0.30": {
-      "fixed_average_fidelity": 0.8014248863491987,
-      "optimized_average_fidelity": 0.801543567172024,
-      "holevo_pauli_bits": 0.6497399285733849,
-      "concurrence": 0.40427465904759713
+      "fixed_average_fidelity": 0.8021440591593451,
+      "optimized_average_fidelity": 0.8022649277369966,
+      "holevo_pauli_bits": 0.6527989164071606,
+      "concurrence": 0.40643217747803523
     },
     "0.50": {
-      "fixed_average_fidelity": 0.6417906633134383,
-      "optimized_average_fidelity": 0.6419166653988442,
-      "holevo_pauli_bits": 0.1526584711012111,
+      "fixed_average_fidelity": 0.6425940815703663,
+      "optimized_average_fidelity": 0.6427228040477332,
+      "holevo_pauli_bits": 0.15431974926919279,
       "concurrence": 0.0
     },
     "1.00": {
-      "fixed_average_fidelity": 0.5043985182316314,
-      "optimized_average_fidelity": 0.5044251181972591,
-      "holevo_pauli_bits": 0.0001685184412152374,
+      "fixed_average_fidelity": 0.5045294151302167,
+      "optimized_average_fidelity": 0.5045553921714832,
+      "holevo_pauli_bits": 0.0001785581319420082,
       "concurrence": 0.0
     }
   },
@@ -84,9 +84,9 @@
           "n_regains": 0
         },
         "holevo": {
-          "initial": 2.0,
+          "initial": 1.9999999999999987,
           "minimum": 0.7284468446064166,
-          "final": 0.8843368123292894,
+          "final": 0.8843368123292896,
           "first_loss_time": 2.0,
           "n_losses": 1,
           "n_regains": 0
@@ -94,7 +94,7 @@
         "concurrence": {
           "initial": 1.0,
           "minimum": 1.0790112478008084e-09,
-          "final": 0.048716747378219974,
+          "final": 0.04871674737821997,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
@@ -102,31 +102,31 @@
       },
       "0.30": {
         "fixed_fidelity": {
-          "initial": 0.801424886349199,
-          "minimum": 0.3333333339099101,
-          "final": 0.3592081799067158,
+          "initial": 0.8021440591593451,
+          "minimum": 0.3333333339104281,
+          "final": 0.35923213382438424,
           "first_loss_time": 1.9500000000000002,
           "n_losses": 1,
           "n_regains": 0
         },
         "optimized_fidelity": {
-          "initial": 0.801543567172024,
-          "minimum": 0.613551943785255,
-          "final": 0.6603782181051199,
+          "initial": 0.8022649277369966,
+          "minimum": 0.6137450578230835,
+          "final": 0.660401037041919,
           "first_loss_time": 1.9500000000000002,
           "n_losses": 1,
           "n_regains": 0
         },
         "holevo": {
-          "initial": 0.6497399285733847,
-          "minimum": 0.3688560518268751,
-          "final": 0.8488059889678,
+          "initial": 0.6527989164071606,
+          "minimum": 0.37006601271093253,
+          "final": 0.8488783207640409,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
         },
         "concurrence": {
-          "initial": 0.4042746590475972,
+          "initial": 0.40643217747803523,
           "minimum": 0.0,
           "final": 0.0,
           "first_loss_time": null,
@@ -136,25 +136,25 @@
       },
       "0.50": {
         "fixed_fidelity": {
-          "initial": 0.6417906633134383,
-          "minimum": 0.33333333379509394,
-          "final": 0.3538979739217829,
+          "initial": 0.6425940815703663,
+          "minimum": 0.3333333337956729,
+          "final": 0.35392474647187405,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
         },
         "optimized_fidelity": {
-          "initial": 0.6419166653988442,
-          "minimum": 0.5626237619982033,
-          "final": 0.6553206547812837,
+          "initial": 0.6427228040477332,
+          "minimum": 0.5628583198431365,
+          "final": 0.6553461607804991,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
         },
         "holevo": {
-          "initial": 0.1526584711012111,
-          "minimum": 0.12136784084848085,
-          "final": 0.8377061446263961,
+          "initial": 0.15431974926919279,
+          "minimum": 0.12248383506405958,
+          "final": 0.8377402604040962,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
@@ -170,25 +170,25 @@
       },
       "1.00": {
         "fixed_fidelity": {
-          "initial": 0.5043985182316315,
-          "minimum": 0.3333333336961752,
-          "final": 0.3493233516015366,
+          "initial": 0.5045294151302167,
+          "minimum": 0.33333333369626944,
+          "final": 0.3493277085346554,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
         },
         "optimized_fidelity": {
-          "initial": 0.5044251181972591,
-          "minimum": 0.5027529900897717,
-          "final": 0.6509630340916743,
+          "initial": 0.5045553921714832,
+          "minimum": 0.5028673583467099,
+          "final": 0.6509671841760237,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
         },
         "holevo": {
-          "initial": 0.0001685184412152374,
-          "minimum": 0.00016845167928969396,
-          "final": 0.8347454472262447,
+          "initial": 0.0001785581319420082,
+          "minimum": 0.00017848472947767924,
+          "final": 0.8347456183014914,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
@@ -222,8 +222,8 @@
           "n_regains": 0
         },
         "holevo": {
-          "initial": 2.0,
-          "minimum": 0.7286410168097814,
+          "initial": 1.9999999999999987,
+          "minimum": 0.7286410168097817,
           "final": 1.0,
           "first_loss_time": 0.25,
           "n_losses": 1,
@@ -231,8 +231,8 @@
         },
         "concurrence": {
           "initial": 1.0,
-          "minimum": 5.630685324082182e-30,
-          "final": 5.630685324082182e-30,
+          "minimum": 5.630685324082181e-30,
+          "final": 5.630685324082181e-30,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
@@ -240,31 +240,31 @@
       },
       "0.30": {
         "fixed_fidelity": {
-          "initial": 0.801424886349199,
-          "minimum": 0.33333333333333326,
+          "initial": 0.8021440591593451,
+          "minimum": 0.3333333333333332,
           "final": 0.3333333333333333,
           "first_loss_time": 0.25,
           "n_losses": 1,
           "n_regains": 0
         },
         "optimized_fidelity": {
-          "initial": 0.801543567172024,
-          "minimum": 0.6153718292321403,
+          "initial": 0.8022649277369966,
+          "minimum": 0.6155582980497162,
           "final": 0.6666666666666666,
           "first_loss_time": 0.25,
           "n_losses": 1,
           "n_regains": 0
         },
         "holevo": {
-          "initial": 0.6497399285733847,
-          "minimum": 0.3689408700626504,
+          "initial": 0.6527989164071606,
+          "minimum": 0.37011211104845176,
           "final": 1.0,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
         },
         "concurrence": {
-          "initial": 0.4042746590475972,
+          "initial": 0.40643217747803523,
           "minimum": 0.0,
           "final": 0.0,
           "first_loss_time": null,
@@ -274,24 +274,24 @@
       },
       "0.50": {
         "fixed_fidelity": {
-          "initial": 0.6417906633134383,
-          "minimum": 0.33333333333333326,
+          "initial": 0.6425940815703663,
+          "minimum": 0.3333333333333332,
           "final": 0.3333333333333333,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
         },
         "optimized_fidelity": {
-          "initial": 0.6419166653988442,
-          "minimum": 0.5619179257474826,
+          "initial": 0.6427228040477332,
+          "minimum": 0.5621540885850321,
           "final": 0.6666666666666666,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
         },
         "holevo": {
-          "initial": 0.1526584711012111,
-          "minimum": 0.12235556066334619,
+          "initial": 0.15431974926919279,
+          "minimum": 0.12354568312667547,
           "final": 1.0,
           "first_loss_time": null,
           "n_losses": 0,
@@ -308,24 +308,24 @@
       },
       "1.00": {
         "fixed_fidelity": {
-          "initial": 0.5043985182316315,
-          "minimum": 0.33333333333333326,
+          "initial": 0.5045294151302167,
+          "minimum": 0.3333333333333332,
           "final": 0.3333333333333333,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
         },
         "optimized_fidelity": {
-          "initial": 0.5044251181972591,
-          "minimum": 0.5031651054544732,
+          "initial": 0.5045553921714832,
+          "minimum": 0.5032824353268842,
           "final": 0.6666666666666666,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
         },
         "holevo": {
-          "initial": 0.0001685184412152374,
-          "minimum": 0.0001685184412152374,
+          "initial": 0.0001785581319420082,
+          "minimum": 0.0001785581319420082,
           "final": 1.0,
           "first_loss_time": null,
           "n_losses": 0,
@@ -352,7 +352,7 @@
       "0.01": {
         "underdamped": true,
         "fixed_fidelity_final": 0.8097916236010421,
-        "holevo_final": 1.0778672094913182,
+        "holevo_final": 1.077867209491318,
         "concurrence_final": 0.7146874354015633,
         "holevo_minimum": 0.7284474166266599
       },
@@ -360,54 +360,54 @@
         "underdamped": true,
         "fixed_fidelity_final": 0.3661830456660516,
         "holevo_final": 0.8834325729346986,
-        "concurrence_final": 0.04927456849907739,
+        "concurrence_final": 0.049274568499077395,
         "holevo_minimum": 0.7284475246928332
       },
       "0.956352": {
         "underdamped": true,
         "fixed_fidelity_final": 0.3333333333336362,
-        "holevo_final": 0.9999999999905862,
-        "concurrence_final": 4.5428698657171777e-13,
-        "holevo_minimum": 0.7285157828775359
+        "holevo_final": 0.9999999999905863,
+        "concurrence_final": 4.542869865717177e-13,
+        "holevo_minimum": 0.7285157828775362
       },
       "3.85307": {
         "underdamped": true,
         "fixed_fidelity_final": 0.3333333333333333,
         "holevo_final": 1.0,
-        "concurrence_final": 1.3432954377993249e-49,
+        "concurrence_final": 1.3432954377993247e-49,
         "holevo_minimum": 0.7287665135556409
       },
       "10.6156": {
         "underdamped": false,
         "fixed_fidelity_final": 0.3333333333333333,
         "holevo_final": 1.0,
-        "concurrence_final": 9.654159213569223e-30,
+        "concurrence_final": 9.654159213569222e-30,
         "holevo_minimum": 0.7285526477437656
       },
       "20": {
         "underdamped": false,
         "fixed_fidelity_final": 0.3333333333333333,
         "holevo_final": 1.0,
-        "concurrence_final": 3.467311229909123e-28,
-        "holevo_minimum": 0.7285983850996061
+        "concurrence_final": 3.4673112299091224e-28,
+        "holevo_minimum": 0.7285983850996058
       }
     }
   },
   "validation": {
     "cross_implementation_max_abs_error": 0.0,
     "fidelity_range": [
-      0.33333333333333326,
+      0.3333333333333332,
       0.9999999999999999
     ],
     "holevo_range": [
-      0.00016845167928969396,
-      2.0
+      0.00017848472947767924,
+      1.9999999999999987
     ],
     "concurrence_range": [
       0.0,
       1.0
     ],
-    "fixed_vs_optimized_max_gap": 0.33333333333333337
+    "fixed_vs_optimized_max_gap": 0.3333333333333334
   },
-  "git_commit": "009825fde8aff2c8aec763a351deff6542daec5b"
+  "git_commit": "eb29fd167307f7c502341b60bdc1f07e049c98ff"
 }

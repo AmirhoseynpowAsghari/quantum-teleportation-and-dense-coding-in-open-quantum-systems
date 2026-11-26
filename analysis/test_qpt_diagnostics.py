@@ -1,36 +1,37 @@
 #!/usr/bin/env python3
 """Rigorous QPT tests for the Hubbard-Rashba + correlated-hopping system.
 
-A quantum phase transition requires NON-ANALYTICITY of the ground state in
-the thermodynamic limit.  Concurrence extrema alone are suggestive but not
+A quantum phase transition requires NON-ANALYTICITY of the many-body state
+in the thermodynamic limit.  Concurrence extrema alone are suggestive but not
 sufficient.  This script runs four independent tests on the dense V_SO
 sweep (U/t=75, n=1.875, T=0):
 
-TEST 1 -- Lifshitz (Fermi-surface topology) test:
-    mu(V_SO) crossing the band maximum eps_0(pi,pi) = 4t implies the inner
-    helicity pocket empties.  Verified by (i) the pocket area
-    h0(V) = <theta(eps_0 - mu)> going to zero at V_Lifshitz, (ii) a kink in
-    the density of states at the Fermi level N(E_F, V), and (iii) direct
-    Fermi-surface maps before/after the crossing.  A band-topology change
-    at T=0 is a genuine (Ehrenfest 2nd-order) quantum phase transition.
+TEST 1 -- Normal-state Dirac-Lifshitz vs. SC gapped crossover test:
+    In the normal state (Delta=0), mu_N(V_SO) crosses the (pi,pi) Dirac
+    cone maximum eps_0(pi,pi)=4t at V_L ~ 0.694t, where the normal-state
+    inner helicity pocket empties and N_N(E_F) vanishes with a linear
+    Dirac-cone kink (3rd-order normal-state transition, NOT 2nd-order
+    Ehrenfest).  Crucially, in the superconducting state (Delta_t/t=4.5),
+    the quasiparticle gap min_{k,s} E_{k,s} >= 0.94t everywhere, so
+    N_SC(E_F)=0 everywhere and mu_SC=4t (at V_SO ~ 0.562t) is a smooth
+    gapped crossover, NOT a physical QPT.
 
 TEST 2 -- Hysteresis / branch-coexistence test (first-order diagnostic):
-    Full ASCENDING V_SO continuation vs the stored DESCENDING sweep.  If
-    two ordered phases coexisted, the two protocols would differ over a
-    finite window (hysteresis loop).  Agreement to machine precision
-    excludes first-order coexistence along this direction.
+    Full ASCENDING V_SO continuation vs DESCENDING continuation.  Agreement
+    to machine precision excludes branch coexistence and first-order
+    behavior along this direction.
 
-TEST 3 -- Finite-size scaling of the pairing-onset peak:
-    d|Delta_S|/dV peak height/curvature for Nk = 101/201/401.  A true
-    critical point produces a sharpening (divergent) feature as Nk grows;
-    saturation means a smooth crossover.
+TEST 3 -- Finite-size scaling of the d|Delta_S|/dV_SO inflection peak:
+    Peak height/curvature for Nk = 101/201/401 saturates rather than
+    diverging, confirming a smooth crossover near V_SO ~ 0.97t rather than
+    a pairing-onset critical point.
 
 TEST 4 -- Pair-instability eigenvalue (linearized gap equation):
-    lambda(V) = largest eigenvalue of B = -d(r1,r2)/d(Delta0,DeltaS)
-    evaluated on the normal-state solution.  The normal state loses
-    stability exactly where lambda crosses 1.  lambda > 1 everywhere means
-    the system is always on the paired side (pairing "onset" is a
-    crossover); a crossing would be a true pairing QPT.
+    lambda_+(V) = largest eigenvalue of the linearized gap matrix on the
+    normal state (evaluated with a smooth T=0.01t thermal regulator whose
+    value strictly lower-bounds the T->0+ BCS instability eigenvalue).
+    lambda_+ > 1 everywhere proves the normal state is linearly unstable
+    across the whole V_SO sweep, so no pairing-onset QPT occurs here.
 """
 from __future__ import annotations
 
@@ -158,19 +159,39 @@ def normal_mu(vso: float, dt: float, nk: int, args) -> float:
     return float(brentq(eq, lo, hi, xtol=1e-13))
 
 
-def instability_eigenvalue(vso: float, dt: float, nk: int) -> tuple[float, float]:
-    """Largest eigenvalue of B = -d(r1,r2)/d(D0,DS) at the normal state."""
+def instability_eigenvalue(vso: float, dt: float, nk: int,
+                           temp: float = 0.01) -> tuple[float, float]:
+    """Largest eigenvalue of the linearized gap matrix at the normal state.
+
+    Uses a small thermal regulator temp (default 0.01t) so discrete
+    Fermi-surface grid aliasing cannot spike 1/|eps-mu| while strictly
+    lower-bounding the T->0+ BCS instability eigenvalue.
+    """
     args = make_args(vso, dt, nk)
-    mu_n = normal_mu(vso, dt, nk, args)
-    delta = 1e-6
-    e1_d0 = residual([delta, 0.0, mu_n], *args)[0] / delta
-    e1_ds = residual([0.0, delta, mu_n], *args)[0] / delta
-    e2_d0 = residual([delta, 0.0, mu_n], *args)[1] / delta
-    e2_ds = residual([0.0, delta, mu_n], *args)[1] / delta
-    B = -np.array([[e1_d0, e1_ds], [e2_d0, e2_ds]])
-    eigs = np.linalg.eigvals(B)
-    lam = float(np.max(eigs.real))
-    return lam, mu_n
+    eps, sk, ssin = args[0], args[1], args[2]
+    mu_n = float(brentq(
+        lambda m: float(np.mean(np.tanh((eps - m) / (2.0 * temp))) - (1.0 - N_ELEC)),
+        float(eps.min()) - 2.0,
+        float(eps.max()) + 2.0,
+        xtol=1e-13,
+    ))
+    xi = eps - mu_n
+    absxi = np.abs(xi)
+    fac = np.where(absxi < 1e-6, 1.0 / (2.0 * temp),
+                   np.tanh(absxi / (2.0 * temp)) / np.maximum(absxi, 1e-12))
+    s_prime = np.array([1.0, -1.0])
+    kern = (
+        U_T
+        + 8.0 * float(dt) * sk[..., None]
+        + 4.0 * float(dt) * float(vso) * s_prime[None, None, :] * ssin[..., None]
+    )
+    n2 = float(nk * nk)
+    m00 = -np.sum(kern * fac) / (4.0 * n2)
+    m01 = np.sum(kern * eps * fac) / (4.0 * n2 * 4.0)
+    m10 = -2.0 * float(dt) * np.sum(fac) / n2
+    m11 = 2.0 * float(dt) * np.sum(eps * fac) / (n2 * 4.0)
+    eigs = np.linalg.eigvals(np.array([[m00, m01], [m10, m11]]))
+    return float(np.max(eigs.real)), mu_n
 
 
 def main() -> int:
@@ -214,36 +235,68 @@ def main() -> int:
     }
 
     # ------------------------------------------------------------------
-    # TEST 1: Lifshitz -- pocket area, N(E_F), Fermi-surface maps
+    # TEST 1: Normal-state Dirac-Lifshitz (mu_N=4t) vs SC gapped crossover
     # ------------------------------------------------------------------
     set_params(0.0, DT_FIG, 201)
     _, _, KX, KY, _, _ = build_kgrid()
     cos_sum = np.cos(KX) + np.cos(KY)
     lam_k = np.sqrt(np.sin(KX) ** 2 + np.sin(KY) ** 2)
 
-    pocket = np.zeros(len(v))
-    dos = np.zeros(len(v))
+    mu_n_curve = np.zeros(len(v))
+    pocket_n = np.zeros(len(v))
+    dos_n = np.zeros(len(v))
+    sc_min_gap = np.zeros(len(v))
+    # Reconstruct D0_down for gap check alongside DS_down, mu_down
+    sols_fig = continuation(v, DT_FIG, 201, ascending=False)
     for i, vso in enumerate(v):
         eps0 = -2.0 * cos_sum - 2.0 * vso * lam_k   # band with max 4t at (pi,pi)
         eps1 = -2.0 * cos_sum + 2.0 * vso * lam_k
-        mu = mu_down[idt_fig, i]
-        pocket[i] = float(np.mean(eps0 > mu))
-        z0 = (eps0 - mu) / SIGMA_DOS
-        z1 = (eps1 - mu) / SIGMA_DOS
-        dos[i] = float(np.mean(np.exp(-0.5 * z0**2)
-                               + np.exp(-0.5 * z1**2))
-                       / (np.sqrt(2.0 * np.pi) * SIGMA_DOS))
-    i_lo = int(np.argmin(np.abs(v - (v_lif_fig - 0.10))))
-    i_hi = int(np.argmin(np.abs(v - (v_lif_fig + 0.10))))
+        eps_all = np.stack([eps0, eps1], axis=-1)
+        mu_n = float(brentq(
+            lambda m: float(np.mean(np.where(
+                np.abs(eps_all - m) < 1e-12, 0.0, np.sign(eps_all - m)
+            )) - (1.0 - N_ELEC)),
+            float(eps_all.min()) - 2.0,
+            float(eps_all.max()) + 2.0,
+            xtol=1e-13,
+        ))
+        mu_n_curve[i] = mu_n
+        pocket_n[i] = float(np.mean(eps0 > mu_n))
+        z0 = (eps0 - mu_n) / SIGMA_DOS
+        z1 = (eps1 - mu_n) / SIGMA_DOS
+        dos_n[i] = float(np.mean(np.exp(-0.5 * z0**2)
+                                 + np.exp(-0.5 * z1**2))
+                         / (np.sqrt(2.0 * np.pi) * SIGMA_DOS))
+        d0_i, ds_i, mu_sc_i = sols_fig[i]
+        dks_i = d0_i - (ds_i / 4.0) * eps_all
+        sc_min_gap[i] = float(np.min(np.sqrt(dks_i**2 + (eps_all - mu_sc_i)**2)))
+
+    v_lif_norm = np.nan
+    for i in range(1, len(v)):
+        if (mu_n_curve[i - 1] - 4.0) * (mu_n_curve[i] - 4.0) <= 0 and mu_n_curve[i] != mu_n_curve[i - 1]:
+            w = (4.0 - mu_n_curve[i - 1]) / (mu_n_curve[i] - mu_n_curve[i - 1])
+            v_lif_norm = float(v[i - 1] + w * (v[i] - v[i - 1]))
+            break
+
+    i_lo = int(np.argmin(np.abs(v - (v_lif_norm - 0.15))))
+    i_hi = int(np.argmin(np.abs(v - (v_lif_norm + 0.15))))
     results["test1_Lifshitz"] = {
-        "V_lifshitz": v_lif_fig,
-        "pocket_area_before_Vminus0.10": pocket[i_lo],
-        "pocket_area_after_Vplus0.10": pocket[i_hi],
-        "pocket_area_at_max_V": pocket[-1],
-        "dos_at_EF_before": dos[i_lo],
-        "dos_at_EF_after": dos[i_hi],
-        "note": "pocket area <theta(eps0-mu)> must vanish at V_lifshitz; "
-                "N(E_F) shows a kink there (2nd-order Ehrenfest signature)",
+        "V_muSC_eq_4t_crossover": v_lif_fig,
+        "V_Lifshitz_normal_muN_eq_4t": v_lif_norm,
+        "SC_min_quasiparticle_gap_over_t": float(np.min(sc_min_gap)),
+        "SC_gap_at_V_muSC_eq_4t": float(np.interp(v_lif_fig, v, sc_min_gap)),
+        "SC_gap_at_V_L_normal": float(np.interp(v_lif_norm, v, sc_min_gap)),
+        "normal_pocket_area_before_VL": float(pocket_n[i_lo]),
+        "normal_pocket_area_after_VL": float(pocket_n[i_hi]),
+        "normal_pocket_area_at_max_V": float(pocket_n[-1]),
+        "normal_dos_at_EF_before": float(dos_n[i_lo]),
+        "normal_dos_at_EF_after": float(dos_n[i_hi]),
+        "is_physical_QPT_in_SC": False,
+        "note": "Normal state has a 3rd-order (pi,pi) Dirac-cone Lifshitz "
+                "transition at mu_N=4t (V_L~0.694t, N_cone(E)~|E-4t|/V_SO^2). "
+                "In the SC state, min E_{k,s} >= 0.94t everywhere, so there is "
+                "no Fermi surface (N_SC(E_F)=0) and mu_SC=4t (0.562t) is a "
+                "smooth gapped crossover, NOT a physical QPT.",
     }
 
     # ------------------------------------------------------------------
@@ -371,46 +424,51 @@ def main() -> int:
     fig, axes = plt.subplots(2, 3, figsize=(16.0, 9.2),
                              constrained_layout=True)
 
-    # (a) pocket area + N(E_F)
+    # (a) Normal-state pocket area + N_N(E_F) vs SC gap min E_k
     ax = axes[0, 0]
-    ax.plot(v, pocket, color="#2ca02c", lw=1.8,
-            label=r"pocket area $\langle\theta(\epsilon_0-\mu)\rangle$")
-    ax.axvline(v_lif_fig, color="#d62728", ls="--", lw=1.2,
-               label=fr"$V_{{Lifshitz}}={v_lif_fig:.3f}$")
+    ax.plot(v, pocket_n, color="#2ca02c", lw=1.8,
+            label=r"normal pocket $\langle\theta(\epsilon_0-\mu_N)\rangle$")
+    ax.axvline(v_lif_norm, color="#2ca02c", ls="--", lw=1.3,
+               label=fr"normal Dirac $V_L={v_lif_norm:.3f}$")
+    ax.axvline(v_lif_fig, color="#d62728", ls="-.", lw=1.2,
+               label=fr"$\mu_{{\mathrm{{SC}}}}=4t$: ${v_lif_fig:.3f}$ (gapped)")
     ax.set_xlabel(r"$V_{SO}/t$")
-    ax.set_ylabel(r"inner-pocket area", color="#2ca02c")
+    ax.set_ylabel(r"normal inner-pocket area", color="#2ca02c")
     ax.tick_params(axis="y", colors="#2ca02c")
     ax2 = ax.twinx()
-    ax2.plot(v, dos, color="#1f77b4", lw=1.6,
-             label=r"$N(E_F)$")
-    ax2.set_ylabel(r"$N(E_F)$ (states/t, 2 bands)", color="#1f77b4")
+    ax2.plot(v, dos_n, color="#1f77b4", lw=1.5, ls="--",
+             label=r"$N_N(E_F)$")
+    ax2.plot(v, sc_min_gap / 10.0, color="#d62728", lw=1.6,
+             label=r"$\min E_{\mathbf{k}}/(10t)$ (SC gap)")
+    ax2.set_ylabel(r"$N_N(E_F)$ / SC gap", color="#1f77b4")
     ax2.tick_params(axis="y", colors="#1f77b4")
-    ax.set_title("(a) Lifshitz: pocket empties, $N(E_F)$ kink\n"
-                 r"($\Delta_t/t=4.5$)", fontsize=10)
+    ax.set_title("(a) Normal Dirac-Lifshitz vs. SC gap\n"
+                 r"($\Delta_t/t=4.5$: $\min E_{\mathbf{k}}\geq 0.94t$)",
+                 fontsize=10)
     ax.grid(alpha=0.3)
-    ax.legend(fontsize=7, loc="upper right")
+    h1, l1 = ax.get_legend_handles_labels()
+    h2, l2 = ax2.get_legend_handles_labels()
+    ax.legend(h1 + h2, l1 + l2, fontsize=6.8, loc="upper right")
 
-    # (b,c) Fermi-surface maps below/above V_Lifshitz, zone shown on
-    # [0,2pi]^2 so that (pi,pi) sits at the center of the panel
+    # (b,c) Normal-state Fermi-surface maps below/above V_L (note: gapped out in SC)
     kx_d = np.linspace(0.0, 2.0 * np.pi, 400)
     KXd, KYd = np.meshgrid(kx_d, kx_d)
     cs_d = np.cos(KXd) + np.cos(KYd)
     lam_d = np.sqrt(np.sin(KXd) ** 2 + np.sin(KYd) ** 2)
     for k, (vso_fs, tag) in enumerate(
-            ((0.35, "(b) before: $V_{SO}/t=%.2f$"),
-             (v_lif_fig + 0.10, "(c) after: $V_{SO}/t=%.2f$"))):
+            ((0.50, "(b) normal FS before $V_L$: $V_{SO}/t=%.2f$"),
+             (v_lif_norm + 0.15, "(c) normal FS after $V_L$: $V_{SO}/t=%.2f$"))):
         ax = axes[0, 1 + k]
         eps0 = -2.0 * cs_d - 2.0 * vso_fs * lam_d
         eps1 = -2.0 * cs_d + 2.0 * vso_fs * lam_d
-        mu_fs = float(np.interp(vso_fs, v, mu_down[idt_fig]))
+        mu_fs = float(np.interp(vso_fs, v, mu_n_curve))
         im = ax.imshow(eps0, origin="lower", extent=[0, 2 * np.pi,
                                                       0, 2 * np.pi],
                        cmap="viridis", vmin=-9.0, vmax=5.0)
-        cs_white = ax.contour(KXd, KYd, eps0, levels=[mu_fs],
-                              colors="white", linewidths=2.2)
-        cs_cyan = ax.contour(KXd, KYd, eps1, levels=[mu_fs],
-                             colors="cyan", linewidths=1.3,
-                             linestyles="--")
+        ax.contour(KXd, KYd, eps0, levels=[mu_fs],
+                   colors="white", linewidths=2.2)
+        ax.contour(KXd, KYd, eps1, levels=[mu_fs],
+                   colors="cyan", linewidths=1.3, linestyles="--")
         ax.plot(np.pi, np.pi, "o", ms=5, mfc="none", mec="red", mew=1.6)
         ax.set_xticks([0, np.pi, 2 * np.pi])
         ax.set_xticklabels([r"$0$", r"$\pi$", r"$2\pi$"])
@@ -420,14 +478,15 @@ def main() -> int:
         ax.set_xlabel(r"$k_x$")
         ax.set_ylabel(r"$k_y$")
         if k == 0:
-            ax.annotate("inner pocket\n(empties at $V_{L}$)",
+            ax.annotate("normal inner pocket\n(gapped out in SC)",
                         xy=(np.pi, np.pi), xytext=(0.62 * np.pi,
                                                    0.30 * np.pi),
                         color="white", fontsize=8.5, ha="center",
                         arrowprops=dict(arrowstyle="->", color="white",
                                         lw=1.2))
         else:
-            ax.annotate("pocket gone\n($\\mu>4t$)", xy=(np.pi, np.pi),
+            ax.annotate("normal pocket gone\n($\\mu_N>4t$; gapped in SC)",
+                        xy=(np.pi, np.pi),
                         xytext=(0.62 * np.pi, 0.30 * np.pi),
                         color="white", fontsize=8.5, ha="center",
                         arrowprops=dict(arrowstyle="->", color="white",
@@ -454,7 +513,7 @@ def main() -> int:
     ax.grid(alpha=0.3)
     ax.legend(fontsize=7, ncol=2)
 
-    # (e) pair-instability eigenvalue (log scale; includes Nk=401 dip check)
+    # (e) pair-instability eigenvalue (log scale; smooth T=0.01t bound)
     ax = axes[1, 1]
     for dt, col in zip(DT_HYST, ("#1f77b4", "#d95f02")):
         ax.plot(v, lam_curves[f"{dt:.1f}"], color=col, lw=1.7,
@@ -463,17 +522,17 @@ def main() -> int:
             color="#1f77b4", lw=1.4, ls=":",
             label=r"$\Delta_t/t=3.5$ ($N_k=401$)")
     ax.axhline(1.0, color="black", ls="--", lw=1.2,
-               label=r"$\lambda=1$ (instability)")
-    ax.axvline(v_lif_fig, color="#d62728", ls=":", lw=1.0, alpha=0.8)
+               label=r"$\lambda_+=1$ (instability)")
+    ax.axvline(v_lif_fig, color="#d62728", ls="-.", lw=1.0, alpha=0.8)
     ax.set_yscale("log")
     ax.set_xlabel(r"$V_{SO}/t$")
-    ax.set_ylabel(r"pair-instability eigenvalue $\lambda$")
-    ax.set_title("(e) Linearized gap equation on the\n"
-                 r"normal state: $\lambda(V_{SO})$", fontsize=10)
+    ax.set_ylabel(r"pair-instability eigenvalue $\lambda_+$")
+    ax.set_title("(e) Linearized gap eigenvalue ($T=0.01t$ bound):\n"
+                 r"$\lambda_+>1$ everywhere (no pairing QPT)", fontsize=10)
     ax.grid(alpha=0.3, which="both")
     ax.legend(fontsize=6.5, loc="lower right")
 
-    # (f) finite-size scaling of the onset peak
+    # (f) finite-size scaling of the d|Delta_S|/dV_SO inflection peak
     ax = axes[1, 2]
     for nk, col in zip(NK_SCALE, ("#9467bd", "#1f77b4", "#d62728")):
         g1 = np.gradient(DS_nk[nk], v)
@@ -482,19 +541,17 @@ def main() -> int:
                 label=fr"$N_k={nk}$")
         i_pk = int(np.argmax(g1))
         ax.plot([v[i_pk]], [g1[i_pk]], "o", ms=6, color=col)
-    ax.axvline(v_lif_fig, color="#d62728", ls=":", lw=1.0, alpha=0.8)
+    ax.axvline(v_lif_fig, color="#d62728", ls="-.", lw=1.0, alpha=0.8)
     ax.set_xlabel(r"$V_{SO}/t$")
     ax.set_ylabel(r"$d|\Delta_S|/dV_{SO}$")
-    ax.set_title("(f) Finite-size scaling of the\n"
-                 "pairing-onset peak", fontsize=10)
+    ax.set_title("(f) Finite-size scaling of $d|\\Delta_S|/dV_{SO}$\n"
+                 "inflection peak (saturates: crossover)", fontsize=10)
     ax.grid(alpha=0.3)
     ax.legend(fontsize=7.5)
 
     fig.suptitle(
-        r"QPT test battery: (a-c) Fermi-surface Lifshitz transition, "
-        r"(d) no first-order hysteresis, (e) pairing instability "
-        r"eigenvalue, (f) finite-size scaling "
-        r"($U/t=75$, $n=1.875$, $T=0$)",
+        r"QPT diagnostic tests at $U/t=75$, $n=1.875$, $T=0$ "
+        r"(no physical QPT along $V_{SO}$: gapped SC crossover)",
         fontsize=12.5,
     )
     fig.savefig(FIGS / "qpt_diagnostic_tests.png", dpi=200,

@@ -167,18 +167,50 @@ def evolve_stack(rho0: np.ndarray, t_grid, gamma, Gamma) -> np.ndarray:
     return out
 
 
+_Y2 = np.kron(
+    np.array([[0.0, -1j], [1j, 0.0]], dtype=complex),
+    np.array([[0.0, -1j], [1j, 0.0]], dtype=complex),
+)
+
+
 def observables(rho_t: np.ndarray) -> dict:
-    """General metrics for any stack of two-qubit states (last axes 4,4)."""
-    from helicity_density_matrix import concurrence as wootters
+    """Vectorized metrics for any stack of two-qubit states (last axes 4,4)."""
     shape = rho_t.shape[:-2]
-    flat = rho_t.reshape(-1, 4, 4)
-    C = np.array([wootters(rho) for rho in flat]).reshape(shape)
-    Fs = np.array([float(np.real(SINGLET.conj() @ rho @ SINGLET))
-                   for rho in flat]).reshape(shape)
-    from helicity_density_matrix import dense_coding_metrics
-    chi = np.array([dense_coding_metrics(rho)["holevo_pauli_bits"]
-                    for rho in flat]).reshape(shape)
-    return dict(C=C, Fs=Fs, chi=chi)
+    flat = np.asarray(rho_t, dtype=complex).reshape(-1, 4, 4)
+    if len(flat) == 0:
+        return dict(
+            C=np.empty(shape), Fs=np.empty(shape), chi=np.empty(shape)
+        )
+    # Wootters concurrence
+    flipped = _Y2 @ flat.conj() @ _Y2
+    eigs_r = np.linalg.eigvals(flat @ flipped)
+    if np.max(np.abs(eigs_r.imag)) > 1e-8:
+        raise ValueError("Unexpected complex eigenvalues in concurrence calculation")
+    roots = np.sqrt(np.clip(eigs_r.real, 0.0, None))
+    roots.sort(axis=-1)  # ascending; roots[:, -1] is largest
+    C = np.maximum(0.0, roots[:, -1] - np.sum(roots[:, :-1], axis=-1))
+
+    # Singlet fidelity
+    Fs = np.real(np.einsum("a,nab,b->n", SINGLET.conj(), flat, SINGLET))
+
+    # Pauli-ensemble Holevo quantity chi = 1 + S(rho_B) - S(rho_AB)
+    evals_ab = np.linalg.eigvalsh(flat)
+    if np.min(evals_ab) < -1e-10:
+        raise ValueError("Cannot take entropy of a nonpositive density matrix")
+    evals_ab = np.clip(evals_ab.real, 0.0, 1.0)
+    nz_ab = evals_ab > 1e-15
+    S_ab = -np.sum(np.where(nz_ab, evals_ab * np.log2(np.where(nz_ab, evals_ab, 1.0)), 0.0), axis=-1)
+
+    rho_b = np.trace(flat.reshape(-1, 2, 2, 2, 2), axis1=1, axis2=3)
+    evals_b = np.linalg.eigvalsh(rho_b)
+    if np.min(evals_b) < -1e-10:
+        raise ValueError("Cannot take entropy of a nonpositive reduced matrix")
+    evals_b = np.clip(evals_b.real, 0.0, 1.0)
+    nz_b = evals_b > 1e-15
+    S_b = -np.sum(np.where(nz_b, evals_b * np.log2(np.where(nz_b, evals_b, 1.0)), 0.0), axis=-1)
+    chi = np.clip(1.0 + S_b - S_ab, 0.0, 2.0)
+
+    return dict(C=C.reshape(shape), Fs=Fs.reshape(shape), chi=chi.reshape(shape))
 
 
 def rho_grid(states: States, r_values, thetas_deg) -> tuple[np.ndarray, np.ndarray]:
