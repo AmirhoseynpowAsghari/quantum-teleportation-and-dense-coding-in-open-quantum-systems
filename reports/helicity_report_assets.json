@@ -1,6 +1,6 @@
 {
   "source_data": "data/helicity_density_matrix_demo.npz",
-  "source_data_sha256": "26d6517d696b3abce742bc9cfe9fe99c962b8f56bf6e11eb1377e222d62df908",
+  "source_data_sha256": "d8d504a0426ccca5d2278d7f3b214776b9a64e15fe5fdeadadfb8c64cce0d5fc",
   "validation_passed": true,
   "generated_files": [
     "reports/helicity_demo_resources.tex",

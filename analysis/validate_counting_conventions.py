@@ -48,7 +48,7 @@ REPORTS = ROOT / "reports"
 # Grid (identical convention to kspace_setup.build_kgrid)
 # ---------------------------------------------------------------------------
 def make_grid(Nk: int, t: float = 1.0, Vso: float = 0.0):
-    kx = np.linspace(-np.pi, np.pi, Nk)
+    kx = np.linspace(-np.pi, np.pi, Nk, endpoint=False)
     KX, KY = np.meshgrid(kx, kx)
     ssin = np.sqrt(np.sin(KX) ** 2 + np.sin(KY) ** 2)
     sk = 0.5 * (np.cos(KX) + np.cos(KY))
@@ -336,8 +336,8 @@ def main():
     T_t = 0.13
     b_t = 1.0 / T_t
     f_hel = np.sum(_th(b_t, np.abs(eps0 - mu_t)))
-    eps_spin = -2 * t * (np.cos(np.linspace(-np.pi, np.pi, 201)[None, :])
-                         + np.cos(np.linspace(-np.pi, np.pi, 201)[:, None]))
+    eps_spin = -2 * t * (np.cos(np.linspace(-np.pi, np.pi, 201, endpoint=False)[None, :])
+                         + np.cos(np.linspace(-np.pi, np.pi, 201, endpoint=False)[:, None]))
     f_spin = 2.0 * np.sum(_th(b_t, np.abs(eps_spin - mu_t)))
     deg_diff = float(abs(f_hel - f_spin) / max(abs(f_spin), 1.0))
     # (b) n capacity with one vs two branches (mu -> above band top)

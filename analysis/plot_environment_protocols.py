@@ -187,24 +187,20 @@ def plot_regimes(tau, series, output):
     fig, axes = plt.subplots(3, 2, figsize=(11.5, 11.0), sharex=True)
 
     row_specs = (
-        (0, CLASSICAL_F, "Teleportation fidelity"),
-        (1, CLASSICAL_CHI, "Dense coding $\\chi$ [bits]"),
-        (2, None, "Concurrence"),
+        (0, 0, CLASSICAL_F, "Teleportation fidelity"),
+        (1, 2, CLASSICAL_CHI, "Dense coding $\\chi$ [bits]"),
+        (2, 3, None, "Concurrence"),
     )
     for col, regime in enumerate(REGIME_ORDER):
-        for row, bound, title in row_specs:
+        for row, metric_idx, bound, title in row_specs:
             ax = axes[row, col]
             for ip, r in enumerate(R_POINTS):
                 data = series[regime][ip]
-                if row < 2:
-                    ax.plot(tau, data[:, row], color=colors[ip],
-                            lw=1.8, label=labels[ip])
-                    if row == 0:      # optimized companion (dashed)
-                        ax.plot(tau, data[:, 1], color=colors[ip],
-                                lw=1.0, ls="--", alpha=0.75)
-                else:
-                    ax.plot(tau, data[:, 3], color=colors[ip],
-                            lw=1.8, label=labels[ip])
+                ax.plot(tau, data[:, metric_idx], color=colors[ip],
+                        lw=1.8, label=labels[ip])
+                if row == 0:      # optimized companion (dashed)
+                    ax.plot(tau, data[:, 1], color=colors[ip],
+                            lw=1.0, ls="--", alpha=0.75)
             if row == 0:
                 ax.plot([], [], color="gray", lw=1.0, ls="--",
                         label="optimized")
@@ -212,7 +208,7 @@ def plot_regimes(tau, series, output):
                 ax.axhline(bound, color="black", lw=1.1, ls=":",
                            label=("classical $2/3$" if row == 0
                                   else "1-bit bound"))
-            if col == 0:
+            if col == 0 and row > 0:
                 ax.set_title(title, fontsize=11, loc="left")
             ax.grid(alpha=0.25, lw=0.5)
             ax.set_ylim(-0.03, 2.08 if row == 1 else 1.03)
@@ -229,8 +225,7 @@ def plot_regimes(tau, series, output):
             axes[row, col].set_ylabel(
                 ["$F$ (solid: fixed, dashed: optimized)",
                  "$\\chi$ [bits]", "$C$"][row])
-    for row in range(3):
-        axes[row, 1].set_xlabel(r"scaled time $\tau=\gamma_0 t$")
+        axes[2, col].set_xlabel(r"scaled time $\tau=\gamma_0 t$")
     fig.suptitle("Environment effects on teleportation, dense coding, and "
                  "concurrence (no Stark shift; BdG resources $U/t=75$)",
                  fontsize=13, y=0.995)
@@ -243,14 +238,14 @@ def plot_regimes(tau, series, output):
 def plot_scan(tau, scan, output):
     """scan -> (N_Gamma, Nt, 4) for the r=0 resource."""
     fig, axes = plt.subplots(3, 1, figsize=(7.8, 11.0), sharex=True)
-    specs = ((0, "Teleportation $F$ (fixed protocol)", "viridis",
+    specs = ((0, 0, "Teleportation $F$ (fixed protocol)", "viridis",
               CLASSICAL_F, (0.0, 1.0)),
-             (1, "Dense coding $\\chi$ [bits]", "magma",
+             (1, 2, "Dense coding $\\chi$ [bits]", "magma",
               CLASSICAL_CHI, (0.0, 2.0)),
-             (2, "Concurrence $C$", "cividis", None, (0.0, 1.0)))
-    for row, title, cmap, bound, vlim in specs:
+             (2, 3, "Concurrence $C$", "cividis", None, (0.0, 1.0)))
+    for row, metric_idx, title, cmap, bound, vlim in specs:
         ax = axes[row]
-        values = scan[:, :, row]            # (NGamma, Nt) = (len y, len x)
+        values = scan[:, :, metric_idx]     # (NGamma, Nt) = (len y, len x)
         mesh = ax.pcolormesh(tau, SCAN_GRID, values, shading="nearest",
                              cmap=cmap, vmin=vlim[0], vmax=vlim[1])
         if bound is not None:

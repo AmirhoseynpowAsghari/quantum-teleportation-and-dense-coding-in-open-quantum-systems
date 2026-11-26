@@ -1,5 +1,5 @@
 {
-  "repository_commit": "b5b41b263f86cda9f5b191ac22dcf5fbce173039",
+  "repository_commit": "eb29fd167307f7c502341b60bdc1f07e049c98ff",
   "parameters": {
     "U_over_t": 75.0,
     "n_elec": 1.875,
@@ -7,24 +7,29 @@
     "Delta_t_figure": 4.5
   },
   "test1_Lifshitz": {
-    "V_lifshitz": 0.5487495522430854,
-    "pocket_area_before_Vminus0.10": 0.003069230959629712,
-    "pocket_area_after_Vplus0.10": 0.0,
-    "pocket_area_at_max_V": 0.0,
-    "dos_at_EF_before": 0.1592431117118488,
-    "dos_at_EF_after": 0.23535279469637121,
-    "note": "pocket area <theta(eps0-mu)> must vanish at V_lifshitz; N(E_F) shows a kink there (2nd-order Ehrenfest signature)"
+    "V_muSC_eq_4t_crossover": 0.561865673962232,
+    "V_Lifshitz_normal_muN_eq_4t": 0.6949399616922762,
+    "SC_min_quasiparticle_gap_over_t": 0.9374465850343119,
+    "SC_gap_at_V_muSC_eq_4t": 1.4404657156382692,
+    "SC_gap_at_V_L_normal": 1.7173220410212422,
+    "normal_pocket_area_before_VL": 0.003985049875003094,
+    "normal_pocket_area_after_VL": 0.0,
+    "normal_pocket_area_at_max_V": 0.0,
+    "normal_dos_at_EF_before": 0.15484806596765113,
+    "normal_dos_at_EF_after": 0.1828973833038349,
+    "is_physical_QPT_in_SC": false,
+    "note": "Normal state has a 3rd-order (pi,pi) Dirac-cone Lifshitz transition at mu_N=4t (V_L~0.694t, N_cone(E)~|E-4t|/V_SO^2). In the SC state, min E_{k,s} >= 0.94t everywhere, so there is no Fermi surface (N_SC(E_F)=0) and mu_SC=4t (0.562t) is a smooth gapped crossover, NOT a physical QPT."
   },
   "test2_hysteresis": {
     "protocol": "ascending V_SO continuation vs stored descending sweep",
     "per_Delta_t": {
       "3.5": {
-        "max_abs_diff_DeltaS": 2.4424906541753444e-15,
-        "max_abs_diff_mu": 4.440892098500626e-15
+        "max_abs_diff_DeltaS": 1.7763568394002505e-15,
+        "max_abs_diff_mu": 3.552713678800501e-15
       },
       "4.5": {
-        "max_abs_diff_DeltaS": 7.549516567451064e-15,
-        "max_abs_diff_mu": 1.4210854715202004e-14
+        "max_abs_diff_DeltaS": 7.993605777301127e-15,
+        "max_abs_diff_mu": 1.3322676295501878e-14
       }
     },
     "conclusion": "differences at machine precision exclude branch coexistence (no first-order hysteresis loop)"
@@ -33,21 +38,21 @@
     "Delta_t": 4.5,
     "metrics": {
       "101": {
-        "peak_height_dDeltaS_dV": 1.319337354648269,
-        "peak_position": 0.97,
-        "max_abs_curvature_near_peak": 0.23577882028078534,
+        "peak_height_dDeltaS_dV": 1.339762993428053,
+        "peak_position": 0.96,
+        "max_abs_curvature_near_peak": 0.2515784518493547,
         "fwhm": 1.19
       },
       "201": {
-        "peak_height_dDeltaS_dV": 1.3294374889287326,
-        "peak_position": 0.97,
-        "max_abs_curvature_near_peak": 0.23043984413817498,
+        "peak_height_dDeltaS_dV": 1.3397629934280246,
+        "peak_position": 0.96,
+        "max_abs_curvature_near_peak": 0.25157845184864414,
         "fwhm": 1.19
       },
       "401": {
-        "peak_height_dDeltaS_dV": 1.3345640127212164,
-        "peak_position": 0.97,
-        "max_abs_curvature_near_peak": 0.22764214733754784,
+        "peak_height_dDeltaS_dV": 1.3397629934279678,
+        "peak_position": 0.96,
+        "max_abs_curvature_near_peak": 0.2515784518493547,
         "fwhm": 1.19
       }
     },
@@ -55,15 +60,15 @@
   },
   "test4_pair_instability": {
     "3.5": {
-      "lambda_min": 2.93282960923284,
-      "lambda_max": 11.505323672402938,
-      "lambda_at_Vmax": 11.06044950227215,
+      "lambda_min": 1.4610531017375665,
+      "lambda_max": 7.245567284637104,
+      "lambda_at_Vmax": 7.245567284637104,
       "crossings_of_1": []
     },
     "4.5": {
-      "lambda_min": 14.694209771789247,
-      "lambda_max": 715.406726341283,
-      "lambda_at_Vmax": 560.0561175797855,
+      "lambda_min": 2.8901997638620998,
+      "lambda_max": 17.392576817126976,
+      "lambda_at_Vmax": 17.392576817126976,
       "crossings_of_1": []
     },
     "dip_check_Nk401_Deltat3.5": {
@@ -72,7 +77,7 @@
           0.1,
           0.3
         ],
-        "lambda_min": 2.7514143666578548,
+        "lambda_min": 1.4748475424773524,
         "crossings_of_1": []
       }
     },

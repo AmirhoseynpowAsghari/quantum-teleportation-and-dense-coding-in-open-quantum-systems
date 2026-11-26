@@ -17,7 +17,7 @@
 \date{\today}
 
 \begin{abstract}
-Quantum communication protocols rely critically on the preservation of entanglement and quantum coherence in realistic noisy environments. In this work, we investigate quantum teleportation and dense coding using correlated electron pairs described within a spin--orbit-coupled Hubbard--Bogoliubov--de Gennes framework and subjected to non-Markovian open-system dynamics. The superconducting correlations are obtained self-consistently, and the corresponding normal and anomalous Green's functions are employed to construct spatially dependent two-qubit density matrices. At nonzero spin--orbit coupling ($V_{\mathrm{SO}}\neq0$) these matrices follow from a momentum-dependent helicity rotation and a matrix-valued conditional Wick prescription, transformed back to the original-spin basis for the protocol calculations; the general Wootters concurrence and the fixed and optimized teleportation fidelities are evaluated directly on these non-X states. The resulting states are evolved using Kraus-operator descriptions of environmental noise, including non-Markovian amplitude damping and dephasing channels, while the Holevo quantity of an equal-probability Pauli encoding ensemble quantifies the information available to the corresponding dense-coding protocol. For two representative non-Markovian amplitude-damping regimes, the results reveal a pronounced dependence of quantum correlations on both the spatial separation of the electron pair and the evolution time. Environmental coupling suppresses the initially available entanglement and communication resources, while the nonmonotonic survival probability produces transient revivals of concurrence and singlet fraction. A dedicated environment-parameter study then maps fidelity, Holevo information, and concurrence against the reservoir spectral width in both the underdamped and overdamped regimes: the dense-coding dynamics reproduce the exactly solvable two-atom benchmark of Haddadi \emph{et al.}~\cite{Haddadi2023} to within $0.01$ bit, while the teleportation-fidelity curves differ because that work evaluates a quadratic output formula rather than the standard linear protocol. The Pauli-ensemble Holevo quantity evolves differently and approaches the one-bit limit of the long-time amplitude-damped product state. A converged interaction sweep at $U/t=40$, $75$, and $115$ shows that the Hubbard interaction changes the initial spatial profiles and hence the subsequent fidelity and Holevo dynamics, but their ordering with $U$ is separation dependent rather than uniformly enhancing or suppressing. A spin--orbit sweep of the concurrence against $U$ and $V_{\mathrm{SO}}$ is analytic across the Lifshitz point, with second-derivative sign changes but no discontinuity. Independent ground-state tests establish the underlying second-order transitions --- a Lifshitz transition and a pairing onset at $\Delta_t/t=2.52$ --- while the protocol parameters lie in a crossover region where all observables vary analytically. All protocol and resource figures in this work are regenerated at $V_{\mathrm{SO}}/t=0.5$ from the helicity construction in the original-spin basis.
+Quantum communication protocols rely critically on the preservation of entanglement and quantum coherence in realistic noisy environments. In this work, we investigate quantum teleportation and dense coding using correlated electron pairs described within a spin--orbit-coupled Hubbard--Bogoliubov--de Gennes framework and subjected to non-Markovian open-system dynamics. The superconducting correlations are obtained self-consistently, and the corresponding normal and anomalous Green's functions are employed to construct spatially dependent two-qubit density matrices. At nonzero spin--orbit coupling ($V_{\mathrm{SO}}\neq0$) these matrices follow from a momentum-dependent helicity rotation and a matrix-valued conditional Wick prescription, transformed back to the original-spin basis for the protocol calculations; the general Wootters concurrence and the fixed and optimized teleportation fidelities are evaluated directly on these non-X states. The resulting states are evolved using Kraus-operator descriptions of environmental noise, including non-Markovian amplitude damping and dephasing channels, while the Holevo quantity of an equal-probability Pauli encoding ensemble quantifies the information available to the corresponding dense-coding protocol. For two representative non-Markovian amplitude-damping regimes, the results reveal a pronounced dependence of quantum correlations on both the spatial separation of the electron pair and the evolution time. Environmental coupling suppresses the initially available entanglement and communication resources, while the nonmonotonic survival probability produces transient revivals of concurrence and singlet fraction. A dedicated environment-parameter study then maps fidelity, Holevo information, and concurrence against the reservoir spectral width in both the underdamped and overdamped regimes: the dense-coding dynamics reproduce the exactly solvable two-atom benchmark of Haddadi \emph{et al.}~\cite{Haddadi2023} to within $0.01$ bit, while the teleportation-fidelity curves differ because that work evaluates a quadratic output formula rather than the standard linear protocol. The Pauli-ensemble Holevo quantity evolves differently and approaches the one-bit limit of the long-time amplitude-damped product state. A converged interaction sweep at $U/t=40$, $75$, and $115$ shows that the Hubbard interaction changes the initial spatial profiles and hence the subsequent fidelity and Holevo dynamics, but their ordering with $U$ is separation dependent rather than uniformly enhancing or suppressing. A spin--orbit sweep of the concurrence against $U$ and $V_{\mathrm{SO}}$ is analytic across the gapped $\mu_{\mathrm{SC}}=4t$ crossover, with smooth second-derivative sign changes and basis-dependent splitting between original-spin and band-pseudospin concurrences ($C_{\mathrm{spin}} > C_{\mathrm{band}}$ at $n=1.875$) rather than any discontinuity. Linearized pair-instability eigenvalues ($\lambda_+ = 1$), branch-continuation hysteresis bounds ($\le 1.3\times 10^{-14}$), finite-size scaling of the order-parameter slope, and normal-state Fermi-surface checks establish genuine second-order pairing-onset transitions elsewhere in parameter space---at $\Delta_{t,c}/t=2.52\pm 0.03$ ($U/t=75$, $V_{\mathrm{SO}}=0$, $n=1.875$), at $U_c/t\approx 73.9$ and $V_c/t\approx 0.532$ ($n=1.0$, $\Delta_t/t=4.5$), and across filling thresholds $n_c \approx \{0.2192, 1.0194\}$ ($U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$)---alongside normal-state Dirac and van Hove Lifshitz transitions, while placing the main protocol point ($U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$, $n=1.875$) strictly inside a fully gapped superconducting crossover ($\min_{\mathbf{k},s} E_{\mathbf{k}s} \ge 0.94t$) where all measured observables vary analytically and entanglement sudden-death kinks arise solely from the Wootters zero cutoff. All protocol and resource figures in this work are computed at $V_{\mathrm{SO}}/t=0.5$ on periodic Brillouin-zone meshes using the helicity construction in the original-spin basis, supplemented by direct comparisons with the helicity-band basis.
 \end{abstract}
 
 \pacs{74.20.Fg, 03.67.Mn, 03.65.Ud, 74.25.-q}
@@ -125,7 +125,7 @@ self-consistently. The equations solved numerically are
 =
 \Delta_0
 +
-\frac{1}{8N_k^2}
+\frac{1}{4N_k^2}
 \sum_{\mathbf{k},s}
 V_{\mathbf{k}s}
 \frac{\Delta_{\mathbf{k}s}}
@@ -141,7 +141,7 @@ V_{\mathbf{k}s}
 =
 \Delta_s
 +
-\frac{V_1}{N_k^2}
+\frac{2V_1}{N_k^2}
 \sum_{\mathbf{k},s}
 \frac{\Delta_{\mathbf{k}s}}
 {E_{\mathbf{k}s}}
@@ -199,13 +199,15 @@ Here, $U$ denotes the on-site Hubbard interaction strength and $V_1$ characteriz
 the extended pairing contribution. In the numerical implementation,
 $V_1$ corresponds to the parameter denoted by \texttt{Delta\_t}.
 Equations~\eqref{eq:self_consistent_delta0}--\eqref{eq:number_equation}
-are solved simultaneously using a multidimensional root-finding procedure.
-The calculations employ a $100\times100$ momentum-space grid and are
-performed at $T=0$. Unless stated otherwise, the fixed model parameters are
-$\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$, and $n=1.875$; the spin--orbit
-term splits the two helicity branches throughout. Energies are expressed in
-units of $t$, separations in units of the lattice constant, and times in units
-of $\hbar/t$.
+are solved simultaneously using a multidimensional root-finding procedure on a
+uniform periodic $N_k\times N_k$ momentum-space mesh
+$k_{x,y}=-\pi+2\pi m/N_k$ ($m=0,\ldots,N_k-1$), which avoids
+zone-boundary double counting and yields rapid spectral convergence.
+Unless stated otherwise, the baseline calculations employ $N_k=100$ at $T=0$
+with fixed parameters $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$, and
+$n=1.875$; the spin--orbit term splits the two helicity branches throughout.
+Energies are expressed in units of $t$, separations in units of the lattice
+constant $a$, and times in units of $\hbar/t$.
 
 To examine how the interaction strength modifies the superconducting state,
 we evaluate the momentum-dependent gap $\Delta_{\mathbf{k}s}$ throughout
@@ -239,33 +241,35 @@ on $\epsilon_{\mathbf{k}s}$ through Eq.~\eqref{eq:gap}. The resulting
 pattern reflects the extended-$s$-wave contribution and preserves the
 symmetry of the underlying square-lattice dispersion.
 
-For $U/t=40$, the reproduced self-consistent solution gives
+For $U/t=40$, the converged self-consistent solution (up to the overall
+$\mathrm{U}(1)$ pairing sign choice $(\Delta_0,\Delta_s)\leftrightarrow(-\Delta_0,-\Delta_s)$) gives
 
 \begin{equation}\boxed{
 \begin{aligned}
-\frac{\Delta_0}{t}&=-0.3121263,
-&\qquad \frac{\Delta_s}{t}&=3.2268726,\\
-&\frac{\mu}{t}=4.9515521,
+\frac{\Delta_0}{t}&=0.3191526,
+&\qquad \frac{\Delta_s}{t}&=-3.1760777,\\
+&\frac{\mu}{t}=4.8564586,
 \end{aligned}
 }\end{equation}
 
-with maximum absolute residual $1.77\times10^{-13}$. The relatively large
+with maximum absolute residual $5.14\times10^{-12}$. The relatively large
 magnitude of $\Delta_s$ produces a strong variation of
-$\Delta_{\mathbf{k}s}$ throughout momentum space. The gap changes sign
-between different regions of the Brillouin zone because the two terms in
-Eq.~\eqref{eq:gap} have different momentum dependence.
+$\Delta_{\mathbf{k}s}$ throughout momentum space, changing sign between
+$\Gamma$ ($\Delta_{\Gamma,+}=\Delta_0+\Delta_s=-2.8569t$) and
+$(\pi,\pi)$ ($\Delta_{M,+}=\Delta_0-\Delta_s=+3.4952t$) because the two
+terms in Eq.~\eqref{eq:gap} have different momentum dependence.
 
 At the intermediate interaction strength $U/t=75$, the parameters become
 
 \begin{equation}\boxed{
 \begin{aligned}
-\frac{\Delta_0}{t}&=0.2485808,
-&\qquad \frac{\Delta_s}{t}&=1.7801622,\\
-&\frac{\mu}{t}=3.9293268,
+\frac{\Delta_0}{t}&=0.2328867,
+&\qquad \frac{\Delta_s}{t}&=1.7428065,\\
+&\frac{\mu}{t}=3.8715297,
 \end{aligned}
 }\end{equation}
 
-with maximum absolute residual $1.29\times10^{-11}$. The reduction in the
+with maximum absolute residual $1.02\times10^{-10}$. The reduction in the
 magnitude of $\Delta_s$ suppresses the momentum-dependent variation of the
 superconducting gap, although the characteristic structure remains visible.
 
@@ -273,13 +277,13 @@ For $U/t=115$, the solution is
 
 \begin{equation}\boxed{
 \begin{aligned}
-\frac{\Delta_0}{t}&=-0.3001766,
-&\qquad \frac{\Delta_s}{t}&=-0.8258708,\\
-&\frac{\mu}{t}=3.6814756,
+\frac{\Delta_0}{t}&=-0.2822545,
+&\qquad \frac{\Delta_s}{t}&=-0.7916655,\\
+&\frac{\mu}{t}=3.6388133,
 \end{aligned}
 }\end{equation}
 
-with maximum absolute residual $5.96\times10^{-13}$. The extended-$s$
+with maximum absolute residual $6.27\times10^{-12}$. The extended-$s$
 component is strongly reduced with respect to $U/t=75$ while the uniform
 component remains finite and changes sign across the band, so
 $\Delta_{\mathbf{k}s}$ retains visible momentum-space structure on the
@@ -383,7 +387,7 @@ for several representative directions.
     $|F_{\uparrow\downarrow}(r,\theta)|$, for $\theta=0^\circ$, $30^\circ$,
     $60^\circ$, and $90^\circ$. The $\theta=0^\circ$ and $90^\circ$
     curves overlap, as do the $30^\circ$ and $60^\circ$ curves, to
-    $1.2\times10^{-14}$. Both correlation functions exhibit damped
+    $9.7\times10^{-15}$. Both correlation functions exhibit damped
     spatial oscillations with direction-dependent amplitudes. The curves were
     regenerated from the helicity conditional-Wick construction in the
     original-spin basis.
@@ -503,8 +507,7 @@ N_{B,\beta'\beta}N_{A,\alpha'\alpha}
 }\label{eq:conditional_rho}\end{equation}
 %
 The conditional state is
-$\rho_{AB}=\widetilde{\rho}_{AB}/\operatorname{Tr}\widetilde{\rho}_{AB}$.
-%
+$\rho_{AB}=\widetilde{\rho}_{AB}/\operatorname{Tr}\widetilde{\rho}_{AB}$,
 where
 $N_{AB}(\mathbf{r})=N_{k}^{-2}\sum_{\mathbf{k}}e^{i\mathbf{k}\cdot\mathbf{r}}N_{\mathbf{k}}$,
 $F_{AB}(\mathbf{r})=N_{k}^{-2}\sum_{\mathbf{k}}e^{-i\mathbf{k}\cdot\mathbf{r}}F_{\mathbf{k}}$,
@@ -517,37 +520,81 @@ Eq.~\eqref{eq:conditional_rho} is the conditional state of the sector
 with exactly one electron detected at each site, not a
 fixed-total-particle-number reduction.
 
-The normalized matrices are Hermitian, of unit trace, and positive
-semidefinite to $1.1\times10^{-16}$; at coincident positions the
-construction returns the pure singlet to the same
-tolerance~\cite{Oh2005}.
+The normalized matrices are Hermitian, of unit trace to
+$2.2\times10^{-16}$, and positive semidefinite with smallest eigenvalue
+$\ge -1.1\times10^{-16}$; at coincident positions the construction returns
+the pure singlet to $2.2\times10^{-16}$~\cite{Oh2005}.
 
 At $V_{\mathrm{SO}}/t=0.5$ the conditional state acquires the full
 complex structure forbidden by the X ansatz. For example, at
-$\mathbf{r}=(1,0)$ with $U/t=75$, $\Delta t/t=4.5$, $n=1.875$, and a
-$101\times101$ mesh, the original-spin matrix is
+$\mathbf{r}=(1,0)$ with $U/t=75$, $\Delta_t/t=4.5$, $n=1.875$, and a
+periodic $101\times101$ mesh, the original-spin matrix is
 %
 \begin{widetext}
 \begin{equation}\boxed{
 \rho_{\mathrm{spin}}\approx
 \begin{pmatrix}
-0.24961259 & -0.00049305 & 0.00049305 & 0.00023973\\
--0.00049305 & 0.25038741 & -0.00101455 & -0.00049305\\
-0.00049305 & -0.00101455 & 0.25038741 & 0.00049305\\
-0.00023973 & -0.00049305 & 0.00049305 & 0.24961259
+0.24919705 & -0.00102273 & 0.00102273 & 0.00049812\\
+-0.00102273 & 0.25080295 & -0.00210401 & -0.00102273\\
+0.00102273 & -0.00210401 & 0.25080295 & 0.00102273\\
+0.00049812 & -0.00102273 & 0.00102273 & 0.24919705
 \end{pmatrix},
 }\label{eq:rho_spin_example}\end{equation}
 \end{widetext}
 %
-which has zero concurrence, singlet overlap $0.25140$, and optimized
-average fidelity $0.5013$; the band-basis matrix at the same separation
-differs, with singlet overlap $0.24961$. Because these states are not
-of X type, concurrence is evaluated with the general Wootters spin-flip
+which has zero concurrence, singlet overlap $0.25291$, fixed-protocol
+average fidelity $0.50194$, optimized average fidelity $0.50260$, and
+Pauli-ensemble Holevo quantity $\chi_{\mathrm{P}}=5.84\times10^{-5}$~bit.
+By contrast, the band-basis matrix at the same separation retains an
+X-block structure with population asymmetry between $|++\rangle$
+($0.27234517$), $|\pm\mp\rangle$ ($0.24963236$), and $|--\rangle$
+($0.22839011$), off-diagonal entries $\rho_{14}=0.00027986$ and
+$\rho_{23}=-0.00024105$, singlet overlap $0.24987$, optimized average
+fidelity $0.50043$, and a residual long-range Holevo bias
+$\chi_{\mathrm{P}}\approx 1.32\times10^{-3}$--$1.40\times10^{-3}$~bit
+originating from $S_2(\rho_B)\approx0.9986<1$. Figures~\ref{fig:helicity_offdiagonal}
+and~\ref{fig:helicity_resources} compare these internal bases across
+discrete lattice vectors. Because the spin-basis states are not of X
+type, concurrence is evaluated with the general Wootters spin-flip
 formula~\cite{Wootters1998}, and teleportation fidelities are reported
 both for the fixed singlet protocol and for the locally optimized
 protocol governed by the fully entangled
 fraction~\cite{Horodecki1999}. Band-basis statements assume ideal Bell
 measurement and feedforward in the nonlocal helicity modes
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.92\textwidth]
+    {figs/helicity_density_matrix_offdiagonal.png}
+    \caption{
+    Off-diagonal matrix magnitudes $|\rho_{ij}|$ ($i\neq j$, diagonal
+    suppressed for clarity) at $V_{\mathrm{SO}}/t=0.5$, $\mathbf{r}=(1,0)$,
+    $U/t=75$, $\Delta_t/t=4.5$, $n=1.875$, and $N_k=101$ in the
+    original-spin basis (left) and the helicity-band basis (right). The
+    spin-basis matrix exhibits the full non-X off-diagonal couplings
+    listed in Eq.~\eqref{eq:rho_spin_example}, whereas the band-basis
+    matrix stays within the X-state subspace.
+    }
+    \label{fig:helicity_offdiagonal}
+\end{figure*}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.92\textwidth]
+    {figs/helicity_density_matrix_resources.png}
+    \caption{
+    Exact discrete-lattice-vector comparison between the original-spin
+    (blue circles) and helicity-band (orange squares) conditional states at
+    $V_{\mathrm{SO}}/t=0.5$, $U/t=75$, $\Delta_t/t=4.5$, and $n=1.875$:
+    concurrence $C$, fixed and locally optimized average teleportation
+    fidelities, Pauli-ensemble Holevo quantity $\chi_{\mathrm{P}}$, and
+    entropies $S_2(\rho_{AB})$ and $S_2(\rho_B)$. Exact nonzero-separation
+    lattice vectors $\mathbf{r}\neq\mathbf{0}$ have $C=0$ in both bases
+    at this high filling, while band-population asymmetry lowers
+    $S_2(\rho_B)$ below one bit in the band basis.
+    }
+    \label{fig:helicity_resources}
+\end{figure*}
 $d_{i,s}=N_{k}^{-1}\sum_{\mathbf{k}}e^{i\mathbf{k}\cdot\mathbf{R}_{i}}c_{\mathbf{k}s}$
 and are not claims about a specific microscopic device.
 
@@ -835,7 +882,7 @@ interaction and direction to $2.2\times10^{-16}$. The vectorized superoperator
 evolution reproduces direct application of the Kraus operators to
 $1.1\times10^{-16}$, and the helicity correlators at vanishing spin--orbit
 coupling coincide with an independent X-state construction built from the
-same amplitudes~\cite{OhKim2005} to $2.2\times10^{-16}$. A separate
+same amplitudes~\cite{Oh2005} to $8.3\times10^{-17}$. A separate
 reference pipeline additionally reproduces its
 reference arrays to $1.6\times10^{-16}$ (initial states) and
 $2.3\times10^{-15}$ (concurrence and singlet-fraction slices), confirming
@@ -871,7 +918,7 @@ helicity construction.
 To investigate how this entanglement depends on the lattice direction,
 Fig.~\ref{fig:concurrence_U_theta} shows $C(r,\theta,0)$ as a function of
 $\theta$ at two fixed separations inside the entangled region,
-$r=0.30$ and $r=0.45$, for $U/t=20$, $44$, $79$, and $115$ at
+$r=0.302$ and $r=0.452$, for $U/t=20$, $44$, $79$, and $115$ at
 $V_{\mathrm{SO}}/t=0.5$. These solutions passed the same residual and
 positivity checks. A previously listed $U/t=150$ case is not included
 because the tested solver outputs did not meet the residual criterion and
@@ -883,19 +930,18 @@ therefore cannot support a converged numerical claim.
     {figs/concurrence_U_theta.png}
     \caption{
     Angular dependence of the initial concurrence $C(r,\theta,0)$ at the
-    fixed separations $r=0.30$ (left) and $r=0.45$ (right) for
+    fixed separations $r=0.302$ (left) and $r=0.452$ (right) for
     $U/t=20$, $44$, $79$, and $115$ at $V_{\mathrm{SO}}/t=0.5$, evaluated
-    on the grid $\theta=0^\circ,15^\circ,\ldots,90^\circ$. At $r=0.30$
-    every direction retains finite concurrence with a mild angular
-    modulation. At $r=0.45$ the axis directions
-    ($\theta=0^\circ,90^\circ$) have already reached their first zero
-    while the diagonal direction ($\theta=45^\circ$) retains finite
-    concurrence: the entanglement range is direction dependent, extending
-    to $r\simeq0.45$ along the axes for $U/t=20$ and $44$ and to
-    $r\simeq0.50$ along the diagonal for every sampled interaction.
-    The $0^\circ$ and $90^\circ$ curves coincide, as do the $30^\circ$
-    and $60^\circ$ curves, and the interaction shifts the angular profile
-    only weakly over the sampled range.
+    on the grid $\theta=0^\circ,15^\circ,\ldots,90^\circ$. At $r=0.302$
+    every direction retains finite concurrence ($0.395$--$0.408$) with a
+    mild angular maximum at $\theta=45^\circ$ and a shallow nonmonotonic
+    ordering between $U/t=20$ and $44$. At $r=0.452$, near the outer edge
+    of the entangled window, all four interactions still retain finite
+    concurrence ($0.0052$--$0.0183$ along the axes $\theta=0^\circ,90^\circ$
+    and $0.0205$--$0.0298$ along the diagonal $\theta=45^\circ$), ordering
+    monotonically with $U$ before vanishing at the common sampled boundary
+    $r=0.5025$. The $0^\circ$ and $90^\circ$ curves coincide, as do the
+    $30^\circ$ and $60^\circ$ curves.
     }
     \label{fig:concurrence_U_theta}
 \end{figure*}
@@ -903,18 +949,19 @@ therefore cannot support a converged numerical claim.
 Several features are evident from Fig.~\ref{fig:concurrence_U_theta}.
 At zero separation the concurrence is unity for all interaction strengths,
 as required by the pure-singlet state, and it decreases rapidly with $r$:
-the first zero lies at $r=0.45$ for $U/t=20$ and $44$ along
-$\theta=0^\circ$ and $90^\circ$ and at $r=0.50$ in the remaining sampled
-cases, so the interaction shifts the entanglement boundary only weakly.
-Because the concurrence stays at zero beyond that boundary in every
-direction, the meaningful structure at fixed separation is angular: at
-$r=0.30$ the concurrence varies smoothly with $\theta$, and at $r=0.45$
-the axis directions have lost their entanglement for the two smallest
-interactions while the diagonal direction retains it for every sampled
-interaction, making the entanglement range itself anisotropic. The
-$\theta=0^\circ$ and $90^\circ$ curves agree to
-$5.5\times10^{-14}$, and the $30^\circ$ and $60^\circ$ curves agree to
-$3.3\times10^{-14}$, reflecting the square-lattice symmetry of the
+on the radial grid of step $\Delta r=0.05025$, the first sampled zero
+occurs at $r=0.5025$ for all four interactions and directions, so the
+interaction shifts the entanglement boundary only weakly. Because the
+concurrence stays at zero beyond that boundary in every direction, the
+meaningful structure at fixed separation is angular: at $r=0.302$ the
+concurrence varies smoothly with $\theta$ and displays a slight dip from
+$U/t=20$ ($0.3950$ at $0^\circ$) to $U/t=44$ ($0.3946$) before rising to
+$0.3984$ ($79$) and $0.4035$ ($115$), whereas at $r=0.452$ near the
+boundary it increases monotonically with $U$ and peaks prominently along
+the diagonal $\theta=45^\circ$ ($0.0205$--$0.0298$ versus $0.0052$--$0.0183$
+along the axes). The $\theta=0^\circ$ and $90^\circ$ curves agree to
+$7.7\times10^{-14}$, and the $30^\circ$ and $60^\circ$ curves agree to
+$4.1\times10^{-14}$, reflecting the square-lattice symmetry of the
 helicity correlators. These are properties of the initial entanglement,
 not environmental memory effects; the open-system time has not yet been
 introduced.
@@ -1000,8 +1047,8 @@ zero-separation state.
 
 Figure~\ref{fig:F_low_time} shows the singlet fraction for
 $\gamma_A=\gamma_B=1.5$ and $\Gamma_A=\Gamma_B=0.1$ along $\theta=45^\circ$.
-The selected separations are those generated by the plotting routine,
-$r=0$, $1.9598$, $3.9698$, $5.9799$, $7.9899$, and $10$. All curves exhibit
+The selected separations match those shown in the legend,
+$r=0$, $1.50754$, $3.3166$, $6.6332$, and $10$. All curves exhibit
 damped nonmonotonic behavior associated with the same single-qubit survival
 probability. At $r=0$, Eq.~\eqref{eq:r0_high} remains valid with the new
 parameters; the first two sampled revival maxima are $0.31136$ at $t=11.6923$
@@ -1048,10 +1095,10 @@ Figure~\ref{fig:F_angular} displays the initial singlet fraction at seven
 sampled angles and four separations. The $r=0$ curve is unity at every angle,
 as required by $p(\mathbf0)=1$. Nontrivial anisotropy is visible at finite
 separation. For example, at $r=3.3166$ the initial singlet fraction ranges
-from $0.25001$ at $30^\circ$ and $60^\circ$ to $0.25207$ at $0^\circ$ and
-$90^\circ$. At
-$r=6.6332$ and $10$, the corresponding angular ranges shrink to
-approximately $4.5\times10^{-4}$ and $3\times10^{-5}$, respectively. The sampled data obey
+from $0.25002$ at $30^\circ$, $45^\circ$, and $60^\circ$ to $0.25184$ at
+$0^\circ$ and $90^\circ$. At $r=6.6332$ and $10$, the corresponding angular
+ranges shrink to $5.9\times10^{-4}$ ($0.25000$ to $0.25059$) and
+$2.2\times10^{-6}$, respectively. The sampled data obey
 $F_{\mathrm s}(0^\circ)=F_{\mathrm s}(90^\circ)$,
 $F_{\mathrm s}(15^\circ)=F_{\mathrm s}(75^\circ)$, and
 $F_{\mathrm s}(30^\circ)=F_{\mathrm s}(60^\circ)$ to numerical precision.
@@ -1064,11 +1111,10 @@ $F_{\mathrm s}(30^\circ)=F_{\mathrm s}(60^\circ)$ to numerical precision.
     Polar representation of the initial singlet fraction
     $F_{\mathrm s}(r,\theta,0)$ for $r=0$, $3.3166$, $6.6332$, and $10$
     at $V_{\mathrm{SO}}/t=0.5$ in the $\gamma=1.5$, $\Gamma=0.1$ regime. Only
-    $\theta=0^\circ,15^\circ,\ldots,90^\circ$ were simulated. The plotted
-    closure between $90^\circ$ and $0^\circ$ is a line connecting the sampled
-    endpoints, and the unpopulated remainder of the polar circle must not be
-    interpreted as additional angular data. The radial coordinate is the
-    singlet fraction, not the electron separation.
+    $\theta=0^\circ,15^\circ,\ldots,90^\circ$ were simulated and plotted
+    across the first-quadrant sector; straight segments connect the seven
+    sampled angles. The radial coordinate is the singlet fraction, not the
+    electron separation.
     }
     \label{fig:F_angular}
 \end{figure}
@@ -1196,12 +1242,12 @@ the accompanying NPZ file.
 The upper panels of Fig.~\ref{fig:U_fidelity_holevo} show that $U$ modifies
 both the positions and amplitudes of the spatial structures. The ordering is
 separation dependent. At $r=0.50251$, for example, the initial singlet
-fraction increases from $0.4549997$ at $U/t=40$ to $0.4567447$ at $75$ and
-$0.4591995$ at $115$; the corresponding Holevo values are $0.14218$,
-$0.14460$, and $0.14803$ bits. At $r=1.50754$ the singlet fraction takes
-values $0.2506373$, $0.2511067$, and $0.2511575$ across the same three
-interactions, while $\chi_{\mathrm P}$ takes values $3.8\times10^{-6}$,
-$1.1\times10^{-5}$, and $1.1\times10^{-5}$ bits. These paired examples are
+fraction increases from $0.4597577$ at $U/t=40$ to $0.4615766$ at $75$ and
+$0.4640707$ at $115$; the corresponding Holevo values are $0.14857$,
+$0.15115$, and $0.15471$ bits. At $r=1.50754$ the singlet fraction takes
+values $0.2506078$, $0.2510586$, and $0.2511120$ across the same three
+interactions, while $\chi_{\mathrm P}$ takes values $3.6\times10^{-6}$,
+$1.0\times10^{-5}$, and $1.0\times10^{-5}$ bits. These paired examples are
 not uniformly ordered: over $0\leq r\leq6$ the difference between the
 $U/t=40$ and $115$ curves changes sign eight times for the singlet
 fraction and five times for $\chi_{\mathrm P}$, so no universal monotonic
@@ -1224,18 +1270,18 @@ functional law in $U$, an optimal interaction strength, or a universally
 beneficial interaction effect. A denser sweep would be required before extending these
 conclusions beyond the present parameter set.
 
-\subsection{Spin--orbit dependence of concurrence}
+\subsection{Spin--orbit, filling, and basis dependence of concurrence}
 \label{sec:vso_concurrence}
 
 The helicity construction of Sec.~\ref{sec:helicity_dm} makes it
-possible to follow the concurrence itself as a function of the
-spin--orbit coupling. We evaluate the exact conditional Wick states at
-$r=0.25$, $\theta=0^{\circ}$, $\Delta t/t=4.5$, $n=1.875$, $T=0$, and
-$N_{k}=201$ along two sweeps: $U/t\in[20,160]$ at fixed
+possible to follow the concurrence itself across the superconducting
+parameter space. We evaluate the exact conditional Wick states at
+$r=0.25$, $\theta=0^{\circ}$, $\Delta_t/t=4.5$, $n=1.875$, $T=0$, and
+periodic $N_{k}=201$ along two sweeps: $U/t\in[20,160]$ at fixed
 $V_{\mathrm{SO}}/t=0.7$, and $V_{\mathrm{SO}}/t\in[0,1.5]$ at fixed
 $U/t=75$. Both the original-spin and helicity-band bases are retained,
 and the finite-difference identities used for the derivatives are
-satisfied to residuals of $1.7\times10^{-14}$ or
+satisfied to solver residuals of $3.0\times10^{-14}$ or
 better~\cite{Hutchinson2018}.
 %
 \begin{figure*}[t]
@@ -1246,69 +1292,218 @@ better~\cite{Hutchinson2018}.
     Concurrence and its first and second derivatives along the two
     spin--orbit parameter sweeps, for the original-spin (blue) and
     helicity-band (orange) bases at $r=0.25$, $\theta=0^{\circ}$,
-    $\Delta t/t=4.5$, $n=1.875$, $T=0$, and $N_{k}=201$.
+    $\Delta_t/t=4.5$, $n=1.875$, $T=0$, and periodic $N_{k}=201$.
     Row (a): $C(U)$, $dC/dU$, and $d^{2}C/dU^{2}$ at
-    $V_{\mathrm{SO}}/t=0.7$; the green line marks the Lifshitz crossing
-    $\mu=4t$ at $U/t=118.04$. Row (b): $C(V_{\mathrm{SO}})$,
-    $dC/dV_{\mathrm{SO}}$, and $d^{2}C/dV_{\mathrm{SO}}^{2}$ at
-    $U/t=75$; the green line marks $\mu=4t$ at
-    $V_{\mathrm{SO}}/t=0.549$. All curves are analytic on the sampled
-    grids; no discontinuity accompanies either Lifshitz crossing.
+    $V_{\mathrm{SO}}/t=0.7$; the green dash-dotted line marks the smooth
+    gapped crossover $\mu_{\mathrm{SC}}=4t$ at $U/t=111.68$. Row (b):
+    $C(V_{\mathrm{SO}})$, $dC/dV_{\mathrm{SO}}$, and
+    $d^{2}C/dV_{\mathrm{SO}}^{2}$ at $U/t=75$; green marks
+    $\mu_{\mathrm{SC}}=4t$ at $V_{\mathrm{SO}}/t=0.562$, and dotted
+    purple marks the normal-state Dirac-Lifshitz point $\mu_{N}=4t$ at
+    $V_{\mathrm{SO}}/t=0.694$. All curves are analytic on the sampled
+    grids; no discontinuity accompanies either crossing.
     }
     \label{fig:concurrence_derivatives}
 \end{figure*}
 %
 Figure~\ref{fig:concurrence_derivatives} shows that along the
-interaction sweep the concurrence varies smoothly and weakly: $C$ rises
-from $0.5378$ to $0.5467$ (spin) and from $0.5297$ to $0.5462$ (band)
-over $U/t\in[20,160]$, with $|dC/dU|\leq1.1\times10^{-4}$ and
-$d^{2}C/dU^{2}$ of order $10^{-6}$. The second derivative changes sign
-near $U/t=112$ (spin) and $U/t=90$ (band), close to the Lifshitz
-crossing at $U/t=118.04$, but the response remains analytic. Along the
-spin--orbit sweep the variation is larger: $C$ falls from $0.5461$ to
-$0.5293$ (spin) and from $0.5451$ to $0.5252$ (band) over
-$V_{\mathrm{SO}}/t\in[0,1.5]$, with the steepest descent
-$dC/dV_{\mathrm{SO}}=-0.0155$ (spin) and $-0.0178$ (band) at
-$V_{\mathrm{SO}}/t=0.58$ and $0.60$ and zero crossings of
-$d^{2}C/dV_{\mathrm{SO}}^{2}$ at $0.57$ and $0.59$, both adjacent to
-the Lifshitz value $V_{\mathrm{SO}}/t=0.5487$. The pairing onset at
-$V_{\mathrm{SO}}/t=0.97$ coincides with the broad maximum of
-$d^{2}C/dV_{\mathrm{SO}}^{2}$ near $V_{\mathrm{SO}}/t=1.06$. The
-spin and band curves coincide at $V_{\mathrm{SO}}=0$ and separate
-progressively as the momentum-dependent rotation of
-Eq.~\eqref{eq:helicity_transform} becomes active; the two bases must
-therefore be reported separately for $V_{\mathrm{SO}}\neq0$.
+interaction sweep the concurrence varies smoothly and weakly: $C_{\mathrm{spin}}$
+dips slightly from $0.5413$ at $U/t=20$ to a shallow minimum $0.5402$
+near $U/t=42$ before rising to $0.5504$ at $U/t=160$, whereas
+$C_{\mathrm{band}}$ increases monotonically from $0.5333$ to $0.5498$,
+with $|dC/dU|\leq 1.31\times10^{-4}$ and $|d^{2}C/dU^{2}|\leq 4.9\times10^{-6}$.
+The second derivative crosses zero at $U/t\approx 112.8$ (spin) and
+$90.5$ (band), adjacent to the gapped chemical-potential crossover
+$\mu_{\mathrm{SC}}=4t$ at $U/t=111.68$, while the response remains
+strictly analytic. Along the spin--orbit sweep the variation is larger:
+$C$ decreases smoothly from $0.5498$ to $0.5330$ (spin) and from
+$0.5488$ to $0.5289$ (band) over $V_{\mathrm{SO}}/t\in[0,1.5]$, with
+steepest slopes $dC/dV_{\mathrm{SO}}=-0.0155$ (spin, at $V_{\mathrm{SO}}/t=0.58$)
+and $-0.0178$ (band, at $0.59$) and zero crossings of
+$d^{2}C/dV_{\mathrm{SO}}^{2}$ at $0.577$ and $0.594$, flanking the
+$\mu_{\mathrm{SC}}=4t$ crossover at $V_{\mathrm{SO}}/t=0.5619$. The broad
+extrema of $d^{2}C/dV_{\mathrm{SO}}^{2}$ near $V_{\mathrm{SO}}/t=1.07$
+(spin) and $1.10$ (band) sit near the smooth inflection peak of
+$|\Delta_s(V_{\mathrm{SO}})|$ at $V_{\mathrm{SO}}/t=0.96$ rather than at
+a pairing onset. Even as $V_{\mathrm{SO}}\to 0$, the momentum-dependent
+helicity phase $\theta_{\mathbf{k}}$ in Eq.~\eqref{eq:helicity_transform}
+induces a small basis offset
+($C_{\mathrm{spin}}-C_{\mathrm{band}}\approx 1.0\times10^{-3}$ at
+$r=0.25$, $\Delta_t/t=4.5$), which grows to $4.1\times10^{-3}$ at
+$V_{\mathrm{SO}}/t=1.5$; the two bases must therefore be reported
+separately.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]
+    {figs/concurrence_vso_r_deltat_wick.png}
+    \caption{
+    Systematic basis and parameter comparison for the exact conditional
+    Wick concurrence at $U/t=75$, $n=1.875$, $T=0$, and periodic $N_k=101$:
+    (a) self-consistent gap magnitudes $|\Delta_s|$ (solid) and $|\Delta_0|$
+    (dashed) across $\Delta_t/t\in[3.5,6.0]$; (b) separation dependence
+    $C(V_{\mathrm{SO}})$ at $\Delta_t/t=4.5$, including exact nonzero
+    lattice vectors $\mathbf{r}=(1,0),(1,1),(2,0)$ where $C=0$ throughout;
+    (c) $C_{\mathrm{spin}}$ and $C_{\mathrm{band}}$ at $r=0.25$; (d) basis
+    splitting $10^{3}(C_{\mathrm{spin}}-C_{\mathrm{band}})$; (e) radial decay
+    $C_{\mathrm{spin}}(r)$; and (f) entanglement-death radius
+    $r_c(V_{\mathrm{SO}},\Delta_t)$.
+    }
+    \label{fig:concurrence_vso_r_deltat_wick}
+\end{figure*}
+
+Figure~\ref{fig:concurrence_vso_r_deltat_wick} extends this comparison across
+$\Delta_t/t\in\{3.5,4.0,4.5,5.0,6.0\}$ and spatial separation $r$. Both
+$|\Delta_s|$ and $C$ remain smooth throughout; increasing either $\Delta_t$
+or $V_{\mathrm{SO}}$ reduces the short-range concurrence ($r=0.25$) while
+preserving $C_{\mathrm{spin}} > C_{\mathrm{band}}$ everywhere in this
+high-filling regime (by up to $4.8\times 10^{-3}$ at $\Delta_t/t=6.0$,
+$V_{\mathrm{SO}}/t=1.2$). The entanglement-death radius shrinks smoothly
+from $r_c\approx 0.464a$ ($\Delta_t/t=3.5$, $V_{\mathrm{SO}}=0$) to
+$0.448a$ ($\Delta_t/t=6.0$, $V_{\mathrm{SO}}/t=1.2$), so exact nonzero
+lattice sites such as $\mathbf{r}=(1,0)$ carry $C=0$ across the entire
+sweep. Complementary filling scans at $U/t=75$, $\Delta_t/t=4.5$ show that
+pairing vanishes across intermediate densities: at $V_{\mathrm{SO}}/t=0.5$
+the linearized pair-instability eigenvalue drops below unity between
+$n_{c,1}\approx 0.2192$ and $n_{c,2}\approx 1.0194$, leaving a normal
+Fermi liquid across $0.3\le n\le 1.0$ while the high-density superconducting
+dome ($n > n_{c,2}$, and $n=1.875$ in particular) maintains a robust
+quasiparticle gap. Across $n\ge 1.0$ at $r=0.25$, over $95\%$ of the
+spin concurrence originates from normal-state Fermi-exchange statistics~\cite{Oh2004,Oh2005},
+with superconductivity slightly lowering $C$ primarily via quasiparticle
+Fermi-surface smearing rather than anomalous pairing amplitudes, whereas
+only in the dilute corner ($n\lesssim 0.04$) does anomalous pairing enhance
+lattice-site concurrence above the normal baseline.
 
 \subsection{Quantum phase-transition assessment}
 \label{sec:qpt}
 
-A quantum phase transition requires a nonanalyticity of the ground state
-in the thermodynamic limit, so extrema of the concurrence alone are not
-sufficient evidence, and concurrence features need not coincide with a
-transition~\cite{Yang2004,Osterloh2002}. We therefore test the ground
-state directly. First, along the spin--orbit sweep the chemical potential
-crosses the $(\pi,\pi)$ band edge at $V_{\mathrm{SO}}/t=0.549$, where the
-inner helicity pocket empties: the pocket area vanishes and the density of
-states at the Fermi level shows a kink, while the ground-state energy
-remains continuous with a discontinuous second derivative --- a
-second-order Ehrenfest (Lifshitz) transition that the finite pairing gap
-rounds into a smooth crossover. Second, in the correlated-hopping channel
-the gap opens continuously at $\Delta_t/t=2.52\pm0.03$, with the onset
-converged between $401^2$ and $601^2$ meshes, establishing a second-order
-pairing transition. Third, ascending and descending continuations along
-$V_{\mathrm{SO}}$ agree to machine precision, which excludes branch
-coexistence and hence first-order behavior along this direction; at
-$\Delta_t/t=4.5$ the linearized gap equation keeps its largest eigenvalue
-above unity for the whole sweep, so the pairing onset along
-$V_{\mathrm{SO}}$ at the present parameters is a crossover rather than a
-transition.
+A quantum phase transition requires a true nonanalyticity of the
+many-body state in the thermodynamic limit, so extrema or inflection points
+of the concurrence alone are not sufficient evidence, and concurrence kinks
+need not coincide with a transition~\cite{Osterloh2002,Yang2005,YuEberly2009}.
+To classify physical transitions against smooth crossovers and noncritical
+cutoff effects without relying on any secondary energy functional, we apply
+four direct ground-state and BdG-equation diagnostics~\cite{Hutchinson2018}:
+(i) the normal-state quasiparticle spectrum and inner-pocket area
+at $\mu_N$, (ii) ascending versus descending branch-continuation hysteresis,
+(iii) finite-size scaling of the order-parameter slope $d|\Delta_s|/dV_{\mathrm{SO}}$
+from $N_k=101$ to $401$, and (iv) the linearized pair-instability
+eigenvalue $\lambda_+(T=0.01t)$ governing pairing onset at $\lambda_+=1$.
 
-The system therefore does support quantum phase transitions --- a
-second-order Lifshitz transition and a second-order pairing onset ---
-while the protocol point used throughout this work ($U/t=75$,
-$\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$) lies in a crossover region in
-which every measured observable, including the concurrence of
-Fig.~\ref{fig:concurrence_derivatives}, varies analytically.
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]
+    {figs/qpt_diagnostic_tests.png}
+    \caption{
+    Four non-energy QPT diagnostic tests at $U/t=75$, $n=1.875$, $T=0$:
+    (a) normal-state inner-pocket area (solid green) and Fermi-level DOS
+    $N_N(E_F)$ (dashed blue), showing the normal Dirac-Lifshitz point
+    $\mu_N=4t$ at $V_L/t=0.695$, versus the strictly gapped superconducting
+    excitation gap $\min_{\mathbf{k},s}E_{\mathbf{k}s}\ge 0.94t$ (red);
+    (b)--(c) normal-state Fermi surface before ($V_{\mathrm{SO}}/t=0.50$)
+    and after ($0.84$) $V_L$; (d) ascending minus descending continuation
+    residuals ($\le 1.3\times 10^{-14}$), excluding first-order coexistence;
+    (e) linearized pair-instability eigenvalue $\lambda_+(T=0.01t)\ge 2.89>1$
+    across the whole sweep; and (f) saturation of the $d|\Delta_s|/dV_{\mathrm{SO}}$
+    inflection peak at $1.339763$ ($V_{\mathrm{SO}}/t=0.96$) for $N_k=101,201,401$.
+    }
+    \label{fig:qpt_diagnostics}
+\end{figure*}
+
+Figure~\ref{fig:qpt_diagnostics} summarizes the protocol slice
+($U/t=75$, $\Delta_t/t=4.5$, $n=1.875$). In the normal state ($\Delta_0=\Delta_s=0$),
+the chemical potential crosses the $(\pi,\pi)$ band edge $\mu_N=4t$ at
+$V_L/t=0.6949$: the inner hole pocket empties and the normal-state
+density of states $N_N(E_F)$ exhibits a kink, corresponding to a
+third-order Dirac-cone Lifshitz transition ($N_{\mathrm{cone}}(E)\propto|E-4t|/V_{\mathrm{SO}}^2$).
+In the self-consistent superconducting state at $\Delta_t/t=4.5$, however,
+the quasiparticle spectrum remains fully gapped throughout
+($\min_{\mathbf{k},s}E_{\mathbf{k}s}\ge 0.937t$, rising to $1.440t$ at
+$\mu_{\mathrm{SC}}=4t$ and $1.717t$ at $V_L$), so there is no Fermi
+surface ($N_{\mathrm{SC}}(E_F)=0$) and both $\mu_{\mathrm{SC}}=4t$
+($V_{\mathrm{SO}}/t=0.5619$) and the normal-state Lifshitz point $V_L$ are
+rounded into an analytic gapped crossover. Ascending and descending
+continuations agree to machine precision ($\le 1.33\times 10^{-14}$),
+excluding branch coexistence and first-order hysteresis. Moreover,
+$\lambda_+(T=0.01t)$ stays within $[2.89, 17.39]>1$ everywhere along the
+sweep, and the inflection peak of $d|\Delta_s|/dV_{\mathrm{SO}}$ at
+$V_{\mathrm{SO}}/t=0.96$ saturates identically to $1.339763$ on
+$N_k=101$, $201$, and $401$ meshes, confirming a smooth crossover rather than
+a pairing transition at $\Delta_t/t=4.5$.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]
+    {figs/concurrence_dense_vso_deriv_qpt.png}
+    \caption{
+    Dense-$V_{\mathrm{SO}}$ crossover diagnostics across
+    $\Delta_t/t\in\{3.5,4.0,4.5,5.0,6.0\}$ at $U/t=75$, $n=1.875$, and
+    periodic $N_k=201$ ($\Delta V_{\mathrm{SO}}=0.01t$). Top five rows:
+    smooth $|\Delta_s|$, $d|\Delta_s|/dV_{\mathrm{SO}}$, $\mu/t$, nonzero
+    quasiparticle gap $\min_{\mathbf{k}}E_{\mathbf{k}}/t\ge 0.211$, and
+    analytic $dC/dV_{\mathrm{SO}}$ ($r=0.25$) in both spin and band bases.
+    Bottom row: sharp nonanalyticity in $dC_{\mathrm{legacy}}/dV_{\mathrm{SO}}$
+    at $r=0.50a$ ($\Delta_t/t=3.5,4.0$), produced solely by the Wootters
+    $\max(0,C_{\mathrm{raw}})$ threshold crossing zero inside a smooth
+    gapped state.
+    }
+    \label{fig:concurrence_dense_qpt}
+\end{figure*}
+
+Figure~\ref{fig:concurrence_dense_qpt} confirms this gapped-crossover
+behavior across $\Delta_t/t\in\{3.5,4.0,4.5,5.0,6.0\}$, where
+$\min_{\mathbf{k},s}E_{\mathbf{k}s}/t\ge 0.211$ throughout and every $r=0.25$
+concurrence derivative varies smoothly; the central-mesh concurrence agrees
+between $N_k=201$ and $401$ to $<6\times 10^{-6}$. Genuine continuous
+pairing-onset quantum phase transitions ($\lambda_+=1$, where the 2D BCS
+gap opens with an essential singularity) do occur elsewhere in the phase
+diagram: at $\Delta_{t,c}/t=2.52\pm 0.03$ ($U/t=75$, $V_{\mathrm{SO}}=0$,
+$n=1.875$), at $U_c/t\approx 73.92$ ($n=1.0$, $V_{\mathrm{SO}}/t=0.5$,
+$\Delta_t/t=4.5$) and $V_c/t\approx 0.5322$ ($U/t=75$, $n=1.0$,
+$\Delta_t/t=4.5$), and across filling boundaries $n_{c,1}\approx 0.2192$
+and $n_{c,2}\approx 1.0194$ ($U/t=75$, $\Delta_t/t=4.5$,
+$V_{\mathrm{SO}}/t=0.5$). True normal-state topological transitions also
+occur wherever $\Delta_{\mathbf{k}s}=0$, notably the logarithmic van Hove
+saddles ($n_{\mathrm{vH},\pm}\approx 0.9065, 1.0935$) and the $(\pi,\pi)$
+Dirac-Lifshitz point ($n_{\mathrm{Dirac},4}=1.9290$ at $V_{\mathrm{SO}}/t=0.5$).
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]
+    {research/figs/fig09_task5_decomposition_esd.png}
+    \caption{
+    Physical origin of noncritical concurrence features at periodic
+    $N_k=201$: (a) spatial decay of concurrence at fixed filling ($n=1.0$)
+    showing disappearance by exact lattice site $r=a$; (b) Wootters
+    entanglement sudden-death (ESD) cutoff kinks at $r=0.50a$ ($n=1.4$,
+    $U/t=75$, $\Delta_t/t=4.5$) where the smooth raw eigenvalue combination
+    $C_{\mathrm{raw}}$ (dashed) crosses zero at $V_{\mathrm{SO}}/t\approx 0.81$
+    (spin) and $0.75$ (band) while all BdG order parameters remain analytic;
+    (c) decomposition separating Fermi-surface smearing
+    ($C_{\mathrm{norm\text{-}only}}-C_N$, red) from the anomalous-pairing
+    contribution ($C_{\mathrm{SC}}-C_{\mathrm{norm\text{-}only}}$, blue),
+    confirming that Fermi-step smearing accounts for $>94\%$ of the
+    superconducting change along the $n=1.0$ interaction sweep.
+    }
+    \label{fig:esd_decomposition}
+\end{figure*}
+
+Finally, Figs.~\ref{fig:concurrence_dense_qpt} (bottom row) and
+\ref{fig:esd_decomposition}(b) explain why raw concurrence derivatives can
+exhibit sharp singularities even in the complete absence of a physical
+transition: Wootters clipping $C=\max(0,C_{\mathrm{raw}})$ produces
+slope discontinuities whenever $C_{\mathrm{raw}}$ passes smoothly through
+zero—entanglement sudden death~\cite{YuEberly2009} in parameter space, as
+seen at $r=0.50a$ for $\Delta_t/t=3.5,4.0$ ($n=1.875$) and at
+$V_{\mathrm{SO}}/t\approx 0.81$ (spin) / $0.75$ (band) for $n=1.4$,
+without any singularity in the underlying quantum state. Similarly, on
+fine parameter grids, discrete-$k$ Fermi-surface crossings induce
+stair-step oscillations in numerical second derivatives of normal-state
+concurrence that diminish under $N_k$ refinement. Thus, the protocol point
+used throughout this work ($U/t=75$, $\Delta_t/t=4.5$,
+$V_{\mathrm{SO}}/t=0.5$, $n=1.875$) lies strictly inside a smooth gapped
+superconducting crossover where every physical observable varies analytically.
 
 \subsection{Environment-parameter dependence of the protocols}
 \label{sec:environment_scan}
@@ -1375,8 +1570,8 @@ their table to $\pm0.01$ ($0.268$ versus $0.27$ at $\tau=10$), while
 the standard linear protocol gives $0.577$ on the identical state --
 the difference is the quadratic $p_{i}p_{j}$ output construction of
 their Eqs.~(16)--(19), not the environment. Finite-separation resources
-start below the ideal point (at $r=0.30$: $F=0.801$, $\chi=0.65$ bit,
-$C=0.40$), so for $r\geq0.30$ the dense-coding advantage is absent
+start below the ideal point (at $r=0.30$: $F=0.802$, $\chi=0.65$ bit,
+$C=0.41$), so for $r\geq0.30$ the dense-coding advantage is absent
 before any noise is applied.
 %
 \begin{figure*}[t]
@@ -1441,22 +1636,30 @@ Eq.~\eqref{eq:conditional_rho} produce general two-qubit states in both
 the original-spin and band-pseudospin bases, and are evaluated
 throughout with the general Wootters concurrence together with the
 fixed and optimized teleportation fidelities. All protocol and resource
-figures are regenerated at $V_{\mathrm{SO}}/t=0.5$ from this construction. The environment-parameter
+figures are computed on periodic Brillouin-zone meshes at
+$V_{\mathrm{SO}}/t=0.5$ from this construction, supplemented by explicit
+spin- versus band-basis concurrence comparisons across $(\Delta_t,V_{\mathrm{SO}},r)$.
+The environment-parameter
 figures complete the open-system analysis: in matched regimes the
 dense-coding Holevo dynamics reproduce the exactly solvable two-atom
 benchmark~\cite{Haddadi2023} to within $0.01$ bit, the overdamped limit
 shows the expected fixed-point values, and reservoirs with spectral
 width $\Gamma\lesssim2\gamma$ sustain a measurable advantage up to
 $\tau=30$. The concurrence sweeps against $U$ and $V_{\mathrm{SO}}$
-remain analytic across the Lifshitz point; independent ground-state
-tests place the protocol point in a crossover region while confirming
-second-order quantum phase transitions elsewhere in the phase diagram,
-namely a Lifshitz transition and a pairing onset at
-$\Delta_t/t=2.52\pm0.03$.
+remain analytic across the gapped $\mu_{\mathrm{SC}}=4t$ crossover;
+independent non-energy BdG diagnostics place the protocol point inside a
+fully gapped superconducting crossover ($\min_{\mathbf{k},s}E_{\mathbf{k}s}\ge 0.94t$)
+while identifying genuine continuous pairing transitions ($\lambda_+=1$)
+elsewhere in parameter space---at $\Delta_{t,c}/t=2.52\pm0.03$, at
+$U_c/t\approx 73.9$ and $V_c/t\approx 0.532$ ($n=1.0$), and across
+filling thresholds $n_c\approx \{0.2192, 1.0194\}$---together with
+normal-state Dirac and van Hove Lifshitz transitions, and attributing
+noncritical concurrence spikes to Wootters sudden-death cutoffs and
+finite-grid Fermi-surface discretization.
 
-The principal remaining tasks are a converged nonzero-spin--orbit sweep
-beyond the demonstrated parameter points, a band-basis counterpart of the
-protocol figures, and experimental assumptions for band-basis Bell
+The principal remaining tasks are extending the open-system protocol sweeps
+to the helicity-band basis across the full filling range and specifying
+the experimental readout required for nonlocal helicity-band Bell
 measurements before assigning operational meaning to that basis.
 
 \begin{acknowledgments}
@@ -1495,9 +1698,6 @@ H.-P. Breuer and F. Petruccione, \emph{The Theory of Open Quantum Systems} (Oxfo
 \bibitem{Bellomo2007}
 B. Bellomo, R. Lo Franco, and G. Compagno, Non-Markovian effects on the dynamics of entanglement, Phys.\ Rev.\ Lett.\ \textbf{99}, 160502 (2007).
 
-\bibitem{OhKim2005}
-S.\ Oh and J.\ Kim, Entanglement of electron pairs in a normal-superconductor hybrid system, Phys.\ Rev.\ B \textbf{71}, 144523 (2005).
-
 \bibitem{Hutchinson2018}
 J. Hutchinson, J. E. H. Hirsch, and F. Marsiglio, Enhancement of superconducting $T_{c}$ due to the spin-orbit interaction, Phys.\ Rev.\ B \textbf{97}, 184513 (2018).
 
@@ -1508,10 +1708,13 @@ S. Haddadi, M. Hadipour, S. Haseli, A. U. Rahman, and A. Czerwinski, Quantum adv
 H.-P. Breuer, E.-M. Laine, and J. Piilo, Measure for the degree of non-Markovian behavior of quantum processes in open systems, Phys.\ Rev.\ Lett.\ \textbf{96}, 105701 (2009).
 
 \bibitem{Osterloh2002}
-A. Osterloh, L. Amico, G. Falci, and R. Fazio, Entanglement and quantum phase transitions, Phys.\ Rev.\ Lett.\ \textbf{89}, 087902 (2002).
+A. Osterloh, L. Amico, G. Falci, and R. Fazio, Scaling of entanglement close to a quantum phase transition, Nature \textbf{416}, 608 (2002).
 
-\bibitem{Yang2004}
-M.-F. Yang, Entanglement and quantum phase transition revisited, arXiv:quant-ph/0407226 (2004).
+\bibitem{Yang2005}
+M.-F. Yang, Entanglement and quantum phase transition revisited, Phys.\ Rev.\ A \textbf{71}, 030302(R) (2005).
+
+\bibitem{YuEberly2009}
+T. Yu and J. H. Eberly, Sudden death of entanglement, Science \textbf{323}, 598 (2009).
 
 \end{thebibliography}
 

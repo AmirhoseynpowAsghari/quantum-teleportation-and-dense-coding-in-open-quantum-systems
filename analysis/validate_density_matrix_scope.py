@@ -42,6 +42,14 @@ ARCHIVED = DATA / "hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_greens.
 
 def integral2(values, kx, ky):
     """Use the same Brillouin-zone quadrature as greens_functions.py."""
+    periodic_x = len(kx) > 1 and (kx[-1] - kx[0]) < (2.0 * np.pi - 1e-6)
+    periodic_y = len(ky) > 1 and (ky[-1] - ky[0]) < (2.0 * np.pi - 1e-6)
+    if periodic_x or periodic_y:
+        px_pad = (0, 1) if periodic_x else (0, 0)
+        py_pad = (0, 1) if periodic_y else (0, 0)
+        kx = np.append(kx, kx[0] + 2.0 * np.pi) if periodic_x else kx
+        ky = np.append(ky, ky[0] + 2.0 * np.pi) if periodic_y else ky
+        values = np.pad(values, (py_pad, px_pad), mode="wrap")
     return (simpson(y=simpson(y=values, x=kx, axis=0), x=ky, axis=0)
             / (2.0 * np.pi) ** 2)
 

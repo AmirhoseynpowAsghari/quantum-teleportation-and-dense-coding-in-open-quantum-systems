@@ -75,8 +75,8 @@ U_STYLES = {40.0: "-", 75.0: "--", 115.0: ":"}
 # --------------------------------------------------------------------------- #
 def build_eps(nk: int, vso: float) -> tuple[np.ndarray, np.ndarray,
                                             np.ndarray, np.ndarray]:
-    """Return KX, KY, epsilon_{k,s}, sqrt_sin on an nk x nk grid."""
-    kx = np.linspace(-np.pi, np.pi, nk)
+    """Return KX, KY, epsilon_{k,s}, sqrt_sin on an nk x nk periodic grid."""
+    kx = np.linspace(-np.pi, np.pi, nk, endpoint=False)
     KX, KY = np.meshgrid(kx, kx)
     ssin = np.sqrt(np.sin(KX) ** 2 + np.sin(KY) ** 2)
     band = -2.0 * T_HOP * (np.cos(KX) + np.cos(KY))

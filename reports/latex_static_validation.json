@@ -2,7 +2,7 @@
   "source": "manuscript.tex",
   "compilation_performed": false,
   "check_type": "static source audit only",
-  "label_count": 60,
+  "label_count": 66,
   "duplicate_labels": [],
   "undefined_references": [],
   "citation_key_count": 16,
@@ -28,8 +28,8 @@
       3
     ],
     "figure*": [
-      10,
-      10
+      16,
+      16
     ],
     "table": [
       0,
@@ -51,6 +51,14 @@
     },
     {
       "path": "figs/greens_angular.png",
+      "exists": true
+    },
+    {
+      "path": "figs/helicity_density_matrix_offdiagonal.png",
+      "exists": true
+    },
+    {
+      "path": "figs/helicity_density_matrix_resources.png",
       "exists": true
     },
     {
@@ -87,6 +95,22 @@
     },
     {
       "path": "figs/concurrence_derivatives_u_vso.png",
+      "exists": true
+    },
+    {
+      "path": "figs/concurrence_vso_r_deltat_wick.png",
+      "exists": true
+    },
+    {
+      "path": "figs/qpt_diagnostic_tests.png",
+      "exists": true
+    },
+    {
+      "path": "figs/concurrence_dense_vso_deriv_qpt.png",
+      "exists": true
+    },
+    {
+      "path": "research/figs/fig09_task5_decomposition_esd.png",
       "exists": true
     },
     {
