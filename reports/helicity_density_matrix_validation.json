@@ -1,5 +1,5 @@
 {
-  "repository_commit": "eb29fd167307f7c502341b60bdc1f07e049c98ff",
+  "repository_commit": "c458cba7273ec5a2ae28b05cea237018e51065cf",
   "scope": "Generalized conditional two-qubit matrices; methodological demo, not a production convergence study",
   "source": "Hutchinson--Hirsch--Marsiglio arXiv:1801.08988 Eqs. (16)--(29)",
   "parameters": {

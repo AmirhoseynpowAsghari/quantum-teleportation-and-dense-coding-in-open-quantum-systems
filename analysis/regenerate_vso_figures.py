@@ -98,11 +98,12 @@ def solve(vso: float, U: float, nk: int = NK) -> dict:
 
 
 class States:
-    """Spin-basis conditional states for one BdG solution, N_k/F_k cached."""
+    """Conditional states for one BdG solution, N_k/F_k cached ('spin' or 'band')."""
 
-    def __init__(self, bdg: dict):
+    def __init__(self, bdg: dict, basis: str = "spin"):
         self.bdg = bdg
-        self.N_k, self.F_k = momentum_correlators(bdg, basis="spin")
+        self.basis = basis
+        self.N_k, self.F_k = momentum_correlators(bdg, basis=basis)
         self.weight = float(self.N_k[..., 0, 0].real.mean())  # unused, keep
 
     def correlators(self, r_vec) -> dict:
@@ -306,30 +307,32 @@ def fig3_concurrence_u_theta(U_solutions: dict) -> None:
 
 
 # ---------------------------------------------------------------------------
-# figure 7/8: heatmaps under the high-noise preset
+# figure 7/8: heatmaps under the high-noise preset (spin + helicity band)
 # ---------------------------------------------------------------------------
-def fig7_8_heatmaps(st75: States) -> None:
+def fig7_8_heatmaps(st75_spin: States, st75_band: States) -> None:
     t_grid = T_HEAT
-    rhos, _ = rho_grid(st75, R_GRID, [0.0])            # theta = 0
-    rho0 = rhos[0]
-    for i, rho in enumerate(rho0):
-        check_rho(rho, f"heatmap r={R_GRID[i]:.3f}", {})
-    rho_t = evolve_stack(rho0, t_grid, **HIGH)         # (200,161,4,4)
-    obs = observables(rho_t)
-    # --- concurrence heatmap (custom, mirrors the fidelity style) ---
-    # Display window: the initial concurrence is confined to r <~ 0.5 and
-    # cannot revive beyond it, so only the structured radial range is shown.
+    rhos_s, _ = rho_grid(st75_spin, R_GRID, [0.0])            # theta = 0
+    rhos_b, _ = rho_grid(st75_band, R_GRID, [0.0])
+    rho0_s = rhos_s[0]
+    rho0_b = rhos_b[0]
+    for i, (rs, rb) in enumerate(zip(rho0_s, rho0_b)):
+        check_rho(rs, f"heatmap spin r={R_GRID[i]:.3f}", {})
+        check_rho(rb, f"heatmap band r={R_GRID[i]:.3f}", {})
+    obs_s = observables(evolve_stack(rho0_s, t_grid, **HIGH))     # (200,161)
+    obs_b = observables(evolve_stack(rho0_b, t_grid, **HIGH))
+
+    # --- concurrence heatmap (spin basis, narrow initial window r <= 1.5) ---
     r_mask = R_GRID <= 1.51
     fig, ax = plt.subplots(figsize=(10, 6))
-    im = ax.imshow(obs["C"][r_mask], aspect="auto", origin="lower",
+    im = ax.imshow(obs_s["C"][r_mask], aspect="auto", origin="lower",
                    cmap="RdYlBu_r",
                    extent=[t_grid[0], t_grid[-1],
                            R_GRID[r_mask][0], R_GRID[r_mask][-1]],
                    vmin=0.0, vmax=1.0, interpolation="bilinear")
     levels = np.array([0.1, 0.2, 0.3, 0.5, 0.7])
-    levels = levels[levels <= float(np.nanmax(obs["C"][r_mask]))]
+    levels = levels[levels <= float(np.nanmax(obs_s["C"][r_mask]))]
     if levels.size:
-        cs = ax.contour(t_grid, R_GRID[r_mask], obs["C"][r_mask],
+        cs = ax.contour(t_grid, R_GRID[r_mask], obs_s["C"][r_mask],
                         levels=levels, colors="white", linewidths=0.9)
         ax.clabel(cs, inline=True, fontsize=9, fmt="C=%.2f")
     div = __import__("mpl_toolkits.axes_grid1", fromlist=["make_axes_locatable"])
@@ -343,44 +346,97 @@ def fig7_8_heatmaps(st75: States) -> None:
     fp = FIGURES / f"{HIGH_PREFIX}_C_heatmap.png"
     fig.savefig(fp, dpi=180, bbox_inches="tight")
     plt.close(fig)
-    # --- singlet-fidelity heatmap via the repository's plot style ---
-    import visualize_fidelity as vf
-    vf.plot_fidelity_heatmap(
-        R_GRID, t_grid, obs["Fs"], 0.0, reference_label=r"$\Psi^-$ initial",
-        filename=f"{HIGH_PREFIX}_F_heatmap_singlet.png", show=False)
+
+    # --- singlet-fidelity heatmap: Spin | Helicity Band | Difference ---
+    diff_Fs = obs_s["Fs"] - obs_b["Fs"]
+    dlim = max(float(np.max(np.abs(diff_Fs))), 1e-6)
+    fig, axes = plt.subplots(1, 3, figsize=(15.4, 4.7), constrained_layout=True)
+    panels = (
+        (obs_s["Fs"], "RdYlBu_r", 0.0, 1.0,
+         r"(a) Spin basis $F_{\mathrm{s}}^{\mathrm{spin}}$", r"$F_{\mathrm{s}}$"),
+        (obs_b["Fs"], "RdYlBu_r", 0.0, 1.0,
+         r"(b) Helicity band basis $F_{\mathrm{s}}^{\mathrm{band}}$", r"$F_{\mathrm{s}}$"),
+        (diff_Fs, "coolwarm", -dlim, dlim,
+         r"(c) Difference $F_{\mathrm{s}}^{\mathrm{spin}} - F_{\mathrm{s}}^{\mathrm{band}}$",
+         r"$\Delta F_{\mathrm{s}}$"),
+    )
+    for idx, (arr, cmap, vmin, vmax, title, clabel) in enumerate(panels):
+        ax = axes[idx]
+        im = ax.imshow(arr, aspect="auto", origin="lower", cmap=cmap,
+                       extent=[t_grid[0], t_grid[-1], R_GRID[0], R_GRID[-1]],
+                       vmin=vmin, vmax=vmax, interpolation="bilinear")
+        if idx < 2:
+            cs = ax.contour(t_grid, R_GRID, arr, levels=[0.5, 0.7, 0.8],
+                            colors="white", linewidths=0.8)
+            ax.clabel(cs, inline=True, fontsize=7.5, fmt="F=%.2f")
+        ax.set_title(title, fontsize=10.5)
+        ax.set_xlabel(r"$t$")
+        if idx == 0:
+            ax.set_ylabel(r"$r$")
+        fig.colorbar(im, ax=ax, pad=0.02, label=clabel)
+    fig.suptitle(
+        r"Singlet-referenced fidelity (ref: $\Psi^-$, $\theta=0^\circ$, $\gamma=4.5$, $\Gamma=0.01$)",
+        fontsize=12)
+    fig.savefig(FIGURES / f"{HIGH_PREFIX}_F_heatmap_singlet.png", dpi=180, bbox_inches="tight")
+    plt.close(fig)
+
     # envelope maxima of F_s(0,t) = p(t) (eta_amp_lorentz returns p)
     p = np.array([eta_amp_lorentz(t, **HIGH) for t in t_grid])
     from scipy.signal import argrelmax
     peaks = argrelmax(p)[0]
     report["quoted_numbers"]["F0_envelope"] = [
         {"t": float(t_grid[i]), "F": float(p[i])} for i in peaks]
+    report["quoted_numbers"]["fig8_high_Fs_basis_diff"] = {
+        "max_abs": float(np.max(np.abs(diff_Fs))),
+        "min": float(np.min(diff_Fs)),
+        "max": float(np.max(diff_Fs)),
+    }
     report["figures"][f"figures/{HIGH_PREFIX}_C_heatmap.png"] = "ok"
     report["figures"][f"figures/{HIGH_PREFIX}_F_heatmap_singlet.png"] = "ok"
 
 
 # ---------------------------------------------------------------------------
-# figure 9: F_s vs t at theta=45 for several r (low noise)
+# figure 9: F_s vs t at theta=45 for several r (low noise, spin + band)
 # ---------------------------------------------------------------------------
-def fig9_f_vs_t(st75: States) -> None:
+def fig9_f_vs_t(st75_spin: States, st75_band: States) -> None:
     t_grid = T_FULL
-    fig, ax = plt.subplots(figsize=(7.2, 5.0))
-    quoted = {}
-    for r in R_VS_T:
-        rho0 = st75.rho(r_vec(r, 45.0))
-        check_rho(rho0, f"vs_t r={r}", {})
-        rho_t = evolve_stack(rho0[None], t_grid, **LOW)[0]
-        Fs = observables(rho_t)["Fs"]
-        ax.plot(t_grid, Fs, label=fr"$r={r:.5g}$".replace(".0$", ""))
-        quoted[f"{r:g}"] = float(Fs[0])
+    fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(12.2, 4.8), constrained_layout=True)
+    colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
+    quoted = {"spin": {}, "band": {}, "max_abs_diff": {}}
+    for ir, r in enumerate(R_VS_T):
+        col = colors[ir % len(colors)]
+        rho0_s = st75_spin.rho(r_vec(r, 45.0))
+        rho0_b = st75_band.rho(r_vec(r, 45.0))
+        check_rho(rho0_s, f"vs_t spin r={r}", {})
+        check_rho(rho0_b, f"vs_t band r={r}", {})
+        Fs_s = observables(evolve_stack(rho0_s[None], t_grid, **LOW)[0])["Fs"]
+        Fs_b = observables(evolve_stack(rho0_b[None], t_grid, **LOW)[0])["Fs"]
+        lbl = fr"$r={r:.5g}$".replace(".0$", "")
+        ax0.plot(t_grid, Fs_s, color=col, lw=1.8, label=lbl)
+        ax0.plot(t_grid, Fs_b, color=col, lw=1.5, ls="--")
+        ax1.plot(t_grid, Fs_s - Fs_b, color=col, lw=1.6, label=lbl)
+        quoted["spin"][f"{r:g}"] = float(Fs_s[0])
+        quoted["band"][f"{r:g}"] = float(Fs_b[0])
+        quoted["max_abs_diff"][f"{r:g}"] = float(np.max(np.abs(Fs_s - Fs_b)))
     for y in (0.5, 0.7, 0.8, 0.9):
-        ax.axhline(y, color="gray", ls="--", lw=0.7)
-    ax.set_xlabel(r"$t$")
-    ax.set_ylabel(r"$\mathcal{F}_{\Psi^-}(r,45^\circ,t)$")
-    ax.set_xlim(t_grid[0], t_grid[-1])
-    ax.set_ylim(0, 1.02)
-    ax.grid(alpha=0.25)
-    ax.legend(fontsize=8)
-    fig.tight_layout()
+        ax0.axhline(y, color="gray", ls=":", lw=0.7)
+    ax0.plot([], [], color="black", lw=1.6, ls="-", label="spin")
+    ax0.plot([], [], color="black", lw=1.6, ls="--", label="band")
+    ax0.set_title(r"(a) Singlet fidelity $F_{\mathrm{s}}(r,45^\circ,t)$")
+    ax0.set_xlabel(r"$t$")
+    ax0.set_ylabel(r"$\mathcal{F}_{\Psi^-}(r,45^\circ,t)$")
+    ax0.set_xlim(t_grid[0], t_grid[-1])
+    ax0.set_ylim(0, 1.02)
+    ax0.grid(alpha=0.25)
+    ax0.legend(fontsize=8, ncol=2)
+
+    ax1.axhline(0.0, color="gray", ls=":", lw=0.8)
+    ax1.set_title(r"(b) Basis difference $F_{\mathrm{s}}^{\mathrm{spin}}-F_{\mathrm{s}}^{\mathrm{band}}$")
+    ax1.set_xlabel(r"$t$")
+    ax1.set_ylabel(r"$F_{\mathrm{s}}^{\mathrm{spin}} - F_{\mathrm{s}}^{\mathrm{band}}$")
+    ax1.set_xlim(t_grid[0], t_grid[-1])
+    ax1.grid(alpha=0.25)
+    ax1.legend(fontsize=8)
     fp = FIGURES / f"{LOW_PREFIX}_F_vs_t_singlet.png"
     fig.savefig(fp, dpi=180, bbox_inches="tight")
     plt.close(fig)
@@ -389,71 +445,125 @@ def fig9_f_vs_t(st75: States) -> None:
 
 
 # ---------------------------------------------------------------------------
-# figure 10: polar initial singlet fraction
+# figure 10: polar initial singlet fraction (spin + helicity band)
 # ---------------------------------------------------------------------------
-def fig10_f_polar(st75: States) -> None:
-    thetas = np.deg2rad(np.arange(0.0, 90.0 + 1e-9, 15.0))
-    fig, ax = plt.subplots(figsize=(6.4, 5.4), subplot_kw={"projection": "polar"})
-    quoted = {}
-    for r in R_POLAR:
-        Fs = []
-        for th in thetas:
-            rho0 = st75.rho(r_vec(r, np.rad2deg(th)))
-            Fs.append(float(np.real(SINGLET.conj() @ rho0 @ SINGLET)))
-        Fs = np.array(Fs)
-        ax.plot(thetas, Fs, label=fr"$r={r:.5g}$")
-        quoted[f"{r:g}"] = {"min": float(Fs.min()), "max": float(Fs.max()),
-                            "values": [round(float(v), 5) for v in Fs]}
-    ax.set_theta_zero_location("N")
-    ax.set_theta_direction(-1)
-    ax.set_thetamax(90)
-    ax.set_ylim(0, 1.02)
-    ax.legend(loc="upper right", bbox_to_anchor=(1.25, 1.1), fontsize=8)
+def fig10_f_polar(st75_spin: States, st75_band: States) -> None:
+    thetas_deg = np.arange(0.0, 90.0 + 1e-9, 15.0)
+    thetas = np.deg2rad(thetas_deg)
+    fig = plt.figure(figsize=(12.2, 5.0))
+    ax0 = fig.add_subplot(1, 2, 1, projection="polar")
+    ax1 = fig.add_subplot(1, 2, 2)
+    colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
+    quoted = {"spin": {}, "band": {}}
+    for ir, r in enumerate(R_POLAR):
+        col = colors[ir % len(colors)]
+        Fs_s = np.array([
+            float(np.real(SINGLET.conj() @ st75_spin.rho(r_vec(r, d)) @ SINGLET))
+            for d in thetas_deg
+        ])
+        Fs_b = np.array([
+            float(np.real(SINGLET.conj() @ st75_band.rho(r_vec(r, d)) @ SINGLET))
+            for d in thetas_deg
+        ])
+        ax0.plot(thetas, Fs_s, color=col, lw=1.8, label=fr"$r={r:.5g}$")
+        ax0.plot(thetas, Fs_b, color=col, lw=1.5, ls="--")
+        if r > 0.0:
+            ax1.plot(thetas_deg, Fs_s, color=col, lw=1.8, marker="o", ms=4.5,
+                     label=fr"$r={r:.5g}$")
+            ax1.plot(thetas_deg, Fs_b, color=col, lw=1.5, ls="--", marker="s", ms=4.0)
+        quoted["spin"][f"{r:g}"] = {
+            "min": float(Fs_s.min()), "max": float(Fs_s.max()),
+            "values": [round(float(v), 5) for v in Fs_s],
+        }
+        quoted["band"][f"{r:g}"] = {
+            "min": float(Fs_b.min()), "max": float(Fs_b.max()),
+            "values": [round(float(v), 5) for v in Fs_b],
+        }
+    ax0.plot([], [], color="black", lw=1.6, ls="-", label="spin")
+    ax0.plot([], [], color="black", lw=1.6, ls="--", label="band")
+    ax0.set_theta_zero_location("N")
+    ax0.set_theta_direction(-1)
+    ax0.set_thetamax(90)
+    ax0.set_ylim(0, 1.02)
+    ax0.set_title("(a) Polar view (first quadrant)", pad=14)
+    ax0.legend(loc="upper right", bbox_to_anchor=(1.30, 1.08), fontsize=8)
+
+    ax1.axhline(0.25, color="gray", lw=0.8, ls=":")
+    ax1.plot([], [], color="black", lw=1.6, ls="-", marker="o", ms=4.5, label="spin")
+    ax1.plot([], [], color="black", lw=1.5, ls="--", marker="s", ms=4.0, label="band")
+    ax1.set_title(r"(b) Finite-$r$ zoom: spin vs. helicity band")
+    ax1.set_xlabel(r"$\theta$ [deg]")
+    ax1.set_ylabel(r"$F_{\mathrm{s}}(r,\theta,0)$")
+    ax1.set_xticks(thetas_deg)
+    ax1.set_xlim(0, 90)
+    ax1.grid(alpha=0.25)
+    ax1.legend(fontsize=8, ncol=2)
+    fig.tight_layout()
     fp = FIGURES / f"{LOW_PREFIX}_F_polar_singlet.png"
     fig.savefig(fp, dpi=180, bbox_inches="tight")
     plt.close(fig)
     # angular-symmetry checks quoted in the manuscript text
-    sym = {}
-    for r in (3.3166, 6.6332, 10.0):
-        vals = {d: float(np.real(SINGLET.conj()
-                @ st75.rho(r_vec(r, d)) @ SINGLET)) for d in
-                (0, 15, 30, 45, 60, 75, 90)}
-        sym[f"{r:g}"] = vals
-        sym[f"{r:g}_sym_err"] = max(
-            abs(vals[0] - vals[90]), abs(vals[15] - vals[75]),
-            abs(vals[30] - vals[60]))
+    sym = {"spin": {}, "band": {}}
+    for bname, st in (("spin", st75_spin), ("band", st75_band)):
+        for r in (3.3166, 6.6332, 10.0):
+            vals = {d: float(np.real(SINGLET.conj()
+                    @ st.rho(r_vec(r, d)) @ SINGLET)) for d in
+                    (0, 15, 30, 45, 60, 75, 90)}
+            sym[bname][f"{r:g}"] = vals
+            sym[bname][f"{r:g}_sym_err"] = max(
+                abs(vals[0] - vals[90]), abs(vals[15] - vals[75]),
+                abs(vals[30] - vals[60]))
     report["quoted_numbers"]["fig10_polar"] = quoted
     report["quoted_numbers"]["fig10_symmetry"] = sym
     report["figures"][f"figures/{LOW_PREFIX}_F_polar_singlet.png"] = "ok"
 
 
 # ---------------------------------------------------------------------------
-# figure 11: chi vs r at six times (low noise, theta=45)
+# figure 11: chi vs r at six times (low noise, theta=45, spin + band)
 # ---------------------------------------------------------------------------
-def fig11_holevo_vs_r(st75: States) -> None:
+def fig11_holevo_vs_r(st75_spin: States, st75_band: States) -> None:
     t_grid = T_FULL
     times = [0, 16, 32, 48, 64, 80]
-    rhos, _ = rho_grid(st75, R_GRID, [45.0])
-    rho0 = rhos[0]
-    rho_t = evolve_stack(rho0, t_grid, **LOW)           # (200,261,4,4)
-    obs = observables(rho_t)
-    fig, ax = plt.subplots(figsize=(7.2, 5.0))
-    quoted = {}
-    for tv in times:
+    rhos_s, _ = rho_grid(st75_spin, R_GRID, [45.0])
+    rhos_b, _ = rho_grid(st75_band, R_GRID, [45.0])
+    obs_s = observables(evolve_stack(rhos_s[0], t_grid, **LOW))
+    obs_b = observables(evolve_stack(rhos_b[0], t_grid, **LOW))
+    fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(12.4, 4.8), constrained_layout=True)
+    colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
+    quoted = {"spin": {}, "band": {}, "band_minus_spin_r10_t0": float(obs_b["chi"][-1, 0] - obs_s["chi"][-1, 0])}
+    for idx, tv in enumerate(times):
+        col = colors[idx % len(colors)]
         it = int(np.argmin(np.abs(t_grid - tv)))
-        ax.plot(R_GRID, obs["chi"][:, it], label=fr"$t={t_grid[it]:g}$")
-    for tv in (16,):
+        ax0.plot(R_GRID, obs_s["chi"][:, it], color=col, lw=1.8,
+                 label=fr"$t={t_grid[it]:g}$")
+        ax0.plot(R_GRID, obs_b["chi"][:, it], color=col, lw=1.5, ls="--")
+        ax1.plot(R_GRID, obs_b["chi"][:, it] - obs_s["chi"][:, it],
+                 color=col, lw=1.6, label=fr"$t={t_grid[it]:g}$")
+    for tv in (0, 16):
         it = int(np.argmin(np.abs(t_grid - tv)))
-        quoted[f"t={tv}"] = [float(obs["chi"][:, it].min()),
-                             float(obs["chi"][:, it].max())]
-    ax.axhline(1.0, color="gray", ls="--", lw=0.8)
-    ax.set_xlabel(r"$r$")
-    ax.set_ylabel(r"$\chi_{\mathrm{P}}(r,45^\circ,t)$ [bits]")
-    ax.set_xlim(R_GRID[0], R_GRID[-1])
-    ax.set_ylim(0, 2.05)
-    ax.grid(alpha=0.25)
-    ax.legend(fontsize=8)
-    fig.tight_layout()
+        quoted["spin"][f"t={tv}"] = [float(obs_s["chi"][:, it].min()),
+                                     float(obs_s["chi"][:, it].max())]
+        quoted["band"][f"t={tv}"] = [float(obs_b["chi"][:, it].min()),
+                                     float(obs_b["chi"][:, it].max())]
+    quoted["max_abs_diff"] = float(np.max(np.abs(obs_b["chi"] - obs_s["chi"])))
+    ax0.axhline(1.0, color="gray", ls=":", lw=0.8)
+    ax0.plot([], [], color="black", lw=1.6, ls="-", label="spin")
+    ax0.plot([], [], color="black", lw=1.6, ls="--", label="band")
+    ax0.set_title(r"(a) Pauli Holevo $\chi_{\mathrm{P}}(r,45^\circ,t)$")
+    ax0.set_xlabel(r"$r$")
+    ax0.set_ylabel(r"$\chi_{\mathrm{P}}(r,45^\circ,t)$ [bits]")
+    ax0.set_xlim(R_GRID[0], R_GRID[-1])
+    ax0.set_ylim(0, 2.05)
+    ax0.grid(alpha=0.25)
+    ax0.legend(fontsize=8, ncol=2)
+
+    ax1.axhline(0.0, color="gray", ls=":", lw=0.8)
+    ax1.set_title(r"(b) Basis difference $\chi_{\mathrm{P}}^{\mathrm{band}}-\chi_{\mathrm{P}}^{\mathrm{spin}}$")
+    ax1.set_xlabel(r"$r$")
+    ax1.set_ylabel(r"$\chi_{\mathrm{P}}^{\mathrm{band}} - \chi_{\mathrm{P}}^{\mathrm{spin}}$ [bits]")
+    ax1.set_xlim(R_GRID[0], R_GRID[-1])
+    ax1.grid(alpha=0.25)
+    ax1.legend(fontsize=8, ncol=2)
     fp = FIGURES / f"{LOW_PREFIX}_holevo_vs_r.png"
     fig.savefig(fp, dpi=180, bbox_inches="tight")
     plt.close(fig)
@@ -462,69 +572,112 @@ def fig11_holevo_vs_r(st75: States) -> None:
 
 
 # ---------------------------------------------------------------------------
-# figure 12: chi(theta, t) at r=0 (low noise)
+# figure 12: chi(theta, t) at r=0 (spin vs band) + finite-r diff at r=0.5025
 # ---------------------------------------------------------------------------
-def fig12_holevo_theta_t(st75: States) -> None:
+def fig12_holevo_theta_t(st75_spin: States, st75_band: States) -> None:
     t_grid = T_FULL
-    rows = []
+    r_finite = float(R_GRID[int(np.argmin(np.abs(R_GRID - 0.50251)))])
+    rows_s0, rows_b0 = [], []
+    rows_sf, rows_bf = [], []
     for th in THETA_DEG:
-        rho0 = st75.rho(r_vec(0.0, th))
-        rho_t = evolve_stack(rho0[None], t_grid, **LOW)[0]
-        rows.append(observables(rho_t)["chi"])
-    chi = np.array(rows)                                # (7, 261)
-    row_ptp = float(np.max(np.ptp(chi, axis=0)))
-    fig, ax = plt.subplots(figsize=(10, 4.6))
-    im = ax.imshow(chi, aspect="auto", origin="lower", cmap="RdYlBu_r",
-                   extent=[t_grid[0], t_grid[-1], -0.5, 6.5],
-                   vmin=0.0, vmax=2.0, interpolation="bilinear")
-    ax.set_yticks(range(7))
-    ax.set_yticklabels([fr"${d}^\circ$" for d in THETA_DEG])
-    ax.set_xlabel(r"$t$")
-    ax.set_ylabel(r"$\theta$")
-    div = __import__("mpl_toolkits.axes_grid1", fromlist=["make_axes_locatable"])
-    cax = div.make_axes_locatable(ax).append_axes("right", size="3%", pad=0.08)
-    cb = plt.colorbar(im, cax=cax)
-    cb.set_label(r"$\chi_{\mathrm{P}}(\theta, r=0, t)$ [bits]")
-    fig.tight_layout()
+        rho_s0 = st75_spin.rho(r_vec(0.0, th))
+        rho_b0 = st75_band.rho(r_vec(0.0, th))
+        rho_sf = st75_spin.rho(r_vec(r_finite, th))
+        rho_bf = st75_band.rho(r_vec(r_finite, th))
+        rows_s0.append(observables(evolve_stack(rho_s0[None], t_grid, **LOW)[0])["chi"])
+        rows_b0.append(observables(evolve_stack(rho_b0[None], t_grid, **LOW)[0])["chi"])
+        rows_sf.append(observables(evolve_stack(rho_sf[None], t_grid, **LOW)[0])["chi"])
+        rows_bf.append(observables(evolve_stack(rho_bf[None], t_grid, **LOW)[0])["chi"])
+    chi_s0 = np.array(rows_s0)
+    chi_b0 = np.array(rows_b0)
+    diff_f = np.array(rows_bf) - np.array(rows_sf)
+    row_ptp = float(max(np.max(np.ptp(chi_s0, axis=0)), np.max(np.ptp(chi_b0, axis=0))))
+    r0_basis_diff = float(np.max(np.abs(chi_b0 - chi_s0)))
+    dlim = max(float(np.max(np.abs(diff_f))), 1e-6)
+
+    fig, axes = plt.subplots(1, 3, figsize=(15.5, 4.5), constrained_layout=True)
+    specs = (
+        (chi_s0, "RdYlBu_r", 0.0, 2.0,
+         r"(a) Spin basis $\chi_{\mathrm{P}}^{\mathrm{spin}}(\theta,r=0,t)$",
+         r"$\chi_{\mathrm{P}}$ [bits]"),
+        (chi_b0, "RdYlBu_r", 0.0, 2.0,
+         r"(b) Helicity band basis $\chi_{\mathrm{P}}^{\mathrm{band}}(\theta,r=0,t)$",
+         r"$\chi_{\mathrm{P}}$ [bits]"),
+        (diff_f, "coolwarm", -dlim, dlim,
+         fr"(c) $\chi_{{\mathrm{{P}}}}^{{\mathrm{{band}}}}-\chi_{{\mathrm{{P}}}}^{{\mathrm{{spin}}}}$ at $r={r_finite:.3f}$",
+         r"$\Delta\chi_{\mathrm{P}}$ [bits]"),
+    )
+    for idx, (arr, cmap, vmin, vmax, title, clabel) in enumerate(specs):
+        ax = axes[idx]
+        im = ax.imshow(arr, aspect="auto", origin="lower", cmap=cmap,
+                       extent=[t_grid[0], t_grid[-1], -0.5, 6.5],
+                       vmin=vmin, vmax=vmax, interpolation="bilinear")
+        ax.set_yticks(range(7))
+        ax.set_yticklabels([fr"${d}^\circ$" for d in THETA_DEG])
+        ax.set_xlabel(r"$t$")
+        if idx == 0:
+            ax.set_ylabel(r"$\theta$")
+        ax.set_title(title, fontsize=10.5)
+        fig.colorbar(im, ax=ax, pad=0.02, label=clabel)
     fp = FIGURES / f"{LOW_PREFIX}_holevo_theta_t_heatmap.png"
     fig.savefig(fp, dpi=180, bbox_inches="tight")
     plt.close(fig)
     report["validation"]["fig12_r0_row_ptp"] = row_ptp
+    report["validation"]["fig12_r0_spin_band_max_diff"] = r0_basis_diff
+    report["quoted_numbers"]["fig12_finite_r_diff"] = {
+        "r": r_finite,
+        "max_abs_diff": float(np.max(np.abs(diff_f))),
+        "min_diff": float(np.min(diff_f)),
+        "max_diff": float(np.max(diff_f)),
+    }
     report["figures"][f"figures/{LOW_PREFIX}_holevo_theta_t_heatmap.png"] = "ok"
 
 
 # ---------------------------------------------------------------------------
-# figure 13: U sweep of F_s and chi (low noise)
+# figure 13: U sweep of F_s and chi (low noise, spin + helicity band)
 # ---------------------------------------------------------------------------
 def fig13_u_sweep() -> None:
     t_grid = T_FULL
     nU, nth, nr, nt = len(U_SWEEP), len(THETA_DEG), len(R_GRID), len(t_grid)
-    C = np.empty((nU, nth, nr, nt))
-    Fs = np.empty_like(C)
-    chi = np.empty_like(C)
-    quoted = {}
+    C_s = np.empty((nU, nth, nr, nt))
+    Fs_s = np.empty_like(C_s)
+    chi_s = np.empty_like(C_s)
+    C_b = np.empty_like(C_s)
+    Fs_b = np.empty_like(C_s)
+    chi_b = np.empty_like(C_s)
+    quoted = {"spin": {}, "band": {}}
     i_r050 = int(np.argmin(np.abs(R_GRID - 0.50251)))
     i_r150 = int(np.argmin(np.abs(R_GRID - 1.50754)))
     i_th45 = THETA_DEG.index(45)
     for iU, U in enumerate(U_SWEEP):
-        st = States(solve(VSO, U))
-        rhos, _ = rho_grid(st, R_GRID, THETA_DEG)
-        rho_t = evolve_stack(rhos.reshape(-1, 4, 4), t_grid, **LOW)
-        obs = observables(rho_t)
-        for key, dst in (("C", C), ("Fs", Fs), ("chi", chi)):
-            dst[iU] = obs[key].reshape(nth, nr, nt)
-        quoted[str(U)] = {
-            "Fs_r0p50251": float(Fs[iU, i_th45, i_r050, 0]),
-            "chi_r0p50251": float(chi[iU, i_th45, i_r050, 0]),
-            "Fs_r1p50754": float(Fs[iU, i_th45, i_r150, 0]),
-            "chi_r1p50754": float(chi[iU, i_th45, i_r150, 0])}
-    rv.plot_U_sweep(U_SWEEP, R_GRID, t_grid, C, Fs, chi)
+        bdg = solve(VSO, U)
+        for bname, C_dst, Fs_dst, chi_dst in (
+            ("spin", C_s, Fs_s, chi_s),
+            ("band", C_b, Fs_b, chi_b),
+        ):
+            st = States(bdg, basis=bname)
+            rhos, _ = rho_grid(st, R_GRID, THETA_DEG)
+            rho_t = evolve_stack(rhos.reshape(-1, 4, 4), t_grid, **LOW)
+            obs = observables(rho_t)
+            for key, dst in (("C", C_dst), ("Fs", Fs_dst), ("chi", chi_dst)):
+                dst[iU] = obs[key].reshape(nth, nr, nt)
+            quoted[bname][str(U)] = {
+                "Fs_r0p50251": float(Fs_dst[iU, i_th45, i_r050, 0]),
+                "chi_r0p50251": float(chi_dst[iU, i_th45, i_r050, 0]),
+                "Fs_r1p50754": float(Fs_dst[iU, i_th45, i_r150, 0]),
+                "chi_r1p50754": float(chi_dst[iU, i_th45, i_r150, 0]),
+                "Fs_r10_t0": float(Fs_dst[iU, i_th45, -1, 0]),
+                "chi_r10_t0": float(chi_dst[iU, i_th45, -1, 0]),
+            }
+    rv.plot_U_sweep(U_SWEEP, R_GRID, t_grid, C_s, Fs_s, chi_s,
+                    Fs_band=Fs_b, chi_band=chi_b)
     report["quoted_numbers"]["fig13_U_sweep"] = quoted
     report["figures"]["figs/U_dependence_fidelity_holevo.png"] = "ok"
     np.savez_compressed(
         DATA / "vso0p5_regeneration.npz",
         r=R_GRID, theta_deg=np.array(THETA_DEG), t=t_grid,
-        Fs_u_sweep=Fs, chi_u_sweep=chi, C_u_sweep=C)
+        Fs_u_sweep=Fs_s, chi_u_sweep=chi_s, C_u_sweep=C_s,
+        Fs_u_sweep_band=Fs_b, chi_u_sweep_band=chi_b, C_u_sweep_band=C_b)
 
 
 # ---------------------------------------------------------------------------
@@ -610,26 +763,27 @@ def fig_claims(U_solutions: dict, st75: States) -> None:
 def main() -> None:
     print(f"[regen] solving BdG at V_SO/t={VSO}, Nk={NK} ...")
     solutions = fig1_delta_heatmaps()          # U = 40, 75, 115
-    st75 = States(solutions[75]["bdg"])
+    st75 = States(solutions[75]["bdg"], basis="spin")
+    st75_band = States(solutions[75]["bdg"], basis="band")
     print("[regen] fig2 greens_angular")
     fig2_greens_angular(st75)
     print("[regen] fig3 concurrence_U_theta (4 U solves)")
     U_sol = {75: st75}
     for U in U_THETA:
         if U not in U_sol:
-            U_sol[U] = States(solve(VSO, U))
+            U_sol[U] = States(solve(VSO, U), basis="spin")
     fig3_concurrence_u_theta(U_sol)
-    print("[regen] figs7-8 heatmaps (high noise)")
-    fig7_8_heatmaps(st75)
-    print("[regen] fig9 F_vs_t")
-    fig9_f_vs_t(st75)
-    print("[regen] fig10 polar")
-    fig10_f_polar(st75)
-    print("[regen] fig11 holevo_vs_r")
-    fig11_holevo_vs_r(st75)
-    print("[regen] fig12 holevo_theta_t")
-    fig12_holevo_theta_t(st75)
-    print("[regen] fig13 U sweep (3 solves)")
+    print("[regen] figs7-8 heatmaps (high noise, spin + band)")
+    fig7_8_heatmaps(st75, st75_band)
+    print("[regen] fig9 F_vs_t (spin + band)")
+    fig9_f_vs_t(st75, st75_band)
+    print("[regen] fig10 polar (spin + band)")
+    fig10_f_polar(st75, st75_band)
+    print("[regen] fig11 holevo_vs_r (spin + band)")
+    fig11_holevo_vs_r(st75, st75_band)
+    print("[regen] fig12 holevo_theta_t (spin + band)")
+    fig12_holevo_theta_t(st75, st75_band)
+    print("[regen] fig13 U sweep (3 solves, spin + band)")
     fig13_u_sweep()
     print("[regen] fig3/fig2 claim extraction")
     fig_claims(U_sol, st75)

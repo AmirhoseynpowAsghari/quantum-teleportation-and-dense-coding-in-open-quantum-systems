@@ -229,31 +229,61 @@ def plot_concurrence_U_theta(solutions):
     plt.close(fig)
 
 
-def plot_U_sweep(U_values, r, t_grid, C, Fs, chi):
+def plot_U_sweep(U_values, r, t_grid, C, Fs, chi,
+                 Fs_band=None, chi_band=None):
     ir = int(np.argmin(np.abs(r-1.5)))
     ith = 3  # 45 degrees, matching the low-noise radial and temporal figures.
-    fig, axes = plt.subplots(2, 2, figsize=(11, 7.5), constrained_layout=True)
+    has_band = (Fs_band is not None) and (chi_band is not None)
+    nrows = 3 if has_band else 2
+    fig, axes = plt.subplots(
+        nrows, 2, figsize=(11.5, 3.55 * nrows), constrained_layout=True
+    )
+    colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
     for iU, U in enumerate(U_values):
+        col = colors[iU % len(colors)]
         label = fr"$U/t={U:g}$"
-        axes[0, 0].plot(r, Fs[iU, ith, :, 0], label=label)
-        axes[0, 1].plot(r, chi[iU, ith, :, 0], label=label)
-        axes[1, 0].plot(t_grid, Fs[iU, ith, ir, :], label=label)
-        axes[1, 1].plot(t_grid, chi[iU, ith, ir, :], label=label)
-    axes[0, 0].set_ylabel(r"$\mathcal{F}_{\Psi^-}(r,45^\circ,0)$")
-    axes[0, 1].set_ylabel(r"$\chi(r,45^\circ,0)$ [bits]")
-    axes[1, 0].set_ylabel(fr"$\mathcal{{F}}_{{\Psi^-}}(r={r[ir]:.2f},45^\circ,t)$")
-    axes[1, 1].set_ylabel(fr"$\chi(r={r[ir]:.2f},45^\circ,t)$ [bits]")
+        axes[0, 0].plot(r, Fs[iU, ith, :, 0], color=col, lw=1.8, label=label)
+        axes[0, 1].plot(r, chi[iU, ith, :, 0], color=col, lw=1.8, label=label)
+        axes[1, 0].plot(t_grid, Fs[iU, ith, ir, :], color=col, lw=1.8, label=label)
+        axes[1, 1].plot(t_grid, chi[iU, ith, ir, :], color=col, lw=1.8, label=label)
+        if has_band:
+            axes[0, 0].plot(r, Fs_band[iU, ith, :, 0], color=col, lw=1.6, ls="--")
+            axes[0, 1].plot(r, chi_band[iU, ith, :, 0], color=col, lw=1.6, ls="--")
+            axes[1, 0].plot(t_grid, Fs_band[iU, ith, ir, :], color=col, lw=1.6, ls="--")
+            axes[1, 1].plot(t_grid, chi_band[iU, ith, ir, :], color=col, lw=1.6, ls="--")
+            axes[2, 0].plot(r, Fs[iU, ith, :, 0] - Fs_band[iU, ith, :, 0],
+                            color=col, lw=1.7, label=label)
+            axes[2, 1].plot(t_grid, chi_band[iU, ith, ir, :] - chi[iU, ith, ir, :],
+                            color=col, lw=1.7, label=label)
+
+    axes[0, 0].set_ylabel(r"$F_{\mathrm{s}}(r,45^\circ,0)$")
+    axes[0, 1].set_ylabel(r"$\chi_{\mathrm{P}}(r,45^\circ,0)$ [bits]")
+    axes[1, 0].set_ylabel(fr"$F_{{\mathrm{{s}}}}(r={r[ir]:.2f},45^\circ,t)$")
+    axes[1, 1].set_ylabel(fr"$\chi_{{\mathrm{{P}}}}(r={r[ir]:.2f},45^\circ,t)$ [bits]")
     axes[1, 0].set_ylim(0, 1.02)
     axes[1, 1].set_ylim(0, 2.02)
-    for ax in axes.flat:
-        ax.grid(alpha=0.25)
-        ax.legend()
+    if has_band:
+        for ax in (axes[0, 0], axes[0, 1], axes[1, 0], axes[1, 1]):
+            ax.plot([], [], color="black", lw=1.6, ls="-", label="spin")
+            ax.plot([], [], color="black", lw=1.6, ls="--", label="band")
+        axes[2, 0].axhline(0.0, color="gray", lw=0.8, ls=":")
+        axes[2, 1].axhline(0.0, color="gray", lw=0.8, ls=":")
+        axes[2, 0].set_ylabel(r"$F_{\mathrm{s}}^{\mathrm{spin}}-F_{\mathrm{s}}^{\mathrm{band}}$ ($t=0$)")
+        axes[2, 1].set_ylabel(fr"$\chi_{{\mathrm{{P}}}}^{{\mathrm{{band}}}}-\chi_{{\mathrm{{P}}}}^{{\mathrm{{spin}}}}$ ($r={r[ir]:.2f}$)")
+        axes[2, 0].set_xlabel(r"$r$")
+        axes[2, 0].set_xlim(0, 6)
+        axes[2, 1].set_xlabel(r"$t$")
+        axes[2, 1].set_xlim(t_grid[0], t_grid[-1])
+    else:
+        for ax in axes[1]:
+            ax.set_xlabel(r"$t$")
+            ax.set_xlim(t_grid[0], t_grid[-1])
     for ax in axes[0]:
         ax.set_xlabel(r"$r$")
         ax.set_xlim(0, 6)
-    for ax in axes[1]:
-        ax.set_xlabel(r"$t$")
-        ax.set_xlim(t_grid[0], t_grid[-1])
+    for ax in axes.flat:
+        ax.grid(alpha=0.25)
+        ax.legend(fontsize=8.5, ncol=2 if has_band else 1)
     fig.savefig(FIGS / "U_dependence_fidelity_holevo.png", dpi=180,
                 bbox_inches="tight")
     plt.close(fig)
