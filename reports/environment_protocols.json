@@ -30,7 +30,7 @@
   "model": {
     "U_over_t": 75.0,
     "V_SO_over_t": 0.5,
-    "state_construction": "helicity conditional Wick, spin basis",
+    "state_construction": "helicity conditional Wick, spin + band bases",
     "Nk": 400,
     "theta_deg": [
       45.0
@@ -43,13 +43,13 @@
       "fixed_average_fidelity": 0.9999999999999999,
       "optimized_average_fidelity": 1.0,
       "holevo_pauli_bits": 1.9999999999999987,
-      "concurrence": 1.0
+      "concurrence": 0.9999999999999998
     },
     "0.30": {
       "fixed_average_fidelity": 0.8021440591593451,
       "optimized_average_fidelity": 0.8022649277369966,
       "holevo_pauli_bits": 0.6527989164071606,
-      "concurrence": 0.40643217747803523
+      "concurrence": 0.40679479239732397
     },
     "0.50": {
       "fixed_average_fidelity": 0.6425940815703663,
@@ -64,12 +64,38 @@
       "concurrence": 0.0
     }
   },
+  "resources_band": {
+    "0.00": {
+      "fixed_average_fidelity": 0.9999999999999999,
+      "optimized_average_fidelity": 1.0,
+      "holevo_pauli_bits": 2.0,
+      "concurrence": 0.9999999999999999
+    },
+    "0.30": {
+      "fixed_average_fidelity": 0.8013459833966308,
+      "optimized_average_fidelity": 0.8013459969920257,
+      "holevo_pauli_bits": 0.650536716421644,
+      "concurrence": 0.4054483534403314
+    },
+    "0.50": {
+      "fixed_average_fidelity": 0.6420770871998801,
+      "optimized_average_fidelity": 0.6420771054474546,
+      "holevo_pauli_bits": 0.1550592767221901,
+      "concurrence": 0.0
+    },
+    "1.00": {
+      "fixed_average_fidelity": 0.5040167308826408,
+      "optimized_average_fidelity": 0.5040167310515516,
+      "holevo_pauli_bits": 0.001569982323192498,
+      "concurrence": 0.0
+    }
+  },
   "dynamics": {
     "non_markovian": {
       "0.00": {
         "fixed_fidelity": {
           "initial": 0.9999999999999999,
-          "minimum": 0.33333333405267423,
+          "minimum": 0.3333333340526741,
           "final": 0.3658111649188133,
           "first_loss_time": 2.5500000000000003,
           "n_losses": 1,
@@ -85,16 +111,16 @@
         },
         "holevo": {
           "initial": 1.9999999999999987,
-          "minimum": 0.7284468446064166,
+          "minimum": 0.7284468446064168,
           "final": 0.8843368123292896,
           "first_loss_time": 2.0,
           "n_losses": 1,
           "n_regains": 0
         },
         "concurrence": {
-          "initial": 1.0,
-          "minimum": 1.0790112478008084e-09,
-          "final": 0.04871674737821997,
+          "initial": 0.9999999999999998,
+          "minimum": 1.0790112478008086e-09,
+          "final": 0.04871674737821996,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
@@ -104,7 +130,7 @@
         "fixed_fidelity": {
           "initial": 0.8021440591593451,
           "minimum": 0.3333333339104281,
-          "final": 0.35923213382438424,
+          "final": 0.3592321338243843,
           "first_loss_time": 1.9500000000000002,
           "n_losses": 1,
           "n_regains": 0
@@ -112,7 +138,7 @@
         "optimized_fidelity": {
           "initial": 0.8022649277369966,
           "minimum": 0.6137450578230835,
-          "final": 0.660401037041919,
+          "final": 0.6604010370419191,
           "first_loss_time": 1.9500000000000002,
           "n_losses": 1,
           "n_regains": 0
@@ -126,7 +152,7 @@
           "n_regains": 0
         },
         "concurrence": {
-          "initial": 0.40643217747803523,
+          "initial": 0.4067947923973239,
           "minimum": 0.0,
           "final": 0.0,
           "first_loss_time": null,
@@ -146,7 +172,7 @@
         "optimized_fidelity": {
           "initial": 0.6427228040477332,
           "minimum": 0.5628583198431365,
-          "final": 0.6553461607804991,
+          "final": 0.655346160780499,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
@@ -154,7 +180,7 @@
         "holevo": {
           "initial": 0.15431974926919279,
           "minimum": 0.12248383506405958,
-          "final": 0.8377402604040962,
+          "final": 0.8377402604040967,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
@@ -170,7 +196,7 @@
       },
       "1.00": {
         "fixed_fidelity": {
-          "initial": 0.5045294151302167,
+          "initial": 0.5045294151302168,
           "minimum": 0.33333333369626944,
           "final": 0.3493277085346554,
           "first_loss_time": null,
@@ -180,14 +206,14 @@
         "optimized_fidelity": {
           "initial": 0.5045553921714832,
           "minimum": 0.5028673583467099,
-          "final": 0.6509671841760237,
+          "final": 0.6509671841760236,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
         },
         "holevo": {
           "initial": 0.0001785581319420082,
-          "minimum": 0.00017848472947767924,
+          "minimum": 0.0001784847294774572,
           "final": 0.8347456183014914,
           "first_loss_time": null,
           "n_losses": 0,
@@ -223,16 +249,16 @@
         },
         "holevo": {
           "initial": 1.9999999999999987,
-          "minimum": 0.7286410168097817,
+          "minimum": 0.7286410168097812,
           "final": 1.0,
           "first_loss_time": 0.25,
           "n_losses": 1,
           "n_regains": 0
         },
         "concurrence": {
-          "initial": 1.0,
-          "minimum": 5.630685324082181e-30,
-          "final": 5.630685324082181e-30,
+          "initial": 0.9999999999999998,
+          "minimum": 5.63068532408218e-30,
+          "final": 5.63068532408218e-30,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
@@ -241,7 +267,7 @@
       "0.30": {
         "fixed_fidelity": {
           "initial": 0.8021440591593451,
-          "minimum": 0.3333333333333332,
+          "minimum": 0.3333333333333333,
           "final": 0.3333333333333333,
           "first_loss_time": 0.25,
           "n_losses": 1,
@@ -257,14 +283,14 @@
         },
         "holevo": {
           "initial": 0.6527989164071606,
-          "minimum": 0.37011211104845176,
+          "minimum": 0.37011211104845154,
           "final": 1.0,
           "first_loss_time": null,
           "n_losses": 0,
           "n_regains": 0
         },
         "concurrence": {
-          "initial": 0.40643217747803523,
+          "initial": 0.4067947923973239,
           "minimum": 0.0,
           "final": 0.0,
           "first_loss_time": null,
@@ -275,7 +301,7 @@
       "0.50": {
         "fixed_fidelity": {
           "initial": 0.6425940815703663,
-          "minimum": 0.3333333333333332,
+          "minimum": 0.3333333333333333,
           "final": 0.3333333333333333,
           "first_loss_time": null,
           "n_losses": 0,
@@ -308,8 +334,8 @@
       },
       "1.00": {
         "fixed_fidelity": {
-          "initial": 0.5045294151302167,
-          "minimum": 0.3333333333333332,
+          "initial": 0.5045294151302168,
+          "minimum": 0.3333333333333333,
           "final": 0.3333333333333333,
           "first_loss_time": null,
           "n_losses": 0,
@@ -342,6 +368,338 @@
       }
     }
   },
+  "dynamics_band": {
+    "non_markovian": {
+      "0.00": {
+        "fixed_fidelity": {
+          "initial": 0.9999999999999999,
+          "minimum": 0.3333333340526741,
+          "final": 0.3658111649188133,
+          "first_loss_time": 2.5500000000000003,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 1.0,
+          "minimum": 0.6666666666666666,
+          "final": 0.6666666666666666,
+          "first_loss_time": 2.5500000000000003,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 2.0,
+          "minimum": 0.7284468446064167,
+          "final": 0.8843368123292895,
+          "first_loss_time": 2.0,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.9999999999999999,
+          "minimum": 1.0790112478008082e-09,
+          "final": 0.04871674737821995,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      },
+      "0.30": {
+        "fixed_fidelity": {
+          "initial": 0.8013459833966309,
+          "minimum": 0.3333333339015334,
+          "final": 0.3588482153761256,
+          "first_loss_time": 1.9000000000000001,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 0.8013459969920257,
+          "minimum": 0.6149299582805514,
+          "final": 0.6607506959705775,
+          "first_loss_time": 1.9000000000000001,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 0.650536716421644,
+          "minimum": 0.38268564781092085,
+          "final": 0.8522964611430031,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.40544835344033164,
+          "minimum": 1.1431359861897534e-11,
+          "final": 0.001208269887974546,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      },
+      "0.50": {
+        "fixed_fidelity": {
+          "initial": 0.6420770871998801,
+          "minimum": 0.3333333337811839,
+          "final": 0.35330121916472246,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 0.6420771054474546,
+          "minimum": 0.5638023339114808,
+          "final": 0.6559597808983605,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 0.1550592767221901,
+          "minimum": 0.13232098767389888,
+          "final": 0.8430730761312534,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.0,
+          "minimum": 0.0,
+          "final": 0.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      },
+      "1.00": {
+        "fixed_fidelity": {
+          "initial": 0.5040167308826409,
+          "minimum": 0.33333333368032125,
+          "final": 0.3486415173067538,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 0.5040167310515516,
+          "minimum": 0.5028974067930911,
+          "final": 0.6516471851456417,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 0.001569982323192498,
+          "minimum": 0.001569982323192498,
+          "final": 0.8405067163768044,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.0,
+          "minimum": 0.0,
+          "final": 0.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      }
+    },
+    "markovian": {
+      "0.00": {
+        "fixed_fidelity": {
+          "initial": 0.9999999999999999,
+          "minimum": 0.3333333333333333,
+          "final": 0.3333333333333333,
+          "first_loss_time": 0.4,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 1.0,
+          "minimum": 0.6666666666666666,
+          "final": 0.6666666666666666,
+          "first_loss_time": 0.4,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 2.0,
+          "minimum": 0.7286410168097817,
+          "final": 1.0,
+          "first_loss_time": 0.25,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.9999999999999999,
+          "minimum": 5.6306853240821804e-30,
+          "final": 5.6306853240821804e-30,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      },
+      "0.30": {
+        "fixed_fidelity": {
+          "initial": 0.8013459833966309,
+          "minimum": 0.3333333333333333,
+          "final": 0.3333333333333333,
+          "first_loss_time": 0.25,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 0.8013459969920257,
+          "minimum": 0.6174643045457412,
+          "final": 0.6666666666666666,
+          "first_loss_time": 0.25,
+          "n_losses": 1,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 0.650536716421644,
+          "minimum": 0.3828097902431771,
+          "final": 1.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.40544835344033164,
+          "minimum": 5.965312080166201e-32,
+          "final": 5.965312080166201e-32,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      },
+      "0.50": {
+        "fixed_fidelity": {
+          "initial": 0.6420770871998801,
+          "minimum": 0.3333333333333333,
+          "final": 0.3333333333333333,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 0.6420771054474546,
+          "minimum": 0.5652923646474876,
+          "final": 0.6666666666666666,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 0.1550592767221901,
+          "minimum": 0.13240797318831166,
+          "final": 1.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.0,
+          "minimum": 0.0,
+          "final": 0.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      },
+      "1.00": {
+        "fixed_fidelity": {
+          "initial": 0.5040167308826409,
+          "minimum": 0.3333333333333333,
+          "final": 0.3333333333333333,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "optimized_fidelity": {
+          "initial": 0.5040167310515516,
+          "minimum": 0.503530723923324,
+          "final": 0.6666666666666666,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "holevo": {
+          "initial": 0.001569982323192498,
+          "minimum": 0.001569982323192498,
+          "final": 1.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        },
+        "concurrence": {
+          "initial": 0.0,
+          "minimum": 0.0,
+          "final": 0.0,
+          "first_loss_time": null,
+          "n_losses": 0,
+          "n_regains": 0
+        }
+      }
+    }
+  },
+  "band_minus_spin_max_abs": {
+    "non_markovian": {
+      "0.00": {
+        "max_abs_fixed_fidelity_diff": 0.0,
+        "max_abs_optimized_fidelity_diff": 2.220446049250313e-16,
+        "max_abs_holevo_diff": 1.5543122344752192e-15,
+        "max_abs_concurrence_diff": 6.661338147750939e-16
+      },
+      "0.30": {
+        "max_abs_fixed_fidelity_diff": 0.0022816722439173986,
+        "max_abs_optimized_fidelity_diff": 0.0023554302594073206,
+        "max_abs_holevo_diff": 0.012861631083402436,
+        "max_abs_concurrence_diff": 0.010920084305006683
+      },
+      "0.50": {
+        "max_abs_fixed_fidelity_diff": 0.003490839220530617,
+        "max_abs_optimized_fidelity_diff": 0.0033864601119625304,
+        "max_abs_holevo_diff": 0.017536168635715166,
+        "max_abs_concurrence_diff": 0.0
+      },
+      "1.00": {
+        "max_abs_fixed_fidelity_diff": 0.003827561959903858,
+        "max_abs_optimized_fidelity_diff": 0.0037623430740229002,
+        "max_abs_holevo_diff": 0.01813669179638744,
+        "max_abs_concurrence_diff": 0.0
+      }
+    },
+    "markovian": {
+      "0.00": {
+        "max_abs_fixed_fidelity_diff": 0.0,
+        "max_abs_optimized_fidelity_diff": 2.220446049250313e-16,
+        "max_abs_holevo_diff": 1.3322676295501878e-15,
+        "max_abs_concurrence_diff": 5.551115123125783e-16
+      },
+      "0.30": {
+        "max_abs_fixed_fidelity_diff": 0.002276288569957541,
+        "max_abs_optimized_fidelity_diff": 0.0023491728559640324,
+        "max_abs_holevo_diff": 0.012862180253763178,
+        "max_abs_concurrence_diff": 0.010918001522610077
+      },
+      "0.50": {
+        "max_abs_fixed_fidelity_diff": 0.003490880011852049,
+        "max_abs_optimized_fidelity_diff": 0.0033838019300895805,
+        "max_abs_holevo_diff": 0.017535036932346593,
+        "max_abs_concurrence_diff": 0.0
+      },
+      "1.00": {
+        "max_abs_fixed_fidelity_diff": 0.0038268288299289077,
+        "max_abs_optimized_fidelity_diff": 0.003759923542631771,
+        "max_abs_holevo_diff": 0.018107673208420216,
+        "max_abs_concurrence_diff": 0.0
+      }
+    }
+  },
   "spectral_width_scan": {
     "gamma": 2.0,
     "Gamma_range": [
@@ -353,61 +711,122 @@
         "underdamped": true,
         "fixed_fidelity_final": 0.8097916236010421,
         "holevo_final": 1.077867209491318,
-        "concurrence_final": 0.7146874354015633,
-        "holevo_minimum": 0.7284474166266599
+        "concurrence_final": 0.7146874354015632,
+        "holevo_minimum": 0.7284474166266599,
+        "r030_spin_final": [
+          0.681849765758161,
+          0.39088342642890495,
+          0.1715810749792766
+        ],
+        "r030_band_final": [
+          0.6797612335189896,
+          0.40216390133514035,
+          0.18164654540932035
+        ]
       },
       "0.0977933": {
         "underdamped": true,
         "fixed_fidelity_final": 0.3661830456660516,
         "holevo_final": 0.8834325729346986,
         "concurrence_final": 0.049274568499077395,
-        "holevo_minimum": 0.7284475246928332
+        "holevo_minimum": 0.7284475246928332,
+        "r030_spin_final": [
+          0.35952686791166616,
+          0.8475620288857941,
+          0.0
+        ],
+        "r030_band_final": [
+          0.35913875812730306,
+          0.8510095043303225,
+          0.001230184418069609
+        ]
       },
       "0.956352": {
         "underdamped": true,
         "fixed_fidelity_final": 0.3333333333336362,
         "holevo_final": 0.9999999999905863,
-        "concurrence_final": 4.542869865717177e-13,
-        "holevo_minimum": 0.7285157828775362
+        "concurrence_final": 4.5428698657171756e-13,
+        "holevo_minimum": 0.7285157828775362,
+        "r030_spin_final": [
+          0.33333333333357634,
+          0.9999999999902603,
+          0.0
+        ],
+        "r030_band_final": [
+          0.33333333333357257,
+          0.9999999999904895,
+          4.812848690552326e-15
+        ]
       },
       "3.85307": {
         "underdamped": true,
         "fixed_fidelity_final": 0.3333333333333333,
         "holevo_final": 1.0,
-        "concurrence_final": 1.3432954377993247e-49,
-        "holevo_minimum": 0.7287665135556409
+        "concurrence_final": 1.3432954377993245e-49,
+        "holevo_minimum": 0.7287665135556409,
+        "r030_spin_final": [
+          0.3333333333333333,
+          1.0,
+          0.0
+        ],
+        "r030_band_final": [
+          0.3333333333333333,
+          1.0,
+          1.4231263231963178e-51
+        ]
       },
       "10.6156": {
         "underdamped": false,
         "fixed_fidelity_final": 0.3333333333333333,
         "holevo_final": 1.0,
-        "concurrence_final": 9.654159213569222e-30,
-        "holevo_minimum": 0.7285526477437656
+        "concurrence_final": 9.65415921356922e-30,
+        "holevo_minimum": 0.7285526477437658,
+        "r030_spin_final": [
+          0.3333333333333333,
+          1.0,
+          0.0
+        ],
+        "r030_band_final": [
+          0.3333333333333333,
+          1.0,
+          1.022789754103993e-31
+        ]
       },
       "20": {
         "underdamped": false,
         "fixed_fidelity_final": 0.3333333333333333,
         "holevo_final": 1.0,
-        "concurrence_final": 3.4673112299091224e-28,
-        "holevo_minimum": 0.7285983850996058
+        "concurrence_final": 3.467311229909122e-28,
+        "holevo_minimum": 0.7285983850996058,
+        "r030_spin_final": [
+          0.3333333333333333,
+          1.0,
+          0.0
+        ],
+        "r030_band_final": [
+          0.3333333333333333,
+          1.0,
+          3.673370535733827e-30
+        ]
       }
     }
   },
   "validation": {
     "cross_implementation_max_abs_error": 0.0,
+    "vectorized_vs_scalar_max_abs_error": 3.3306690738754696e-16,
     "fidelity_range": [
-      0.3333333333333332,
+      0.3333333333333333,
       0.9999999999999999
     ],
     "holevo_range": [
-      0.00017848472947767924,
-      1.9999999999999987
+      0.0001784847294774572,
+      2.0
     ],
     "concurrence_range": [
       0.0,
-      1.0
+      0.9999999999999999
     ],
-    "fixed_vs_optimized_max_gap": 0.3333333333333334
+    "fixed_vs_optimized_max_gap": 0.3333333333333333
   },
-  "git_commit": "eb29fd167307f7c502341b60bdc1f07e049c98ff"
+  "git_commit": "c458cba7273ec5a2ae28b05cea237018e51065cf"
 }

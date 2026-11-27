@@ -17,7 +17,7 @@
 \date{\today}
 
 \begin{abstract}
-Quantum communication protocols rely critically on the preservation of entanglement and quantum coherence in realistic noisy environments. In this work, we investigate quantum teleportation and dense coding using correlated electron pairs described within a spin--orbit-coupled Hubbard--Bogoliubov--de Gennes framework and subjected to non-Markovian open-system dynamics. The superconducting correlations are obtained self-consistently, and the corresponding normal and anomalous Green's functions are employed to construct spatially dependent two-qubit density matrices. At nonzero spin--orbit coupling ($V_{\mathrm{SO}}\neq0$) these matrices follow from a momentum-dependent helicity rotation and a matrix-valued conditional Wick prescription, transformed back to the original-spin basis for the protocol calculations; the general Wootters concurrence and the fixed and optimized teleportation fidelities are evaluated directly on these non-X states. The resulting states are evolved using Kraus-operator descriptions of environmental noise, including non-Markovian amplitude damping and dephasing channels, while the Holevo quantity of an equal-probability Pauli encoding ensemble quantifies the information available to the corresponding dense-coding protocol. For two representative non-Markovian amplitude-damping regimes, the results reveal a pronounced dependence of quantum correlations on both the spatial separation of the electron pair and the evolution time. Environmental coupling suppresses the initially available entanglement and communication resources, while the nonmonotonic survival probability produces transient revivals of concurrence and singlet fraction. A dedicated environment-parameter study then maps fidelity, Holevo information, and concurrence against the reservoir spectral width in both the underdamped and overdamped regimes: the dense-coding dynamics reproduce the exactly solvable two-atom benchmark of Haddadi \emph{et al.}~\cite{Haddadi2023} to within $0.01$ bit, while the teleportation-fidelity curves differ because that work evaluates a quadratic output formula rather than the standard linear protocol. The Pauli-ensemble Holevo quantity evolves differently and approaches the one-bit limit of the long-time amplitude-damped product state. A converged interaction sweep at $U/t=40$, $75$, and $115$ shows that the Hubbard interaction changes the initial spatial profiles and hence the subsequent fidelity and Holevo dynamics, but their ordering with $U$ is separation dependent rather than uniformly enhancing or suppressing. A spin--orbit sweep of the concurrence against $U$ and $V_{\mathrm{SO}}$ is analytic across the gapped $\mu_{\mathrm{SC}}=4t$ crossover, with smooth second-derivative sign changes and basis-dependent splitting between original-spin and band-pseudospin concurrences ($C_{\mathrm{spin}} > C_{\mathrm{band}}$ at $n=1.875$) rather than any discontinuity. Linearized pair-instability eigenvalues ($\lambda_+ = 1$), branch-continuation hysteresis bounds ($\le 1.3\times 10^{-14}$), finite-size scaling of the order-parameter slope, and normal-state Fermi-surface checks establish genuine second-order pairing-onset transitions elsewhere in parameter space---at $\Delta_{t,c}/t=2.52\pm 0.03$ ($U/t=75$, $V_{\mathrm{SO}}=0$, $n=1.875$), at $U_c/t\approx 73.9$ and $V_c/t\approx 0.532$ ($n=1.0$, $\Delta_t/t=4.5$), and across filling thresholds $n_c \approx \{0.2192, 1.0194\}$ ($U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$)---alongside normal-state Dirac and van Hove Lifshitz transitions, while placing the main protocol point ($U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$, $n=1.875$) strictly inside a fully gapped superconducting crossover ($\min_{\mathbf{k},s} E_{\mathbf{k}s} \ge 0.94t$) where all measured observables vary analytically and entanglement sudden-death kinks arise solely from the Wootters zero cutoff. All protocol and resource figures in this work are computed at $V_{\mathrm{SO}}/t=0.5$ on periodic Brillouin-zone meshes using the helicity construction in the original-spin basis, supplemented by direct comparisons with the helicity-band basis.
+Quantum communication protocols rely critically on the preservation of entanglement and quantum coherence in realistic noisy environments. In this work, we investigate quantum teleportation and dense coding using correlated electron pairs described within a spin--orbit-coupled Hubbard--Bogoliubov--de Gennes framework and subjected to non-Markovian open-system dynamics. The superconducting correlations are obtained self-consistently, and the corresponding normal and anomalous Green's functions are employed to construct spatially dependent two-qubit density matrices. At nonzero spin--orbit coupling ($V_{\mathrm{SO}}\neq0$) these matrices follow from a momentum-dependent helicity rotation and a matrix-valued conditional Wick prescription, evaluated in both the original-spin basis and the helicity-band (band-pseudospin) basis; the general Wootters concurrence and the fixed and optimized teleportation fidelities are evaluated directly on both the non-X spin-basis states and the X-block helicity-band states. The resulting states are evolved using Kraus-operator descriptions of environmental noise, including non-Markovian amplitude damping and dephasing channels, while the Holevo quantity of an equal-probability Pauli encoding ensemble quantifies the information available to the corresponding dense-coding protocol. At zero separation ($r=0$), both internal bases recover the identical pure spin singlet and therefore share identical open-system teleportation, dense-coding, and concurrence dynamics to numerical precision. At finite separation ($r>0$), helicity band-population asymmetry ($n_+\neq n_-$) induces measurable, systematic basis splittings across all protocols: in the helicity-band basis the long-range singlet fraction saturates slightly below $1/4$ ($0.24953$ at $U/t=75$, versus $0.25000$ in the spin basis), yielding a small positive asymptotic Pauli Holevo offset ($1.36\times 10^{-3}$~bit at $U/t=75$, $t=0$) driven by $S_2(\rho_B)<1$, while intermediate-time basis differences reach up to $6.83\times 10^{-3}$ in singlet fidelity and $0.0260$~bit in $\chi_{\mathrm{P}}$ (at $U/t=115$). Under non-Markovian amplitude damping, finite-separation concurrence revivals can even be modestly stronger in the helicity-band basis ($\Delta C$ up to $+0.0109$ at $r=0.30$). A dedicated environment-parameter study maps fidelity, Holevo information, and concurrence against the reservoir spectral width in both underdamped and overdamped regimes: the dense-coding dynamics reproduce the exactly solvable two-atom benchmark of Haddadi \emph{et al.}~\cite{Haddadi2023} to within $0.01$ bit, while the teleportation-fidelity curves differ because that work evaluates a quadratic output formula rather than the standard linear protocol. A converged interaction sweep at $U/t=40$, $75$, and $115$ shows that the Hubbard interaction modifies both bases' initial spatial profiles and subsequent dynamics, while preserving separation-dependent ordering rather than uniform enhancement. Spin--orbit sweeps of concurrence against $U$ and $V_{\mathrm{SO}}$ remain analytic across the gapped $\mu_{\mathrm{SC}}=4t$ crossover, with smooth second-derivative sign changes and basis splitting between original-spin and band-pseudospin concurrences rather than any discontinuity. Linearized pair-instability eigenvalues ($\lambda_+ = 1$), branch-continuation hysteresis bounds ($\le 1.3\times 10^{-14}$), finite-size scaling of the order-parameter slope, and normal-state Fermi-surface checks establish genuine second-order pairing-onset transitions elsewhere in parameter space---at $\Delta_{t,c}/t=2.52\pm 0.03$ ($U/t=75$, $V_{\mathrm{SO}}=0$, $n=1.875$), at $U_c/t\approx 73.9$ and $V_c/t\approx 0.532$ ($n=1.0$, $\Delta_t/t=4.5$), and across filling thresholds $n_c \approx \{0.2192, 1.0194\}$ ($U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$)---alongside normal-state Dirac and van Hove Lifshitz transitions, while placing the main protocol point ($U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$, $n=1.875$) strictly inside a fully gapped superconducting crossover ($\min_{\mathbf{k},s} E_{\mathbf{k}s} \ge 0.94t$) where all measured observables vary analytically and entanglement sudden-death kinks arise solely from the Wootters zero cutoff. All protocol and resource figures in this work are computed at $V_{\mathrm{SO}}/t=0.5$ on periodic Brillouin-zone meshes across both the original-spin and helicity-band bases.
 \end{abstract}
 
 \pacs{74.20.Fg, 03.67.Mn, 03.65.Ud, 74.25.-q}
@@ -37,8 +37,9 @@ two-qubit states for electron pairs separated by different distances and
 directions in real space; at nonzero spin--orbit coupling the
 reconstruction proceeds through momentum-dependent helicity rotations and
 yields general two-qubit states in both the original-spin and
-band-pseudospin descriptions, with the original-spin basis used for the
-protocol calculations. The resulting two-qubit states are subsequently evolved under open-system quantum channels describing independent or correlated environmental interactions, with particular attention to non-Markovian amplitude damping.
+band-pseudospin (helicity-band) descriptions, both of which are evaluated
+side by side across all teleportation, dense-coding, and open-system
+protocol calculations below. The resulting two-qubit states are subsequently evolved under open-system quantum channels describing independent or correlated environmental interactions, with particular attention to non-Markovian amplitude damping.
 
 The evolution of the superconducting quantum resource is characterized using several complementary quantities. Concurrence is employed to quantify bipartite entanglement, while purity and von Neumann entropy describe the degree of mixedness generated by environmental interactions. Uhlmann fidelity to the initial state monitors the preservation of that state during the open-system evolution. Separately, the overlap with the spin singlet quantifies the retention of singlet weight; for a pure singlet reference it coincides with the pure-state-referenced Uhlmann fidelity, but it is not automatically an optimized teleportation fidelity. For dense coding, we evaluate the Holevo quantity associated with the standard equal-probability Pauli encoding operations and derive its reduction to an entropy expression involving the two-qubit state and one reduced subsystem.
 
@@ -484,8 +485,9 @@ $Z=\mathrm{diag}(1,-1)$, following the Rashba helicity convention of
 Ref.~\cite{Hutchinson2018}. Because the rotation is genuinely momentum
 dependent for $V_{\mathrm{SO}}\neq0$, band-pseudospin qubits are not
 related to original-spin qubits by fixed local unitaries and the two
-descriptions must be kept distinct; the protocol results below use the
-original-spin basis.
+descriptions must be kept distinct; throughout the teleportation,
+dense-coding, and environment-regime studies below, we compute and
+compare both the original-spin basis and the helicity-band basis directly.
 
 The two-qubit state is reconstructed before any X-state assumption is
 made. For a Gaussian BdG state, Wick's theorem applied to two
@@ -561,6 +563,8 @@ both for the fixed singlet protocol and for the locally optimized
 protocol governed by the fully entangled
 fraction~\cite{Horodecki1999}. Band-basis statements assume ideal Bell
 measurement and feedforward in the nonlocal helicity modes
+$d_{i,s}=N_{k}^{-1}\sum_{\mathbf{k}}e^{i\mathbf{k}\cdot\mathbf{R}_{i}}c_{\mathbf{k}s}$
+and are not claims about a specific microscopic device.
 
 \begin{figure*}[t]
     \centering
@@ -595,8 +599,6 @@ measurement and feedforward in the nonlocal helicity modes
     }
     \label{fig:helicity_resources}
 \end{figure*}
-$d_{i,s}=N_{k}^{-1}\sum_{\mathbf{k}}e^{i\mathbf{k}\cdot\mathbf{R}_{i}}c_{\mathbf{k}s}$
-and are not claims about a specific microscopic device.
 
 \subsection{Open-system evolution}
 \label{sec:open_system}
@@ -999,18 +1001,22 @@ explain the temporal structure.
 \end{figure*}
 
 The singlet-referenced fidelity in Fig.~\ref{fig:F_high_heatmap} displays
-related but nonidentical behavior. It remains nonzero in regions where the
+related but nonidentical behavior in both internal bases. It remains nonzero in regions where the
 concurrence has vanished, as expected because a mixed separable state can
-retain singlet weight. At $r=0$, the initial state is a pure singlet and
+retain singlet weight. At $r=0$, the initial state is a pure singlet in
+both the original-spin and helicity-band descriptions, and
 independent amplitude damping gives the direct relations
 \begin{equation}\boxed{
 F_{\mathrm s}(0,t)=p(t),
 \qquad
 C(0,t)=p(t).
 }\label{eq:r0_high}\end{equation}
-The two quantities therefore coincide at this special point. At finite
+The two quantities therefore coincide at this special point in both bases. At finite
 separation no such identity holds, and singlet weight can remain nonzero after
-the concurrence has vanished. The $r=0$ time slice gives maxima
+the concurrence has vanished; moreover, the spin-basis singlet fidelity
+exceeds the helicity-band value across the finite-$r$ revival ridges by up to
+$F_{\mathrm s}^{\mathrm{spin}}-F_{\mathrm s}^{\mathrm{band}}=6.83\times10^{-3}$
+[Fig.~\ref{fig:F_high_heatmap}(c)]. The $r=0$ time slice gives maxima
 $F_{\mathrm s}=0.81091$, $0.65751$, and
 $0.53309$ near $t=21$, $42$, and $63$, respectively, followed by a decreasing
 envelope. At intervening survival-probability minima the singlet fraction
@@ -1018,16 +1024,21 @@ nearly vanishes.
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=0.92\textwidth]
+    \includegraphics[width=\textwidth]
     {figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_heatmap_singlet.png}
     \caption{
     Singlet-referenced Uhlmann fidelity
     $\mathcal F_{\Psi^-}(r,0^\circ,t)=F_{\mathrm s}(r,0^\circ,t)$ for the same
     independent amplitude-damping regime and model settings as
-    Fig.~\ref{fig:C_high_heatmap}. The color scale is the overlap with
+    Fig.~\ref{fig:C_high_heatmap}: (a)~original-spin basis
+    $F_{\mathrm s}^{\mathrm{spin}}$, (b)~helicity-band basis
+    $F_{\mathrm s}^{\mathrm{band}}$, and (c)~their difference
+    $F_{\mathrm s}^{\mathrm{spin}}-F_{\mathrm s}^{\mathrm{band}}$ (zero at
+    $r=0$, peaking at $6.83\times10^{-3}$ at finite $r$).
+    The color scale is the overlap with
     $|\Psi^-\rangle$, not fidelity to the initial mixed state and not an
     optimized average teleportation fidelity. The radial oscillations are
-    inherited from the initial two-spin state, while the repeated temporal
+    inherited from the initial two-particle state, while the repeated temporal
     modulation follows $p(t)$. Contour lines are plotting guides and are not
     assigned operational teleportation thresholds.
     }
@@ -1045,37 +1056,49 @@ zero-separation state.
 \subsection{Fidelity dynamics at lower coupling}
 \label{sec:fidelity_time}
 
-Figure~\ref{fig:F_low_time} shows the singlet fraction for
-$\gamma_A=\gamma_B=1.5$ and $\Gamma_A=\Gamma_B=0.1$ along $\theta=45^\circ$.
-The selected separations match those shown in the legend,
+Figure~\ref{fig:F_low_time} compares the spin- and helicity-band singlet
+fractions for $\gamma_A=\gamma_B=1.5$ and $\Gamma_A=\Gamma_B=0.1$ along
+$\theta=45^\circ$. The selected separations match those shown in the legend,
 $r=0$, $1.50754$, $3.3166$, $6.6332$, and $10$. All curves exhibit
 damped nonmonotonic behavior associated with the same single-qubit survival
-probability. At $r=0$, Eq.~\eqref{eq:r0_high} remains valid with the new
-parameters; the first two sampled revival maxima are $0.31136$ at $t=11.6923$
-and $0.09694$ at $t=23.3846$. Their decreasing magnitudes exclude any claim of
-persistent or growing revivals over the computed interval.
+probability. At $r=0$, Eq.~\eqref{eq:r0_high} remains valid identically in
+both bases with the new parameters; the first two sampled revival maxima are
+$0.31136$ at $t=11.6923$ and $0.09694$ at $t=23.3846$. Their decreasing
+magnitudes exclude any claim of persistent or growing revivals over the
+computed interval.
 
-\begin{figure}[t]
+\begin{figure*}[t]
     \centering
-    \includegraphics[width=\columnwidth]
+    \includegraphics[width=0.96\textwidth]
     {figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_singlet.png}
     \caption{
     Time dependence of the singlet-referenced fidelity
     $\mathcal F_{\Psi^-}(r,45^\circ,t)=F_{\mathrm s}$ for independent
     amplitude damping with $\gamma_A=\gamma_B=1.5$ and
     $\Gamma_A=\Gamma_B=0.1$, using the common $U/t=75$, $V_{\mathrm{SO}}/t=0.5$
-    initial-state settings. Curves are shown for $r=0$, $1.50754$, $3.3166$,
-    $6.6332$, and $10$. The data contain $261$ times on $0\leq t\leq80$. The horizontal dashed
-    lines at $0.5$, $0.7$, $0.8$, and $0.9$ are automatically drawn reference
-    guides; they are not thresholds for the plotted singlet fraction.
+    initial-state settings. (a)~Comparison of original-spin (solid) and
+    helicity-band (dashed) curves at $r=0$, $1.50754$, $3.3166$, $6.6332$,
+    and $10$. (b)~Basis difference $F_{\mathrm s}^{\mathrm{spin}}-F_{\mathrm s}^{\mathrm{band}}$,
+    which vanishes identically at $r=0$ and reaches $5.93\times10^{-3}$ at
+    $r=1.50754$ ($5.54\times10^{-3}$ at $r=10$). The data contain $261$
+    times on $0\leq t\leq80$. The horizontal dashed lines at $0.5$, $0.7$,
+    $0.8$, and $0.9$ are automatically drawn reference guides; they are not
+    thresholds for the plotted singlet fraction.
     }
     \label{fig:F_low_time}
-\end{figure}
+\end{figure*}
 
-The large-$r$ curves begin close to one quarter, the singlet weight of a
-nearly uncorrelated pair. Their subsequent time dependence is dominated
-by the common noise channel rather than by a persistent long-range entangled
-resource. At all displayed separations, the singlet fraction approaches zero
+The large-$r$ curves begin near $1/4$: in the original-spin basis the
+$t=0$ singlet fraction converges to $0.25000$ ($0.25106$ at $r=1.50754$,
+$0.25002$ at $r=3.3166$, $0.25000$ at $r=6.6332$ and $10$), whereas in the
+helicity-band basis the population imbalance $n_+\neq n_-$ weights
+$|++\rangle$ and $|--\rangle$ above $|\pm\mp\rangle$ and shifts the
+large-$r$ limit slightly below $1/4$ ($0.24948$ at $r=1.50754$ and
+$3.3166$, and $0.24953$ at $r=6.6332$ and $10$). Under amplitude damping,
+the basis splitting $F_{\mathrm s}^{\mathrm{spin}}-F_{\mathrm s}^{\mathrm{band}}$
+peaks at $5.93\times10^{-3}$ for $r=1.50754$ ($5.54\times10^{-3}$ at $r=10$)
+near the first survival dip before decaying alongside the singlet overlap.
+At all displayed separations, the singlet fraction approaches zero
 at long times because the amplitude-damping fixed point is a ground-state
 product state orthogonal to $|\Psi^-\rangle$. This fixed-point statement does
 not apply to fidelity to each initial state, which is a different array in the
@@ -1091,33 +1114,45 @@ angle-dependent coefficient. Consequently, the noise does not introduce a new
 preferred lattice direction; angular structure at finite time is inherited
 from the initial state and modified by the common temporal map.
 
-Figure~\ref{fig:F_angular} displays the initial singlet fraction at seven
-sampled angles and four separations. The $r=0$ curve is unity at every angle,
-as required by $p(\mathbf0)=1$. Nontrivial anisotropy is visible at finite
-separation. For example, at $r=3.3166$ the initial singlet fraction ranges
-from $0.25002$ at $30^\circ$, $45^\circ$, and $60^\circ$ to $0.25184$ at
-$0^\circ$ and $90^\circ$. At $r=6.6332$ and $10$, the corresponding angular
-ranges shrink to $5.9\times10^{-4}$ ($0.25000$ to $0.25059$) and
-$2.2\times10^{-6}$, respectively. The sampled data obey
-$F_{\mathrm s}(0^\circ)=F_{\mathrm s}(90^\circ)$,
+Figure~\ref{fig:F_angular} displays the initial singlet fraction across the
+seven sampled angles and four separations in both bases, together with a
+zoom resolving the small-amplitude anisotropy at finite $r$. The $r=0$ curve
+is unity at every angle in both bases, as required by $p(\mathbf0)=1$.
+Nontrivial anisotropy is visible at finite separation. At $r=3.3166$, the
+initial singlet fraction spans $0.25002$ ($30^\circ,45^\circ,60^\circ$) to
+$0.25184$ ($0^\circ,90^\circ$) in the spin basis, and runs almost in
+parallel $5\times10^{-4}$--$6\times10^{-4}$ lower in the helicity-band
+basis, from $0.24948$ ($45^\circ$) to $0.25123$ ($0^\circ,90^\circ$).
+At $r=6.6332$ and $10$, the angular spans shrink to $5.9\times10^{-4}$
+($0.25000$--$0.25059$) and $2.2\times10^{-6}$ in the spin basis, and
+$5.4\times10^{-4}$ ($0.24953$--$0.25007$) and $4.0\times10^{-7}$ (around
+$0.24953$) in the helicity-band basis. In the spin basis the sampled data
+obey $F_{\mathrm s}(0^\circ)=F_{\mathrm s}(90^\circ)$,
 $F_{\mathrm s}(15^\circ)=F_{\mathrm s}(75^\circ)$, and
-$F_{\mathrm s}(30^\circ)=F_{\mathrm s}(60^\circ)$ to numerical precision.
+$F_{\mathrm s}(30^\circ)=F_{\mathrm s}(60^\circ)$ to numerical precision,
+while in the band basis $\theta=0^\circ$ and $90^\circ$ coincide exactly
+and $\theta=15^\circ$ versus $75^\circ$ retains a $5.4\times10^{-6}$
+residual asymmetry at $r=3.3166$ ($3.4\times10^{-7}$ at $r=6.6332$)
+from the $s=\pm1$ helicity-phase weighting.
 
-\begin{figure}[t]
+\begin{figure*}[t]
     \centering
-    \includegraphics[width=\columnwidth]
+    \includegraphics[width=0.96\textwidth]
     {figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_singlet.png}
     \caption{
-    Polar representation of the initial singlet fraction
-    $F_{\mathrm s}(r,\theta,0)$ for $r=0$, $3.3166$, $6.6332$, and $10$
-    at $V_{\mathrm{SO}}/t=0.5$ in the $\gamma=1.5$, $\Gamma=0.1$ regime. Only
-    $\theta=0^\circ,15^\circ,\ldots,90^\circ$ were simulated and plotted
-    across the first-quadrant sector; straight segments connect the seven
-    sampled angles. The radial coordinate is the singlet fraction, not the
-    electron separation.
+    Polar representation and finite-$r$ angular zoom of the initial singlet
+    fraction $F_{\mathrm s}(r,\theta,0)$ for $r=0$, $3.3166$, $6.6332$, and
+    $10$ at $V_{\mathrm{SO}}/t=0.5$ in the $\gamma=1.5$, $\Gamma=0.1$
+    regime. (a)~First-quadrant polar view comparing spin (solid) and
+    helicity-band (dashed) bases; straight segments connect the seven
+    sampled angles $\theta=0^\circ,15^\circ,\ldots,90^\circ$, and the radial
+    coordinate is the singlet fraction. (b)~Zoom on the finite-$r$ curves
+    showing the parallel downward shift of $F_{\mathrm s}^{\mathrm{band}}$
+    below $1/4$ ($0.24953$ at $r=10$) relative to $F_{\mathrm s}^{\mathrm{spin}}$
+    ($0.25000$) together with the $\theta=0^\circ,90^\circ$ anisotropy peak.
     }
     \label{fig:F_angular}
-\end{figure}
+\end{figure*}
 
 These observations support an initial-state lattice anisotropy at selected
 finite separations, not a universal preferred direction at all $r$. Nor does
@@ -1130,58 +1165,77 @@ the available grid.
 \label{sec:holevo_results}
 
 The spatial behavior of the Pauli-ensemble Holevo quantity is shown in
-Fig.~\ref{fig:holevo_spatial} for $\theta=45^\circ$. At $t=0$,
-$\chi_{\mathrm P}=2$ bits at $r=0$, as required for a pure singlet. The initial
-curve then falls below one bit by $r=0.25$ and decays rapidly, with only
-negligible oscillatory local maxima (below $10^{-5}$ bit) beyond
-$r\simeq1.6$. Thus at $V_{\mathrm{SO}}/t=0.5$ the one-bit dense-coding
-benchmark is exceeded only in the immediate vicinity of zero separation.
+Fig.~\ref{fig:holevo_spatial} for $\theta=45^\circ$ in both the original-spin
+and helicity-band bases. At $t=0$, $\chi_{\mathrm P}=2$ bits at $r=0$ in both
+bases, as required for a pure singlet. The initial curve then falls below one
+bit by $r=0.2513$ ($0.8644$ bit in spin, $0.8615$ bit in band) and decays
+rapidly. In the spin basis, $\chi_{\mathrm P}^{\mathrm{spin}}$ drops to
+negligible values below $10^{-5}$ bit beyond $r\simeq1.6$; in the helicity-band
+basis, $\chi_{\mathrm P}^{\mathrm{band}}-\chi_{\mathrm{P}}^{\mathrm{spin}}$
+first shows a small negative dip ($-3.25\times10^{-3}$ bit at $r=0.2010$)
+inside the entangled core before crossing positive (peaking at
+$+1.49\times10^{-3}$ bit near $r=0.754$) and approaching a small nonvanishing
+long-range plateau $\chi_{\mathrm P}^{\mathrm{band}}(r=10,0)=1.362\times10^{-3}$~bit
+[Fig.~\ref{fig:holevo_spatial}(b)], generated by $S_2(\rho_B)<1$ from the
+band-population imbalance $n_+\neq n_-$. In either basis, the one-bit
+dense-coding benchmark at $V_{\mathrm{SO}}/t=0.5$ is exceeded only in the
+immediate vicinity of zero separation.
 
-\begin{figure}[t]
+\begin{figure*}[t]
     \centering
-    \includegraphics[width=\columnwidth]
+    \includegraphics[width=0.96\textwidth]
     {figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs_r.png}
     \caption{
     Pauli-ensemble Holevo quantity $\chi_{\mathrm P}(r,45^\circ,t)$ at
     $t=0,16,32,48,64,80$ for independent amplitude damping with
     $\gamma_A=\gamma_B=1.5$, $\Gamma_A=\Gamma_B=0.1$, and common
     $U/t=75$, $V_{\mathrm{SO}}/t=0.5$ initial-state settings.
-    Entropies use base-two logarithms. The quantity is
-    defined by Eqs.~\eqref{eq:holevo_definition} and
-    \eqref{eq:holevo_entropy}; it is not concurrence or singlet fidelity.
+    (a)~Spin-basis (solid) and helicity-band (dashed) profiles versus $r$.
+    (b)~Basis difference $\chi_{\mathrm P}^{\mathrm{band}}-\chi_{\mathrm P}^{\mathrm{spin}}$,
+    highlighting the small negative short-range dip at $t=0$, the finite
+    asymptotic band bias ($1.362\times10^{-3}$~bit at $r=10$, $t=0$), and
+    the positive intermediate-time enhancement ($+6.90\times10^{-3}$~bit
+    across large $r$ at $t=16$). Entropies use base-two logarithms; the
+    quantity is defined by Eqs.~\eqref{eq:holevo_definition} and
+    \eqref{eq:holevo_entropy}.
     }
     \label{fig:holevo_spatial}
-\end{figure}
+\end{figure*}
 
-The temporal slices flatten toward one bit, with small finite-time deviations
-still visible in the arrays. This tendency follows from the amplitude-damping
-fixed point derived below Eq.~\eqref{eq:holevo_entropy}, rather than from a
-survival of dense-coding quantum advantage. Indeed, the asymptotic value one
-is precisely the classical one-qubit benchmark. At $t=16$, for example, the
-sampled radial range is $0.79509$--$0.86087$ bits, below that benchmark
-throughout this slice.
+The temporal slices flatten toward one bit, with small finite-time
+deviations still visible in the arrays. This tendency follows from the
+amplitude-damping fixed point derived below Eq.~\eqref{eq:holevo_entropy},
+rather than from a survival of dense-coding quantum advantage. Indeed, the
+asymptotic value one is precisely the classical one-qubit benchmark. At
+$t=16$, for example, the sampled radial range is $0.79509$--$0.86087$ bits in
+the spin basis and $0.80185$--$0.86087$ bits in the helicity-band basis,
+below that benchmark throughout both slices, with $\chi_{\mathrm P}^{\mathrm{band}}-\chi_{\mathrm P}^{\mathrm{spin}}$
+reaching a maximum of $0.01893$~bit at $(r=0.7538,t=3.385)$.
 
 Figure~\ref{fig:holevo_angular} resolves the angular and temporal behavior at
-$r=0$. The initial value is two bits at every sampled angle. Subsequent
-oscillations are identical across the seven angular rows to numerical
-precision. This angle independence is expected because the zero-separation
-initial state is the same pure singlet for every row and the independent noise
-channel is angle independent. The figure therefore verifies the consistency
-of the $r=0$ slice; it does not demonstrate that $\chi_{\mathrm P}$ is angle
-independent at finite $r$, where the initial state is anisotropic.
+$r=0$ across both bases together with the finite-separation basis splitting
+at $r=0.503$. At $r=0$, the initial value is two bits at every sampled angle,
+all seven angular rows are identical to numerical precision, and the spin
+and helicity-band heatmaps coincide to $8.9\times10^{-16}$ bit. This
+agreement is expected because the zero-separation initial state is the same
+pure singlet for every row and basis and the independent noise channel is
+angle independent. Panel~\ref{fig:holevo_angular}(c) shows that as soon as
+$r>0$ ($r=0.503$), the helicity-band capacity exceeds the spin-basis value
+across all angles during intermediate times, peaking at $+0.01803$ bit.
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=0.92\textwidth]
+    \includegraphics[width=\textwidth]
     {figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_theta_t_heatmap.png}
     \caption{
-    Pauli-ensemble Holevo quantity $\chi_{\mathrm P}(\theta,r=0,t)$ for the
-    same $\gamma=1.5$, $\Gamma=0.1$ regime as
-    Fig.~\ref{fig:holevo_spatial}. The seven rows correspond to
-    $\theta=0^\circ,15^\circ,\ldots,90^\circ$, and $261$ time points span
-    $0\leq t\leq80$. The identical rows follow from the angle-independent
-    pure-singlet initial state at $r=0$ and the angle-independent local Kraus
-    map; no finite-separation isotropy is implied.
+    Pauli-ensemble Holevo quantity $\chi_{\mathrm P}(\theta,r,t)$ for the
+    same $\gamma=1.5$, $\Gamma=0.1$ regime as Fig.~\ref{fig:holevo_spatial}:
+    (a)~original-spin basis at $r=0$, (b)~helicity-band basis at $r=0$
+    (identical to (a) to $8.9\times10^{-16}$ bit), and (c)~basis difference
+    $\chi_{\mathrm P}^{\mathrm{band}}-\chi_{\mathrm P}^{\mathrm{spin}}$ at
+    finite separation $r=0.503$, reaching $+0.01803$ bit. The seven rows
+    correspond to $\theta=0^\circ,15^\circ,\ldots,90^\circ$, and $261$ time
+    points span $0\leq t\leq80$.
     }
     \label{fig:holevo_angular}
 \end{figure*}
@@ -1208,59 +1262,71 @@ computed dependence
 $\mathcal F(U,\theta,r,t)$ or $\chi_{\mathrm P}(U,\theta,r,t)$ is transmitted
 through the initial state and then acted upon by a $U$-independent noise map.
 
-To test this dependence numerically, we performed a new sweep at the three
-interaction strengths already used in Fig.~\ref{fig:delta_ks_heatmaps}:
-$U/t=40$, $75$, and $115$. All other model parameters were fixed, and each
-self-consistency solution satisfied the residual criterion reported in
-Sec.~\ref{sec:validation}. For each interaction strength we used the full
-seven-angle, $200$-radius, and $261$-time grid in the
+To test this dependence numerically across both bases, we performed a sweep
+at the three interaction strengths already used in
+Fig.~\ref{fig:delta_ks_heatmaps}: $U/t=40$, $75$, and $115$. All other model
+parameters were fixed, and each self-consistency solution satisfied the
+residual criterion reported in Sec.~\ref{sec:validation}. For each interaction
+strength we evaluated both the original-spin and helicity-band conditional
+states on the full seven-angle, $200$-radius, and $261$-time grid in the
 $\gamma_A=\gamma_B=1.5$, $\Gamma_A=\Gamma_B=0.1$ independent-amplitude-damping
 regime. Concurrence, singlet fraction, and the Pauli-ensemble Holevo quantity
 were evaluated with the same validated formulas. The initial density matrices
-were Hermitian, normalized, and positive semidefinite. The complete arrays,
-self-consistency parameters, residuals, and commit identifier are stored in
-the accompanying NPZ file.
+were Hermitian, normalized, and positive semidefinite. The complete arrays for
+both bases, self-consistency parameters, residuals, and commit identifier are
+stored in the accompanying NPZ archive.
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=0.94\textwidth]
+    \includegraphics[width=0.96\textwidth]
     {figs/U_dependence_fidelity_holevo.png}
     \caption{
-    Interaction dependence computed for $U/t=40$, $75$, and $115$ in the
-    $\gamma_A=\gamma_B=1.5$, $\Gamma_A=\Gamma_B=0.1$ regime. Upper panels:
-    initial singlet fraction and Pauli-ensemble Holevo quantity along
-    $\theta=45^\circ$. Lower panels: their time dependence at the fixed sampled
-    separation $r=1.50754$ and the same angle. All other BdG parameters are
-    identical to those in Fig.~\ref{fig:delta_ks_heatmaps}. The interaction
-    changes the initial state but does not enter the Kraus map. These results
-    use the helicity conditional-Wick construction in the original-spin basis
-    at $V_{\mathrm{SO}}/t=0.5$.
+    Interaction dependence computed for $U/t=40$, $75$, and $115$ at
+    $V_{\mathrm{SO}}/t=0.5$ in the $\gamma_A=\gamma_B=1.5$,
+    $\Gamma_A=\Gamma_B=0.1$ regime for both the original-spin (solid) and
+    helicity-band (dashed) bases. Top row: initial singlet fraction and
+    Pauli-ensemble Holevo quantity along $\theta=45^\circ$. Middle row: time
+    dependence at the fixed sampled separation $r=1.50754$ and the same
+    angle. Bottom row: basis differences
+    $F_{\mathrm s}^{\mathrm{spin}}-F_{\mathrm s}^{\mathrm{band}}(t=0)$ versus
+    $r$ (left) and $\chi_{\mathrm P}^{\mathrm{band}}-\chi_{\mathrm P}^{\mathrm{spin}}(r=1.50754)$
+    versus $t$ (right). All other BdG parameters are identical to those in
+    Fig.~\ref{fig:delta_ks_heatmaps}.
     }
     \label{fig:U_fidelity_holevo}
 \end{figure*}
 
-The upper panels of Fig.~\ref{fig:U_fidelity_holevo} show that $U$ modifies
-both the positions and amplitudes of the spatial structures. The ordering is
-separation dependent. At $r=0.50251$, for example, the initial singlet
-fraction increases from $0.4597577$ at $U/t=40$ to $0.4615766$ at $75$ and
-$0.4640707$ at $115$; the corresponding Holevo values are $0.14857$,
-$0.15115$, and $0.15471$ bits. At $r=1.50754$ the singlet fraction takes
-values $0.2506078$, $0.2510586$, and $0.2511120$ across the same three
-interactions, while $\chi_{\mathrm P}$ takes values $3.6\times10^{-6}$,
-$1.0\times10^{-5}$, and $1.0\times10^{-5}$ bits. These paired examples are
-not uniformly ordered: over $0\leq r\leq6$ the difference between the
-$U/t=40$ and $115$ curves changes sign eight times for the singlet
-fraction and five times for $\chi_{\mathrm P}$, so no universal monotonic
-enhancement or suppression holds over the spatial domain.
+The top and bottom-left panels of Fig.~\ref{fig:U_fidelity_holevo} show that
+$U$ modifies both the positions and amplitudes of the spatial structures in
+both bases, while the ordering in $U$ remains separation dependent. At
+$r=0.50251$, the initial singlet fraction rises from $0.4597577$ ($U/t=40$) to
+$0.4615766$ ($75$) and $0.4640707$ ($115$) in the spin basis, and from
+$0.4585905$ to $0.4608040$ and $0.4631088$ in the helicity-band basis; the
+corresponding Holevo values are $0.14857$, $0.15115$, and $0.15471$ bits in
+spin versus $0.14806$, $0.15190$, and $0.15643$ bits in band. At
+$r=1.50754$, $F_{\mathrm s}^{\mathrm{spin}}$ takes values $0.2506078$,
+$0.2510586$, and $0.2511120$ across $U/t=40,75,115$ (with $\chi_{\mathrm P}^{\mathrm{spin}} \le 1.02\times10^{-5}$~bit),
+whereas $F_{\mathrm s}^{\mathrm{band}}$ sits below $1/4$ at $0.2493298$,
+$0.2494829$, and $0.2496350$ and retains a finite Holevo offset
+$\chi_{\mathrm P}^{\mathrm{band}} = 8.89\times10^{-4}$, $1.33\times10^{-3}$,
+and $2.15\times10^{-3}$ bit. At $r=10$, the asymptotic band singlet fraction
+decreases monotonically with interaction ($0.2496778$, $0.2495281$, and
+$0.2492831$), while the asymptotic band Holevo bias grows monotonically
+($9.29\times10^{-4}$, $1.36\times10^{-3}$, and $2.07\times10^{-3}$ bit) as
+stronger $U$ widens the helicity population asymmetry. Over $0\leq r\leq6$ the
+difference between the $U/t=40$ and $115$ curves still changes sign multiple
+times in both bases, so no universal monotonic $U$ ordering holds globally.
 
-The lower panels show the consequences at fixed $r=1.50754$. The singlet
-fraction exhibits damped revivals at common times because $p(t)$ is shared;
-the interaction changes the initial amplitude and therefore the detailed
-curve, but does not introduce a separate environmental timescale. The Holevo
-curves likewise approach one bit at long times, with nearly indistinguishable
-late-time behavior on the plotted scale. At $r=0$, all three interactions
-instead give exactly the same curves because the zero-separation initial
-state is the pure singlet for every converged solution.
+The middle and bottom-right panels resolve the dynamics at fixed
+$r=1.50754$. Both bases share identical survival-probability revival times
+because $p(t)$ does not depend on $U$ or internal basis, while the
+basis splitting $\chi_{\mathrm P}^{\mathrm{band}}-\chi_{\mathrm P}^{\mathrm{spin}}$
+grows systematically with $U$, peaking at $0.01422$ ($U/t=40$), $0.01753$
+($75$), and $0.02243$ bit ($115$) at $t=3.385$ on this slice (and up to
+$0.02601$ bit globally across the $(r,t)$ grid at $U/t=115$, alongside
+$\max|\Delta F_{\mathrm s}|=0.00821$). At $r=0$, all three interactions and
+both bases instead give identically coincident curves because the
+zero-separation initial state is always the pure singlet.
 
 The supported conclusion is therefore specific: within the three-point,
 fixed-filling calculation, the Hubbard interaction
@@ -1533,29 +1599,31 @@ used for both regimes.
     {figs/environment_protocols_regimes.png}
     \caption{
     Environment effects on teleportation, dense coding, and
-    concurrence at $\beta=0$ (no Stark shift), for the BdG resources of
-    $U/t=75$, $\Delta t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$ (helicity
-    spin basis), $n=1.875$ at $\theta=45^{\circ}$,
-    $N_{k}=400$. Rows: teleportation fidelity (solid: fixed singlet
-    protocol, dashed: locally optimized), dense-coding Holevo quantity
-    $\chi$, and concurrence $C$; columns: the non-Markovian regime
-    $\lambda=0.1\gamma_{0}$ ($\gamma=2$, $\Gamma=0.1$) and the
-    Markovian regime $\lambda=10\gamma_{0}$ ($\gamma=2$, $\Gamma=10$),
-    versus $\tau=\gamma_{0}t$. Curves correspond to separations
-    $r=0$, $0.30$, $0.50$, and $1.0$; dotted lines mark the classical
-    bounds $2/3$ and $1$ bit. The $r=0$ resource starts at the ideal
-    values $(1,2,1)$, exactly as the maximally entangled initial state
-    of Ref.~\cite{Haddadi2023}.
+    concurrence at $\beta=0$ (no Stark shift), comparing the original-spin
+    (solid) and helicity-band (dash-dotted) bases for the BdG resources of
+    $U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$, $n=1.875$ at
+    $\theta=45^{\circ}$, $N_{k}=400$. Rows: teleportation fidelity (fixed
+    singlet protocol in both bases; thin dashed: locally optimized spin
+    companion), dense-coding Holevo quantity $\chi_{\mathrm P}$, and exact
+    Wootters concurrence $C$. Left and middle columns: non-Markovian
+    ($\lambda=0.1\gamma_{0}$, $\gamma=2$, $\Gamma=0.1$) and Markovian
+    ($\lambda=10\gamma_{0}$, $\gamma=2$, $\Gamma=10$) regimes versus
+    $\tau=\gamma_{0}t$ for $r=0$, $0.30$, $0.50$, and $1.0$; dotted lines
+    mark the classical bounds $2/3$ and $1$ bit. Right column: basis
+    difference ($\mathrm{band}-\mathrm{spin}$) across both regimes (solid:
+    non-Markovian, dashed: Markovian).
     }
     \label{fig:environment_regimes}
 \end{figure*}
 %
 Figure~\ref{fig:environment_regimes} displays the three protocol
-metrics in both regimes. In the Markovian column the fixed-protocol
-fidelity of the $r=0$ resource falls below $2/3$ by $\tau=0.4$ and
-settles at exactly $1/3$, the optimized fidelity approaches $2/3$, the
-Holevo quantity converges to exactly $1$ bit, and the concurrence
-vanishes -- the fixed-point values reported in
+metrics across both internal bases and regimes. At $r=0$, both the spin
+and helicity-band resources start at the ideal values $(1,2,1)$ and
+evolve identically to $1.6\times10^{-15}$ throughout both regimes. In the
+Markovian column the fixed-protocol fidelity of the $r=0$ resource falls
+below $2/3$ by $\tau=0.4$ and settles at exactly $1/3$, the optimized
+fidelity approaches $2/3$, the Holevo quantity converges to exactly $1$
+bit, and the concurrence vanishes -- the fixed-point values reported in
 Ref.~\cite{Haddadi2023} within their table rounding. In the
 non-Markovian column the first loss of the teleportation advantage
 occurs at $\tau=2.55$; the Holevo quantity dips to $0.73$ bit and
@@ -1569,39 +1637,57 @@ not coincide: their Eq.~(23) evaluated on our evolved states reproduces
 their table to $\pm0.01$ ($0.268$ versus $0.27$ at $\tau=10$), while
 the standard linear protocol gives $0.577$ on the identical state --
 the difference is the quadratic $p_{i}p_{j}$ output construction of
-their Eqs.~(16)--(19), not the environment. Finite-separation resources
-start below the ideal point (at $r=0.30$: $F=0.802$, $\chi=0.65$ bit,
-$C=0.41$), so for $r\geq0.30$ the dense-coding advantage is absent
-before any noise is applied.
+their Eqs.~(16)--(19), not the environment.
+
+At finite separation ($r=0.30,0.50,1.00$), all resources start below the
+ideal point ($r=0.30$: $F=0.8021$, $\chi_{\mathrm P}=0.6528$ bit,
+$C=0.4068$ in spin versus $0.8013$, $0.6505$ bit, $0.4054$ in band), so
+for $r\geq0.30$ the dense-coding advantage is absent before any noise is
+applied. During non-Markovian evolution, the basis differences
+[Fig.~\ref{fig:environment_regimes}, right column] reach peak magnitudes
+of $|\Delta F_{\mathrm{fixed}}|=0.00228$, $0.00349$, and $0.00383$ and
+$\Delta\chi_{\mathrm P}=+0.01286$, $+0.01754$, and $+0.01814$ bit across
+$r=0.30$, $0.50$, and $1.00$. Notably, at $r=0.30$, although the
+helicity-band state begins with slightly smaller concurrence
+($\Delta C=-0.00135$ at $\tau=0$), it exhibits slightly stronger
+amplitude-damping entanglement revivals ($\Delta C=+0.01092$ at the
+first revival, retaining $C^{\mathrm{band}}=0.00121$ at $\tau=30$ where
+$C^{\mathrm{spin}}=0$).
 %
 \begin{figure*}[t]
     \centering
     \includegraphics[width=\textwidth]
     {figs/environment_parameter_scan.png}
     \caption{
-    Reservoir spectral-width scan at $\gamma=2$ for the maximally
-    entangled $r=0$ resource, with $\beta=0$: teleportation fidelity
-    (fixed protocol), dense-coding Holevo quantity $\chi$, and
-    concurrence as functions of $\tau=\gamma_{0}t$ and $\Gamma$
-    (logarithmic axis). White contours mark the classical bounds
-    $F=2/3$ and $\chi=1$ bit; the dashed line at
-    $\Gamma=2\gamma=4$ separates the underdamped (revival) branch from
-    the overdamped branch. Strong memory ($\Gamma=0.01$) sustains all
-    three advantages to $\tau=30$, whereas $\Gamma\gtrsim4$ drives
-    every metric to its monotonic fixed point.
+    Reservoir spectral-width scan at $\gamma=2$ with $\beta=0$ as a
+    function of $\tau=\gamma_{0}t$ and logarithmic spectral width $\Gamma$:
+    left column, maximally entangled $r=0$ resource (spin $\equiv$
+    helicity band); middle column, finite-separation $r=0.30$ resource in
+    the helicity-band basis; right column, $r=0.30$ basis difference
+    ($\mathrm{band}-\mathrm{spin}$). Rows show fixed-protocol teleportation
+    fidelity $F$, Pauli-ensemble Holevo quantity $\chi_{\mathrm P}$, and
+    concurrence $C$. White contours mark the classical bounds $F=2/3$ and
+    $\chi_{\mathrm P}=1$ bit; the horizontal dashed line at
+    $\Gamma=2\gamma=4$ separates the underdamped (revival) branch from the
+    overdamped branch.
     }
     \label{fig:environment_scan}
 \end{figure*}
 %
 Figure~\ref{fig:environment_scan} resolves the memory-strength
-dependence directly. At $\tau=30$ the spectral width $\Gamma=0.01$
-leaves $F=0.81$, $\chi=1.08$ bit, and $C=0.71$ -- all three
-advantages intact -- while widths beyond the $\Gamma=2\gamma$ crossover
-reduce the fixed fidelity to $1/3$, the Holevo quantity to $1$ bit, and
-the concurrence to zero. The environment, through $\Gamma$ relative to
-$\gamma$, therefore controls whether the superconducting resource
-retains any operational advantage at long times, independently of the
-spatial structure examined in Sec.~\ref{sec:vso_concurrence}.
+dependence directly for both $r=0$ and $r=0.30$. At $\tau=30$ and
+$\Gamma=0.01$, the $r=0$ resource retains $F=0.81$, $\chi_{\mathrm P}=1.08$ bit,
+and $C=0.71$ -- all three advantages intact -- while at $r=0.30$ the
+underdamped revival pocket restores $F$ slightly above the $2/3$ contour
+near $\tau\approx27$--$30$ ($F=0.680$, $\chi_{\mathrm P}=0.402$ bit,
+$C=0.182$ in the band basis versus $0.682$, $0.391$ bit, $0.172$ in spin
+at $\tau=30$). Widths beyond the $\Gamma=2\gamma$ crossover drive every
+metric monotonically to its asymptotic fixed point ($F=1/3$,
+$\chi_{\mathrm P}=1$ bit, $C=0$) in both bases. The environment, through
+$\Gamma$ relative to $\gamma$, therefore controls whether the
+superconducting resource retains any operational advantage at long
+times, while the internal basis sets the magnitude of the finite-$r$
+coherence and entanglement-revival splitting.
 
 \section{Conclusion}
 
@@ -1635,17 +1721,29 @@ Eq.~\eqref{eq:helicity_transform} and the conditional Wick matrix of
 Eq.~\eqref{eq:conditional_rho} produce general two-qubit states in both
 the original-spin and band-pseudospin bases, and are evaluated
 throughout with the general Wootters concurrence together with the
-fixed and optimized teleportation fidelities. All protocol and resource
-figures are computed on periodic Brillouin-zone meshes at
-$V_{\mathrm{SO}}/t=0.5$ from this construction, supplemented by explicit
-spin- versus band-basis concurrence comparisons across $(\Delta_t,V_{\mathrm{SO}},r)$.
+fixed and optimized teleportation fidelities and Pauli-ensemble Holevo
+capacities. All protocol, interaction-sweep, and open-system figures are
+computed on periodic Brillouin-zone meshes at $V_{\mathrm{SO}}/t=0.5$ in
+both internal bases. At $r=0$, the spin and helicity-band descriptions
+coincide to machine precision ($\le 1.6\times10^{-15}$) because both reduce
+to the exact pure spin singlet; at finite separation ($r>0$),
+band-population asymmetry ($n_+\neq n_-$) shifts the long-range band
+singlet fraction slightly below $1/4$ ($0.24953$ at $U/t=75$, leaving a
+nonvanishing asymptotic Holevo offset $\chi_{\mathrm{P}}^{\mathrm{band}}=1.36\times10^{-3}$~bit)
+and induces finite-time basis splittings up to $6.83\times10^{-3}$ in
+singlet fidelity and $0.0260$~bit in $\chi_{\mathrm{P}}$ (at $U/t=115$),
+while producing slightly stronger non-Markovian concurrence revivals at
+short finite separation ($\Delta C=+0.0109$ at $r=0.30$). These results
+are complemented by explicit spin- versus band-basis concurrence comparisons
+across $(\Delta_t,V_{\mathrm{SO}},r)$.
 The environment-parameter
 figures complete the open-system analysis: in matched regimes the
 dense-coding Holevo dynamics reproduce the exactly solvable two-atom
 benchmark~\cite{Haddadi2023} to within $0.01$ bit, the overdamped limit
 shows the expected fixed-point values, and reservoirs with spectral
 width $\Gamma\lesssim2\gamma$ sustain a measurable advantage up to
-$\tau=30$. The concurrence sweeps against $U$ and $V_{\mathrm{SO}}$
+$\tau=30$ for both $r=0$ and (in the fixed-fidelity revival pocket) $r=0.30$.
+The concurrence sweeps against $U$ and $V_{\mathrm{SO}}$
 remain analytic across the gapped $\mu_{\mathrm{SC}}=4t$ crossover;
 independent non-energy BdG diagnostics place the protocol point inside a
 fully gapped superconducting crossover ($\min_{\mathbf{k},s}E_{\mathbf{k}s}\ge 0.94t$)
@@ -1657,10 +1755,11 @@ normal-state Dirac and van Hove Lifshitz transitions, and attributing
 noncritical concurrence spikes to Wootters sudden-death cutoffs and
 finite-grid Fermi-surface discretization.
 
-The principal remaining tasks are extending the open-system protocol sweeps
-to the helicity-band basis across the full filling range and specifying
-the experimental readout required for nonlocal helicity-band Bell
-measurements before assigning operational meaning to that basis.
+The principal remaining tasks are extending these open-system
+teleportation and dense-coding basis sweeps across the full electronic
+filling range and specifying the experimental readout required for
+nonlocal helicity-band Bell measurements before assigning operational
+meaning to that basis.
 
 \begin{acknowledgments}
 Numerical results were obtained with a self-consistent BdG solver and open-quantum-system evolution code implemented by the author.
