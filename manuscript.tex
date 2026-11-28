@@ -17,7 +17,7 @@
 \date{\today}
 
 \begin{abstract}
-Quantum communication protocols rely critically on the preservation of entanglement and quantum coherence in realistic noisy environments. In this work, we investigate quantum teleportation and dense coding using correlated electron pairs described within a spin--orbit-coupled Hubbard--Bogoliubov--de Gennes framework and subjected to non-Markovian open-system dynamics. The superconducting correlations are obtained self-consistently, and the corresponding normal and anomalous Green's functions are employed to construct spatially dependent two-qubit density matrices. At nonzero spin--orbit coupling ($V_{\mathrm{SO}}\neq0$) these matrices follow from a momentum-dependent helicity rotation and a matrix-valued conditional Wick prescription, evaluated in both the original-spin basis and the helicity-band (band-pseudospin) basis; the general Wootters concurrence and the fixed and optimized teleportation fidelities are evaluated directly on both the non-X spin-basis states and the X-block helicity-band states. The resulting states are evolved using Kraus-operator descriptions of environmental noise, including non-Markovian amplitude damping and dephasing channels, while the Holevo quantity of an equal-probability Pauli encoding ensemble quantifies the information available to the corresponding dense-coding protocol. At zero separation ($r=0$), both internal bases recover the identical pure spin singlet and therefore share identical open-system teleportation, dense-coding, and concurrence dynamics to numerical precision. At finite separation ($r>0$), helicity band-population asymmetry ($n_+\neq n_-$) induces measurable, systematic basis splittings across all protocols: in the helicity-band basis the long-range singlet fraction saturates slightly below $1/4$ ($0.24953$ at $U/t=75$, versus $0.25000$ in the spin basis), yielding a small positive asymptotic Pauli Holevo offset ($1.36\times 10^{-3}$~bit at $U/t=75$, $t=0$) driven by $S_2(\rho_B)<1$, while intermediate-time basis differences reach up to $6.83\times 10^{-3}$ in singlet fidelity and $0.0260$~bit in $\chi_{\mathrm{P}}$ (at $U/t=115$). Under non-Markovian amplitude damping, finite-separation concurrence revivals can even be modestly stronger in the helicity-band basis ($\Delta C$ up to $+0.0109$ at $r=0.30$). A dedicated environment-parameter study maps fidelity, Holevo information, and concurrence against the reservoir spectral width in both underdamped and overdamped regimes: the dense-coding dynamics reproduce the exactly solvable two-atom benchmark of Haddadi \emph{et al.}~\cite{Haddadi2023} to within $0.01$ bit, while the teleportation-fidelity curves differ because that work evaluates a quadratic output formula rather than the standard linear protocol. A converged interaction sweep at $U/t=40$, $75$, and $115$ shows that the Hubbard interaction modifies both bases' initial spatial profiles and subsequent dynamics, while preserving separation-dependent ordering rather than uniform enhancement. Spin--orbit sweeps of concurrence against $U$ and $V_{\mathrm{SO}}$ remain analytic across the gapped $\mu_{\mathrm{SC}}=4t$ crossover, with smooth second-derivative sign changes and basis splitting between original-spin and band-pseudospin concurrences rather than any discontinuity. Linearized pair-instability eigenvalues ($\lambda_+ = 1$), branch-continuation hysteresis bounds ($\le 1.3\times 10^{-14}$), finite-size scaling of the order-parameter slope, and normal-state Fermi-surface checks establish genuine second-order pairing-onset transitions elsewhere in parameter space---at $\Delta_{t,c}/t=2.52\pm 0.03$ ($U/t=75$, $V_{\mathrm{SO}}=0$, $n=1.875$), at $U_c/t\approx 73.9$ and $V_c/t\approx 0.532$ ($n=1.0$, $\Delta_t/t=4.5$), and across filling thresholds $n_c \approx \{0.2192, 1.0194\}$ ($U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$)---alongside normal-state Dirac and van Hove Lifshitz transitions, while placing the main protocol point ($U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$, $n=1.875$) strictly inside a fully gapped superconducting crossover ($\min_{\mathbf{k},s} E_{\mathbf{k}s} \ge 0.94t$) where all measured observables vary analytically and entanglement sudden-death kinks arise solely from the Wootters zero cutoff. All protocol and resource figures in this work are computed at $V_{\mathrm{SO}}/t=0.5$ on periodic Brillouin-zone meshes across both the original-spin and helicity-band bases.
+Quantum communication protocols rely critically on the preservation of entanglement and quantum coherence in realistic noisy environments. In this work, we investigate quantum teleportation and dense coding using correlated electron pairs described within a spin--orbit-coupled Hubbard--Bogoliubov--de Gennes framework and subjected to non-Markovian open-system dynamics. The superconducting correlations are obtained self-consistently, and the corresponding normal and anomalous Green's functions are employed to construct spatially dependent two-qubit density matrices. At nonzero spin--orbit coupling ($V_{\mathrm{SO}}\neq0$) these matrices follow from a momentum-dependent helicity rotation and a matrix-valued conditional Wick prescription, evaluated in both the original-spin basis and the helicity-band (band-pseudospin) basis; the general Wootters concurrence and the fixed and optimized teleportation fidelities are evaluated directly on both the non-X spin-basis states and the X-block helicity-band states. The resulting states are evolved using Kraus-operator descriptions of environmental noise, including non-Markovian amplitude damping and dephasing channels, while the Holevo quantity of an equal-probability Pauli encoding ensemble quantifies the information available to the corresponding dense-coding protocol. At zero separation ($r=0$), both internal bases recover the identical pure spin singlet and therefore share identical open-system teleportation, dense-coding, and concurrence dynamics to numerical precision. At finite separation ($r>0$), helicity band-population asymmetry ($n_+\neq n_-$) induces measurable, systematic basis splittings across all protocols: in the helicity-band basis the long-range singlet fraction saturates slightly below $1/4$ ($0.24953$ at $U/t=75$, versus $0.25000$ in the spin basis), yielding a small positive asymptotic Pauli Holevo offset ($1.36\times 10^{-3}$~bit at $U/t=75$, $t=0$) driven by $S_2(\rho_B)<1$, while intermediate-time basis differences reach up to $6.83\times 10^{-3}$ in singlet fidelity and $0.0260$~bit in $\chi_{\mathrm{P}}$ (at $U/t=115$). Under non-Markovian amplitude damping, finite-separation concurrence revivals can even be modestly stronger in the helicity-band basis ($\Delta C$ up to $+0.0109$ at $r=0.30$). A dedicated environment-parameter study maps fidelity, Holevo information, and concurrence against the reservoir spectral width in both underdamped and overdamped regimes: the dense-coding dynamics reproduce the exactly solvable two-atom benchmark of Haddadi \emph{et al.}~\cite{Haddadi2023} to within $0.01$ bit, while the teleportation-fidelity curves differ because that work evaluates a quadratic output formula rather than the standard linear protocol. A converged interaction sweep at $U/t=40$, $75$, and $115$ shows that the Hubbard interaction modifies both bases' initial spatial profiles and subsequent dynamics, while preserving separation-dependent ordering rather than uniform enhancement. Extending this comparison across the full electronic filling range $n \in (0,2)$ at $V_{\mathrm{SO}}/t=0.5$ reveals dual pairing boundaries---a re-entrant dilute nodal ($s_{\pm}$) pocket below $n_{c,1}\approx 0.2192$ and the main high-density dome above $n_{c,2}\approx 1.0194$---together with a pronounced filling-driven divergence between the original-spin and helicity-band bases controlled by the helicity population polarization $(n_+-n_-)/n$. In the original-spin basis, lowering $n$ below $n_{\mathrm{ESD}}(1,0)=0.4162$ unlocks finite-site quantum advantage at the exact nearest-neighbor lattice vector $\mathbf{r}=(1,0)a$ (reaching $C_{\mathrm{spin}}=0.7840$, $\overline{\mathcal{F}}_{\mathrm{tel}}^{\mathrm{spin}}=0.9280$, and $\chi_{\mathrm{P}}^{\mathrm{spin}}=1.3350$~bits at $n=0.04$, and sustaining non-Markovian lattice-site teleportation revivals above $2/3$ and $>1$~bit dense-coding revivals at $n=0.10$), whereas in the helicity-band basis near-complete lower-band polarization ($n_+/n \to 1$) suppresses low-$n$ band concurrence while inflating the classical-asymmetry Holevo bias $1-S_2(\rho_B^{\mathrm{band}})$ toward $1$~bit; at intermediate and high fillings ($n\ge 0.50$), by contrast, non-Markovian concurrence revivals at $r=0.30a$ remain stronger in the helicity-band basis (up to $\Delta C = +0.0505$ at $n=1.0$). Spin--orbit sweeps of concurrence against $U$ and $V_{\mathrm{SO}}$ remain analytic across the gapped $\mu_{\mathrm{SC}}=4t$ crossover, with smooth second-derivative sign changes and basis splitting between original-spin and band-pseudospin concurrences rather than any discontinuity. Linearized pair-instability eigenvalues ($\lambda_+ = 1$), branch-continuation hysteresis bounds ($\le 1.3\times 10^{-14}$), finite-size scaling of the order-parameter slope, and normal-state Fermi-surface checks establish genuine second-order pairing-onset transitions elsewhere in parameter space---at $\Delta_{t,c}/t=2.52\pm 0.03$ ($U/t=75$, $V_{\mathrm{SO}}=0$, $n=1.875$), at $U_c/t\approx 73.9$ and $V_c/t\approx 0.532$ ($n=1.0$, $\Delta_t/t=4.5$), and across filling thresholds $n_c \approx \{0.2192, 1.0194\}$ ($U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$)---alongside normal-state Dirac and van Hove Lifshitz transitions, while placing the main protocol point ($U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$, $n=1.875$) strictly inside a fully gapped superconducting crossover ($\min_{\mathbf{k},s} E_{\mathbf{k}s} \ge 0.94t$) where all measured observables vary analytically and entanglement sudden-death kinks arise solely from the Wootters zero cutoff. All protocol and resource figures in this work are computed at $V_{\mathrm{SO}}/t=0.5$ on periodic Brillouin-zone meshes across both the original-spin and helicity-band bases.
 \end{abstract}
 
 \pacs{74.20.Fg, 03.67.Mn, 03.65.Ud, 74.25.-q}
@@ -1336,6 +1336,255 @@ functional law in $U$, an optimal interaction strength, or a universally
 beneficial interaction effect. A denser sweep would be required before extending these
 conclusions beyond the present parameter set.
 
+\subsection{Electron-filling dependence of pairing, basis splitting, and open-system protocols}
+\label{sec:n_results}
+
+In all preceding subsections, the electronic filling was held fixed at
+$n=1.875$, near the top of the upper band where the two helicity subbands
+are nearly equally occupied ($n_+/n=0.522$, $n_-/n=0.478$ at
+$U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$). Varying the electron
+filling $n\in(0,2)$ alters both the Fermi-surface geometry and the
+self-consistent pairing state $(\Delta_0,\Delta_s,\mu)$, while
+dramatically tuning the helicity population polarization
+$(n_+-n_-)/n$, where $n_\pm=N_k^{-2}\sum_{\mathbf{k}}|v_{\mathbf{k}\pm}|^2$.
+Because $n_+-n_-$ directly governs the finite-separation asymmetry of
+$\rho_{AB}^{\mathrm{band}}(\mathbf{r})$ in Eq.~\eqref{eq:conditional_rho},
+electronic filling serves as the primary physical knob separating the
+original-spin and helicity-band bases across both static entanglement
+ranges and non-Markovian open-system communication protocols.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]
+    {figs/n_dependence_phase_and_resources.png}
+    \caption{
+    Full-band electron-filling dependence at $V_{\mathrm{SO}}/t=0.5$,
+    $\Delta_t/t=4.5$, and $T=0$ on periodic $N_k=201$ meshes (cross-checked
+    at $N_k=401$ to $\Delta C\le 2.8\times 10^{-3}$), comparing the
+    original-spin (solid) and helicity-band (dashed) bases.
+    (a)~Linearized pair-instability eigenvalue $\lambda_+(n)$ at $U/t=75$
+    (blue) and $115$ (brown dash-dot), showing the re-entrant dilute
+    nodal $s_{\pm}$ pocket ($n<n_{c,1}=0.2192$) and high-density dome
+    ($n>n_{c,2}=1.0194$) at $U/t=75$, overlaid with the helicity
+    population polarization $(n_+-n_-)/n$ (red dashed, right axis).
+    (b)~Initial ($t=0$) singlet fraction $F_{\mathrm{s}}$ at
+    $\mathbf{r}=(0.25,0)a$ and $\mathbf{r}=(1,0)a$, together with locally
+    optimized teleportation fidelity $\overline{\mathcal{F}}_{\mathrm{tel}}(1,0)$.
+    (c)~Initial Wootters concurrence $C(n)$ at $\mathbf{r}=(0.25,0)a$,
+    $(0.50,0)a$, and $(1,0)a$, marking the spin-basis lattice-site ESD
+    threshold $n_{\mathrm{ESD}}(1,0)=0.4162$.
+    (d)~Continuous entanglement-death radius $r_c(n)$ along
+    $\theta=45^\circ$ relative to the nearest-neighbor lattice spacing
+    $r=a$ (dotted), highlighting the low-$n$ band collapse as $n_-\to 0$.
+    (e)~Pauli-ensemble Holevo capacity $\chi_{\mathrm{P}}(n,t=0)$ at
+    $(0.25,0)a$, $(1,0)a$, and asymptotic $r=10a$ in the band basis
+    [$1-S_2(\rho_B^{\mathrm{band}})$].
+    (f)~Lattice-site optimized teleportation fidelity
+    $\overline{\mathcal{F}}_{\mathrm{tel}}(\mathbf{r}=(1,0)a,t=0)$ across
+    $U/t\in\{15,25,75\}$ at $V_{\mathrm{SO}}/t=0.5$.
+    }
+    \label{fig:n_phase_resources}
+\end{figure*}
+
+Figure~\ref{fig:n_phase_resources} summarizes the full-band $n\in[0.02,1.96]$
+sweep at $U/t=75$, $\Delta_t/t=4.5$, $V_{\mathrm{SO}}/t=0.5$, and $T=0$.
+Because $\Delta_t/t=4.5>2$ yields a dilute pairing threshold
+$U_c(n\to 0^+)=(2\Delta_t-4t)(\Delta_t/t)|E_{\min}|=95.46t>75t$, the
+linearized pairing eigenvalue $\lambda_+(n)$ is non-monotonic
+[Fig.~\ref{fig:n_phase_resources}(a)], giving \emph{two} superconducting
+regimes separated by an intermediate normal Fermi liquid: a newly
+resolved re-entrant dilute nodal ($s_{\pm}$-like, $\Delta_0\Delta_s<0$)
+pocket for $n<n_{c,1}=0.2192$ ($\Delta_0=+0.0043t$, $\Delta_s=-0.0051t$ at
+$n=0.10$; rising to $\Delta_0=+0.0862t$, $\Delta_s=-0.0975t$ at $n=0.04$),
+a zero-gap normal phase across $0.2192\le n\le 1.0194$, and the main
+high-density superconducting dome for $n>n_{c,2}=1.0194$ (extending to
+$n=1.875$ and beyond). Raising $U/t$ to $115>95.46$ removes the dilute
+pocket and leaves a single transition at $n_c=1.4602$, whereas lowering
+$U/t$ to $15$ or $25$ keeps $\lambda_+(n)>1$ across all sampled fillings.
+
+Crucially, as $n$ decreases from $1.875$ toward the dilute limit, the
+chemical potential drops toward the lower Rashba band minimum and empties
+the upper helicity branch $s=-1$, driving $(n_+-n_-)/n$ from $0.0434$
+at $n=1.875$ to $0.4104$ at $n=1.00$, $0.5180$ at $n=0.50$, $0.9564$ at
+$n=0.10$, and $0.9999$ near the upper-band edge $n=0.065$ (before slight
+Bogoliubov gap mixing restores $n_-/n=0.0116$ at $n=0.02$). This filling-tuned
+helicity polarization produces stark, opposite responses in the two bases
+at nonzero separation:
+%
+\begin{enumerate}
+\item \emph{Spin-basis enhancement and exact lattice-site quantum advantage.}
+Lowering $n$ enlarges the real-space normal-exchange envelope and
+increases the entanglement-death radius $r_c^{\mathrm{spin}}(45^\circ)$
+from $0.464a$ ($n=1.875$) through $0.621a$ ($n=1.00$) and $0.906a$
+($n=0.50$), crossing the nearest-neighbor lattice spacing $r=a$ below
+$n_{\mathrm{ESD}}^{\mathrm{spin}}(1,0)=0.4162$ and reaching $1.994a$ at
+$n=0.10$ and $2.856a$ at $n=0.04$ [Fig.~\ref{fig:n_phase_resources}(c)--(d)].
+Consequently, at the exact nearest-neighbor lattice vector
+$\mathbf{r}=(1,0)a$, the spin-basis state acquires genuine operational
+quantum advantage across the low-filling regime: at $n=0.10$,
+$C_{\mathrm{spin}}=0.5916$, $F_{\mathrm{s}}^{\mathrm{spin}}=0.7025$, and
+$\overline{\mathcal{F}}_{\mathrm{tel}}^{\mathrm{spin}}=0.8639>2/3$; by
+$n=0.04$, even the dense-coding capacity crosses the classical bound
+($\chi_{\mathrm{P}}^{\mathrm{spin}}=1.3350$~bits $>1$, alongside
+$C_{\mathrm{spin}}=0.7840$ and $\overline{\mathcal{F}}_{\mathrm{tel}}^{\mathrm{spin}}=0.9280$),
+reaching $\chi_{\mathrm{P}}^{\mathrm{spin}}=1.5063$~bits at $n=0.02$.
+At $r=0.25a$, both bases remain smooth across the pairing threshold
+$n_{c,2}=1.0194$ because 2D BCS pairing opens with an essential singularity;
+at $n\ge 1.0$, superconductivity slightly lowers $C$ via Fermi-surface
+smearing, whereas only for $n\lesssim 0.04$ does dilute $s_{\pm}$ pairing
+boost lattice-site concurrence above the normal-state baseline.
+
+\item \emph{Helicity-band singlet collapse and classical Holevo bias.}
+At $r=0$, both bases still reduce identically to the pure spin singlet
+($F_{\mathrm{s}}=C=1$, $\chi_{\mathrm{P}}=2$~bits, verified to
+$\le 3.3\times 10^{-16}$ across all fillings). At any finite separation
+$r>0$, however, strong lower-band polarization forces two detected
+band-basis electrons predominantly into the polarized state $|{++}\rangle$.
+Consequently, $F_{\mathrm{s}}^{\mathrm{band}}$ at $\mathbf{r}=(1,0)a$
+never exceeds $0.344$ (peaking around $n\approx 0.28$), and
+$C_{\mathrm{band}}(0.25a)$ drops from $0.859$ ($n\approx 0.25$) down to
+zero at $n=0.065$, collapsing $r_c^{\mathrm{band}}$ from $2.723a$
+($n=0.10$) to $0.068a$ ($n=0.065$) before tiny dilute-gap mixing yields
+$C_{\mathrm{band}}(0.25a)=0.1890$ at $n=0.02$
+[Fig.~\ref{fig:n_phase_resources}(b)--(d)]. Remarkably, over the
+intermediate band $n\in[0.34,0.46]$, the diagonal X-state tail of
+$\rho_{AB}^{\mathrm{band}}$ still decays slightly more slowly with $r$
+than $\rho_{AB}^{\mathrm{spin}}$ ($r_c^{\mathrm{band}}=1.056a$ vs.\
+$r_c^{\mathrm{spin}}=0.994a$ at $n=0.4162$), leaving a narrow band
+entanglement window $C_{\mathrm{band}}(1,0)=0.0347$ where
+$C_{\mathrm{spin}}(1,0)$ has already vanished. In dense coding
+[Fig.~\ref{fig:n_phase_resources}(e)], the asymptotic long-range band
+Holevo offset grows monotonically from $1.36\times 10^{-3}$~bit
+($n=1.875$) to $0.1251$~bit ($n=1.00$), $0.2033$~bit ($n=0.50$),
+$0.8499$~bit ($n=0.10$), and $0.9989$~bit ($n=0.065$), tracking the
+exact single-qubit purity formula $\chi_{\mathrm{P}}^{\mathrm{band}}(r\to\infty,0)=1-S_2(\rho_B^{\mathrm{band}})=1-h_2(n_+/n)$
+to within $1.6\times 10^{-3}$~bit at $r=10a$ without carrying any
+entanglement ($C=0$) or exceeding the one-bit classical limit.
+
+\item \emph{Role of interaction $U$ across $n$.}
+Comparing $U/t\in\{15,25,75\}$ at $V_{\mathrm{SO}}/t=0.5$
+[Fig.~\ref{fig:n_phase_resources}(f)] shows that lowering $U$ restores
+robust pairing across lower fillings ($\max|\Delta_{\mathbf{k}}|=5.49t$ at
+$U/t=15, n=0.10$), yet the resulting quasiparticle Fermi-surface
+smearing \emph{reduces} $\overline{\mathcal{F}}_{\mathrm{tel}}(1,0)$ at
+low $n$ in both bases (at $n=0.10$: $0.8639$ at $U/t=75$ vs.\ $0.7950$
+at $U/t=25$ and $0.7864$ at $U/t=15$ in spin, and $0.6596$ vs.\ $0.5757$
+and $0.6172$ in band). Consistent with complementary $V_{\mathrm{SO}}=0$
+surveys across $n\in[0.50,1.875]$ and $U/t\in\{15,25,75\}$, no tested
+interaction produces nonzero concurrence at $\mathbf{r}=(1,0)a$ for
+$n\ge 0.50$; finite-site lattice advantage appears only once filling
+drops below $n_{\mathrm{ESD}}(1,0)$.
+\end{enumerate}
+
+\begin{table*}[t]
+    \centering
+    \footnotesize
+    \caption{Representative filling comparison at $U/t=75$, $\Delta_t/t=4.5$,
+    $V_{\mathrm{SO}}/t=0.5$, and $T=0$ ($N_k=201$ periodic) across both
+    original-spin and helicity-band bases: initial ($t=0$) concurrence $C$,
+    singlet fraction $F_{\mathrm{s}}$, optimized teleportation fidelity
+    $\overline{\mathcal{F}}_{\mathrm{tel}}$, and Pauli Holevo capacity
+    $\chi_{\mathrm{P}}$ at $r=0.30a$ ($\theta=45^\circ$) and exact lattice
+    site $\mathbf{r}=(1,0)a$, together with first non-Markovian revival peaks
+    ($t>4$) under low noise ($\gamma=1.5,\Gamma=0.1$) and strong memory
+    ($\gamma=4.5,\Gamma=0.01$).}
+    \label{tab:n_protocols}
+    \begin{ruledtabular}
+    \begin{tabular}{cccccccccc}
+        $n$ & Basis & $(n_+-n_-)/n$ & $C(0.30a,0)$ & $\chi_{\mathrm{P}}(0.30a,0)$ &
+        $C(1,0;0)$ & $\overline{\mathcal{F}}_{\mathrm{tel}}(1,0;0)$ &
+        $C_{\mathrm{rev}}^{\mathrm{low}}(0.30a)$ &
+        $\chi_{\mathrm{P,rev}}^{\mathrm{high}}(0.30a)$ &
+        $\overline{\mathcal{F}}_{\mathrm{tel,rev}}^{\mathrm{high}}(1,0)$ \\
+        \hline
+        $0.100$ & spin & $0.9564$ & $0.9548$ & $1.8085$ & $0.5916$ & $0.8639$ & $0.2557$ & $1.1575$ & $0.7716$ \\
+        $0.100$ & band & $0.9564$ & $0.6029$ & $0.8964$ & $0.1092$ & $0.6596$ & $0.1865$ & $1.0000$ & $0.6667$ \\
+        $0.500$ & spin & $0.5180$ & $0.8051$ & $1.3847$ & $0.0000$ & $0.6374$ & $0.1757$ & $1.0000$ & $0.6667$ \\
+        $0.500$ & band & $0.5180$ & $0.7475$ & $1.1802$ & $0.0000$ & $0.5795$ & $0.2123$ & $1.0000$ & $0.6667$ \\
+        $1.000$ & spin & $0.4104$ & $0.6263$ & $1.0091$ & $0.0000$ & $0.5456$ & $0.1027$ & $1.0000$ & $0.6667$ \\
+        $1.000$ & band & $0.4104$ & $0.5955$ & $0.9079$ & $0.0000$ & $0.5412$ & $0.1532$ & $1.0000$ & $0.6667$ \\
+        $1.400$ & spin & $0.1868$ & $0.5009$ & $0.7939$ & $0.0000$ & $0.5181$ & $0.0574$ & $1.0000$ & $0.6667$ \\
+        $1.400$ & band & $0.1868$ & $0.4912$ & $0.7719$ & $0.0000$ & $0.5093$ & $0.0848$ & $1.0000$ & $0.6667$ \\
+        $1.875$ & spin & $0.0434$ & $0.4069$ & $0.6529$ & $0.0000$ & $0.5026$ & $0.0246$ & $1.0000$ & $0.6667$ \\
+        $1.875$ & band & $0.0434$ & $0.4055$ & $0.6506$ & $0.0000$ & $0.5004$ & $0.0329$ & $1.0000$ & $0.6667$ \\
+    \end{tabular}
+    \end{ruledtabular}
+\end{table*}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]
+    {figs/n_dependence_open_protocols.png}
+    \caption{
+    Open-system non-Markovian dynamics across five representative fillings
+    $n\in\{0.10,0.50,1.00,1.40,1.875\}$ at $U/t=75$, $\Delta_t/t=4.5$,
+    $V_{\mathrm{SO}}/t=0.5$, and $T=0$ in both the original-spin (solid) and
+    helicity-band (dashed) bases. Left column ($r=0.30a$, $\theta=45^\circ$,
+    low-noise $\gamma=1.5$, $\Gamma=0.1$): (a)~singlet fraction
+    $F_{\mathrm{s}}(t)$, (c)~Pauli-ensemble Holevo capacity
+    $\chi_{\mathrm{P}}(t)$, and (e)~Wootters concurrence $C(t)$. Right
+    column: (b)~locally optimized teleportation fidelity
+    $\overline{\mathcal{F}}_{\mathrm{tel}}(t)$ at exact nearest-neighbor
+    lattice site $\mathbf{r}=(1,0)a$ in the strong-memory regime
+    ($\gamma=4.5$, $\Gamma=0.01$), showing genuine lattice-site quantum
+    revival above $2/3$ at $n=0.10$ in the spin basis; (d)~strong-memory
+    ($\gamma=4.5$, $\Gamma=0.01$) Pauli Holevo $\chi_{\mathrm{P}}(t)$ at
+    $r=0.30a$, showing spin-basis dense-coding revival above $1$~bit
+    ($1.1575$~bits) at $n=0.10$; and (f)~basis splitting
+    $C^{\mathrm{band}}-C^{\mathrm{spin}}$ at $r=0.30a$ ($\gamma=1.5$,
+    $\Gamma=0.1$), illustrating the sign inversion between spin-dominated
+    revivals at $n=0.10$ ($\Delta C<0$) and band-enhanced revivals at
+    $n\ge 0.50$ ($\Delta C>0$).
+    }
+    \label{fig:n_open_protocols}
+\end{figure*}
+
+Figure~\ref{fig:n_open_protocols} and Table~\ref{tab:n_protocols} extend
+this filling comparison into the open-system amplitude-damping channels
+at the five representative fillings spanning the dilute nodal pocket
+($n=0.10$), the normal Fermi-liquid window ($n=0.50,1.00$), the
+intermediate high-density dome ($n=1.40$), and the manuscript protocol
+point ($n=1.875$). In the low-noise regime ($\gamma=1.5$, $\Gamma=0.1$)
+at $r=0.30a$ ($\theta=45^\circ$) [Figs.~\ref{fig:n_open_protocols}(a),(c),(e)],
+lowering $n$ monotonically lifts both initial resources and subsequent
+revivals in the spin basis: $C_{\mathrm{spin}}$ starts at $0.4069$
+($n=1.875$) and climbs to $0.9548$ ($n=0.10$), while its first
+non-Markovian revival peak increases more than tenfold from $0.0246$ to
+$0.2557$; similarly, $\chi_{\mathrm{P}}^{\mathrm{spin}}(0)$ crosses the
+one-bit dense-coding limit at $n=1.00$ ($1.0091$~bits), reaches
+$1.3847$~bits at $n=0.50$, and attains $1.8085$~bits at $n=0.10$ (with
+$\chi_{\mathrm{P}}^{\mathrm{band}}(0)=1.1802$~bits $>1$ at $n=0.50$).
+In the strong-memory regime ($\gamma=4.5$, $\Gamma=0.01$)
+[Figs.~\ref{fig:n_open_protocols}(b),(d)], low filling unlocks genuine
+post-death quantum communication revivals that are absent at $n=1.875$:
+at $r=0.30a$, $\chi_{\mathrm{P}}^{\mathrm{spin}}$ at $n=0.10$ revives
+above the classical bound to $1.1575$~bits near $t\approx 20.9$ (after
+passing through the pure $|11\rangle$ point $\chi_{\mathrm{P}}=1$,
+$\overline{\mathcal{F}}_{\mathrm{tel}}=2/3$ where $\eta=0$ near $t\approx 10.7$),
+and even at the exact nearest-neighbor lattice vector $\mathbf{r}=(1,0)a$
+the spin-basis state revives to $C_{\mathrm{spin}}=0.3808$,
+$F_{\mathrm{s}}^{\mathrm{spin}}=0.5873$, and
+$\overline{\mathcal{F}}_{\mathrm{tel}}^{\mathrm{spin}}=0.7716>2/3$
+(whereas the band basis remains below $2/3$ throughout and all fillings
+$n\ge 0.50$ remain trapped below $2/3$ at $\mathbf{r}=(1,0)a$).
+
+Finally, Fig.~\ref{fig:n_open_protocols}(f) uncovers a sharp filling-driven
+sign reversal in the non-Markovian concurrence basis splitting
+$\Delta C(t)=C^{\mathrm{band}}-C^{\mathrm{spin}}$ at $r=0.30a$
+($\gamma=1.5$, $\Gamma=0.1$). Across $n\in\{0.50,1.00,1.40,1.875\}$,
+even though the helicity-band state begins slightly less entangled at
+$t=0$ ($\Delta C(0)<0$), amplitude damping suppresses the off-diagonal
+non-X coherences of $\rho_{AB}^{\mathrm{spin}}$ more strongly than the
+diagonal-plus-antidiagonal X-block structure of $\rho_{AB}^{\mathrm{band}}$,
+causing $\Delta C(t)$ to turn positive during both the pre-death tail and
+the revival peaks—reaching $+0.0084$ ($n=1.875$), $+0.0274$ ($n=1.40$),
+$+0.0366$ ($n=0.50$), and a maximum of $\Delta C = +0.0505$ at $n=1.00$
+(nearly five times the $+0.0109$ splitting at $n=1.875$ under $\gamma=2$,
+$\Gamma=0.1$). At $n=0.10$, however, the 95.6\% helicity band
+polarization forces $\rho_{AB}^{\mathrm{band}}(0)$ so far from the
+singlet that the spin basis retains higher concurrence throughout the
+entire evolution ($\Delta C(0)=-0.3520$, $\Delta C_{\mathrm{rev}}=-0.0692$).
+
 \subsection{Spin--orbit, filling, and basis dependence of concurrence}
 \label{sec:vso_concurrence}
 
@@ -1428,13 +1677,13 @@ $V_{\mathrm{SO}}/t=1.2$). The entanglement-death radius shrinks smoothly
 from $r_c\approx 0.464a$ ($\Delta_t/t=3.5$, $V_{\mathrm{SO}}=0$) to
 $0.448a$ ($\Delta_t/t=6.0$, $V_{\mathrm{SO}}/t=1.2$), so exact nonzero
 lattice sites such as $\mathbf{r}=(1,0)$ carry $C=0$ across the entire
-sweep. Complementary filling scans at $U/t=75$, $\Delta_t/t=4.5$ show that
-pairing vanishes across intermediate densities: at $V_{\mathrm{SO}}/t=0.5$
-the linearized pair-instability eigenvalue drops below unity between
-$n_{c,1}\approx 0.2192$ and $n_{c,2}\approx 1.0194$, leaving a normal
-Fermi liquid across $0.3\le n\le 1.0$ while the high-density superconducting
-dome ($n > n_{c,2}$, and $n=1.875$ in particular) maintains a robust
-quasiparticle gap. Across $n\ge 1.0$ at $r=0.25$, over $95\%$ of the
+sweep. As established in detail across the full band in Sec.~\ref{sec:n_results}
+and Fig.~\ref{fig:n_phase_resources}, complementary filling scans at $U/t=75$, $\Delta_t/t=4.5$,
+$V_{\mathrm{SO}}/t=0.5$ show that pairing vanishes across intermediate densities
+between $n_{c,1}\approx 0.2192$ and $n_{c,2}\approx 1.0194$, leaving a normal
+Fermi liquid across $0.22 < n < 1.02$ while both the dilute $s_{\pm}$ pocket ($n<n_{c,1}$)
+and the high-density superconducting dome ($n > n_{c,2}$) maintain nonzero gaps.
+Across $n\ge 1.0$ at $r=0.25$, over $95\%$ of the
 spin concurrence originates from normal-state Fermi-exchange statistics~\cite{Oh2004,Oh2005},
 with superconductivity slightly lowering $C$ primarily via quasiparticle
 Fermi-surface smearing rather than anomalous pairing amplitudes, whereas
@@ -1529,7 +1778,7 @@ $n=1.875$), at $U_c/t\approx 73.92$ ($n=1.0$, $V_{\mathrm{SO}}/t=0.5$,
 $\Delta_t/t=4.5$) and $V_c/t\approx 0.5322$ ($U/t=75$, $n=1.0$,
 $\Delta_t/t=4.5$), and across filling boundaries $n_{c,1}\approx 0.2192$
 and $n_{c,2}\approx 1.0194$ ($U/t=75$, $\Delta_t/t=4.5$,
-$V_{\mathrm{SO}}/t=0.5$). True normal-state topological transitions also
+$V_{\mathrm{SO}}/t=0.5$; Fig.~\ref{fig:n_phase_resources}(a)). True normal-state topological transitions also
 occur wherever $\Delta_{\mathbf{k}s}=0$, notably the logarithmic van Hove
 saddles ($n_{\mathrm{vH},\pm}\approx 0.9065, 1.0935$) and the $(\pi,\pi)$
 Dirac-Lifshitz point ($n_{\mathrm{Dirac},4}=1.9290$ at $V_{\mathrm{SO}}/t=0.5$).
@@ -1755,11 +2004,38 @@ normal-state Dirac and van Hove Lifshitz transitions, and attributing
 noncritical concurrence spikes to Wootters sudden-death cutoffs and
 finite-grid Fermi-surface discretization.
 
-The principal remaining tasks are extending these open-system
-teleportation and dense-coding basis sweeps across the full electronic
-filling range and specifying the experimental readout required for
-nonlocal helicity-band Bell measurements before assigning operational
-meaning to that basis.
+The electron-filling study of Sec.~\ref{sec:n_results}
+(Figs.~\ref{fig:n_phase_resources}--\ref{fig:n_open_protocols} and
+Table~\ref{tab:n_protocols}) establishes how carrier density controls
+both pairing and the spin-versus-band resource splitting across the full
+band $n\in(0,2)$ at $V_{\mathrm{SO}}/t=0.5$. Decreasing $n$ drives the
+helicity population polarization $(n_+-n_-)/n$ from $0.0434$ at $n=1.875$
+up to $0.9999$ near $n=0.065$, causing opposite trends in the two
+bases: in the original-spin basis, the entanglement range
+$r_c^{\mathrm{spin}}$ crosses the lattice spacing $a$ below
+$n_{\mathrm{ESD}}(1,0)=0.4162$ and unlocks genuine nearest-neighbor
+lattice-site concurrence, teleportation ($\overline{\mathcal{F}}_{\mathrm{tel}}>2/3$),
+dense coding ($\chi_{\mathrm{P}}>1$~bit for $n\lesssim 0.09$), and
+strong-memory non-Markovian revivals above the classical bounds at
+$n=0.10$; in the helicity-band basis, strong lower-band polarization
+suppresses the low-$n$ band singlet and collapses $r_c^{\mathrm{band}}$
+near $n=0.065$, while inflating the long-range classical-asymmetry Holevo
+plateau $1-S_2(\rho_B^{\mathrm{band}})$ toward $1$~bit without
+entanglement. Under low-noise non-Markovian evolution at $r=0.30a$,
+helicity-band concurrence revivals nonetheless surpass the spin basis
+across $n\in[0.50,1.875]$ (peaking at $\Delta C=+0.0505$ at $n=1.00$)
+before reverting to spin dominance inside the polarized $n=0.10$ pocket.
+Comparing $U/t\in\{15,25,75\}$ further demonstrates that larger
+low-density pairing gaps at smaller $U$ smear the Fermi distribution
+and suppress lattice-site teleportation fidelity relative to $U/t=75$,
+and that nonzero lattice-site entanglement emerges only below
+$n_{\mathrm{ESD}}(1,0)$.
+
+The principal remaining tasks are specifying the experimental readout
+required for nonlocal helicity-band Bell measurements before assigning
+operational meaning to that basis and extending these open-system
+protocol studies beyond Gaussian BdG mean-field and single-band
+approximations.
 
 \begin{acknowledgments}
 Numerical results were obtained with a self-consistent BdG solver and open-quantum-system evolution code implemented by the author.

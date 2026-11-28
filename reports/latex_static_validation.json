@@ -2,7 +2,7 @@
   "source": "manuscript.tex",
   "compilation_performed": false,
   "check_type": "static source audit only",
-  "label_count": 66,
+  "label_count": 70,
   "duplicate_labels": [],
   "undefined_references": [],
   "citation_key_count": 16,
@@ -28,16 +28,16 @@
       0
     ],
     "figure*": [
-      19,
-      19
+      21,
+      21
     ],
     "table": [
       0,
       0
     ],
     "table*": [
-      0,
-      0
+      1,
+      1
     ],
     "thebibliography": [
       1,
@@ -91,6 +91,14 @@
     },
     {
       "path": "figs/U_dependence_fidelity_holevo.png",
+      "exists": true
+    },
+    {
+      "path": "figs/n_dependence_phase_and_resources.png",
+      "exists": true
+    },
+    {
+      "path": "figs/n_dependence_open_protocols.png",
       "exists": true
     },
     {
