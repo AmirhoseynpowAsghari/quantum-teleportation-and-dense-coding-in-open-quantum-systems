@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  28 NOV 2026 11:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  28 NOV 2026 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -450,84 +450,62 @@ Package pdftex.def Info: figs/U_dependence_fidelity_holevo.png  used on input l
 ine 1282.
 (pdftex.def)             Requested size: 489.60342pt x 453.76328pt.
  [13]
-<figs/n_dependence_phase_and_resources.png, id=92, 1164.35pt x 918.632pt>
+<figs/n_dependence_phase_and_resources.png, id=92, 1164.35pt x 831.908pt>
 File: figs/n_dependence_phase_and_resources.png Graphic file (type png)
 <use figs/n_dependence_phase_and_resources.png>
 Package pdftex.def Info: figs/n_dependence_phase_and_resources.png  used on inp
 ut line 1359.
-(pdftex.def)             Requested size: 510.0pt x 402.36308pt.
+(pdftex.def)             Requested size: 469.19907pt x 335.2326pt.
  [14 <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs
 _r.png> <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo
-_theta_t_heatmap.png>] [15 <./figs/U_dependence_fidelity_holevo.png>]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 1435.
-
-
-Underfull \hbox (badness 5133) in paragraph at lines 1485--1516
+_theta_t_heatmap.png>] [15 <./figs/U_dependence_fidelity_holevo.png>] [16 <./fi
+gs/n_dependence_phase_and_resources.png>]
+Underfull \hbox (badness 5133) in paragraph at lines 1465--1496
  []\OT1/cmr/m/it/10 Concurrence deriva-tives $\OML/cmm/m/it/10 dC=dn$ \OT1/cmr/
 m/it/10 and $\OML/cmm/m/it/10 d[]C=dn[]$
  []
 
-
-Underfull \hbox (badness 1048) in paragraph at lines 1485--1516
- \OT1/cmr/m/n/10 na-tures from non-crit-i-cal cut-off ef-fects in both
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1485--1516
- \OT1/cmr/m/n/10 than the cor-re-spond-ing spin-basis slopes
- []
-
-
-Underfull \hbox (badness 1292) in paragraph at lines 1485--1516
- \OT1/cmr/m/n/10 pair-ing smears out the up-per van Hove cusp
- []
-
-<figs/n_dependence_open_protocols.png, id=103, 1034.264pt x 831.908pt>
+<figs/n_dependence_open_protocols.png, id=107, 1034.264pt x 831.908pt>
 File: figs/n_dependence_open_protocols.png Graphic file (type png)
 <use figs/n_dependence_open_protocols.png>
 Package pdftex.def Info: figs/n_dependence_open_protocols.png  used on input li
-ne 1570.
+ne 1550.
 (pdftex.def)             Requested size: 510.0pt x 410.21535pt.
-[16]
-<figs/concurrence_derivatives_u_vso.png, id=107, 1200.53224pt x 600.69124pt>
+[17]
+<figs/concurrence_derivatives_u_vso.png, id=111, 1200.53224pt x 600.69124pt>
 File: figs/concurrence_derivatives_u_vso.png Graphic file (type png)
 <use figs/concurrence_derivatives_u_vso.png>
 Package pdftex.def Info: figs/concurrence_derivatives_u_vso.png  used on input 
-line 1658.
+line 1638.
 (pdftex.def)             Requested size: 510.0pt x 255.18498pt.
-<figs/concurrence_vso_r_deltat_wick.png, id=108, 1200.6675pt x 716.4585pt>
+<figs/concurrence_vso_r_deltat_wick.png, id=112, 1200.6675pt x 716.4585pt>
 File: figs/concurrence_vso_r_deltat_wick.png Graphic file (type png)
 <use figs/concurrence_vso_r_deltat_wick.png>
 Package pdftex.def Info: figs/concurrence_vso_r_deltat_wick.png  used on input 
-line 1707.
+line 1687.
 (pdftex.def)             Requested size: 510.0pt x 304.32138pt.
- [17]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 1722.
-
-<figs/qpt_diagnostic_tests.png, id=115, 1164.2697pt x 673.19505pt>
+ [18]
+<figs/qpt_diagnostic_tests.png, id=119, 1164.2697pt x 673.19505pt>
 File: figs/qpt_diagnostic_tests.png Graphic file (type png)
 <use figs/qpt_diagnostic_tests.png>
-Package pdftex.def Info: figs/qpt_diagnostic_tests.png  used on input line 1765
+Package pdftex.def Info: figs/qpt_diagnostic_tests.png  used on input line 1745
 .
 (pdftex.def)             Requested size: 510.0pt x 294.8919pt.
-<figs/concurrence_dense_vso_deriv_qpt.png, id=116, 1381.44106pt x 1222.44705pt>
+ [19 <./figs/n_dependence_open_protocols.png>]
+<figs/concurrence_dense_vso_deriv_qpt.png, id=125, 1381.44106pt x 1222.44705pt>
 
 File: figs/concurrence_dense_vso_deriv_qpt.png Graphic file (type png)
 <use figs/concurrence_dense_vso_deriv_qpt.png>
 Package pdftex.def Info: figs/concurrence_dense_vso_deriv_qpt.png  used on inpu
-t line 1806.
+t line 1786.
 (pdftex.def)             Requested size: 510.0pt x 451.29106pt.
 
-Underfull \hbox (badness 2689) in paragraph at lines 1822--1839
+Underfull \hbox (badness 2689) in paragraph at lines 1802--1819
 []\OT1/cmr/m/n/10 Figure 18[] con-firms this gapped-crossover be-hav-
  []
 
 
-Underfull \hbox (badness 7047) in paragraph at lines 1822--1839
+Underfull \hbox (badness 7047) in paragraph at lines 1802--1819
 \OT1/cmr/m/n/10 ior across $^^A[]\OML/cmm/m/it/10 =t \OMS/cmsy/m/n/10 2 f\OT1/c
 mr/m/n/10 3\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/1
 0 4\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4\OML/
@@ -536,57 +514,52 @@ cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it
 1/cmr/m/n/10 0\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 , where
  []
 
-<research/figs/fig09_task5_decomposition_esd.png, id=117, 956.373pt x 298.716pt
+<research/figs/fig09_task5_decomposition_esd.png, id=126, 956.373pt x 298.716pt
 >
 File: research/figs/fig09_task5_decomposition_esd.png Graphic file (type png)
 <use research/figs/fig09_task5_decomposition_esd.png>
 Package pdftex.def Info: research/figs/fig09_task5_decomposition_esd.png  used 
-on input line 1843.
+on input line 1823.
 (pdftex.def)             Requested size: 510.0pt x 159.29869pt.
-<figs/environment_protocols_regimes.png, id=118, 1106.09235pt x 808.7013pt>
+<figs/environment_protocols_regimes.png, id=127, 1106.09235pt x 808.7013pt>
 File: figs/environment_protocols_regimes.png Graphic file (type png)
 <use figs/environment_protocols_regimes.png>
 Package pdftex.def Info: figs/environment_protocols_regimes.png  used on input 
-line 1902.
+line 1882.
 (pdftex.def)             Requested size: 510.0pt x 372.88324pt.
-[18]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 1944.
-
-<figs/environment_parameter_scan.png, id=122, 1112.2353pt x 796.77675pt>
+[20 <./figs/concurrence_derivatives_u_vso.png>]
+<figs/environment_parameter_scan.png, id=132, 1112.2353pt x 796.77675pt>
 File: figs/environment_parameter_scan.png Graphic file (type png)
 <use figs/environment_parameter_scan.png>
 Package pdftex.def Info: figs/environment_parameter_scan.png  used on input lin
-e 1963.
+e 1943.
 (pdftex.def)             Requested size: 510.0pt x 365.3546pt.
-
-Underfull \hbox (badness 1168) in paragraph at lines 2021--2060
+ [21 <./figs/concurrence_vso_r_deltat_wick.png>]
+Underfull \hbox (badness 1168) in paragraph at lines 2001--2040
 []\OT1/cmr/m/n/10 The he-lic-ity ex-ten-sion col-lects these el-e-ments for
  []
 
-[19]
+[22 <./figs/qpt_diagnostic_tests.png>] [23 <./figs/concurrence_dense_vso_deriv_
+qpt.png>]
+Overfull \vbox (4.22925pt too high) has occurred while \output is active []
 
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 2060.
 
-(./manuscript.bbl) [20] [21 <./figs/n_dependence_phase_and_resources.png>]
-[22 <./figs/n_dependence_open_protocols.png>] [23 <./figs/concurrence_derivativ
-es_u_vso.png>] [24 <./figs/concurrence_vso_r_deltat_wick.png>] [25 <./figs/qpt_
-diagnostic_tests.png>] [26 <./figs/concurrence_dense_vso_deriv_qpt.png>]
-[27 <./research/figs/fig09_task5_decomposition_esd.png>] [28 <./figs/environmen
-t_protocols_regimes.png>] [29 <./figs/environment_parameter_scan.png>]
-(./manuscript.aux)
+Overfull \vbox (4.22925pt too high) has occurred while \output is active []
+
+
+[24 <./research/figs/fig09_task5_decomposition_esd.png>] [25 <./figs/environmen
+t_protocols_regimes.png>] (./manuscript.bbl) [26 <./figs/environment_parameter_
+scan.png>] (./manuscript.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5141 strings out of 467050
- 78756 string characters out of 5408429
- 554341 words of memory out of 5000000
- 34463 multiletter control sequences out of 15000+600000
+ 5142 strings out of 467050
+ 78766 string characters out of 5408429
+ 532958 words of memory out of 5000000
+ 34464 multiletter control sequences out of 15000+600000
  643240 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,17n,65p,6201b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -618,10 +591,10 @@ nts/cm/cmsy9.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm
 ></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><
 /opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><
 /opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on manuscript.pdf (29 pages, 8509968 bytes).
+Output written on manuscript.pdf (26 pages, 8462606 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 156 compressed objects within 2 object streams
+ 282 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
