@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  28 NOV 2026 06:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  28 NOV 2026 06:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -601,12 +601,12 @@ Package pdftex.def Info: figs/ground_state_energy_caseB2.png  used on input lin
 e 250.
 (pdftex.def)             Requested size: 166.26205pt x 205.38608pt.
 
-Overfull \hbox (41.19623pt too wide) in paragraph at lines 259--272
+Overfull \hbox (81.19623pt too wide) in paragraph at lines 261--274
  []$[]$ 
  []
 
 
-Underfull \hbox (badness 1874) in paragraph at lines 278--279
+Underfull \hbox (badness 1874) in paragraph at lines 280--281
  []\OT1/cmr/bx/n/10 Machine-precision ther-mo-dy-namic con-sis-
  []
 
@@ -615,21 +615,21 @@ t>
 File: research/figs/fig10_task6_n1875_revalidation.png Graphic file (type png)
 <use research/figs/fig10_task6_n1875_revalidation.png>
 Package pdftex.def Info: research/figs/fig10_task6_n1875_revalidation.png  used
- on input line 285.
+ on input line 287.
 (pdftex.def)             Requested size: 510.0pt x 159.29869pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--294
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
 []\OT1/cmr/m/n/10 Why does the normal-state sec-ond deriva-tive
  []
 
 
-Underfull \hbox (badness 2644) in paragraph at lines 293--294
+Underfull \hbox (badness 2644) in paragraph at lines 295--296
 \OML/cmm/m/it/10 d[]e[]=dV[]$ \OT1/cmr/m/n/10 in Fig. [][]3[][] ex-hibit a smoo
 th V-shaped
  []
 
 
-Underfull \hbox (badness 3657) in paragraph at lines 315--317
+Underfull \hbox (badness 3657) in paragraph at lines 317--319
 \OT1/cmr/m/n/10 re-mains con-tin-u-ous with a sym-met-ric cusp while
  []
 
@@ -638,7 +638,7 @@ Underfull \hbox (badness 3657) in paragraph at lines 315--317
 File: research/figs/fig11_task6_kspace_topology.png Graphic file (type png)
 <use research/figs/fig11_task6_kspace_topology.png>
 Package pdftex.def Info: research/figs/fig11_task6_kspace_topology.png  used on
- input line 320.
+ input line 322.
 (pdftex.def)             Requested size: 510.0pt x 159.29869pt.
 <research/figs/fig13_density_eq28_phase_landscape.png, id=215, 1185.52913pt x 6
 94.09312pt>
@@ -646,7 +646,7 @@ File: research/figs/fig13_density_eq28_phase_landscape.png Graphic file (type p
 ng)
 <use research/figs/fig13_density_eq28_phase_landscape.png>
 Package pdftex.def Info: research/figs/fig13_density_eq28_phase_landscape.png  
-used on input line 350.
+used on input line 352.
 (pdftex.def)             Requested size: 510.0pt x 298.5919pt.
 <research/figs/fig14_density_qpt_zooms_eq28_vs_concurrence.png, id=216, 1330.37
 025pt x 622.42537pt>
@@ -654,18 +654,18 @@ File: research/figs/fig14_density_qpt_zooms_eq28_vs_concurrence.png Graphic fil
 e (type png)
 <use research/figs/fig14_density_qpt_zooms_eq28_vs_concurrence.png>
 Package pdftex.def Info: research/figs/fig14_density_qpt_zooms_eq28_vs_concurre
-nce.png  used on input line 357.
+nce.png  used on input line 359.
 (pdftex.def)             Requested size: 510.0pt x 238.60403pt.
  [5 <./research/figs/fig03_task2_lambda_instability.png> <./research/figs/fig07
 _task4_landau_topology.png>]
-Underfull \hbox (badness 2529) in paragraph at lines 366--367
+Underfull \hbox (badness 2529) in paragraph at lines 368--369
  \OML/cmm/m/it/10 r \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 25\OML
 /cmm/m/it/10 a$\OT1/cmr/m/n/10 , over $95%$ of $\OML/cmm/m/it/10 C[]\OT1/cmr/m/
 n/10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 )$ orig-i-nates
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 366--367
+Underfull \hbox (badness 1297) in paragraph at lines 368--369
  \OML/cmm/m/it/10 C \OT1/cmr/m/n/10 = [](0\OML/cmm/m/it/10 ; C[]\OT1/cmr/m/n/10
  )$ pro-duces ar-ti-fi-cial sudden-
  []
@@ -717,7 +717,7 @@ ic/amsfonts/cm/cmtt10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmtt9.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on ground_state_energy_qpt_report.pdf (9 pages, 4013186 bytes).
+Output written on ground_state_energy_qpt_report.pdf (9 pages, 4013188 bytes).
 PDF statistics:
  398 PDF objects out of 1000 (max. 8388607)
  309 compressed objects within 4 object streams
