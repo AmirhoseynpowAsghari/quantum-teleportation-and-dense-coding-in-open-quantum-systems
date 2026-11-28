@@ -51,18 +51,17 @@ To resolve those claims unambiguously, we verified the exact zero-temperature ($
 Consider correlated electrons on a periodic $N_k\times N_k$ two-dimensional square lattice ($N=N_k^2$ sites, lattice constant $a=1$, nearest-neighbor hopping $t=1$) with on-site Hubbard interaction $U$, correlated-hopping amplitude $\Delta_t$, and Rashba spin--orbit coupling $\SO$. Sampling the Brillouin zone without boundary double-counting requires periodic meshes $k_{x,y}\in[-\pi,\pi)$ with step $\Delta k = 2\pi/N_k$ (\texttt{endpoint=False}), avoiding the $\mathcal{O}(1/N_k)$ zone-edge bias present when both $-\pi$ and $+\pi$ are included.
 
 Diagonalizing the kinetic plus Rashba spin--orbit block in momentum space produces two helicity bands indexed by $s\in\{+1,-1\}$:
-\begin{equation}
-\epsilon_{\ks} = -2t(\cos k_x + \cos k_y) - 2s\SO\lambda_{\mathbf{k}},
-\qquad
-\lambda_{\mathbf{k}} = \sqrt{\sin^2 k_x + \sin^2 k_y}.
+\begin{align}
+\epsilon_{\ks} &= -2t(\cos k_x + \cos k_y) - 2s\SO\lambda_{\mathbf{k}}, \nonumber\\
+\lambda_{\mathbf{k}} &= \sqrt{\sin^2 k_x + \sin^2 k_y}.
 \label{eq:eps_ks}
-\end{equation}
+\end{align}
 In the helicity-band representation~\cite{Hutchinson2018}, the momentum- and helicity-dependent correlated-hopping pairing kernel takes the affine form
-\begin{equation}
-K_s(\mathbf{k}) = U + 4\Delta_t(\cos k_x + \cos k_y) - 4s\frac{\Delta_t}{t}\SO\lambda_{\mathbf{k}}
-\equiv U - \frac{2\Delta_t}{t}\,\epsilon_{\ks}.
+\begin{align}
+K_s(\mathbf{k}) &= U + 4\Delta_t(\cos k_x + \cos k_y) - 4s\frac{\Delta_t}{t}\SO\lambda_{\mathbf{k}} \nonumber\\
+&\equiv U - \frac{2\Delta_t}{t}\,\epsilon_{\ks}.
 \label{eq:kernel}
-\end{equation}
+\end{align}
 Because $K_s(\mathbf{k})$ depends on $(\mathbf{k},s)$ solely through $\epsilon_{\ks}$, the zero-momentum BdG gap function is parameterized globally by two scalar amplitudes $(\Delta_0,\Delta_S)$:
 \begin{align}
 \Delta_{\ks} &= \Delta_0 - \frac{\Delta_S}{4t}\,\epsilon_{\ks},
@@ -274,7 +273,8 @@ Case B2 ($U=115,\Delta_t=4.5$)& 401 & 1 & $3.45\times 10^{-13}$ & ---           
 
 Figure~\ref{fig:gse_cases} and Table~\ref{tab:gse_verification} establish four quantitative facts:
 \begin{enumerate}
-\item \textbf{Single unique branch:} Across all three parameter sets and up to $N_k=601$, multi-seed continuation recovers $N_b=1$ non-trivial superconducting branch with $e_{\mathrm{GS}} < e_N$ everywhere where pairing is active (the tiny crossings at $V=0.058t, 0.145t$ in $N_k=401$ Case~B1 reflect exponentially suppressed $|\Delta_S|\sim 10^{-4}t$ where $|e_{\mathrm{SC}}-e_N|\lesssim 10^{-10}t$ lies inside floating-point precision).
+\sloppy
+\item \textbf{Single unique branch:} Across all three parameter sets and up to $N_k=601$, multi-seed continuation recovers $N_b=1$ non-trivial superconducting branch with $e_{\mathrm{GS}} < e_N$ everywhere pairing is active (the tiny crossings at $V=0.058t, 0.145t$ in $N_k=401$ Case~B1 reflect exponentially suppressed $|\Delta_S|\sim 10^{-4}t$ where $|e_{\mathrm{SC}}-e_N|\lesssim 10^{-10}t$ lies inside floating-point precision).
 \item \textbf{Machine-precision thermodynamic consistency:} The number-equation identity~\eqref{eq:dOmega_dmu_total} holds to $\le 3.6\times 10^{-13}$ across every SC point, and independent fixed-$\mu$ solves confirm $d\Omega/d\mu = -N_{\mathrm{tot}}$ to relative error $1.74\times 10^{-10}$--$9.89\times 10^{-9}$.
 \item \textbf{Disentangling $\mu_{\mathrm{SC}}=4t$ from $\mu_N=4t$:} In Case~A ($U=75,\Delta_t=4.5$), the superconducting chemical potential crosses $4t$ at $\SO/t = 0.5485$ ($N_k=201$), $0.5552$ ($N_k=401$), and $0.5574$ ($N_k=601$, converging toward $0.5619$ in the continuum), whereas the \emph{normal-state} Fermi-level crossing $\mu_N=4t$ occurs much higher at $\SO/t = 0.6901$ ($N_k=401$, converging to $V_L = 0.6942t$). Figure~\ref{fig:n1875_revalidation} shows that previously reported ``Lifshitz'' coordinates ($0.5487t$, $68.55t$, $118.04t$) were actually $\mu_{\mathrm{SC}}=4t$ crossings on $N_k=201$ meshes; in fixed-$\SO$ $U$-sweeps, $\mu_N$ is completely independent of $U$ ($3.6477t < 4t$ at $\SO=0.5t$; $4.0120t > 4t$ at $\SO=0.7t$), so no normal Lifshitz crossing occurs at all.
 \item \textbf{Smooth gapped SC behavior:} Because the Bogoliubov quasiparticle spectrum in Case~A stays strictly gapped ($\min_{\ks}E_{\ks}\ge 0.9374t$ across the entire $\SO\in[0,1.5]t$ sweep, Fig.~\ref{fig:n1875_revalidation}(c)), $e_{\mathrm{GS}}(\SO)$ and its derivatives remain analytic across both $\mu_{\mathrm{SC}}=4t$ and $\mu_N=4t$. By contrast, in Case~B1 ($U=115,\Delta_t=3.5$), the weak pairing tail near $\SO\lesssim 0.65t$ makes $e_{\mathrm{GS}}\approx e_N$, so the SC curve closely follows the sharper normal-state turnover near $\mu_N=4t$.
@@ -306,8 +306,8 @@ the singular contribution to the $T=0$ grand potential $\delta\Omega_{\mathrm{co
 \begin{aligned}
 \delta\Omega_{\mathrm{cone}}(\mu_N) &\propto \frac{|\mu_N - 4t|^3}{\SO^2} \\
 &\quad \times \begin{cases}
--1, & \mu_N < 4t\;\;(\text{inner } \epsilon_- \text{ hole pocket}),\\
-+1, & \mu_N > 4t\;\;(\text{inner } \epsilon_+ \text{ electron pocket}).
+-1, & \mu_N < 4t\;\;(\epsilon_-\text{ hole pocket}),\\
++1, & \mu_N > 4t\;\;(\epsilon_+\text{ electron pocket}).
 \end{cases}
 \end{aligned}
 }
