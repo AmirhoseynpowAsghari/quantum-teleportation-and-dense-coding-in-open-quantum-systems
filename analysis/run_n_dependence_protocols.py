@@ -313,7 +313,7 @@ def load_task8_concurrence_derivatives() -> dict:
 
 def make_phase_and_resources_figure(sweep: dict, u_comp: dict, derivs: dict) -> None:
     ns = np.asarray(sweep["n"])
-    fig, axes = plt.subplots(3, 3, figsize=(16.0, 12.6), constrained_layout=True)
+    fig, axes = plt.subplots(3, 3, figsize=(16.0, 11.4), constrained_layout=True)
 
     # Panel (a): lambda_+(n) and helicity band polarization (n_+ - n_-)/n
     ax = axes[0, 0]
@@ -416,10 +416,10 @@ def make_phase_and_resources_figure(sweep: dict, u_comp: dict, derivs: dict) -> 
     ):
         ax.plot(n401[m401], derivs["full"]["spin"][rk]["d2C"][m401], color=col, lw=1.7, ls="-", label=f"{lbl} spin")
         ax.plot(n401[m401], derivs["full"]["band"][rk]["d2C"][m401], color=col, lw=1.5, ls="--", label=f"{lbl} band")
-    ax.annotate(r"ESD $(1,0)$" "\n" r"$(+48.0,\, +39.1)$", xy=(0.44, 15.8), xytext=(0.54, 11.0),
+    ax.annotate(r"ESD $(1,0)$" "\n" r"$(+48.0,\, +39.1)$", xy=(0.44, 15.8), xytext=(0.55, 11.0),
                 arrowprops=dict(arrowstyle="->", color="#d62728", lw=0.9),
                 fontsize=7.4, color="#d62728")
-    ax.annotate(r"ESD $(0.50a)$", xy=(1.54, 12.0), xytext=(1.55, 6.2),
+    ax.annotate(r"ESD $(0.50a)$", xy=(1.54, 12.0), xytext=(1.58, 6.4),
                 arrowprops=dict(arrowstyle="->", color="#d2691e", lw=0.9),
                 fontsize=7.4, color="#c25900")
     ax.set_xlim(0.22, 1.98)

@@ -1355,51 +1355,31 @@ ranges and non-Markovian open-system communication protocols.
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=\textwidth]
+    \includegraphics[width=0.92\textwidth]
     {figs/n_dependence_phase_and_resources.png}
     \caption{
-    Full-band electron-filling dependence at $V_{\mathrm{SO}}/t=0.5$,
-    $\Delta_t/t=4.5$, and $T=0$ comparing the original-spin (solid) and
-    helicity-band (dashed) bases. Panels~(a)--(c) and (g)--(i) are
-    evaluated on periodic $N_k=201$ meshes (cross-checked at $N_k=401$ to
-    $\Delta C\le 2.8\times 10^{-3}$), while panels~(d)--(f) show converged
-    periodic $N_k=401$ and $N_k=801$ finite-difference concurrence
-    derivatives ($dC/dn$ and $d^2C/dn^2$).
-    (a)~Linearized pair-instability eigenvalue $\lambda_+(n)$ at $U/t=75$
-    (blue) and $115$ (brown dash-dot), showing the re-entrant dilute
-    nodal $s_{\pm}$ pocket ($n<n_{c,1}=0.2192$) and high-density dome
-    ($n>n_{c,2}=1.0194$) at $U/t=75$, overlaid with the helicity
-    population polarization $(n_+-n_-)/n$ (red dashed, right axis).
-    (b)~Initial ($t=0$) singlet fraction $F_{\mathrm{s}}$ at
-    $\mathbf{r}=(0.25,0)a$ and $\mathbf{r}=(1,0)a$, together with locally
-    optimized teleportation fidelity $\overline{\mathcal{F}}_{\mathrm{tel}}(1,0)$.
-    (c)~Initial Wootters concurrence $C(n)$ at $\mathbf{r}=(0.25,0)a$,
-    $(0.50,0)a$, and $(1,0)a$, marking the spin-basis lattice-site ESD
-    threshold $n_{\mathrm{ESD}}(1,0)=0.4162$.
-    (d)~First derivative $dC/dn$ ($N_k=401$, $200$ points on
-    $n\in[0.005,1.98]$) across $(0.25,0)a$, $(0.50,0)a$, and $(1,0)a$,
-    marking $n_{\mathrm{vH},-}=0.9065$ and $n_{c,2}=1.0194$ (vertical scale
-    clipped to $[-2.1,1.15]$; dilute band collapse reaches $-37.3$ and
-    $+27.6$ near $n\approx 0.065$).
-    (e)~Second derivative $d^2C/dn^2$ ($N_k=401$, $n\in[0.22,1.98]$),
-    highlighting the noncritical Wootters ESD zero-crossing spikes at
-    $(1,0)a$ ($+48.0$ spin, $+39.1$ band) and $(0.50,0)a$ ($+11.8$ spin,
-    $+13.7$ band).
-    (f)~High-resolution $N_k=801$ zoom ($\Delta n=0.005$) of $d^2C/dn^2$ at
-    $\mathbf{r}=(0.25,0)a$ across $n\in[0.85,1.15]$, comparing the
-    superconducting state ($U/t=75$) with the normal state ($U/t=115$)
-    across the lower van Hove saddle $n_{\mathrm{vH},-}=0.9065$, the
-    pairing onset $n_{c,2}=1.0194$, and the smeared upper van Hove
-    saddle $n_{\mathrm{vH},+}=1.0935$.
-    (g)~Continuous entanglement-death radius $r_c(n)$ along
-    $\theta=45^\circ$ relative to the nearest-neighbor lattice spacing
-    $r=a$ (dotted), highlighting the low-$n$ band collapse as $n_-\to 0$.
-    (h)~Pauli-ensemble Holevo capacity $\chi_{\mathrm{P}}(n,t=0)$ at
-    $(0.25,0)a$, $(1,0)a$, and asymptotic $r=10a$ in the band basis
-    [$1-S_2(\rho_B^{\mathrm{band}})$].
-    (i)~Lattice-site optimized teleportation fidelity
-    $\overline{\mathcal{F}}_{\mathrm{tel}}(\mathbf{r}=(1,0)a,t=0)$ across
-    $U/t\in\{15,25,75\}$ at $V_{\mathrm{SO}}/t=0.5$.
+    Full-band filling dependence at $V_{\mathrm{SO}}/t=0.5$, $\Delta_t/t=4.5$,
+    and $T=0$ comparing the original-spin (solid) and helicity-band (dashed)
+    bases: $N_k=201$ periodic meshes in (a)--(c),(g)--(i) ($N_k=401$ check
+    $\Delta C\le 2.8\times 10^{-3}$) and converged $N_k=401,801$ derivatives in
+    (d)--(f).
+    (a)~$\lambda_+(n)$ at $U/t=75$ and $115$ (dilute $n<n_{c,1}=0.2192$ and
+    high-$n$ dome $n>n_{c,2}=1.0194$) with polarization $(n_+-n_-)/n$ (red).
+    (b)~$F_{\mathrm{s}}$ and $\overline{\mathcal{F}}_{\mathrm{tel}}(1,0)$ at
+    $t=0$.
+    (c)~$C(n,t=0)$ at $(0.25,0)a$, $(0.50,0)a$, and $(1,0)a$
+    [$n_{\mathrm{ESD}}^{\mathrm{spin}}(1,0)=0.4162$].
+    (d)~$dC/dn$ ($N_k=401$, clipped to $[-2.1,1.15]$; dilute band swing
+    spans $[-37.3,+27.6]$ near $n\approx 0.065$).
+    (e)~$d^2C/dn^2$ ($N_k=401$, $n\ge 0.22$), resolving noncritical Wootters
+    ESD spikes at $(1,0)a$ ($+48.0,+39.1$) and $(0.50,0)a$ ($+11.8,+13.7$).
+    (f)~$N_k=801$ zoom of $d^2C/dn^2$ at $(0.25,0)a$ comparing SC ($U/t=75$)
+    and normal ($U/t=115$) across $n_{\mathrm{vH},-}=0.9065$,
+    $n_{c,2}=1.0194$, and smeared $n_{\mathrm{vH},+}=1.0935$.
+    (g)~$r_c(n,45^\circ)$ vs.\ $r=a$.
+    (h)~$\chi_{\mathrm{P}}(n,t=0)$ and $r=10a$ band limit
+    $1-S_2(\rho_B^{\mathrm{band}})$.
+    (i)~$\overline{\mathcal{F}}_{\mathrm{tel}}(1,0)$ across $U/t\in\{15,25,75\}$.
     }
     \label{fig:n_phase_resources}
 \end{figure*}
@@ -1489,10 +1469,10 @@ separates genuine Fermi-surface and pairing signatures from noncritical
 cutoff effects in both bases. In the dilute pocket ($n\lesssim 0.15$),
 the rapid collapse and recovery of $C_{\mathrm{band}}$ around
 $n\approx 0.065$ produces dramatic helicity-band derivative swings at
-$\mathbf{r}=(0.25,0)a$ ($dC_{\mathrm{band}}/dn\in[-37.27,+27.59]$,
-$d^2C_{\mathrm{band}}/dn^2\in[-884.4,+1379.6]$), far stronger than the
-corresponding spin-basis slopes ($dC_{\mathrm{spin}}/dn\in[-0.35,+4.77]$
-at $0.25a$, and $-8.40$ at $(1,0)a$). At intermediate and high densities
+$\mathbf{r}=(0.25,0)a$: $dC_{\mathrm{band}}/dn$ spans $-37.27$ to $+27.59$
+and $d^2C_{\mathrm{band}}/dn^2$ spans $-884.4$ to $+1379.6$, far exceeding
+the spin-basis slopes ($dC_{\mathrm{spin}}/dn$ from $-0.35$ to $+4.77$ at
+$0.25a$, and $-8.40$ at $(1,0)a$). At intermediate and high densities
 [Fig.~\ref{fig:n_phase_resources}(e)], the Wootters zero cutoff
 $\max(0,C_{\mathrm{raw}})$ creates sharp, separation-dependent
 step discontinuities in $dC/dn$ and positive noncritical spikes in
@@ -1503,16 +1483,16 @@ no singularity in any BdG parameter. On the $N_k=801$ zoom at
 $\mathbf{r}=(0.25,0)a$ [Fig.~\ref{fig:n_phase_resources}(f)], where $C$
 never hits zero, the normal-state lower van Hove saddle
 $n_{\mathrm{vH},-}=0.9065$ drives a sharp dip in $dC/dn$ ($-0.3561$ spin,
-$-0.3325$ band) and a sign-flip cusp in $d^2C/dn^2$ ($-4.00\to +4.07$
-spin, $-3.63\to +4.75$ band) shared identically by the $U/t=75$ and
-$U/t=115$ curves. By contrast, at the continuous pairing transition
+$-0.3325$ band) and a sign-flip cusp in $d^2C/dn^2$ ($-4.00$ to $+4.07$
+in spin; $-3.63$ to $+4.75$ in band) shared identically by $U/t=75$ and
+$U/t=115$. By contrast, at the continuous pairing transition
 $n_{c,2}=1.0194$, the 2D BCS essential singularity keeps $dC/dn$ and
 $d^2C/dn^2$ continuous across $n_{c,2}$ itself, shifting the negative
 superconducting-dome extremum of $d^2C/dn^2$ inside the dome to
 $n=1.040$ ($-6.21$ spin, $-8.09$ band vs.\ $-1.65$ and $-2.80$ in the
-$U/t=115$ normal state), while superconducting pairing smears out the
+$U/t=115$ normal state), while superconducting pairing smears the
 upper van Hove cusp at $n_{\mathrm{vH},+}=1.0935$ relative to the normal
-curve ($-1.31\to +2.17$ spin at $U/t=115$).
+curve ($-1.31$ to $+2.17$ in spin at $U/t=115$).
 
 \item \emph{Role of interaction $U$ across $n$.}
 Comparing $U/t\in\{15,25,75\}$ at $V_{\mathrm{SO}}/t=0.5$
