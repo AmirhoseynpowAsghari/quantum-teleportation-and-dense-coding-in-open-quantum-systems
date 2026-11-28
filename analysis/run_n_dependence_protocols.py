@@ -282,9 +282,38 @@ def entanglement_death_radius(st: CachedStates, theta_deg: float = 45.0,
     return float(fine[k - 1] + frac * (fine[k] - fine[k - 1]))
 
 
-def make_phase_and_resources_figure(sweep: dict, u_comp: dict) -> None:
+def load_task8_concurrence_derivatives() -> dict:
+    """Load converged periodic Nk=401 and Nk=801 concurrence derivatives (spin & band)."""
+    path = ROOT / "research" / "data" / "task8_density_qpt_eq28.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    full401 = data["full_sweeps"]["full_U75_V0.5_Nk401"]
+    zm75 = data["zooms"]["zoom_mid_U75_V0.5_Nk801"]
+    zm115 = data["zooms"]["zoom_mid_U115_V0.5_Nk801"]
+    n401 = np.array([r["n"] for r in full401["rows"]], dtype=float)
+    n801 = np.array([r["n"] for r in zm75["rows"]], dtype=float)
+    out = {"n401": n401, "n801": n801, "full": {}, "zoom_sc": {}, "zoom_norm": {}}
+    for bs in ("spin", "band"):
+        out["full"][bs] = {}
+        for rk in ("0.25_0", "0.5_0", "1_0"):
+            d = full401["derivs"]["concurrence"][bs][rk]
+            out["full"][bs][rk] = {
+                "dC": np.array(d["dCS"], dtype=float),
+                "d2C": np.array(d["d2CS"], dtype=float),
+            }
+        out["zoom_sc"][bs] = {
+            "dC": np.array(zm75["derivs"]["concurrence"][bs]["0.25_0"]["dCS"], dtype=float),
+            "d2C": np.array(zm75["derivs"]["concurrence"][bs]["0.25_0"]["d2CS"], dtype=float),
+        }
+        out["zoom_norm"][bs] = {
+            "dC": np.array(zm115["derivs"]["concurrence"][bs]["0.25_0"]["dCN"], dtype=float),
+            "d2C": np.array(zm115["derivs"]["concurrence"][bs]["0.25_0"]["d2CN"], dtype=float),
+        }
+    return out
+
+
+def make_phase_and_resources_figure(sweep: dict, u_comp: dict, derivs: dict) -> None:
     ns = np.asarray(sweep["n"])
-    fig, axes = plt.subplots(2, 3, figsize=(15.6, 9.2), constrained_layout=True)
+    fig, axes = plt.subplots(3, 3, figsize=(16.0, 11.4), constrained_layout=True)
 
     # Panel (a): lambda_+(n) and helicity band polarization (n_+ - n_-)/n
     ax = axes[0, 0]
@@ -353,8 +382,76 @@ def make_phase_and_resources_figure(sweep: dict, u_comp: dict) -> None:
     ax.grid(alpha=0.25)
     ax.legend(fontsize=7.2, ncol=2, loc="upper right")
 
-    # Panel (d): Entanglement-death radius r_c(n, theta=45 deg)
+    # Panel (d): First derivative dC/dn across n (Nk=401 periodic, spin vs. band)
+    n401 = derivs["n401"]
     ax = axes[1, 0]
+    ax.axhline(0.0, color="0.35", ls=":", lw=0.9)
+    ax.axvline(0.906482, color="#2ca02c", ls=":", lw=1.0, label=r"$n_{\mathrm{vH},-}=0.9065$")
+    ax.axvline(1.019424, color="0.45", ls="--", lw=0.9, label=r"$n_{c,2}=1.0194$")
+    for rk, col, lbl in (
+        ("0.25_0", "#1f77b4", r"$(0.25,0)a$"),
+        ("0.5_0", "#ff7f0e", r"$(0.50,0)a$"),
+        ("1_0", "#d62728", r"$(1,0)a$"),
+    ):
+        ax.plot(n401, derivs["full"]["spin"][rk]["dC"], color=col, lw=1.7, ls="-", label=f"{lbl} spin")
+        ax.plot(n401, derivs["full"]["band"][rk]["dC"], color=col, lw=1.5, ls="--", label=f"{lbl} band")
+    ax.set_xlim(0.0, 1.98)
+    ax.set_ylim(-2.1, 1.15)
+    ax.set_xlabel(r"Electron filling $n$")
+    ax.set_ylabel(r"$dC/dn$ ($N_k=401$)")
+    ax.set_title(r"(d) First derivative $dC/dn$: spin vs. band", fontsize=10.5)
+    ax.grid(alpha=0.25)
+    ax.legend(fontsize=6.6, ncol=2, loc="lower right")
+
+    # Panel (e): Second derivative d^2C/dn^2 across n in [0.22, 1.98] (Nk=401 periodic)
+    ax = axes[1, 1]
+    m401 = n401 >= 0.22
+    ax.axhline(0.0, color="0.35", ls=":", lw=0.9)
+    ax.axvline(0.906482, color="#2ca02c", ls=":", lw=1.0)
+    ax.axvline(1.019424, color="0.45", ls="--", lw=0.9)
+    for rk, col, lbl in (
+        ("0.25_0", "#1f77b4", r"$(0.25,0)a$"),
+        ("0.5_0", "#ff7f0e", r"$(0.50,0)a$"),
+        ("1_0", "#d62728", r"$(1,0)a$"),
+    ):
+        ax.plot(n401[m401], derivs["full"]["spin"][rk]["d2C"][m401], color=col, lw=1.7, ls="-", label=f"{lbl} spin")
+        ax.plot(n401[m401], derivs["full"]["band"][rk]["d2C"][m401], color=col, lw=1.5, ls="--", label=f"{lbl} band")
+    ax.annotate(r"ESD $(1,0)$" "\n" r"$(+48.0,\, +39.1)$", xy=(0.44, 15.8), xytext=(0.55, 11.0),
+                arrowprops=dict(arrowstyle="->", color="#d62728", lw=0.9),
+                fontsize=7.4, color="#d62728")
+    ax.annotate(r"ESD $(0.50a)$", xy=(1.54, 12.0), xytext=(1.58, 6.4),
+                arrowprops=dict(arrowstyle="->", color="#d2691e", lw=0.9),
+                fontsize=7.4, color="#c25900")
+    ax.set_xlim(0.22, 1.98)
+    ax.set_ylim(-15.5, 16.5)
+    ax.set_xlabel(r"Electron filling $n$")
+    ax.set_ylabel(r"$d^2C/dn^2$ ($N_k=401$)")
+    ax.set_title(r"(e) Second derivative $d^2C/dn^2$ & ESD spikes", fontsize=10.5)
+    ax.grid(alpha=0.25)
+    ax.legend(fontsize=6.8, ncol=2, loc="lower right")
+
+    # Panel (f): Converged Nk=801 zoom of d^2C/dn^2 (r=0.25a, n in [0.85, 1.15])
+    ax = axes[1, 2]
+    n801 = derivs["n801"]
+    m801 = (n801 >= 0.85) & (n801 <= 1.15)
+    ax.axhline(0.0, color="0.35", ls=":", lw=0.9)
+    ax.axvline(0.906482, color="#2ca02c", ls=":", lw=1.1, label=r"$n_{\mathrm{vH},-}=0.9065$")
+    ax.axvline(1.019424, color="0.45", ls="--", lw=1.0, label=r"$n_{c,2}=1.0194$")
+    ax.axvline(1.093471, color="#9467bd", ls=":", lw=1.1, label=r"$n_{\mathrm{vH},+}=1.0935$")
+    ax.plot(n801[m801], derivs["zoom_norm"]["spin"]["d2C"][m801], color="0.45", lw=1.4, ls="-", label=r"Normal spin ($U/t=115$)")
+    ax.plot(n801[m801], derivs["zoom_norm"]["band"]["d2C"][m801], color="#8c564b", lw=1.4, ls=":", label=r"Normal band ($U/t=115$)")
+    ax.plot(n801[m801], derivs["zoom_sc"]["spin"]["d2C"][m801], color="#1f77b4", lw=2.0, ls="-", label=r"SC spin ($U/t=75$)")
+    ax.plot(n801[m801], derivs["zoom_sc"]["band"]["d2C"][m801], color="#ff7f0e", lw=2.0, ls="--", label=r"SC band ($U/t=75$)")
+    ax.set_xlim(0.85, 1.15)
+    ax.set_ylim(-8.6, 5.6)
+    ax.set_xlabel(r"Electron filling $n$")
+    ax.set_ylabel(r"$d^2C/dn^2$ ($r=0.25a$, $N_k=801$)")
+    ax.set_title(r"(f) $N_k=801$ zoom: van Hove cusp vs. SC smearing", fontsize=10.5)
+    ax.grid(alpha=0.25)
+    ax.legend(fontsize=6.6, ncol=2, loc="lower left")
+
+    # Panel (g): Entanglement-death radius r_c(n, theta=45 deg)
+    ax = axes[2, 0]
     ax.axhline(1.0, color="#d62728", ls=":", lw=1.1, label=r"Nearest-neighbor site $r=a$")
     ax.plot(ns, sweep["rc_spin"], color="#1f77b4", lw=2.0, ls="-", label=r"$r_c^{\mathrm{spin}}(n)$ ($45^\circ$)")
     ax.plot(ns, sweep["rc_band"], color="#ff7f0e", lw=2.0, ls="--", label=r"$r_c^{\mathrm{band}}(n)$ ($45^\circ$)")
@@ -364,15 +461,15 @@ def make_phase_and_resources_figure(sweep: dict, u_comp: dict) -> None:
     ax.set_ylim(0.0, 3.30)
     ax.set_xlabel(r"Electron filling $n$")
     ax.set_ylabel(r"Entanglement-death radius $r_c/a$")
-    ax.set_title(r"(d) Entanglement range $r_c(n)$ vs. lattice spacing", fontsize=10.5)
+    ax.set_title(r"(g) Entanglement range $r_c(n)$ vs. lattice spacing", fontsize=10.5)
     ax.annotate(r"band collapse ($n_- \to 0$)", xy=(0.065, 0.12), xytext=(0.30, 0.25),
                 arrowprops=dict(arrowstyle="->", color="#ff7f0e", lw=1.0),
                 fontsize=7.8, color="#c25900")
     ax.grid(alpha=0.25)
     ax.legend(fontsize=8.0, loc="upper right")
 
-    # Panel (e): Pauli-ensemble Holevo capacity chi_P(n)
-    ax = axes[1, 1]
+    # Panel (h): Pauli-ensemble Holevo capacity chi_P(n)
+    ax = axes[2, 1]
     ax.axhline(1.0, color="0.3", ls=":", lw=1.0, label=r"1-bit classical limit")
     ax.plot(ns, sweep["chi_r025_spin"], color="#1f77b4", lw=1.8, ls="-", label=r"$(0.25,0)a$ spin")
     ax.plot(ns, sweep["chi_r025_band"], color="#1f77b4", lw=1.8, ls="--", label=r"$(0.25,0)a$ band")
@@ -383,12 +480,12 @@ def make_phase_and_resources_figure(sweep: dict, u_comp: dict) -> None:
     ax.set_ylim(-0.02, 2.08)
     ax.set_xlabel(r"Electron filling $n$")
     ax.set_ylabel(r"Pauli Holevo $\chi_{\mathrm{P}}(n,t=0)$ [bits]")
-    ax.set_title(r"(e) Dense coding vs. classical asymmetry bias", fontsize=10.5)
+    ax.set_title(r"(h) Dense coding vs. classical asymmetry bias", fontsize=10.5)
     ax.grid(alpha=0.25)
     ax.legend(fontsize=7.0, ncol=2, loc="upper right")
 
-    # Panel (f): Interaction comparison U/t = 15, 25, 75 at V_SO/t = 0.5 for lattice site (1,0)
-    ax = axes[1, 2]
+    # Panel (i): Interaction comparison U/t = 15, 25, 75 at V_SO/t = 0.5 for lattice site (1,0)
+    ax = axes[2, 2]
     ax.axhline(2.0 / 3.0, color="0.3", ls=":", lw=1.0, label=r"Classical bound $2/3$")
     u_cols = {15: "#2ca02c", 25: "#ff7f0e", 75: "#1f77b4"}
     u_ns = np.asarray(u_comp["n"])
@@ -402,7 +499,7 @@ def make_phase_and_resources_figure(sweep: dict, u_comp: dict) -> None:
     ax.set_ylim(0.49, 0.96)
     ax.set_xlabel(r"Electron filling $n$")
     ax.set_ylabel(r"$\overline{\mathcal{F}}_{\mathrm{tel}}(\mathbf{r}=(1,0)a, t=0)$")
-    ax.set_title(r"(f) Lattice-site teleportation across $U/t$ ($V_{\mathrm{SO}}=0.5t$)", fontsize=10.5)
+    ax.set_title(r"(i) Lattice-site teleportation across $U/t$ ($V_{\mathrm{SO}}=0.5t$)", fontsize=10.5)
     ax.grid(alpha=0.25)
     ax.legend(fontsize=7.2, ncol=2, loc="upper right")
 
@@ -808,7 +905,8 @@ def main() -> None:
     validation["max_r10_band_chi_vs_1_minus_h2"] = float(max(asym_errs))
 
     print("[n-study] Generating publication figures ...")
-    make_phase_and_resources_figure(sweep, u_comp)
+    derivs = load_task8_concurrence_derivatives()
+    make_phase_and_resources_figure(sweep, u_comp, derivs)
     make_open_protocols_figure(dyn)
 
     np.savez_compressed(

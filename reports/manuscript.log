@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  28 NOV 2026 10:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  28 NOV 2026 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -302,13 +302,6 @@ Class revtex4-2 Warning: Assuming \noaffiliation for authors.
 Class revtex4-2 Warning: If you want your PACS to appear in your output, use do
 cument class option showpacs.
 
-
-Overfull \vbox (3.69763pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (3.69763pt too high) has occurred while \output is active []
-
-
 [1{/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 1127) in paragraph at lines 44--45
 \OT1/cmr/m/n/10 source is char-ac-ter-ized us-ing sev-eral com-ple-men-tary
@@ -330,18 +323,17 @@ Underfull \hbox (badness 2343) in paragraph at lines 273--276
 \OT1/cmr/m/n/10 re-duc-tion in the mag-ni-tude of $^^A[]$ sup-presses the
  []
 
-
+[3]
 Underfull \hbox (badness 1043) in paragraph at lines 293--301
 \OT1/cmr/m/n/10 be-hav-ior is im-por-tant for the sub-se-quent quantum-
  []
 
-[3]
 <figs/greens_angular.png, id=34, 803.0pt x 311.564pt>
 File: figs/greens_angular.png Graphic file (type png)
 <use figs/greens_angular.png>
 Package pdftex.def Info: figs/greens_angular.png  used on input line 383.
 (pdftex.def)             Requested size: 494.70062pt x 191.95062pt.
- [4 <./Delta_ks_heatmaps.png>]
+[4 <./Delta_ks_heatmaps.png>]
 Underfull \hbox (badness 6944) in paragraph at lines 509--524
 \OT1/cmr/m/n/10 The con-di-tional state is $\OML/cmm/m/it/10 ^^Z[] \OT1/cmr/m/n
 /10 = []\OML/cmm/m/it/10 = [] []$\OT1/cmr/m/n/10 ,
@@ -398,8 +390,9 @@ nglet.png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_
 GB0.010_F_heatmap_singlet.png  used on input line 1028.
 (pdftex.def)             Requested size: 510.0pt x 158.18738pt.
+ [9]
 <figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_singlet.p
-ng, id=65, 889.724pt x 354.926pt>
+ng, id=69, 889.724pt x 354.926pt>
 File: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_sing
 let.png Graphic file (type png)
 <use figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_singl
@@ -407,13 +400,14 @@ et.png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_
 GB0.100_F_vs_t_singlet.png  used on input line 1073.
 (pdftex.def)             Requested size: 489.60342pt x 195.30737pt.
- [9]
+
 Underfull \hbox (badness 3826) in paragraph at lines 1110--1116
 []\OT1/cmr/m/n/10 Angular de-pen-dence en-ters the cal-cu-la-tion only
  []
 
+[10 <./figs/concurrence_U_theta.png>]
 <figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_singlet.
-png, id=70, 849.574pt x 353.7215pt>
+png, id=74, 849.574pt x 353.7215pt>
 File: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_sin
 glet.png Graphic file (type png)
 <use figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_polar_sing
@@ -426,11 +420,13 @@ Underfull \hbox (badness 1082) in paragraph at lines 1157--1163
 []\OT1/cmr/m/n/10 These ob-ser-va-tions sup-port an initial-state lat-tice
  []
 
-[10 <./figs/concurrence_U_theta.png>] [11 <./figures/hubbard_amp_independent_gA
-4.50_GA0.010_gB4.50_GB0.010_C_heatmap.png> <./figures/hubbard_amp_independent_g
-A4.50_GA0.010_gB4.50_GB0.010_F_heatmap_singlet.png>]
+[11 <./figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_C_heatmap.
+png> <./figures/hubbard_amp_independent_gA4.50_GA0.010_gB4.50_GB0.010_F_heatmap
+_singlet.png>] [12 <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0
+.100_F_vs_t_singlet.png> <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.
+50_GB0.100_F_polar_singlet.png>]
 <figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs_r.png,
- id=80, 904.178pt x 354.926pt>
+ id=85, 904.178pt x 354.926pt>
 File: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs_r
 .png Graphic file (type png)
 <use figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs_r.
@@ -438,9 +434,6 @@ png>
 Package pdftex.def Info: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_
 GB0.100_holevo_vs_r.png  used on input line 1187.
 (pdftex.def)             Requested size: 489.60342pt x 192.18791pt.
- [12 <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_vs_t_si
-nglet.png> <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_F_p
-olar_singlet.png>]
 <figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_theta_t_h
 eatmap.png, id=86, 1128.215pt x 333.245pt>
 File: figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_thet
@@ -456,57 +449,63 @@ File: figs/U_dependence_fidelity_holevo.png Graphic file (type png)
 Package pdftex.def Info: figs/U_dependence_fidelity_holevo.png  used on input l
 ine 1282.
 (pdftex.def)             Requested size: 489.60342pt x 453.76328pt.
- [13 <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs
-_r.png>]
-<figs/n_dependence_phase_and_resources.png, id=93, 1135.442pt x 672.914pt>
+ [13]
+<figs/n_dependence_phase_and_resources.png, id=92, 1164.35pt x 831.908pt>
 File: figs/n_dependence_phase_and_resources.png Graphic file (type png)
 <use figs/n_dependence_phase_and_resources.png>
 Package pdftex.def Info: figs/n_dependence_phase_and_resources.png  used on inp
 ut line 1359.
-(pdftex.def)             Requested size: 510.0pt x 302.24377pt.
+(pdftex.def)             Requested size: 469.19907pt x 335.2326pt.
+ [14 <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_vs
+_r.png> <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo
+_theta_t_heatmap.png>] [15 <./figs/U_dependence_fidelity_holevo.png>] [16 <./fi
+gs/n_dependence_phase_and_resources.png>]
+Underfull \hbox (badness 5133) in paragraph at lines 1465--1496
+ []\OT1/cmr/m/it/10 Concurrence deriva-tives $\OML/cmm/m/it/10 dC=dn$ \OT1/cmr/
+m/it/10 and $\OML/cmm/m/it/10 d[]C=dn[]$
+ []
 
-[14 <./figures/hubbard_amp_independent_gA1.50_GA0.100_gB1.50_GB0.100_holevo_the
-ta_t_heatmap.png>] [15 <./figs/U_dependence_fidelity_holevo.png>] [16 <./figs/n
-_dependence_phase_and_resources.png>]
 <figs/n_dependence_open_protocols.png, id=107, 1034.264pt x 831.908pt>
 File: figs/n_dependence_open_protocols.png Graphic file (type png)
 <use figs/n_dependence_open_protocols.png>
 Package pdftex.def Info: figs/n_dependence_open_protocols.png  used on input li
-ne 1517.
+ne 1550.
 (pdftex.def)             Requested size: 510.0pt x 410.21535pt.
-<figs/concurrence_derivatives_u_vso.png, id=108, 1200.53224pt x 600.69124pt>
+[17]
+<figs/concurrence_derivatives_u_vso.png, id=111, 1200.53224pt x 600.69124pt>
 File: figs/concurrence_derivatives_u_vso.png Graphic file (type png)
 <use figs/concurrence_derivatives_u_vso.png>
 Package pdftex.def Info: figs/concurrence_derivatives_u_vso.png  used on input 
-line 1605.
+line 1638.
 (pdftex.def)             Requested size: 510.0pt x 255.18498pt.
-<figs/concurrence_vso_r_deltat_wick.png, id=109, 1200.6675pt x 716.4585pt>
+<figs/concurrence_vso_r_deltat_wick.png, id=112, 1200.6675pt x 716.4585pt>
 File: figs/concurrence_vso_r_deltat_wick.png Graphic file (type png)
 <use figs/concurrence_vso_r_deltat_wick.png>
 Package pdftex.def Info: figs/concurrence_vso_r_deltat_wick.png  used on input 
-line 1654.
+line 1687.
 (pdftex.def)             Requested size: 510.0pt x 304.32138pt.
- [17]
-<figs/qpt_diagnostic_tests.png, id=113, 1164.2697pt x 673.19505pt>
+ [18]
+<figs/qpt_diagnostic_tests.png, id=119, 1164.2697pt x 673.19505pt>
 File: figs/qpt_diagnostic_tests.png Graphic file (type png)
 <use figs/qpt_diagnostic_tests.png>
-Package pdftex.def Info: figs/qpt_diagnostic_tests.png  used on input line 1712
+Package pdftex.def Info: figs/qpt_diagnostic_tests.png  used on input line 1745
 .
 (pdftex.def)             Requested size: 510.0pt x 294.8919pt.
-<figs/concurrence_dense_vso_deriv_qpt.png, id=114, 1381.44106pt x 1222.44705pt>
+ [19 <./figs/n_dependence_open_protocols.png>]
+<figs/concurrence_dense_vso_deriv_qpt.png, id=125, 1381.44106pt x 1222.44705pt>
 
 File: figs/concurrence_dense_vso_deriv_qpt.png Graphic file (type png)
 <use figs/concurrence_dense_vso_deriv_qpt.png>
 Package pdftex.def Info: figs/concurrence_dense_vso_deriv_qpt.png  used on inpu
-t line 1753.
+t line 1786.
 (pdftex.def)             Requested size: 510.0pt x 451.29106pt.
 
-Underfull \hbox (badness 2689) in paragraph at lines 1769--1785
+Underfull \hbox (badness 2689) in paragraph at lines 1802--1819
 []\OT1/cmr/m/n/10 Figure 18[] con-firms this gapped-crossover be-hav-
  []
 
 
-Underfull \hbox (badness 7047) in paragraph at lines 1769--1785
+Underfull \hbox (badness 7047) in paragraph at lines 1802--1819
 \OT1/cmr/m/n/10 ior across $^^A[]\OML/cmm/m/it/10 =t \OMS/cmsy/m/n/10 2 f\OT1/c
 mr/m/n/10 3\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/1
 0 4\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4\OML/
@@ -515,49 +514,55 @@ cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it
 1/cmr/m/n/10 0\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 , where
  []
 
-<research/figs/fig09_task5_decomposition_esd.png, id=115, 956.373pt x 298.716pt
+<research/figs/fig09_task5_decomposition_esd.png, id=126, 956.373pt x 298.716pt
 >
 File: research/figs/fig09_task5_decomposition_esd.png Graphic file (type png)
 <use research/figs/fig09_task5_decomposition_esd.png>
 Package pdftex.def Info: research/figs/fig09_task5_decomposition_esd.png  used 
-on input line 1789.
+on input line 1823.
 (pdftex.def)             Requested size: 510.0pt x 159.29869pt.
-<figs/environment_protocols_regimes.png, id=116, 1106.09235pt x 808.7013pt>
+<figs/environment_protocols_regimes.png, id=127, 1106.09235pt x 808.7013pt>
 File: figs/environment_protocols_regimes.png Graphic file (type png)
 <use figs/environment_protocols_regimes.png>
 Package pdftex.def Info: figs/environment_protocols_regimes.png  used on input 
-line 1848.
+line 1882.
 (pdftex.def)             Requested size: 510.0pt x 372.88324pt.
-[18] [19 <./figs/n_dependence_open_protocols.png>]
-<figs/environment_parameter_scan.png, id=128, 1112.2353pt x 796.77675pt>
+[20 <./figs/concurrence_derivatives_u_vso.png>]
+<figs/environment_parameter_scan.png, id=132, 1112.2353pt x 796.77675pt>
 File: figs/environment_parameter_scan.png Graphic file (type png)
 <use figs/environment_parameter_scan.png>
 Package pdftex.def Info: figs/environment_parameter_scan.png  used on input lin
-e 1909.
+e 1943.
 (pdftex.def)             Requested size: 510.0pt x 365.3546pt.
- [20 <./figs/concurrence_derivatives_u_vso.png>]
-Underfull \hbox (badness 1168) in paragraph at lines 1967--2006
+ [21 <./figs/concurrence_vso_r_deltat_wick.png>]
+Underfull \hbox (badness 1168) in paragraph at lines 2001--2040
 []\OT1/cmr/m/n/10 The he-lic-ity ex-ten-sion col-lects these el-e-ments for
  []
 
-[21 <./figs/concurrence_vso_r_deltat_wick.png>] [22 <./figs/qpt_diagnostic_test
-s.png>] [23 <./figs/concurrence_dense_vso_deriv_qpt.png>] (./manuscript.bbl)
+[22 <./figs/qpt_diagnostic_tests.png>] [23 <./figs/concurrence_dense_vso_deriv_
+qpt.png>]
+Overfull \vbox (4.22925pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (4.22925pt too high) has occurred while \output is active []
+
+
 [24 <./research/figs/fig09_task5_decomposition_esd.png>] [25 <./figs/environmen
-t_protocols_regimes.png>] [26 <./figs/environment_parameter_scan.png>]
-(./manuscript.aux)
+t_protocols_regimes.png>] (./manuscript.bbl) [26 <./figs/environment_parameter_
+scan.png>] (./manuscript.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5143 strings out of 467050
- 78777 string characters out of 5408429
- 546831 words of memory out of 5000000
- 34465 multiletter control sequences out of 15000+600000
+ 5142 strings out of 467050
+ 78766 string characters out of 5408429
+ 532958 words of memory out of 5000000
+ 34464 multiletter control sequences out of 15000+600000
  643240 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,17n,65p,5868b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,17n,65p,6201b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
 pt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/te
 xlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></opt/texlive/
@@ -586,7 +591,7 @@ nts/cm/cmsy9.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm
 ></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><
 /opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><
 /opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on manuscript.pdf (26 pages, 8224520 bytes).
+Output written on manuscript.pdf (26 pages, 8462606 bytes).
 PDF statistics:
  282 PDF objects out of 1000 (max. 8388607)
  150 compressed objects within 2 object streams
