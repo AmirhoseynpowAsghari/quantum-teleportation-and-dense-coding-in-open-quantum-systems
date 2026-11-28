@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  28 NOV 2026 06:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  28 NOV 2026 06:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,72 +475,55 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (39.22644pt too wide) detected at line 59
-[][][]\OML/cmm/m/it/10 ^^O[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n
-/10 2\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ([] \OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10
- + [] \OML/cmm/m/it/10 k[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/1
-0 2\OML/cmm/m/it/10 sV[]^^U[];  ^^U[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 :
- []
-
-
-Overfull \hbox (17.97923pt too wide) detected at line 65
-[][][]\OML/cmm/m/it/10 K[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 k\OT1/cmr/m/n/10 ) 
-= \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 + 4^^A[]([] \OML/cmm/m/it/10 k[] \OT1/cmr/
-m/n/10 + [] \OML/cmm/m/it/10 k[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OT1/cmr
-/m/n/10 4\OML/cmm/m/it/10 s[]V[]^^U[] \OMS/cmsy/m/n/10 ^^Q \OML/cmm/m/it/10 U \
-OMS/cmsy/m/n/10 ^^@ [] \OML/cmm/m/it/10 ^^O[]:
- []
-
-[1{/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 6625) in paragraph at lines 98--99
+) [1{/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 6625) in paragraph at lines 97--98
  []\OT1/cmr/bx/n/10 No ex-ter-nal $\OT1/cmr/m/n/10 ^^A[]\OML/cmm/m/it/10 =U$ \O
 T1/cmr/bx/n/10 term: \OT1/cmr/m/n/10 The anoma-
  []
 
 
-Underfull \hbox (badness 1558) in paragraph at lines 98--99
+Underfull \hbox (badness 1558) in paragraph at lines 97--98
  \OT1/cmr/m/n/10 lous pair ex-pec-ta-tion term $+[] [][] []\OML/cmm/m/it/10 b[]
  \OT1/cmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 2158) in paragraph at lines 98--99
+Underfull \hbox (badness 2158) in paragraph at lines 97--98
  \OT1/cmr/m/n/10 +[] [][] ^^A[]\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 (2\OML/cmm/m/i
 t/10 E[]\OT1/cmr/m/n/10 )$ with $\OML/cmm/m/it/10 b[] \OT1/cmr/m/n/10 = \OMS/cm
 sy/m/n/10 ^^@\OML/cmm/m/it/10 u[]v[] \OT1/cmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 2689) in paragraph at lines 127--128
+Underfull \hbox (badness 2689) in paragraph at lines 126--127
 \OT1/cmr/m/n/10 act off-shell vari-a-tional Helmholtz en-ergy per site
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
  []\OT1/cmr/bx/n/10 Compressibility and chemical-potential
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
  \OT1/cmr/bx/n/10 iden-ti-ties: \OT1/cmr/m/n/10 Dif-fer-en-ti-at-ing $\OML/cmm/
 m/it/10 e[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ) =
  []
 
 
-Underfull \hbox (badness 3375) in paragraph at lines 175--176
+Underfull \hbox (badness 3375) in paragraph at lines 174--175
  \OML/cmm/m/it/10 n$ \OT1/cmr/m/n/10 and in-vok-ing sta-tion-ar-ity with re-spe
 ct to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 []\OT1/cmr/m/n/10 Linearizing $(\OML/cmm/m/it/10 r[]; r[]\OT1/cmr/m/n/10 )$ aro
 und the nor-mal state
  []
 
 
-Underfull \hbox (badness 3471) in paragraph at lines 196--197
+Underfull \hbox (badness 3471) in paragraph at lines 195--196
 \OT1/cmr/m/n/10 (^^A[]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 ^^A[]) \OMS/cmsy/m/n/1
 0 ! \OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0)$ at $\OML/cmm/m/it/
 10 ^^V \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^V[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
@@ -548,40 +531,40 @@ Underfull \hbox (badness 3471) in paragraph at lines 196--197
  []
 
 
-Underfull \hbox (badness 7433) in paragraph at lines 196--197
+Underfull \hbox (badness 7433) in paragraph at lines 195--196
 \OT1/cmr/m/n/10 the $2 \OMS/cmsy/m/n/10 ^^B \OT1/cmr/m/n/10 2$ lin-earized gap 
 ma-trix $\OML/cmm/m/it/10 M$ \OT1/cmr/m/n/10 sat-is-fy-ing
  []
 
 
-Underfull \hbox (badness 6493) in paragraph at lines 204--206
+Underfull \hbox (badness 6493) in paragraph at lines 203--205
 \OT1/cmr/m/n/10 Expanding $\OML/cmm/m/it/10 ^^O[] \OT1/cmr/m/n/10 = \OML/cmm/m/
 it/10 ^^V[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^X[]$ \OT1/cmr/m/n/10 iso-lates
  the log-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--206
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
 \OT1/cmr/m/n/10 a-rith-mi-cally di-ver-gent Cooper sum $\OML/cmm/m/it/10 I[] \O
 T1/cmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 2469) in paragraph at lines 204--206
+Underfull \hbox (badness 2469) in paragraph at lines 203--205
 [] [][] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^X[]\OMS/cmsy/m/n/10 j[] ^^X \OML/c
 mm/m/it/10 N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^V[]\OT1/cmr/m/n/10 ) [](^^C\OML
 /cmm/m/it/10 =^^Nk\OT1/cmr/m/n/10 )$ from fi-nite mo-
  []
 
 
-Underfull \hbox (badness 3884) in paragraph at lines 204--206
+Underfull \hbox (badness 3884) in paragraph at lines 203--205
 \OT1/cmr/m/n/10 ments $\OML/cmm/m/it/10 J[] \OT1/cmr/m/n/10 = [] [][] [](\OML/c
 mm/m/it/10 ^^X[]\OT1/cmr/m/n/10 ) = 2(1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 n
 \OT1/cmr/m/n/10 )$ and
  []
 
 
-Overfull \hbox (0.922pt too wide) detected at line 211
+Overfull \hbox (0.922pt too wide) detected at line 210
 [][][][]
  []
 
@@ -591,34 +574,34 @@ t>
 File: research/figs/fig03_task2_lambda_instability.png Graphic file (type png)
 <use research/figs/fig03_task2_lambda_instability.png>
 Package pdftex.def Info: research/figs/fig03_task2_lambda_instability.png  used
- on input line 221.
+ on input line 220.
 (pdftex.def)             Requested size: 510.0pt x 159.29869pt.
 <research/figs/fig07_task4_landau_topology.png, id=178, 956.373pt x 298.716pt>
 File: research/figs/fig07_task4_landau_topology.png Graphic file (type png)
 <use research/figs/fig07_task4_landau_topology.png>
 Package pdftex.def Info: research/figs/fig07_task4_landau_topology.png  used on
- input line 237.
+ input line 236.
 (pdftex.def)             Requested size: 510.0pt x 159.29869pt.
 <figs/ground_state_energy_caseA.png, id=181, 614.295pt x 758.835pt>
 File: figs/ground_state_energy_caseA.png Graphic file (type png)
 <use figs/ground_state_energy_caseA.png>
 Package pdftex.def Info: figs/ground_state_energy_caseA.png  used on input line
- 249.
+ 248.
 (pdftex.def)             Requested size: 166.26205pt x 205.38608pt.
 <figs/ground_state_energy_caseB1.png, id=182, 614.295pt x 758.835pt>
 File: figs/ground_state_energy_caseB1.png Graphic file (type png)
 <use figs/ground_state_energy_caseB1.png>
 Package pdftex.def Info: figs/ground_state_energy_caseB1.png  used on input lin
-e 250.
+e 249.
 (pdftex.def)             Requested size: 166.26205pt x 205.38608pt.
 <figs/ground_state_energy_caseB2.png, id=183, 614.295pt x 758.835pt>
 File: figs/ground_state_energy_caseB2.png Graphic file (type png)
 <use figs/ground_state_energy_caseB2.png>
 Package pdftex.def Info: figs/ground_state_energy_caseB2.png  used on input lin
-e 251.
+e 250.
 (pdftex.def)             Requested size: 166.26205pt x 205.38608pt.
 
-Overfull \hbox (41.19623pt too wide) in paragraph at lines 260--273
+Overfull \hbox (41.19623pt too wide) in paragraph at lines 259--272
  []$[]$ 
  []
 
@@ -643,11 +626,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 293--294
 Underfull \hbox (badness 2644) in paragraph at lines 293--294
 \OML/cmm/m/it/10 d[]e[]=dV[]$ \OT1/cmr/m/n/10 in Fig. [][]3[][] ex-hibit a smoo
 th V-shaped
- []
-
-
-Overfull \hbox (24.9775pt too wide) detected at line 315
-[][][][]
  []
 
 
@@ -709,7 +687,7 @@ changed.
 Here is how much of TeX's memory you used:
  12564 strings out of 467050
  189209 string characters out of 5408429
- 672280 words of memory out of 5000000
+ 674280 words of memory out of 5000000
  41713 multiletter control sequences out of 15000+600000
  639524 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -739,7 +717,7 @@ ic/amsfonts/cm/cmtt10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmtt9.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on ground_state_energy_qpt_report.pdf (9 pages, 4013185 bytes).
+Output written on ground_state_energy_qpt_report.pdf (9 pages, 4013186 bytes).
 PDF statistics:
  398 PDF objects out of 1000 (max. 8388607)
  309 compressed objects within 4 object streams
