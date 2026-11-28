@@ -64,14 +64,13 @@ K_s(\mathbf{k}) = U + 4\Delta_t(\cos k_x + \cos k_y) - 4s\frac{\Delta_t}{t}\SO\l
 \label{eq:kernel}
 \end{equation}
 Because $K_s(\mathbf{k})$ depends on $(\mathbf{k},s)$ solely through $\epsilon_{\ks}$, the zero-momentum BdG gap function is parameterized globally by two scalar amplitudes $(\Delta_0,\Delta_S)$:
-\begin{equation}
-\Delta_{\ks} = \Delta_0 - \frac{\Delta_S}{4t}\,\epsilon_{\ks},
+\begin{align}
+\Delta_{\ks} &= \Delta_0 - \frac{\Delta_S}{4t}\,\epsilon_{\ks},
 \qquad
-\xi_{\ks} = \epsilon_{\ks} - \mu,
-\qquad
-E_{\ks} = \sqrt{\Delta_{\ks}^2 + \xi_{\ks}^2},
+\xi_{\ks} = \epsilon_{\ks} - \mu, \nonumber\\
+E_{\ks} &= \sqrt{\Delta_{\ks}^2 + \xi_{\ks}^2},
 \label{eq:gap_quasiparticle}
-\end{equation}
+\end{align}
 where $\mu$ is the chemical potential fixing the average electron filling $n\in(0,2)$.
 
 At $T=0$ ($\beta\to\infty$), the self-consistency conditions and particle-number constraint form the coupled nonlinear system $(r_1,r_2,r_3)=0$:
@@ -100,7 +99,7 @@ Two structural features of Eq.~\eqref{eq:eq28} are critical for QPT checks:
 \item \textbf{On-shell nature of Eq.~\eqref{eq:eq28}:} Equation~\eqref{eq:eq28} is exact \emph{on-shell}, i.e., evaluated at solutions of Eqs.~\eqref{eq:r1}--\eqref{eq:r3}. Directly minimizing Eq.~\eqref{eq:eq28} with respect to $(\Delta_0,\Delta_S)$ off-shell would fail because the $1/E_{\ks}$ counterterm is only variational once $K_s(\mathbf{k})$ enters explicitly through the gap equations.
 \end{enumerate}
 
-\subsection{Exact Derivation of the Off-Shell Variational Functional $F_{\mathrm{eff}}$}
+\subsection{Exact Derivation of the Off-Shell Variational Functional \texorpdfstring{$F_{\mathrm{eff}}$}{Feff}}
 
 To obtain the true off-shell generating functional and prove exact thermodynamic derivatives, we eliminate the $\Delta_{\ks}^2/(2E_{\ks})$ sum using the gap equations~\eqref{eq:r1}--\eqref{eq:r2}. From $r_2=0$,
 \begin{equation}
@@ -128,7 +127,10 @@ Expanding $\Delta_{\ks}^2 = (\Delta_0 - \frac{\Delta_S}{4t}\epsilon_{\ks})\Delta
 Replacing the counterterm in Eq.~\eqref{eq:eq28} by the quadratic form~\eqref{eq:counterterm_identity} and adding $+\mu n$ per site defines the exact off-shell variational Helmholtz energy per site $F_{\mathrm{eff}}(\Delta_0,\Delta_S,\mu)$ (and grand potential $\Omega_{\mathrm{var}} \equiv N(F_{\mathrm{eff}}-\mu n)$):
 \begin{equation}
 \boxed{
-F_{\mathrm{eff}}(\Delta_0,\Delta_S,\mu) = \frac{1}{2N}\sum_{\ks}(\xi_{\ks} - E_{\ks}) + \mu n - \frac{\Delta_0\Delta_S}{4\Delta_t} + \frac{U\Delta_S^2}{64\Delta_t^2}.
+\begin{aligned}
+F_{\mathrm{eff}}(\Delta_0,\Delta_S,\mu) &= \frac{1}{2N}\sum_{\ks}(\xi_{\ks} - E_{\ks}) + \mu n \\
+&\quad - \frac{\Delta_0\Delta_S}{4\Delta_t} + \frac{U\Delta_S^2}{64\Delta_t^2}.
+\end{aligned}
 }
 \label{eq:Feff}
 \end{equation}
@@ -139,21 +141,21 @@ Differentiating Eq.~\eqref{eq:Feff} directly proves that the BdG self-consistenc
 = -\frac{r_2}{4\Delta_t} = 0, \label{eq:dFeff_dD0}\\
 \frac{\partial F_{\mathrm{eff}}}{\partial \Delta_S}
 &= +\frac{1}{8Nt}\sum_{\ks}\epsilon_{\ks}\frac{\Delta_{\ks}}{E_{\ks}} - \frac{\Delta_0}{4\Delta_t} + \frac{U\Delta_S}{32\Delta_t^2} \nonumber\\
-&= -\frac{1}{4\Delta_t}\left[\Delta_0 + \frac{1}{4N}\sum_{\ks}\left(U - \frac{2\Delta_t}{t}\epsilon_{\ks}\right)\frac{\Delta_{\ks}}{E_{\ks}}\right]
-= -\frac{r_1}{4\Delta_t} = 0, \label{eq:dFeff_dDS}\\
+&= -\frac{1}{4\Delta_t}\!\left[\Delta_0 + \frac{1}{4N}\sum_{\ks}K_s(\mathbf{k})\frac{\Delta_{\ks}}{E_{\ks}}\right] \nonumber\\
+&= -\frac{r_1}{4\Delta_t} = 0, \label{eq:dFeff_dDS}\\
 \frac{1}{N}\frac{\partial \Omega_{\mathrm{var}}}{\partial \mu}
 &= \frac{1}{2N}\sum_{\ks}\left(-1 + \frac{\xi_{\ks}}{E_{\ks}}\right) = r_3 - n = -n. \label{eq:dOmega_dmu_partial}
 \end{align}
 Notice the remarkable physical consequence: although Eq.~\eqref{eq:eq28} and Eq.~\eqref{eq:Feff} are algebraically equal only \emph{on-shell} (verified numerically to machine precision $-2.22\times 10^{-16}t$), the variational functional $F_{\mathrm{eff}}$ guarantees exact Hellmann--Feynman stationarity at every self-consistent root.
 
-\subsection{Envelope Identities and Fixed-Density Energy $e_{\mathrm{GS}}$}
+\subsection{Envelope Identities and Fixed-Density Energy \texorpdfstring{$e_{\mathrm{GS}}$}{e\_GS}}
 
 At fixed electron filling $n$, the canonical ground-state energy per site is the Legendre transform of the on-shell grand potential $\Omega(\mu) \equiv E_g(\Delta_0^*(\mu),\Delta_S^*(\mu),\mu)$:
 \begin{equation}
 e_{\mathrm{GS}}(n,\SO) = \frac{E_g}{N} + \mu n = \min_{\mathrm{branches}}\,F_{\mathrm{eff}}(\Delta_0^*,\Delta_S^*,\mu^*),
 \label{eq:eGS_canonical}
 \end{equation}
-evaluated over all converged superconducting branches together with the normal ($\Delta=0$) branch. Applying the envelope theorem with Eqs.~\eqref{eq:dFeff_dD0}--\eqref{eq:dOmega_dmu_partial} produces four exact diagnostic identities checked directly in \texttt{analysis/ground\_state\_energy\_qpt.py}:
+evaluated over all converged superconducting branches together with the normal ($\Delta=0$) branch. Applying the envelope theorem with Eqs.~\eqref{eq:dFeff_dD0}--\eqref{eq:dOmega_dmu_partial} produces four exact diagnostic identities checked directly in \texttt{analysis/\allowbreak ground\_state\_energy\_qpt.py}:
 \begin{enumerate}
 \item \textbf{Grand-canonical number identity:} Because $\partial\Omega_{\mathrm{var}}/\partial\Delta_0 = \partial\Omega_{\mathrm{var}}/\partial\Delta_S = 0$ on-shell, the total derivative with respect to $\mu$ at fixed $(\SO,U,\Delta_t)$ obeys
 \begin{equation}
@@ -163,31 +165,30 @@ evaluated over all converged superconducting branches together with the normal (
 where $N_{\mathrm{tot}} = nN$. Both the point-wise residual $|(\partial\Phi/\partial\mu + N_{\mathrm{tot}})/N_{\mathrm{tot}}|$ and centered finite-difference solves at fixed $\mu\pm h$ ($h=10^{-3}t$) check Eq.~\eqref{eq:dOmega_dmu_total} to $\le 3.6\times 10^{-13}$ and $\le 9.9\times 10^{-9}$, respectively.
 
 \item \textbf{Compressibility and chemical-potential identities:} Differentiating $e_{\mathrm{GS}}(n) = \Omega(\mu(n))/N + \mu(n)n$ with respect to $n$ gives
-\begin{equation}
-\frac{de_{\mathrm{GS}}}{dn} = \left(\frac{1}{N}\frac{d\Omega}{d\mu} + n\right)\frac{d\mu}{dn} + \mu = \mu(n),
-\qquad
-\frac{d^2 e_{\mathrm{GS}}}{dn^2} = \frac{d\mu}{dn} = \frac{1}{n^2\kappa(n)},
+\begin{align}
+\frac{de_{\mathrm{GS}}}{dn} &= \left(\frac{1}{N}\frac{d\Omega}{d\mu} + n\right)\frac{d\mu}{dn} + \mu = \mu(n), \nonumber\\
+\frac{d^2 e_{\mathrm{GS}}}{dn^2} &= \frac{d\mu}{dn} = \frac{1}{n^2\kappa(n)},
 \label{eq:compressibility}
-\end{equation}
+\end{align}
 so strict positivity $d\mu/dn > 0$ ($\kappa>0$) rules out phase separation everywhere along stable branches.
 
 \item \textbf{Spin--orbit Hellmann--Feynman derivative:} Differentiating $e_{\mathrm{GS}}$ with respect to $\SO$ at fixed $n$ and invoking stationarity with respect to $(\Delta_0,\Delta_S,\mu)$ yields
-\begin{equation}
-\frac{de_{\mathrm{GS}}}{d\SO} = \frac{1}{2N}\sum_{\ks}\left(1 - \frac{\xi_{\ks}}{E_{\ks}} + \frac{\Delta_S\Delta_{\ks}}{4t E_{\ks}}\right)\frac{\partial\epsilon_{\ks}}{\partial\SO},
+\begin{multline}
+\frac{de_{\mathrm{GS}}}{d\SO} = \frac{1}{2N}\sum_{\ks}\left(1 - \frac{\xi_{\ks}}{E_{\ks}} + \frac{\Delta_S\Delta_{\ks}}{4t E_{\ks}}\right) \\
+\times \frac{\partial\epsilon_{\ks}}{\partial\SO},
 \label{eq:de_dVso}
-\end{equation}
+\end{multline}
 with $\partial\epsilon_{\ks}/\partial\SO = -2s\lambda_{\mathbf{k}}$. Notice how the third term inside the bracket captures the explicit $\SO$-dependence of the correlated-hopping pairing kernel $K_s(\mathbf{k})$ through $\Delta_{\ks}(\epsilon_{\ks})$.
 
 \item \textbf{Exact $T=0$ normal-state benchmark:} Setting $\Delta_0=\Delta_S=0$ collapses $E_{\ks}\to|\xi_{\ks}|$ and $1 - \xi_{\ks}/|\xi_{\ks}| = 2\theta(-\xi_{\ks})$. Sorting the $2N$ helicity eigenvalues $\epsilon_{(0)}\le\dots\le\epsilon_{(2N-1)}$ and selecting $k=\operatorname{round}(nN)$ gives the zero-temperature normal chemical potential $\mu_N = \tfrac{1}{2}(\epsilon_{(k-1)}+\epsilon_{(k)})$ without root-finder stalls on the step function, yielding
-\begin{equation}
-e_N = \frac{1}{2N}\sum_{\ks}(\xi_{\ks}-|\xi_{\ks}|) + \mu_N n = \frac{1}{N}\sum_{\epsilon_{\ks}<\mu_N}\epsilon_{\ks},
-\qquad
-\frac{de_N}{d\SO} = -\frac{2}{N}\sum_{\ks} s\lambda_{\mathbf{k}}\,\theta(\mu_N - \epsilon_{\ks}).
+\begin{align}
+e_N &= \frac{1}{2N}\sum_{\ks}(\xi_{\ks}-|\xi_{\ks}|) + \mu_N n = \frac{1}{N}\sum_{\epsilon_{\ks}<\mu_N}\epsilon_{\ks}, \nonumber\\
+\frac{de_N}{d\SO} &= -\frac{2}{N}\sum_{\ks} s\lambda_{\mathbf{k}}\,\theta(\mu_N - \epsilon_{\ks}).
 \label{eq:eN_exact}
-\end{equation}
+\end{align}
 \end{enumerate}
 
-\section{Exact Instability Boundary $\lambda_+=1$ and Constrained Landau Potential}
+\section{Exact Instability Boundary \texorpdfstring{$\lambda_+=1$}{lambda+=1} and Constrained Landau Potential}
 \label{sec:lambda_landau}
 
 \subsection{Closed-Form Pairing Boundary}
@@ -238,10 +239,10 @@ which improves root-mean-square fit errors by $2\times$--$11\times$ relative to 
 \label{fig:landau_topology}
 \end{figure*}
 
-\section{Ground-State Energy Sweeps Against $\SO$ at $n=1.875$}
+\section{Ground-State Energy Sweeps Against \texorpdfstring{$\SO$}{V\_SO} at \texorpdfstring{$n=1.875$}{n=1.875}}
 \label{sec:gse_sweeps}
 
-We next analyze the direct $\SO$-sweep checks executed in \texttt{analysis/ground\_state\_energy\_qpt.py} at the manuscript's high-filling operating point $n=1.875$ across three interaction/correlated-hopping regimes: Case~A ($U/t=75, \Delta_t/t=4.5$, $N_k\in\{201,301,401,601\}$), Case~B1 ($U/t=115, \Delta_t/t=3.5$, $N_k\in\{201,401\}$), and Case~B2 ($U/t=115, \Delta_t/t=4.5$, $N_k\in\{201,401\}$).
+We next analyze the direct $\SO$-sweep checks executed in \texttt{analysis/\allowbreak ground\_state\_energy\_qpt.py} at the manuscript's high-filling operating point $n=1.875$ across three interaction/correlated-hopping regimes: Case~A ($U/t=75, \Delta_t/t=4.5$, $N_k\in\{201,301,401,601\}$), Case~B1 ($U/t=115, \Delta_t/t=3.5$, $N_k\in\{201,401\}$), and Case~B2 ($U/t=115, \Delta_t/t=4.5$, $N_k\in\{201,401\}$).
 
 \begin{figure*}[t]
 \centering
@@ -286,7 +287,7 @@ Figure~\ref{fig:gse_cases} and Table~\ref{tab:gse_verification} establish four q
 \label{fig:n1875_revalidation}
 \end{figure*}
 
-\section{Analytic Proof of Third-Order Dirac--Lifshitz Scaling at $(\pi,\pi)$}
+\section{Analytic Proof of Third-Order Dirac--Lifshitz Scaling at \texorpdfstring{$(\pi,\pi)$}{(pi,pi)}}
 \label{sec:dirac_lifshitz}
 
 Why does the normal-state second derivative $d^2e_N/d\SO^2$ in Fig.~\ref{fig:gse_cases} exhibit a smooth V-shaped peak rather than a discontinuous second-order Ehrenfest jump? Expanding Eq.~\eqref{eq:eps_ks} around the Brillouin-zone corner $\mathbf{k} = (\pi - q_x, \pi - q_y)$ yields an isotropic 2D Dirac cone anchored at $E=4t$:
@@ -302,11 +303,13 @@ N_{\mathrm{cone}}(E) = \int \frac{d^2 q}{(2\pi)^2}\,\delta\!\left(E - 4t \pm 2\S
 the singular contribution to the $T=0$ grand potential $\delta\Omega_{\mathrm{cone}}(\mu_N) = -\int^{\mu_N} (\mu_N - E)N_{\mathrm{cone}}(E)\,dE$ integrates the linear V-kink twice:
 \begin{equation}
 \boxed{
-\delta\Omega_{\mathrm{cone}}(\mu_N) \propto \frac{|\mu_N - 4t|^3}{\SO^2}\times
-\begin{cases}
+\begin{aligned}
+\delta\Omega_{\mathrm{cone}}(\mu_N) &\propto \frac{|\mu_N - 4t|^3}{\SO^2} \\
+&\quad \times \begin{cases}
 -1, & \mu_N < 4t\;\;(\text{inner } \epsilon_- \text{ hole pocket}),\\
 +1, & \mu_N > 4t\;\;(\text{inner } \epsilon_+ \text{ electron pocket}).
 \end{cases}
+\end{aligned}
 }
 \label{eq:third_order_dirac}
 \end{equation}
@@ -321,7 +324,7 @@ Unlike a parabolic 2D band edge whose step-function density of states gives $|\m
 
 Figure~\ref{fig:kspace_topology} verifies Eq.~\eqref{eq:third_order_dirac} directly on $N_k=801$ periodic meshes at $T=2\times 10^{-4}t$: the normal-state $d^2e_N/d\SO^2$ peaks continuously at $-0.00391\,t^{-1}$, while $d^3e_N/d\SO^3$ drops discontinuously from $+0.881\,t^{-2}$ to $-0.735\,t^{-2}$ across $V_L = 0.69426t$. In the superconducting ground state ($U=75t,\Delta_t=4.5t$), pairing opens a large gap $E_-(\pi,\pi)\ge 1.366t$ right at the Dirac apex, leaving $d^3e_{\mathrm{SC}}/d\SO^3$ completely smooth across $V_L$.
 
-\section{Full-Band Density ($n$) Landscape: Eq.~(28) Energy vs.\ Concurrence}
+\section{Full-Band Density (\texorpdfstring{$n$}{n}) Landscape: Eq.~(28) Energy vs.\ Concurrence}
 \label{sec:density_landscape}
 
 Extending the Eq.~(28) energy analysis across the entire electronic filling $n\in(0,2)$ on periodic $N_k=401$ and $N_k=801$ grids clarifies both the global phase structure and the limitations of raw two-qubit concurrence $C(n)$ as a QPT detector (Figs.~\ref{fig:density_landscape} and \ref{fig:density_zooms}, Table~\ref{tab:density_critical}).
