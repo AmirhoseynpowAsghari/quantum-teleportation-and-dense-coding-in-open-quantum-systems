@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  28 NOV 2026 06:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.10.1)  28 NOV 2026 06:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -492,134 +492,55 @@ m/n/10 + [] \OML/cmm/m/it/10 k[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OT1/cmr
 OMS/cmsy/m/n/10 ^^@ [] \OML/cmm/m/it/10 ^^O[]:
  []
 
-
-Overfull \hbox (24.77325pt too wide) detected at line 74
-[][][]\OT1/cmr/m/n/10 ^^A[] = ^^A[] \OMS/cmsy/m/n/10 ^^@ [] \OML/cmm/m/it/10 ^^
-O[];  ^^X[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^O[] \OMS/cmsy/m/n/10 ^^@ \OML/
-cmm/m/it/10 ^^V;  E[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 ;
- []
-
 [1{/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 6625) in paragraph at lines 99--100
+Underfull \hbox (badness 6625) in paragraph at lines 98--99
  []\OT1/cmr/bx/n/10 No ex-ter-nal $\OT1/cmr/m/n/10 ^^A[]\OML/cmm/m/it/10 =U$ \O
 T1/cmr/bx/n/10 term: \OT1/cmr/m/n/10 The anoma-
  []
 
 
-Underfull \hbox (badness 1558) in paragraph at lines 99--100
+Underfull \hbox (badness 1558) in paragraph at lines 98--99
  \OT1/cmr/m/n/10 lous pair ex-pec-ta-tion term $+[] [][] []\OML/cmm/m/it/10 b[]
  \OT1/cmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 2158) in paragraph at lines 99--100
+Underfull \hbox (badness 2158) in paragraph at lines 98--99
  \OT1/cmr/m/n/10 +[] [][] ^^A[]\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 (2\OML/cmm/m/i
 t/10 E[]\OT1/cmr/m/n/10 )$ with $\OML/cmm/m/it/10 b[] \OT1/cmr/m/n/10 = \OMS/cm
 sy/m/n/10 ^^@\OML/cmm/m/it/10 u[]v[] \OT1/cmr/m/n/10 =
  []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 103.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 103.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 103.
-
-
-Underfull \hbox (badness 2689) in paragraph at lines 128--129
+Underfull \hbox (badness 2689) in paragraph at lines 127--128
 \OT1/cmr/m/n/10 act off-shell vari-a-tional Helmholtz en-ergy per site
  []
 
-
-Overfull \hbox (28.09688pt too wide) detected at line 134
-[][][][]
- []
-
-
-Overfull \hbox (55.59558pt too wide) detected at line 146
-[]
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 149.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 149.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 149.
-
 [2]
-Underfull \hbox (badness 1057) in paragraph at lines 155--157
-\OT1/cmr/m/n/10 to-gether with the nor-mal ($^^A = 0$) branch. Ap-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--166
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
  []\OT1/cmr/bx/n/10 Compressibility and chemical-potential
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--166
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
  \OT1/cmr/bx/n/10 iden-ti-ties: \OT1/cmr/m/n/10 Dif-fer-en-ti-at-ing $\OML/cmm/
 m/it/10 e[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (40.03719pt too wide) detected at line 171
-[][][][] \OT1/cmr/m/n/10 = [] [] + \OML/cmm/m/it/10 ^^V \OT1/cmr/m/n/10 = \OML/
-cmm/m/it/10 ^^V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 )\OML/cmm/m/i
-t/10 ;  [] \OT1/cmr/m/n/10 = [] = []\OML/cmm/m/it/10 ;
- []
-
-
-Underfull \hbox (badness 3375) in paragraph at lines 174--175
+Underfull \hbox (badness 3375) in paragraph at lines 175--176
  \OML/cmm/m/it/10 n$ \OT1/cmr/m/n/10 and in-vok-ing sta-tion-ar-ity with re-spe
 ct to
  []
 
 
-Overfull \hbox (124.43242pt too wide) detected at line 187
-[][][]\OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 = [] [](\OML/cmm/m/it/10 ^^X[] \OMS/
-cmsy/m/n/10 ^^@ j\OML/cmm/m/it/10 ^^X[]\OMS/cmsy/m/n/10 j\OT1/cmr/m/n/10 ) + \O
-ML/cmm/m/it/10 ^^V[]n \OT1/cmr/m/n/10 = [] [] \OML/cmm/m/it/10 ^^O[];  [] \OT1/
-cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@[] [] \OML/cmm/m/it/10 s^^U[] ^^R\OT1/cmr/m/n/
-10 (\OML/cmm/m/it/10 ^^V[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^O[]\OT1/cmr/
-m/n/10 )\OML/cmm/m/it/10 :
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 190.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 190.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 190.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 190.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
 []\OT1/cmr/m/n/10 Linearizing $(\OML/cmm/m/it/10 r[]; r[]\OT1/cmr/m/n/10 )$ aro
 und the nor-mal state
  []
 
 
-Underfull \hbox (badness 3471) in paragraph at lines 195--196
+Underfull \hbox (badness 3471) in paragraph at lines 196--197
 \OT1/cmr/m/n/10 (^^A[]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 ^^A[]) \OMS/cmsy/m/n/1
 0 ! \OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0)$ at $\OML/cmm/m/it/
 10 ^^V \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^V[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
@@ -627,217 +548,172 @@ Underfull \hbox (badness 3471) in paragraph at lines 195--196
  []
 
 
-Underfull \hbox (badness 7433) in paragraph at lines 195--196
+Underfull \hbox (badness 7433) in paragraph at lines 196--197
 \OT1/cmr/m/n/10 the $2 \OMS/cmsy/m/n/10 ^^B \OT1/cmr/m/n/10 2$ lin-earized gap 
 ma-trix $\OML/cmm/m/it/10 M$ \OT1/cmr/m/n/10 sat-is-fy-ing
  []
 
 
-Underfull \hbox (badness 6493) in paragraph at lines 203--205
+Underfull \hbox (badness 6493) in paragraph at lines 204--206
 \OT1/cmr/m/n/10 Expanding $\OML/cmm/m/it/10 ^^O[] \OT1/cmr/m/n/10 = \OML/cmm/m/
 it/10 ^^V[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^X[]$ \OT1/cmr/m/n/10 iso-lates
  the log-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--205
+Underfull \hbox (badness 10000) in paragraph at lines 204--206
 \OT1/cmr/m/n/10 a-rith-mi-cally di-ver-gent Cooper sum $\OML/cmm/m/it/10 I[] \O
 T1/cmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 2469) in paragraph at lines 203--205
+Underfull \hbox (badness 2469) in paragraph at lines 204--206
 [] [][] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^X[]\OMS/cmsy/m/n/10 j[] ^^X \OML/c
 mm/m/it/10 N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^V[]\OT1/cmr/m/n/10 ) [](^^C\OML
 /cmm/m/it/10 =^^Nk\OT1/cmr/m/n/10 )$ from fi-nite mo-
  []
 
 
-Underfull \hbox (badness 3884) in paragraph at lines 203--205
+Underfull \hbox (badness 3884) in paragraph at lines 204--206
 \OT1/cmr/m/n/10 ments $\OML/cmm/m/it/10 J[] \OT1/cmr/m/n/10 = [] [][] [](\OML/c
 mm/m/it/10 ^^X[]\OT1/cmr/m/n/10 ) = 2(1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 n
 \OT1/cmr/m/n/10 )$ and
  []
 
 
-Overfull \hbox (0.922pt too wide) detected at line 210
+Overfull \hbox (0.922pt too wide) detected at line 211
 [][][][]
  []
 
-<research/figs/fig03_task2_lambda_instability.png, id=151, 956.373pt x 298.716p
+[3]
+<research/figs/fig03_task2_lambda_instability.png, id=170, 956.373pt x 298.716p
 t>
 File: research/figs/fig03_task2_lambda_instability.png Graphic file (type png)
 <use research/figs/fig03_task2_lambda_instability.png>
 Package pdftex.def Info: research/figs/fig03_task2_lambda_instability.png  used
- on input line 220.
+ on input line 221.
 (pdftex.def)             Requested size: 510.0pt x 159.29869pt.
-[3]
-<research/figs/fig07_task4_landau_topology.png, id=179, 956.373pt x 298.716pt>
+<research/figs/fig07_task4_landau_topology.png, id=178, 956.373pt x 298.716pt>
 File: research/figs/fig07_task4_landau_topology.png Graphic file (type png)
 <use research/figs/fig07_task4_landau_topology.png>
 Package pdftex.def Info: research/figs/fig07_task4_landau_topology.png  used on
- input line 236.
+ input line 237.
 (pdftex.def)             Requested size: 510.0pt x 159.29869pt.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 241.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 241.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 241.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 241.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 241.
-
-<figs/ground_state_energy_caseA.png, id=182, 614.295pt x 758.835pt>
+<figs/ground_state_energy_caseA.png, id=181, 614.295pt x 758.835pt>
 File: figs/ground_state_energy_caseA.png Graphic file (type png)
 <use figs/ground_state_energy_caseA.png>
 Package pdftex.def Info: figs/ground_state_energy_caseA.png  used on input line
- 248.
+ 249.
 (pdftex.def)             Requested size: 166.26205pt x 205.38608pt.
-<figs/ground_state_energy_caseB1.png, id=183, 614.295pt x 758.835pt>
+<figs/ground_state_energy_caseB1.png, id=182, 614.295pt x 758.835pt>
 File: figs/ground_state_energy_caseB1.png Graphic file (type png)
 <use figs/ground_state_energy_caseB1.png>
 Package pdftex.def Info: figs/ground_state_energy_caseB1.png  used on input lin
-e 249.
+e 250.
 (pdftex.def)             Requested size: 166.26205pt x 205.38608pt.
-<figs/ground_state_energy_caseB2.png, id=184, 614.295pt x 758.835pt>
+<figs/ground_state_energy_caseB2.png, id=183, 614.295pt x 758.835pt>
 File: figs/ground_state_energy_caseB2.png Graphic file (type png)
 <use figs/ground_state_energy_caseB2.png>
 Package pdftex.def Info: figs/ground_state_energy_caseB2.png  used on input lin
-e 250.
+e 251.
 (pdftex.def)             Requested size: 166.26205pt x 205.38608pt.
 
-Overfull \hbox (41.19623pt too wide) in paragraph at lines 259--272
+Overfull \hbox (41.19623pt too wide) in paragraph at lines 260--273
  []$[]$ 
  []
 
 
-Underfull \hbox (badness 1874) in paragraph at lines 277--278
+Underfull \hbox (badness 1874) in paragraph at lines 278--279
  []\OT1/cmr/bx/n/10 Machine-precision ther-mo-dy-namic con-sis-
  []
 
-<research/figs/fig10_task6_n1875_revalidation.png, id=190, 956.373pt x 298.716p
+<research/figs/fig10_task6_n1875_revalidation.png, id=189, 956.373pt x 298.716p
 t>
 File: research/figs/fig10_task6_n1875_revalidation.png Graphic file (type png)
 <use research/figs/fig10_task6_n1875_revalidation.png>
 Package pdftex.def Info: research/figs/fig10_task6_n1875_revalidation.png  used
- on input line 284.
+ on input line 285.
 (pdftex.def)             Requested size: 510.0pt x 159.29869pt.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 289.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 289.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 289.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 289.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 292--293
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
 []\OT1/cmr/m/n/10 Why does the normal-state sec-ond deriva-tive
  []
 
 
-Underfull \hbox (badness 2644) in paragraph at lines 292--293
+Underfull \hbox (badness 2644) in paragraph at lines 293--294
 \OML/cmm/m/it/10 d[]e[]=dV[]$ \OT1/cmr/m/n/10 in Fig. [][]3[][] ex-hibit a smoo
 th V-shaped
  []
 
-[4 <./research/figs/fig03_task2_lambda_instability.png>]
-Overfull \hbox (75.19588pt too wide) detected at line 312
+
+Overfull \hbox (24.9775pt too wide) detected at line 315
 [][][][]
  []
 
 
-Underfull \hbox (badness 3657) in paragraph at lines 312--314
+Underfull \hbox (badness 3657) in paragraph at lines 315--317
 \OT1/cmr/m/n/10 re-mains con-tin-u-ous with a sym-met-ric cusp while
  []
 
-<research/figs/fig11_task6_kspace_topology.png, id=208, 956.373pt x 298.716pt>
+[4]
+<research/figs/fig11_task6_kspace_topology.png, id=209, 956.373pt x 298.716pt>
 File: research/figs/fig11_task6_kspace_topology.png Graphic file (type png)
 <use research/figs/fig11_task6_kspace_topology.png>
 Package pdftex.def Info: research/figs/fig11_task6_kspace_topology.png  used on
- input line 317.
+ input line 320.
 (pdftex.def)             Requested size: 510.0pt x 159.29869pt.
-[5 <./research/figs/fig07_task4_landau_topology.png> <./figs/ground_state_energ
-y_caseA.png> <./figs/ground_state_energy_caseB1.png> <./figs/ground_state_energ
-y_caseB2.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 324.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 324.
-
-<research/figs/fig13_density_eq28_phase_landscape.png, id=226, 1185.52913pt x 6
+<research/figs/fig13_density_eq28_phase_landscape.png, id=215, 1185.52913pt x 6
 94.09312pt>
 File: research/figs/fig13_density_eq28_phase_landscape.png Graphic file (type p
 ng)
 <use research/figs/fig13_density_eq28_phase_landscape.png>
 Package pdftex.def Info: research/figs/fig13_density_eq28_phase_landscape.png  
-used on input line 347.
+used on input line 350.
 (pdftex.def)             Requested size: 510.0pt x 298.5919pt.
-<research/figs/fig14_density_qpt_zooms_eq28_vs_concurrence.png, id=227, 1330.37
+<research/figs/fig14_density_qpt_zooms_eq28_vs_concurrence.png, id=216, 1330.37
 025pt x 622.42537pt>
 File: research/figs/fig14_density_qpt_zooms_eq28_vs_concurrence.png Graphic fil
 e (type png)
 <use research/figs/fig14_density_qpt_zooms_eq28_vs_concurrence.png>
 Package pdftex.def Info: research/figs/fig14_density_qpt_zooms_eq28_vs_concurre
-nce.png  used on input line 354.
+nce.png  used on input line 357.
 (pdftex.def)             Requested size: 510.0pt x 238.60403pt.
-
-Underfull \hbox (badness 2529) in paragraph at lines 363--364
+ [5 <./research/figs/fig03_task2_lambda_instability.png> <./research/figs/fig07
+_task4_landau_topology.png>]
+Underfull \hbox (badness 2529) in paragraph at lines 366--367
  \OML/cmm/m/it/10 r \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 25\OML
 /cmm/m/it/10 a$\OT1/cmr/m/n/10 , over $95%$ of $\OML/cmm/m/it/10 C[]\OT1/cmr/m/
 n/10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 )$ orig-i-nates
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 363--364
+Underfull \hbox (badness 1297) in paragraph at lines 366--367
  \OML/cmm/m/it/10 C \OT1/cmr/m/n/10 = [](0\OML/cmm/m/it/10 ; C[]\OT1/cmr/m/n/10
  )$ pro-duces ar-ti-fi-cial sudden-
  []
 
-[6 <./research/figs/fig10_task6_n1875_revalidation.png>]
-(./ground_state_energy_qpt_report.bbl) [7 <./research/figs/fig11_task6_kspace_t
-opology.png>] [8 <./research/figs/fig13_density_eq28_phase_landscape.png>]
-[9 <./research/figs/fig14_density_qpt_zooms_eq28_vs_concurrence.png>]
-(./ground_state_energy_qpt_report.aux)
+[6 <./figs/ground_state_energy_caseA.png> <./figs/ground_state_energy_caseB1.pn
+g> <./figs/ground_state_energy_caseB2.png>]
+(./ground_state_energy_qpt_report.bbl) [7 <./research/figs/fig10_task6_n1875_re
+validation.png> <./research/figs/fig11_task6_kspace_topology.png>] [8 <./resear
+ch/figs/fig13_density_eq28_phase_landscape.png>] [9 <./research/figs/fig14_dens
+ity_qpt_zooms_eq28_vs_concurrence.png>] (./ground_state_energy_qpt_report.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `ground_state_energy_qpt_report.out' has not 
 changed.
-(rerunfilecheck)             Checksum: 903DAEF726EDF70215A3C4CD906AA3DA;4954.
+(rerunfilecheck)             Checksum: 96CD6E93FC43FD94462901F2CB05EBD4;5020.
  ) 
 Here is how much of TeX's memory you used:
- 12560 strings out of 467050
- 189090 string characters out of 5408429
- 669455 words of memory out of 5000000
- 41709 multiletter control sequences out of 15000+600000
+ 12564 strings out of 467050
+ 189209 string characters out of 5408429
+ 672280 words of memory out of 5000000
+ 41713 multiletter control sequences out of 15000+600000
  639524 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,11n,79p,2136b,580s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,17n,79p,2136b,568s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
 pt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/te
 xlive/texdir/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></opt/texlive/
@@ -863,7 +739,7 @@ ic/amsfonts/cm/cmtt10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmtt9.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msam10.pfb></opt/texlive/texdir/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on ground_state_energy_qpt_report.pdf (9 pages, 4013399 bytes).
+Output written on ground_state_energy_qpt_report.pdf (9 pages, 4013185 bytes).
 PDF statistics:
  398 PDF objects out of 1000 (max. 8388607)
  309 compressed objects within 4 object streams
